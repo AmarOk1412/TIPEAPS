@@ -6,7 +6,6 @@
 #       888      888   888        888    oo    8oooo88    888                888 
 #      o888o    o888o o888o      o888ooo8888 o88o  o888o o888o       o88oooo888
 
-
 #Imports
 import cv2
 import numpy
