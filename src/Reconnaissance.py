@@ -50,8 +50,12 @@ class CreateDataBase():
     def getFaceFrame(self, frame, x, y, w, h):
         """On récupère un rectangle (largeur, hauteur) (centreX, centreY)"""
         cropped = cv2.getRectSubPix(frame, (w, h), (x + w / 2, y + h / 2))
-        #On met l'image en niveaux de gris. TODO: gamma, HSV
+        #On met l'image en niveaux de gris. TODO: gamma
         grayscale = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
+        #hsvMode = cv2.cvtColor(cropped, cv2.COLOR_BGR2HSV)
+        #hlsMode = cv2.cvtColor(cropped, cv2.COLOR_BGR2HLS)
+        #luvMode = cv2.cvtColor(cropped, cv2.COLOR_BGR2LUV)
+        #labMode = cv2.cvtColor(cropped, cv2.COLOR_BGR2LAB)
         self.faceFrame = cv2.resize(grayscale, (IMAGE_SIZE, IMAGE_SIZE))
         return self.faceFrame
 
@@ -87,7 +91,7 @@ class CreateDataBase():
 #        self.camera = CAMERA
 
 if __name__ == "__main__":
-    createDB = CreateDataBase("image", "AmarOk")
+    createDB = CreateDataBase("image", "AmarOkLAB")
     createDB.capture()	
 
 
