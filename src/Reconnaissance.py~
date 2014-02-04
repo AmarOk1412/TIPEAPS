@@ -35,7 +35,7 @@ class CreateDataBase():
         faces = self.classifier.detectMultiScale(miniature)
         return faces
 
-    def drawDetectedFace(self, frame, faces):
+    def drawDetectedFace(self, frame, face):
         """Dessine un rectangle autour du visage détecté"""
         for f in faces: 
             x,y,w,h = [v for v in f]

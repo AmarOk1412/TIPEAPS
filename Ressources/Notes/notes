@@ -1,4 +1,5 @@
 http://docs.opencv.org/modules/contrib/doc/facerec/facerec_api.html
+SE RENSEIGNER SUR LES CLASSIFIERS
 
 All face recognition models in OpenCV are derived from the abstract base class FaceRecognizer, which provides a unified access to all face recongition algorithms in OpenCV.
 
@@ -185,3 +186,41 @@ regions.
 4) Classification: Each face image in test set is classified
 by comparing it against the face images in the training
 set. The comparison is performed using
+
+
+
+
+
+
+
+
+
+
+Facial expression recognition from
+video sequences: temporal and static modeling
+
+Since the early 1970s, Paul Ekman and his colleagues [10] have performed exten-
+sive studies of human facial expressions. They found evidence to support universality
+in facial expressions. These ‘‘universal facial expressions’’ are those representing hap-
+piness, sadness, anger, fear, surprise, and disgust.
+
+As mentioned in the previous section, the classifiers used can either be ÔstaticÕ clas-
+sifiers or dynamic ones. ÔStaticÕ classifiers use feature vectors related to a single frame
+to perform classification (e.g., Neural networks, Bayesian networks, and linear dis-
+criminant analysis). Temporal classifiers try to capture the temporal pattern in the
+sequence of feature vectors related to each frame such as the HMM based methods
+of [23,28,30].
+
+. Cohen et al. / Computer Vision and Image Understanding 91 (2003) 160–187
+Fig. 1. (a) The wireframe model and (b) the facial motion measurements.
+
+
+
+
+
+
+Image and Vision Computing
+We observe in our experiments that LBP features perform stably and robustly over a useful
+range of low resolutions of face images, and yield promising performance in compressed low-resolution
+video sequences captured in real-world environments.
+

@@ -1,0 +1,15 @@
+1: Reconnaissance des visages
+Comparer les vitesses d'algos, la reconnaissance en fonction de	la luminosité et du nombre d'image référence par individu dans la BDD :
+* Eigenfaces
+* LBPH
+Comparer les algos de reconnaissance sur une base de données d'images en :
+* N&B
+* HSV
+* Gamma
+
++ affiner l'algo du meilleur choisi :)
++ voir les limites de l'algo.
+
+
+
+URGENT : Tracker des points
