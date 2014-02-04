@@ -30,12 +30,12 @@ class CreateDataBase():
 
     def capture(self):        
         if self.camera.isOpened():
-            rval, frame = self.camera.read()
+            (rval, frame) = self.camera.read()
         else:
             rval = False
 
         while rval:
-            rval, frame = self.camera.read()
+            (rval, frame) = self.camera.read()
             cv2.imshow("Create Database Window", frame)
             key = cv2.waitKey(20)
             if key in [27, ord('Q'), ord('q')]:
