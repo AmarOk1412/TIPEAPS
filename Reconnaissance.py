@@ -6,8 +6,6 @@
 #       888      888   888        888          8oooo88    888                888 
 #      o888o    o888o o888o      o888ooo8888 o88o  o888o o888o       o88oooo888
 
-#test n0m1s
-
 #Imports
 import cv2
 import numpy
@@ -38,7 +36,7 @@ class CreateDataBase():
             (rval, frame) = self.camera.read()
             cv2.imshow("Create Database Window", frame)
             key = cv2.waitKey(20)
-            if key in [27, ord('Q'), ord('q')]:
+            if key in [27, ord('Q'), ord('q')]: #esc / Q
                 break
         
 
