@@ -23,12 +23,16 @@ CAMERA = 0                                 #La camera
 
 #####################################
 class CreateDataBase():
-    def __init__(self):
+    def __init__(self, imgPath ,ident):
         self.rval = False            
         self.camera = cv2.VideoCapture(CAMERA)
         self.classifier = cv2.CascadeClassifier(TRAINSET)
+        self.faceFrame = None
+        self.captureNum = 0
+        self.identity = ident
+        self.imagesPath = imgPath
 
-    def getFaces(self, frame):
+    def getFacesPos(self, frame):
         """Retourne la position des visages détéctés de la forme [[x y w h]]"""
         Size = (frame.shape[1], frame.shape[0])
         miniature = cv2.resize(frame, Size)
@@ -40,7 +44,21 @@ class CreateDataBase():
         for f in faces: 
             x,y,w,h = [v for v in f]
             cv2.rectangle(frame, (x,y), (x+w, y+h), (0,140,255))
+            self.getFaceFrame(frame, x, y, w, h)
         return frame
+
+    def getFaceFrame(self, frame, x, y, w, h):
+        """On récupère un rectangle (largeur, hauteur) (centreX, centreY)"""
+        cropped = cv2.getRectSubPix(frame, (w, h), (x + w / 2, y + h / 2))
+        #On met l'image en niveaux de gris. TODO: gamma, HSV
+        grayscale = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
+        self.faceFrame = cv2.resize(grayscale, (IMAGE_SIZE, IMAGE_SIZE))
+        return self.faceFrame
+
+    def collectFace(self, frame):
+        """On enregistre le visage récupéré"""        
+        os.makedirs("{0}/{1}".format(self.imagesPath, self.identity))
+        cv2.imwrite("{0}/{1}/{2}.jpg".format(self.imagesPath, self.identity, self.captureNum), frame)
 
     def capture(self): 
         """Récupère le flux vidéo"""       
@@ -51,11 +69,13 @@ class CreateDataBase():
 
         while rval:
             (rval, frame) = self.camera.read()
-            frame = self.drawDetectedFace(frame, self.getFaces(frame))
+            frame = self.drawDetectedFace(frame, self.getFacesPos(frame))
             cv2.imshow("Create Database Window", frame)
             key = cv2.waitKey(20)
             if key in [27, ord('Q'), ord('q')]: #esc / Q
                 break
+            if key in [ord('C'), ord('c')] and self.faceFrame != None: 
+                self.collectFace(self.faceFrame)
         
 
 #class RecognizeEigenFaces():
@@ -67,7 +87,7 @@ class CreateDataBase():
 #        self.camera = CAMERA
 
 if __name__ == "__main__":
-    createDB = CreateDataBase()
+    createDB = CreateDataBase("image", "AmarOk")
     createDB.capture()	
 
 
