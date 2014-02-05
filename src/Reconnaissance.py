@@ -102,7 +102,11 @@ class CreateDataBase():
 #        self.camera = CAMERA
 
 if __name__ == "__main__":
-    createDB = CreateDataBase("image", "AmarOk")
+    individu = "User"
+    for i in range(1,len(sys.argv)):
+        if sys.argv[i] == '-n' and i < len(sys.argv):
+            individu = sys.argv[i + 1]
+    createDB = CreateDataBase("image", individu)
     createDB.capture()
 
 
