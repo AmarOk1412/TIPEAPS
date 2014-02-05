@@ -28,7 +28,6 @@ class CreateDataBase():
         self.camera = cv2.VideoCapture(CAMERA)
         self.classifier = cv2.CascadeClassifier(TRAINSET)
         self.faceFrame = None
-        self.captureNum = 0
         self.identity = ident
         self.imagesPath = imgPath
 
@@ -44,13 +43,13 @@ class CreateDataBase():
         for f in faces: 
             x,y,w,h = [v for v in f]
             cv2.rectangle(frame, (x,y), (x+w, y+h), (0,140,255))
-            self.getFaceFrame(frame, x, y, w, h)
+            self.LBPHBaseImage = self.getFaceFrame(frame, x, y, w, h)
         return frame
 
     def getFaceFrame(self, frame, x, y, w, h):
         """On récupère un rectangle (largeur, hauteur) (centreX, centreY)"""
         cropped = cv2.getRectSubPix(frame, (w, h), (x + w / 2, y + h / 2))
-        #On met l'image en niveaux de gris. TODO: gamma
+        #On met l'image en niveaux de gris. TODO: relief
         grayscale = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
         #hsvMode = cv2.cvtColor(cropped, cv2.COLOR_BGR2HSV)
         #hlsMode = cv2.cvtColor(cropped, cv2.COLOR_BGR2HLS)
@@ -60,9 +59,21 @@ class CreateDataBase():
         return self.faceFrame
 
     def collectFace(self, frame):
-        """On enregistre le visage récupéré"""        
-        os.makedirs("{0}/{1}".format(self.imagesPath, self.identity))
-        cv2.imwrite("{0}/{1}/{2}.jpg".format(self.imagesPath, self.identity, self.captureNum), frame)
+        """On enregistre le visage récupéré"""     
+        imageCreated = False
+        captureNum = 0
+        #Créé le dossier s'il n'existe pas
+        try:
+            os.makedirs("{0}/{1}".format(self.imagesPath, self.identity))
+        except OSError:
+            print("écriture dans dossier existant") 
+        #Créé l'image à la suite
+        while not imageCreated:
+            if not os.path.isfile("{0}/{1}/{2}.jpg".format(self.imagesPath, self.identity, captureNum)):
+                cv2.imwrite("{0}/{1}/{2}.jpg".format(self.imagesPath, self.identity, captureNum), frame)
+                imageCreated = True
+            else:
+                captureNum += 1
 
     def capture(self): 
         """Récupère le flux vidéo"""       
@@ -91,8 +102,8 @@ class CreateDataBase():
 #        self.camera = CAMERA
 
 if __name__ == "__main__":
-    createDB = CreateDataBase("image", "AmarOkLAB")
-    createDB.capture()	
+    createDB = CreateDataBase("image", "AmarOk")
+    createDB.capture()
 
 
 
