@@ -85,6 +85,8 @@ class CreateDataBase():
         while rval:
             (rval, frame) = self.camera.read()
             frame = self.drawDetectedFace(frame, self.getFacesPos(frame))
+            #Affichage du texte
+            cv2.putText(frame, "Appuyez sur c pour collecter", (0,20), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,0,0))
             cv2.imshow("Create Database Window", frame)
             key = cv2.waitKey(20)
             if key in [27, ord('Q'), ord('q')]: #esc / Q
