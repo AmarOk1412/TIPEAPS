@@ -22,12 +22,12 @@ https://stackoverflow.com/questions/12943410/opencv-python-single-rather-than-mu
 http://www.davidhampgonsalves.com/opencv-python-color-tracking
 http://mikkeljans.blogspot.fr/2009/02/python-color-tracking.html
 http://bipuljain.wordpress.com/2011/12/20/multiple-color-tracking-using-opencv-python/
-similar project :
-http://www.ictjournal.ch/fr-CH/News/2013/11/08/KeyLemon-entre-dans-votre-voiture.aspx
-http://www.gentside.com/denso/un-systeme-de-reconnaissance-faciale-detecte-la-somnolence-au-volant_art31705.html
-http://www.lemondeinformatique.fr/actualites/lire-ceatec-la-voiture-de-demain-diagnostiquera-le-conducteur-55202.html
+similar project:
+http://www.ictjournal.ch/fr-CH/News/2013/11/08/KeyLemon-entre-dans-votre-voiture.aspx DONE
+http://www.gentside.com/denso/un-systeme-de-reconnaissance-faciale-detecte-la-somnolence-au-volant_art31705.html DONE
+http://www.lemondeinformatique.fr/actualites/lire-ceatec-la-voiture-de-demain-diagnostiquera-le-conducteur-55202.html DONE
 http://www.stanford.edu/~nass/papers.html
-http://www.generation-nt.com/toyota-fv2-concept-voiture-capable-lire-emotions-conducteur-actualite-1810542.html
+http://www.generation-nt.com/toyota-fv2-concept-voiture-capable-lire-emotions-conducteur-actualite-1810542.html DONE
 LBPH
 http://www.bytefish.de/blog/local_binary_patterns/
 http://docs.opencv.org/trunk/modules/contrib/doc/facerec/facerec_api.html
@@ -41,5 +41,6 @@ http://forum.hardware.fr/hfr/Programmation/Python/duree-script-sujet_50685_1.htm
 http://www.developpez.net/forums/d1053594/autres-langages/python-zope/gui/wxpython/ajoute-temps-d-execution-d-fonction/
 http://www.developpez.net/forums/d1329241/autres-langages/python-zope/general-python/calculer-temps-d-execution-d-fonction/
 http://minne.romain.free.fr/MPI/georges.khaznadar/foad9-parallel3/seance13/consigne_4.html
-
+EYES
+http://glowingpython.blogspot.fr/2011/11/face-and-eyes-detection-in-opencv.html
 

@@ -1,0 +1,23 @@
+TITRE : 
+Photo-Realistic Expressive Text to Talking Head Synthesis
+AUTEURS
+Vincent Wan 1 , Robert Anderson 2 , Art Blokland 1 , Norbert Braunschweiler 1 , Langzhou Chen 1 ,
+BalaKrishna Kolluru 1 , Javier Latorre 1 , Ranniery Maia 1 , Bj ̈orn Stenger 1 , Kayoko Yanagisawa 1 ,
+Yannis Stylianou 1 , Masami Akamine 3 , Mark J. F. Gales 1 and Roberto Cipolla 1
+
+PASSAGES INTERESSANTS
+CAT creates a continuous, low dimensional eigenspace of ex-
+pressions, which allows the creation of expressions of different
+intensity (including ones more intense than those in the original
+recordings) and combining different expressions to create new
+ones
+
+FIGURES INTERESSANTES
+Figure 3: Schematic of Cluster Adaptive Training. The clus-
+ters in CAT form the bases of an emotion-space, and the weights
+λ i are the coordinates. Subtle, extreme and new combined ex-
+pressions are achieved by moving around the space.
+Figure 4: Emotion recognition study. Recognition rates in
+percent for real video cropped to the face and for the synthe-
+sised avatar. In each case 10 sentences in each emotion were
+evaluated by 20 people.

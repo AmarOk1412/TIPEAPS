@@ -1,0 +1,20 @@
+TITRE:
+Bimodal Emotion Recognition
+AUTEURS:
+Liyanage C. De Silva, Pei Chi Ng
+The National University of Singapore
+Department of Electrical Engineering
+10 Kent Ridge Crescent, Singapore 119260
+elelcds@nus.edu.sg, engp9794@nus.edu.sg
+
+PASSAGES INTERESSANTS:
+The method aims to classify 6 basic emotions (angry, dislike, fear, happy, sad and surprise [4])
+
+each image sequence is characterized by a pair of velocity and displacement feature vectors.
+
+Each subject was asked to perform 6 emotional
+outbursts for each basic emotion: anger, dislike, fear, happy,
+sad, surprise, and to repeat each emotion 12 times. Alto-
+gether, there are 144 image sequences
+
+FIGURES INTERESSANTES:
