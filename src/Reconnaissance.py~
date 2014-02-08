@@ -108,8 +108,7 @@ class Recognize():
 
 
     def getMouthPos(self, frame):
-        #TODO:Meilleur classifier, la c'est merdique
-        """Retourne la position des bouches détéctés de la forme [[x1 y1 x2 y2]]"""
+        """TODO: Meilleur classifier, la c'est merdique"""
         cascade = cv2.CascadeClassifier('mouth_classifier.xml')
         rects = cascade.detectMultiScale(frame)        
         if len(rects) == 0:

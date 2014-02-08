@@ -1,0 +1,46 @@
+Opencv
+Best result
+http://www.hdm-stuttgart.de/~maucher/Python/ComputerVision/html/Adaboost.html
+http://docs.opencv.org/modules/ml/doc/boosting.html
+http://docs.opencv.org/modules/objdetect/doc/cascade_classification.html
+http://docs.opencv.org/doc/user_guide/ug_traincascade.html
+http://coding-robin.de/2013/07/22/train-your-own-opencv-haar-classifier.html
+http://opencvuser.blogspot.fr/2011/08/creating-haar-cascade-classifier-aka.html
+https://opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html
+http://opencvpython.blogspot.fr/2013/05/thresholding.html
+http://achuwilson.wordpress.com/2011/07/01/create-your-own-haar-classifier-for-detecting-objects-in-opencv/
+Tracking de points
+http://www.thisismyrobot.com/2010/05/object-tracking-in-opencv-and-python-26.html
+Motion tracking
+https://stackoverflow.com/questions/3374828/how-do-i-track-motion-using-opencv-in-python
+Hand tracking
+http://anikettatipamula.blogspot.ro/2012/02/hand-gesture-using-opencv.html
+Color tracking
+http://mikkeljans.blogspot.fr/2009/02/python-color-tracking.html
+http://derek.simkowiak.net/motion-tracking-with-python/
+https://stackoverflow.com/questions/12943410/opencv-python-single-rather-than-multiple-blob-tracking
+http://www.davidhampgonsalves.com/opencv-python-color-tracking
+http://mikkeljans.blogspot.fr/2009/02/python-color-tracking.html
+http://bipuljain.wordpress.com/2011/12/20/multiple-color-tracking-using-opencv-python/
+similar project DONE :
+http://www.ictjournal.ch/fr-CH/News/2013/11/08/KeyLemon-entre-dans-votre-voiture.aspx DONE
+http://www.gentside.com/denso/un-systeme-de-reconnaissance-faciale-detecte-la-somnolence-au-volant_art31705.html DONE
+http://www.lemondeinformatique.fr/actualites/lire-ceatec-la-voiture-de-demain-diagnostiquera-le-conducteur-55202.html DONE
+http://www.stanford.edu/~nass/papers.html DONE
+http://www.generation-nt.com/toyota-fv2-concept-voiture-capable-lire-emotions-conducteur-actualite-1810542.html DONE
+LBPH
+http://www.bytefish.de/blog/local_binary_patterns/
+http://docs.opencv.org/trunk/modules/contrib/doc/facerec/facerec_api.html
+http://continuum.io/blog/obama-romney-facial-recognition
+Fisherfaces
+http://www.bytefish.de/blog/fisherfaces/
+https://github.com/bytefish/facerec
+https://stackoverflow.com/questions/12197383/face-recognition-in-opencv-python-far-frr
+time
+http://forum.hardware.fr/hfr/Programmation/Python/duree-script-sujet_50685_1.htm
+http://www.developpez.net/forums/d1053594/autres-langages/python-zope/gui/wxpython/ajoute-temps-d-execution-d-fonction/
+http://www.developpez.net/forums/d1329241/autres-langages/python-zope/general-python/calculer-temps-d-execution-d-fonction/
+http://minne.romain.free.fr/MPI/georges.khaznadar/foad9-parallel3/seance13/consigne_4.html
+EYES
+http://glowingpython.blogspot.fr/2011/11/face-and-eyes-detection-in-opencv.html
+
