@@ -9,12 +9,6 @@ http://opencvuser.blogspot.fr/2011/08/creating-haar-cascade-classifier-aka.html
 https://opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html
 http://opencvpython.blogspot.fr/2013/05/thresholding.html
 http://achuwilson.wordpress.com/2011/07/01/create-your-own-haar-classifier-for-detecting-objects-in-opencv/
-Tracking de points
-http://www.thisismyrobot.com/2010/05/object-tracking-in-opencv-and-python-26.html
-Motion tracking
-https://stackoverflow.com/questions/3374828/how-do-i-track-motion-using-opencv-in-python
-Hand tracking
-http://anikettatipamula.blogspot.ro/2012/02/hand-gesture-using-opencv.html
 Color tracking
 http://mikkeljans.blogspot.fr/2009/02/python-color-tracking.html
 http://derek.simkowiak.net/motion-tracking-with-python/
@@ -36,11 +30,19 @@ Fisherfaces
 http://www.bytefish.de/blog/fisherfaces/
 https://github.com/bytefish/facerec
 https://stackoverflow.com/questions/12197383/face-recognition-in-opencv-python-far-frr
-time
-http://forum.hardware.fr/hfr/Programmation/Python/duree-script-sujet_50685_1.htm
-http://www.developpez.net/forums/d1053594/autres-langages/python-zope/gui/wxpython/ajoute-temps-d-execution-d-fonction/
-http://www.developpez.net/forums/d1329241/autres-langages/python-zope/general-python/calculer-temps-d-execution-d-fonction/
-http://minne.romain.free.fr/MPI/georges.khaznadar/foad9-parallel3/seance13/consigne_4.html
-EYES
-http://glowingpython.blogspot.fr/2011/11/face-and-eyes-detection-in-opencv.html
+
+
+Tracking de points DONE
+http://www.thisismyrobot.com/2010/05/object-tracking-in-opencv-and-python-26.html DONE
+Motion tracking DONE
+https://stackoverflow.com/questions/3374828/how-do-i-track-motion-using-opencv-in-python DONE (nul)
+Hand tracking DONE
+http://anikettatipamula.blogspot.ro/2012/02/hand-gesture-using-opencv.html DONE (pas intéressant pour ce projet)
+time DONE (seul le lien dans le résumé est intéressant)
+http://forum.hardware.fr/hfr/Programmation/Python/duree-script-sujet_50685_1.htm DONE
+http://www.developpez.net/forums/d1053594/autres-langages/python-zope/gui/wxpython/ajoute-temps-d-execution-d-fonction/ DONE
+http://www.developpez.net/forums/d1329241/autres-langages/python-zope/general-python/calculer-temps-d-execution-d-fonction/ DONE
+http://minne.romain.free.fr/MPI/georges.khaznadar/foad9-parallel3/seance13/consigne_4.html DONE
+EYES DONE
+http://glowingpython.blogspot.fr/2011/11/face-and-eyes-detection-in-opencv.html DONE
 

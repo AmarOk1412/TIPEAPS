@@ -180,13 +180,18 @@ class Recognize():
 
 if __name__ == "__main__":
     individu = "User"
+    mode = 0
     for i in range(1,len(sys.argv)):
         if sys.argv[i] == '-n' and i < len(sys.argv):
             individu = sys.argv[i + 1]
-    #createDB = CreateDataBase("image", individu)
-    #createDB.capture()
-    recognize = Recognize("image", individu)
-    recognize.capture()
+        if sys.argv[i] == '-r':
+            mode = 1
+    if mode == 0:
+        createDB = CreateDataBase("image", individu)
+        createDB.capture()
+    else:
+        recognize = Recognize("image", individu)
+        recognize.capture()
 
 
 

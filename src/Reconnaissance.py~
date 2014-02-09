@@ -108,7 +108,8 @@ class Recognize():
 
 
     def getMouthPos(self, frame):
-        """TODO: Meilleur classifier, la c'est merdique"""
+        #TODO:Meilleur classifier, la c'est merdique
+        """Retourne la position des bouches détéctés de la forme [[x1 y1 x2 y2]]"""
         cascade = cv2.CascadeClassifier('mouth_classifier.xml')
         rects = cascade.detectMultiScale(frame)        
         if len(rects) == 0:
@@ -179,13 +180,18 @@ class Recognize():
 
 if __name__ == "__main__":
     individu = "User"
+    mode = 0
     for i in range(1,len(sys.argv)):
         if sys.argv[i] == '-n' and i < len(sys.argv):
             individu = sys.argv[i + 1]
-    #createDB = CreateDataBase("image", individu)
-    #createDB.capture()
-    recognize = Recognize("image", individu)
-    recognize.capture()
+       if sys.argv[i] == '-r':
+            mode = 1
+    if mode == 0:
+        createDB = CreateDataBase("image", individu)
+        createDB.capture()
+    else:
+        recognize = Recognize("image", individu)
+        recognize.capture()
 
 
 
