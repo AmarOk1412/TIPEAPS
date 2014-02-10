@@ -1,0 +1,1 @@
+-> regarder les "Gabor Wavelets" pour extraire des informations utiles (cf "Automatic facial expression analysis: a survey", fig. 3)

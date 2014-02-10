@@ -1,7 +1,12 @@
+# pour les documents utiles : lire en diagonale les éléments surlignés
+
 -2002ElfenbeinMeta.pdf (On the Universality and Cultural Specificity of Emotion Recognition: A Meta-Analysis)
 	Les émotions sont-elles universelles? (à placer juste en citation)
 -Emotions in Depressed Patients with Major Depression Disorder and Schizotypal Personality Disorder
 	Plutôt useless : les dépressifs reconnaissent moins bien les émotions que les non-dépressifs
 -Authentic facial expression analysis
-	utile : cf surligné
-
+	utile
+-Automatic facial expression analysis: a survey
+	utile
+	-> TODO : étudier les méthodes présentées pour "stabiliser" et extraire une image correcte et sur laquelle on peut travailler pour les émotions
+	-> STOPPED AT §3.4
