@@ -110,7 +110,7 @@ class Recognize():
     def getMouthPos(self, frame):
         #TODO:Meilleur classifier, la c'est merdique
         """Retourne la position des bouches détéctés de la forme [[x1 y1 x2 y2]]"""
-        cascade = cv2.CascadeClassifier('mouth_classifier.xml')
+        cascade = cv2.CascadeClassifier('mouth_classifier_2.xml')
         rects = cascade.detectMultiScale(frame)        
         if len(rects) == 0:
            return rects
@@ -162,7 +162,7 @@ class Recognize():
         while rval:
             (rval, frame) = self.camera.read()
             frame = self.drawDetected(frame, self.getFacesPos(frame), (0,140,255))
-            #frame = self.drawDetectedXXYY(frame, self.getMouthPos(frame), (0,0,255))
+            frame = self.drawDetectedXXYY(frame, self.getMouthPos(frame), (0,0,255))
             frame = self.drawDetectedXXYY(frame, self.getEyesPos(frame), (255,0,255))
             cv2.imshow("Create Database Window", frame)
             key = cv2.waitKey(20)
