@@ -156,7 +156,7 @@ class Recognize():
         return self.faceFrame
 
     def readImages(self):
-        """Récupère les images de bases ("""
+        """Récupère les images de bases pour effectuer la reconnaissance des visages"""
         c = 0
         self.images = []
         self.imagesIndex = []

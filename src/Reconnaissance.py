@@ -166,7 +166,7 @@ class Recognize():
                 subject_path = os.path.join(dirname, subdirname)
                 for filename in os.listdir(subject_path):
                     try:
-                        im = cv2.imread(os.path.join(subject_path, filename), cv2.IMREAD_GRAYSCALE)
+                        im = cv2.imread(os.path.join(subject_path, filename), 0)
                         self.images.append(numpy.asarray(im, dtype=numpy.uint8))
                         self.imagesIndex.append(c)
                     except IOError, (errno, strerror):
