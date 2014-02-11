@@ -183,6 +183,18 @@ class Recognize():
 
    #TODO : Fisherface + LBPH
 
+    def cropFromFace(self, frame, facePos):
+        """garde seulement la partie "tête" de la frame"""
+        #X,Y,W,H
+        if len(facePos) == 0 :
+            return frame
+        else :
+            x1 = facePos[0][0]
+            x2 = x1 + facePos[0][2]
+            y1 = facePos[0][1]
+            y2 = y1 + facePos[0][3]
+            return frame[y1:y2, x1:x2]
+
     def capture(self): 
         """Récupère le flux vidéo"""
         self.readImages()       
@@ -193,9 +205,11 @@ class Recognize():
 
         while rval:
             (rval, frame) = self.camera.read()
-            frame = self.drawDetected(frame, self.getFacesPos(frame), (0,140,255))
-            frame = self.drawDetectedXXYY(frame, self.getMouthPos(frame), (0,0,255))
-            frame = self.drawDetectedXXYY(frame, self.getEyesPos(frame), (255,0,255))
+            facePos = self.getFacesPos(frame)
+            cropped = self.cropFromFace(frame, facePos)
+            frame = self.drawDetected(frame, facePos, (0,140,255))
+            #frame = self.drawDetectedXXYY(frame, self.getMouthPos(frame), (0,0,255))
+            #frame = self.drawDetectedXXYY(frame, self.getEyesPos(frame), (255,0,255))
             cv2.imshow("Create Database Window", frame)
             key = cv2.waitKey(20)
             if key in [27, ord('Q'), ord('q')]: #esc / Q
