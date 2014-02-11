@@ -12,4 +12,15 @@ Comparer les algos de reconnaissance sur une base de données d'images en :
 
 
 
-URGENT : Tracker des points
+Pour Framboise 3.14 :
+4 LEDs :
+Frein
+limitation de l'accélération
+Autorisation de démarrage
+warning
+
+BUZZER:
+alerte sonore
+
+Sortie texte :
+Emotions & identité reconnue
