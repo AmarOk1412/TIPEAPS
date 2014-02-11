@@ -36,23 +36,23 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="0" name="Recherche des projets similaires" color="#ff0000" meeting="false" start="2014-02-10" duration="6" complete="0" expand="true"/>
-        <task id="1" name="Recherche Sécurité Routière" color="#000000" meeting="false" start="2014-02-10" duration="6" complete="0" expand="true"/>
-        <task id="2" name="Recherche Reconnaissance Faciale" color="#33ff00" meeting="false" start="2014-02-10" duration="6" complete="0" expand="true"/>
-        <task id="3" name="Recherche Reconnaissance des Émotions" color="#0000cc" meeting="false" start="2014-02-10" duration="6" complete="0" expand="true"/>
-        <task id="4" name="Contacter des professionnels" color="#ff0000" meeting="false" start="2014-02-10" duration="14" complete="0" expand="true"/>
-        <task id="5" name="Aprendre Python" color="#ff0000" meeting="false" start="2014-02-14" duration="1" complete="0" expand="true"/>
-        <task id="6" name="Apprendre à utiliser Git" color="#ff0000" meeting="false" start="2014-02-19" duration="1" complete="0" expand="true"/>
-        <task id="7" name="Créer le dépôt Git" color="#33ff00" meeting="false" start="2014-02-19" duration="1" complete="0" expand="true"/>
-        <task id="21" name="Apprendre OpenCV" color="#ff0000" meeting="false" start="2014-02-15" duration="7" complete="0" thirdDate="2014-02-15" thirdDate-constraint="1" expand="true"/>
-        <task id="9" name="Comparer les reconnaissances faciale" color="#ff0000" meeting="false" start="2014-02-20" duration="6" complete="0" expand="true"/>
-        <task id="10" name="Réaliser l'application" color="#ff0000" meeting="false" start="2014-02-24" duration="14" complete="0" expand="true"/>
-        <task id="11" name="Créer prototype de test" color="#ff0000" meeting="false" start="2014-03-08" duration="3" complete="0" expand="true"/>
-        <task id="12" name="Réaliser les test" color="#ff0000" meeting="false" start="2014-03-10" duration="7" complete="0" expand="true"/>
-        <task id="13" name="Analyser les tests" color="#ff0000" meeting="false" start="2014-03-16" duration="3" complete="0" expand="true"/>
-        <task id="14" name="Rédiger le rapport écrit" color="#ff0000" meeting="false" start="2014-03-17" duration="10" complete="0" expand="true"/>
-        <task id="15" name="Relecture du rapport" color="#0000cc" meeting="false" start="2014-03-27" duration="3" complete="0" expand="true"/>
         <task id="16" name="Oral / fiche synoptique" color="#ff0000" meeting="false" start="2014-03-31" duration="7" complete="0" expand="true"/>
+        <task id="15" name="Relecture du rapport" color="#0000cc" meeting="false" start="2014-03-27" duration="3" complete="0" expand="true"/>
+        <task id="14" name="Rédiger le rapport écrit" color="#ff0000" meeting="false" start="2014-03-17" duration="10" complete="0" expand="true"/>
+        <task id="13" name="Analyser les tests" color="#ff0000" meeting="false" start="2014-03-16" duration="3" complete="0" expand="true"/>
+        <task id="12" name="Réaliser les test" color="#ff0000" meeting="false" start="2014-03-10" duration="7" complete="0" expand="true"/>
+        <task id="11" name="Créer prototype de test" color="#ff0000" meeting="false" start="2014-03-08" duration="3" complete="0" expand="true"/>
+        <task id="10" name="Réaliser l'application" color="#ff0000" meeting="false" start="2014-02-24" duration="14" complete="0" expand="true"/>
+        <task id="9" name="Comparer les reconnaissances faciale" color="#ff0000" meeting="false" start="2014-02-20" duration="6" complete="0" expand="true"/>
+        <task id="21" name="Apprendre OpenCV" color="#ff0000" meeting="false" start="2014-02-15" duration="7" complete="0" thirdDate="2014-02-15" thirdDate-constraint="1" expand="true"/>
+        <task id="7" name="Créer le dépôt Git" color="#33ff00" meeting="false" start="2014-02-19" duration="1" complete="0" expand="true"/>
+        <task id="6" name="Apprendre à utiliser Git" color="#ff0000" meeting="false" start="2014-02-19" duration="1" complete="0" expand="true"/>
+        <task id="5" name="Aprendre Python" color="#ff0000" meeting="false" start="2014-02-14" duration="1" complete="0" expand="true"/>
+        <task id="4" name="Contacter des professionnels" color="#ff0000" meeting="false" start="2014-02-10" duration="14" complete="0" expand="true"/>
+        <task id="3" name="Recherche Reconnaissance des Émotions" color="#0000cc" meeting="false" start="2014-02-10" duration="6" complete="0" expand="true"/>
+        <task id="2" name="Recherche Reconnaissance Faciale" color="#33ff00" meeting="false" start="2014-02-10" duration="6" complete="0" expand="true"/>
+        <task id="1" name="Recherche Sécurité Routière" color="#000000" meeting="false" start="2014-02-10" duration="6" complete="0" expand="true"/>
+        <task id="0" name="Recherche des projets similaires" color="#ff0000" meeting="false" start="2014-02-10" duration="6" complete="0" expand="true"/>
     </tasks>
     <resources>
         <resource id="0" name="Sébastien Blin" function="Default:0" contacts="" phone=""/>
