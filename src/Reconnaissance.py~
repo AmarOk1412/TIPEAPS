@@ -99,7 +99,10 @@ class Recognize():
         self.classifier = cv2.CascadeClassifier(TRAINSET)
         self.faceFrame = None
         self.identity = ident
+        self.identities = []
         self.imagesPath = imgPath
+        self.images = []
+        self.imagesIndex = []
 
     def getFacesPos(self, frame):
         """Retourne la position des visages détéctés de la forme [[x y w h]]"""
@@ -152,8 +155,37 @@ class Recognize():
         self.faceFrame = cv2.resize(grayscale, (IMAGE_SIZE, IMAGE_SIZE))
         return self.faceFrame
 
+    def readImages(self):
+        """Récupère les images de bases ("""
+        c = 0
+        self.images = []
+        self.imagesIndex = []
+        for dirname, dirnames, filenames in os.walk(self.imagesPath):
+            for subdirname in dirnames:
+                self.identities.append(subdirname)
+                subject_path = os.path.join(dirname, subdirname)
+                for filename in os.listdir(subject_path):
+                    try:
+                        im = cv2.imread(os.path.join(subject_path, filename), cv2.IMREAD_GRAYSCALE)
+                        self.images.append(numpy.asarray(im, dtype=numpy.uint8))
+                        self.imagesIndex.append(c)
+                    except IOError, (errno, strerror):
+                       print "I/O error({0}): {1}".format(errno, strerror)
+                    except:
+                        print "Unexpected error:", sys.exc_info()[0]
+                        raise
+                c += 1 
+
+    def recognizeEigenFace(self, frame):
+        """Reconnait par la méthode EigenFace"""
+        self.model = cv2.createEigenFaceRecognizer()
+        #TODO : créer la base d'entrainement + méthode identify self.model.train(numpy.asarray(self.images), numpy.asarray(self.images_index))
+
+   #TODO : Fisherface + LBPH
+
     def capture(self): 
-        """Récupère le flux vidéo"""       
+        """Récupère le flux vidéo"""
+        self.readImages()       
         if self.camera.isOpened():
             (rval, frame) = self.camera.read()
         else:
@@ -162,17 +194,12 @@ class Recognize():
         while rval:
             (rval, frame) = self.camera.read()
             frame = self.drawDetected(frame, self.getFacesPos(frame), (0,140,255))
-            #frame = self.drawDetectedXXYY(frame, self.getMouthPos(frame), (0,0,255))
+            frame = self.drawDetectedXXYY(frame, self.getMouthPos(frame), (0,0,255))
             frame = self.drawDetectedXXYY(frame, self.getEyesPos(frame), (255,0,255))
             cv2.imshow("Create Database Window", frame)
             key = cv2.waitKey(20)
             if key in [27, ord('Q'), ord('q')]: #esc / Q
                 break
-        
-
-#class RecognizeEigenFaces():
-#    def __init__(self):
-#        self.camera = CAMERA
 
 #class RecognizeLPBH():
 #    def __init__(self):
@@ -184,7 +211,7 @@ if __name__ == "__main__":
     for i in range(1,len(sys.argv)):
         if sys.argv[i] == '-n' and i < len(sys.argv):
             individu = sys.argv[i + 1]
-       if sys.argv[i] == '-r':
+        if sys.argv[i] == '-r':
             mode = 1
     if mode == 0:
         createDB = CreateDataBase("image", individu)
