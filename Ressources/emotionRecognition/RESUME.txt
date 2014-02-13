@@ -10,3 +10,10 @@
 	utile
 	-> TODO : étudier les méthodes présentées pour "stabiliser" et extraire une image correcte et sur laquelle on peut travailler pour les émotions
 	-> STOPPED AT §3.4
+
+
+
+
+
+- REALISTIC FACIAL EXPRESSION SYNTHESIS FOR AN IMAGE-BASED TALKING HEAD
+La figure 5 est cool, pour connaitre la largeur de la bouche pour un sourire.

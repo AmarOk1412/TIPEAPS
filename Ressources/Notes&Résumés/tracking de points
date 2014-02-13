@@ -15,3 +15,7 @@ http://anikettatipamula.blogspot.ro/2012/02/hand-gesture-using-opencv.html
 Soit par la couleur, soit par la détection de contour, soit par une soustraction du fond.
 Convex hull pour avoir les doigts
 
+Couleur :
+HSV puis
+cv2.inRange (inRangeS ?)
+cv2.findContours

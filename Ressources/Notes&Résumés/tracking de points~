@@ -4,8 +4,14 @@ Le code est intéressant, c'est par la couleur :
 https://raw2.github.com/thisismyrobot/Little-red-car/master/code.py
 
 
-Pour les yeux :
+Pour les yeux:
 LIEN:
 http://glowingpython.blogspot.fr/2011/11/face-and-eyes-detection-in-opencv.html
 Utilisation d'un classifier
+
+Pour la main:
+LIEN:
+http://anikettatipamula.blogspot.ro/2012/02/hand-gesture-using-opencv.html
+Soit par la couleur, soit par la détection de contour, soit par une soustraction du fond.
+Convex hull pour avoir les doigts
 
