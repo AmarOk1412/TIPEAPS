@@ -149,13 +149,6 @@ class Recognize():
             cv2.rectangle(frame, (x,y), (x+w, y+h), color)
         return frame
 
-    def drawDetectedXXYY(self, frame, detected, color):
-        """Dessine un rectangle autour du visage détecté"""
-        for d in detected: 
-            x1,y1,x2,y2 = [v for v in d]
-            cv2.rectangle(frame, (x1, y1), (x2, y2), color)
-        return frame
-
     def getFaceFrame(self, frame, x, y, w, h):
         """On récupère un rectangle (largeur, hauteur) (centreX, centreY)"""
         cropped = cv2.getRectSubPix(frame, (w, h), (x + w / 2, y + h / 2))
