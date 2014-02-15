@@ -110,27 +110,40 @@ class Recognize():
         return faces
 
 
-    def getMouthPos(self, frame):
+    def getMouthPos(self, frame, facePos):
         #TODO:Meilleur classifier, la c'est merdique
-        """Retourne la position des bouches détéctés de la forme [[x1 y1 x2 y2]]"""
-        cascade = cv2.CascadeClassifier('mouth_classifier.xml')
-        rects = cascade.detectMultiScale(frame)        
-        if len(rects) == 0:
-           return rects
-        rects[:, 2:] += rects[:, :2]
-        return rects
+        """Retourne la position des bouches détéctés de la forme [[x1 y1 x2 y2]]"""        
+        if len(facePos) > 0:
+            cascade = cv2.CascadeClassifier('mouth_classifier.xml')
+            rects = cascade.detectMultiScale(frame)        
+            if len(rects) == 0:
+                return rects
+            final = None   
+            x1 = facePos[0][0] + facePos[0][2]*1/4
+            x2 = facePos[0][0] + facePos[0][2]*3/4
+            y1 = facePos[0][1] + facePos[0][3]*5/8
+            y2 = facePos[0][1] + facePos[0][3]
+            #Prend la partie inférieure de la tête pour le traitement
+            for rect in rects:
+                if rect[0] > x1 and rect[0] + rect[2] < x2 and rect[1] > y1 and rect[1] + rect[3] < y2:
+                    if final is None:
+                        final = [rect]
+                    else:
+                        final += [rect]
+            return final
+        else:
+            return None
 
     def getEyesPos(self, frame):
         """Retourne la position des yeux + sourcils détéctés de la forme [[x1 y1 x2 y2]]"""
         cascade = cv2.CascadeClassifier('haarcascade_lefteye_2splits.xml')
         rects = cascade.detectMultiScale(frame)
-        if len(rects) == 0:
-           return rects
-        rects[:, 2:] += rects[:, :2]
         return rects
 
     def drawDetected(self, frame, detected, color):
         """Dessine un rectangle autour du visage détecté"""
+        if detected is None:
+            return frame
         for d in detected: 
             x,y,w,h = [v for v in d]
             cv2.rectangle(frame, (x,y), (x+w, y+h), color)
@@ -183,7 +196,6 @@ class Recognize():
 
    #TODO : Fisherface + LBPH
 
-    #n0m1s
     def cropFromFace(self, frame, facePos):
         """garde seulement la partie "tête" de la frame"""
         #X,Y,W,H
@@ -209,8 +221,8 @@ class Recognize():
             facePos = self.getFacesPos(frame)
             cropped = self.cropFromFace(frame, facePos)
             frame = self.drawDetected(frame, facePos, (0,140,255))
-            #frame = self.drawDetectedXXYY(frame, self.getMouthPos(frame), (0,0,255))
-            #frame = self.drawDetectedXXYY(frame, self.getEyesPos(frame), (255,0,255))
+            frame = self.drawDetected(frame, self.getEyesPos(frame), (255,0,255))
+            frame = self.drawDetected(frame, self.getMouthPos(frame, facePos), (0,0,255))
             cv2.imshow("Create Database Window", frame)
             key = cv2.waitKey(20)
             if key in [27, ord('Q'), ord('q')]: #esc / Q
