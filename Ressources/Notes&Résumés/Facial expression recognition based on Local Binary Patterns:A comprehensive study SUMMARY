@@ -1,0 +1,21 @@
+TITRE: 
+Facial expression recognition based on Local Binary Patterns:A comprehensive study
+AUTEURS:
+Caifeng Shan a, * , Shaogang Gong b , Peter W. McOwan b
+PASSAGES INTERESSANTS:
+
+FIGURES INTERESSANTES:
+Fig. 4. Examples of texture primitives which can be detected by LBP (white circles represent ones and black circles zeros) [30].
+Fig. 6. A face image is divided into small regions from which LBP histograms are
+extracted and concatenated into a single, spatially enhanced feature histogram.
+
+SVM : https://fr.wikipedia.org/wiki/Machine_%C3%A0_vecteurs_de_support#R.C3.A9sum.C3.A9_intuitif
+LDA : https://fr.wikipedia.org/wiki/Analyse_discriminante_lin%C3%A9aire
+
+Adaboost pour sélectionner les meilleures sous régions
+
+TODO : Neural Network based
+approach to recognize facial action units in image sequences. Hid-
+den Markov Models (HMMs) have been widely used to model the
+temporal behaviors of facial expressions from image sequences
+[11,13].  !!!!!!!!

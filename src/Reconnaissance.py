@@ -47,7 +47,7 @@ class CreateDataBase():
     def getFaceFrame(self, frame, x, y, w, h):
         """On récupère un rectangle (largeur, hauteur) (centreX, centreY)"""
         cropped = cv2.getRectSubPix(frame, (w, h), (x + w / 2, y + h / 2))
-        #On met l'image en niveaux de gris. TODO: relief
+        #On met l'image en niveaux de gris. TODO: gradient
         grayscale = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
         #hsvMode = cv2.cvtColor(cropped, cv2.COLOR_BGR2HSV)
         #hlsMode = cv2.cvtColor(cropped, cv2.COLOR_BGR2HLS)
@@ -112,7 +112,7 @@ class Recognize():
 
     def getMouthPos(self, frame, facePos):
         #TODO:Meilleur classifier, la c'est merdique
-        """Retourne la position des bouches détéctés de la forme [[x1 y1 x2 y2]]"""        
+        """Retourne la position des bouches détéctés de la forme [[x y w h]]"""        
         if len(facePos) > 0:
             cascade = cv2.CascadeClassifier('mouth_classifier.xml')
             rects = cascade.detectMultiScale(frame)        
@@ -135,7 +135,7 @@ class Recognize():
             return None
 
     def getEyesPos(self, frame):
-        """Retourne la position des yeux + sourcils détéctés de la forme [[x1 y1 x2 y2]]"""
+        """Retourne la position des yeux + sourcils détéctés de la forme [[x y w h]]"""
         cascade = cv2.CascadeClassifier('haarcascade_lefteye_2splits.xml')
         rects = cascade.detectMultiScale(frame)
         return rects
@@ -187,7 +187,7 @@ class Recognize():
         self.model = cv2.createEigenFaceRecognizer()
         #TODO : créer la base d'entrainement + méthode identify self.model.train(numpy.asarray(self.images), numpy.asarray(self.images_index))
 
-   #TODO : Fisherface + LBPH
+    #TODO : Fisherface + LBPH
 
     def cropFromFace(self, frame, facePos):
         """garde seulement la partie "tête" de la frame"""
@@ -200,6 +200,8 @@ class Recognize():
             y1 = facePos[0][1]
             y2 = y1 + facePos[0][3]
             return frame[y1:y2, x1:x2]
+
+    #TODO : Traitement toute les 10 frames pour éviter de surcharger.
 
     def capture(self): 
         """Récupère le flux vidéo"""
@@ -239,6 +241,3 @@ if __name__ == "__main__":
     else:
         recognize = Recognize("image", individu)
         recognize.capture()
-
-
-

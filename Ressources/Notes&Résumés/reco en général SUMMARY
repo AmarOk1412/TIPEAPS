@@ -1,0 +1,35 @@
+Plus précisément,
+l’ensemble des déformations possibles au niveau du visage résultant de l’activité des
+différents muscles a été décrit par le système FACS (Facial Action Coding System)
+[Ekman78]. Ce système décrit chaque déformation faciale comme une combinaison de
+plusieurs actions élémentaires ou AU (Action Unit). Au total, il existe 44 AU différentes.
+
+Nous présentons dans ce mémoire un système axé sur
+la reconnaissance des six émotions universelles proposées par Ekman que sont la joie, la
+peur, le dégoût, la tristesse, la colère et la surprise. A ces six expressions, nous avons ajouté
+l’expression neutre ainsi qu’une catégorie d’expressions dites inconnues qui englobe toutes
+les expressions faciales différentes des six émotions universelles et de l’expression neutre.
+
+les expressions faciales peuvent être reconnues à
+partir des informations relatives aux déformations des traits permanents du visage que
+sont les yeux, les sourcils et la bouche
+
+5.1.1 Pré-traitement :atténuation des variations d’éclairement (embossement)
+
+
+Le choix d’un modèle adapté pour modéliser les lèvres est délicat car la forme des lèvres est
+très variable. Si le modèle choisi n’est pas bien adapté, le résultat de la segmentation ne sera
+pas de bonne qualité. Le modèle que nous proposons est composé de 5 courbes
+indépendantes, chacune d’entre elles décrivant une partie du contour labial. Entre Q 2 et Q 4 ,
+l’arc de Cupidon est décrit par une ligne brisée tandis que les autres portions du contour sont
+décrites par des courbes polynomiales cubiques γ i (voir Figure 4-gauche). De plus, on impose
+à chaque cubique d’avoir une dérivée nulle au point Q 2 , Q 4 ou Q 6 . Par exemple, γ 1 (cubique
+entre Q 1 et Q 2 ) doit avoir une dérivée nulle en Q 2 .
+
+5.1.3 Extraction de points caractéristiques et initialisation des modèles
+
+TODO voir si ça marche sur des noirs
+lumière
+traits cachés
+lunettes ?
+préalable pour filmer ?
