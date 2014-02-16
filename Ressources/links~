@@ -7,16 +7,11 @@ http://docs.opencv.org/doc/user_guide/ug_traincascade.html
 http://coding-robin.de/2013/07/22/train-your-own-opencv-haar-classifier.html
 http://opencvuser.blogspot.fr/2011/08/creating-haar-cascade-classifier-aka.html
 https://opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html
-http://opencvpython.blogspot.fr/2013/05/thresholding.html
+http://opencvpython.blogspot.fr/2013/05/thresholding.html image to binary image DONE
 http://achuwilson.wordpress.com/2011/07/01/create-your-own-haar-classifier-for-detecting-objects-in-opencv/
-Color tracking
-http://mikkeljans.blogspot.fr/2009/02/python-color-tracking.html 
-https://stackoverflow.com/questions/12943410/opencv-python-single-rather-than-multiple-blob-tracking DONE
-http://mikkeljans.blogspot.fr/2009/02/python-color-tracking.html DONE
 LBPH
-http://www.bytefish.de/blog/local_binary_patterns/
+http://www.bytefish.de/blog/local_binary_patterns/ -> FIGURES COOL DONE
 http://docs.opencv.org/trunk/modules/contrib/doc/facerec/facerec_api.html
-http://continuum.io/blog/obama-romney-facial-recognition
 Fisherfaces
 http://www.bytefish.de/blog/fisherfaces/
 https://github.com/bytefish/facerec
@@ -42,4 +37,10 @@ http://www.gentside.com/denso/un-systeme-de-reconnaissance-faciale-detecte-la-so
 http://www.lemondeinformatique.fr/actualites/lire-ceatec-la-voiture-de-demain-diagnostiquera-le-conducteur-55202.html DONE
 http://www.stanford.edu/~nass/papers.html DONE
 http://www.generation-nt.com/toyota-fv2-concept-voiture-capable-lire-emotions-conducteur-actualite-1810542.html DONE
+Color tracking DONE
+https://stackoverflow.com/questions/12943410/opencv-python-single-rather-than-multiple-blob-tracking DONE
+http://mikkeljans.blogspot.fr/2009/02/python-color-tracking.html DONE
 
+GABOR Wavelets
+https://fr.wikipedia.org/wiki/Filtre_de_Gabor
+https://en.wikipedia.org/wiki/Gabor_filter (plus complet)
