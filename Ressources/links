@@ -1,24 +1,24 @@
 Opencv
-Best result
-http://www.hdm-stuttgart.de/~maucher/Python/ComputerVision/html/Adaboost.html
-http://docs.opencv.org/modules/ml/doc/boosting.html
-http://docs.opencv.org/modules/objdetect/doc/cascade_classification.html
-http://docs.opencv.org/doc/user_guide/ug_traincascade.html
-http://coding-robin.de/2013/07/22/train-your-own-opencv-haar-classifier.html
-http://opencvuser.blogspot.fr/2011/08/creating-haar-cascade-classifier-aka.html
-https://opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html Simplifie les classifiers DONE
-http://opencvpython.blogspot.fr/2013/05/thresholding.html image to binary image DONE
-LBPH
-http://www.bytefish.de/blog/local_binary_patterns/ -> FIGURES COOL DONE
-http://docs.opencv.org/trunk/modules/contrib/doc/facerec/facerec_api.html
 Fisherfaces
 http://www.bytefish.de/blog/fisherfaces/
-https://github.com/bytefish/facerec
-https://stackoverflow.com/questions/12197383/face-recognition-in-opencv-python-far-frr
+https://github.com/bytefish/facerec DONE
+https://stackoverflow.com/questions/12197383/face-recognition-in-opencv-python-far-frr Code 2
 
 
 Tracking de points DONE
 http://www.thisismyrobot.com/2010/05/object-tracking-in-opencv-and-python-26.html DONE
+Best result
+http://www.hdm-stuttgart.de/~maucher/Python/ComputerVision/html/Adaboost.html DONE
+http://docs.opencv.org/modules/ml/doc/boosting.html DOC
+http://docs.opencv.org/modules/objdetect/doc/cascade_classification.html DONE
+http://docs.opencv.org/doc/user_guide/ug_traincascade.html DONE
+http://coding-robin.de/2013/07/22/train-your-own-opencv-haar-classifier.html POUR CREER SON CLASSIFIER 
+http://opencvuser.blogspot.fr/2011/08/creating-haar-cascade-classifier-aka.html POUR CREER SON CLASSIFIER ²
+https://opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_objdetect/py_face_detection/py_face_detection.html Simplifie les classifiers DONE
+http://opencvpython.blogspot.fr/2013/05/thresholding.html image to binary image DONE
+LBPH
+http://www.bytefish.de/blog/local_binary_patterns/ -> FIGURES COOL DONE
+http://docs.opencv.org/trunk/modules/contrib/doc/facerec/facerec_api.html DOC DONE
 Motion tracking DONE
 https://stackoverflow.com/questions/3374828/how-do-i-track-motion-using-opencv-in-python DONE (nul)
 Hand tracking DONE
