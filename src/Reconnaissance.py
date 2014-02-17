@@ -13,6 +13,7 @@ import numpy
 import time
 import os
 import sys
+import math
 
 #Constantes
 TRAINSET = "lbpcascade_frontalface.xml"    #Fichier de reconnaissance
@@ -134,6 +135,27 @@ class Recognize():
         else:
             return None
 
+    def getCroppedMouthPos(self, croppedFrame):
+        #TODO:Meilleur classifier, la c'est merdique
+        """Retourne la position des bouches détéctés de la forme [[x y w h]]"""        
+        cascade = cv2.CascadeClassifier('mouth_classifier.xml')
+        rects = cascade.detectMultiScale(croppedFrame)        
+        if len(rects) == 0:
+            return rects
+        final = None   
+        x1 = 0
+        x2 = 0 + len(croppedFrame)
+        y1 = 0 + len(croppedFrame[0])*5/8
+        y2 = 0 + len(croppedFrame[0])
+        #Prend la partie inférieure de la tête pour le traitement
+        for rect in rects:
+            if rect[0] > x1 and rect[0] + rect[2] < x2 and rect[1] > y1 and rect[1] + rect[3] < y2:
+                if final is None:
+                    final = [rect]
+                else:
+                    final += [rect]
+        return final
+
     def getEyesPos(self, frame):
         """Retourne la position des yeux + sourcils détéctés de la forme [[x y w h]]"""
         cascade = cv2.CascadeClassifier('haarcascade_lefteye_2splits.xml')
@@ -201,11 +223,31 @@ class Recognize():
             y2 = y1 + facePos[0][3]
             return frame[y1:y2, x1:x2]
 
-    #TODO : Traitement toute les 10 frames pour éviter de surcharger.
+    def gaborFilter(self, frame):
+        """Applique un filtre de Gabor"""
+        #parametres du filtre
+        sigma = 1
+        a = 10
+        b = 1
+
+        if len(frame) == 0:
+            return frame
+        else:
+            x = 0
+            y = 0
+            gaborFrame = frame
+            while x < len(frame)-10:
+                while y < len(frame[0])-10:
+                    gaborFrame[x][y] = frame[x][y]#math.cos(a*x+b*y)*math.exp(-((x*x+y*y)/(2*sigma*sigma)))
+                    x = x+1
+                    y = y+1
+            return gaborFrame
+                    
 
     def capture(self): 
         """Récupère le flux vidéo"""
-        self.readImages()       
+        self.readImages()
+        intervalle = 0
         if self.camera.isOpened():
             (rval, frame) = self.camera.read()
         else:
@@ -213,12 +255,20 @@ class Recognize():
 
         while rval:
             (rval, frame) = self.camera.read()
-            facePos = self.getFacesPos(frame)
-            cropped = self.cropFromFace(frame, facePos)
-            frame = self.drawDetected(frame, facePos, (0,140,255))
-            frame = self.drawDetected(frame, self.getEyesPos(frame), (255,0,255))
-            frame = self.drawDetected(frame, self.getMouthPos(frame, facePos), (0,0,255))
-            cv2.imshow("Create Database Window", frame)
+            if intervalle >= 10:
+                intervalle = 0
+                facePos = self.getFacesPos(frame)
+                cropped = self.cropFromFace(frame, facePos)
+#                frame = self.drawDetected(frame, facePos, (0,140,255))
+#                frame = self.drawDetected(frame, self.getEyesPos(frame), (255,0,255))
+#                frame = self.drawDetected(frame, self.getMouthPos(frame, facePos), (0,0,255))
+                cropped = self.drawDetected(cropped, self.getEyesPos(cropped), (255,0,255))
+                cropped = self.drawDetected(cropped, self.getCroppedMouthPos(cropped), (0,0,255))
+                cv2.imshow("CroppedPicture", cropped)
+                #cv2.imshow("CroppedPicture", self.gaborFilter(cropped))
+            else :
+                intervalle = intervalle + 1
+            cv2.imshow("Indentification", frame)
             key = cv2.waitKey(20)
             if key in [27, ord('Q'), ord('q')]: #esc / Q
                 break
