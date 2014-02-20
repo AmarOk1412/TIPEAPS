@@ -13,16 +13,15 @@ import math
 TRAINSET = "lbpcascade_frontalface.xml"    #Fichier de reconnaissance
 IMAGE_SIZE = 170                           #Normalisation des images de base
 NUMBER_OF_CAPTURE = 10                     #Nombre de captures a realiser pour la base de donnees
-SEUIL = 4000                               #Seuil de reconnaissance
+SEUIL = 5000                               #Seuil de reconnaissance
 CAMERA = 0                                 #La camera
 
 class Recognize():
-    def __init__(self, imgPath ,ident):
+    def __init__(self, imgPath):
         self.rval = False            
         self.camera = cv2.VideoCapture(CAMERA)
         self.classifier = cv2.CascadeClassifier(TRAINSET)
         self.faceFrame = None
-        self.identity = ident
         self.identities = []
         self.imagesPath = imgPath
         self.images = []
@@ -80,10 +79,9 @@ class Recognize():
                 c += 1 
 
     def recognizeFisherFace(self):
-        """Reconnait par la méthode EigenFace"""
+        """Reconnait par la méthode FisherFace"""
         self.model = cv2.createFisherFaceRecognizer()        
         self.model.train(numpy.asarray(self.images), numpy.asarray(self.imagesIndex))
-        #TODO : créer la base d'entrainement + méthode identify self.model.train(numpy.asarray(self.images), numpy.asarray(self.imagesIndex))
     
     def recognizeEigenFace(self):
         """Reconnait par la méthode EigenFace"""
@@ -91,7 +89,7 @@ class Recognize():
         self.model.train(numpy.asarray(self.images), numpy.asarray(self.imagesIndex))
 
     def recognizeLBPHFace(self):
-        """Reconnait par la méthode EigenFace"""
+        """Reconnait par la méthode LBPH"""
         self.model = cv2.createLBPHFaceRecognizer()        
         self.model.train(numpy.asarray(self.images), numpy.asarray(self.imagesIndex))
 
@@ -112,6 +110,27 @@ class Recognize():
         [p_index, p_confidence] = self.model.predict(image)
         found_identity = self.identities[p_index]
         return found_identity, p_confidence
+   
+
+    def detectOnPict(self):
+        for i in range(0,50):
+		self.time = time.time()        
+		self.readImages()
+		#self.recognizeEigenFace()
+		#self.recognizeFisherFace()
+		self.recognizeLBPHFace()        
+		print('L\'ajout des images dans la bdd a pris : ' +str(time.time()- self.time))
+		frame = cv2.imread('base.jpg')
+		self.time = time.time()
+		facePos = self.getFacesPos(frame)
+		for f in facePos: 
+		    x,y,w,h = [v for v in f]
+		    resized = self.extractAndResize(frame, x, y, w, h)
+		    identity, confidence = self.identify(resized)
+		    if confidence > SEUIL:
+		        identity = "INCONNU"
+		    print('La reconnaissance a pris : ' +str(time.time()- self.time))
+		    self.time = time.time()
 
     def capture(self): 
         """Récupère le flux vidéo"""
@@ -121,8 +140,9 @@ class Recognize():
             (rval, frame) = self.camera.read()
         else:
             rval = False
-
-        while rval:
+        i = 0
+        while i < 105:
+            i+=1
             (rval, frame) = self.camera.read()
             self.time = time.time()
             facePos = self.getFacesPos(frame)
@@ -133,8 +153,8 @@ class Recognize():
                 identity, confidence = self.identify(resized)
                 if confidence > SEUIL:
                     identity = "INCONNU"
-                print('La reconnaissance a pris : ' +str(time.time()- self.time))
                 self.time = time.time()
+                print(identity + " --- " + str(confidence))
                 cv2.putText(frame, "%s (%s)"%(identity, confidence), (x,y), cv2.FONT_HERSHEY_PLAIN, 1.5, (0,140,255))
             cv2.imshow("Indentification", frame)
             key = cv2.waitKey(20)
@@ -142,12 +162,5 @@ class Recognize():
                 break
 
 if __name__ == "__main__":
-    individu = "User"
-    mode = 0
-    for i in range(1,len(sys.argv)):
-        if sys.argv[i] == '-n' and i < len(sys.argv):
-            individu = sys.argv[i + 1]
-        if sys.argv[i] == '-r':
-            mode = 1
-    recognize = Recognize("images", individu)
+    recognize = Recognize("images")
     recognize.recognize()

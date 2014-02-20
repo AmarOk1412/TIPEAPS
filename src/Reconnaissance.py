@@ -286,8 +286,8 @@ if __name__ == "__main__":
         if sys.argv[i] == '-r':
             mode = 1
     if mode == 0:
-        createDB = CreateDataBase("image", individu)
+        createDB = CreateDataBase("imageExp", individu)
         createDB.capture()
     else:
-        recognize = Recognize("image", individu)
+        recognize = Recognize("imageExp", individu)
         recognize.capture()
