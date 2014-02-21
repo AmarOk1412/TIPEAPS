@@ -113,7 +113,7 @@ class Recognize():
         self.hauteurOeilGauche = 0
         self.hauteurOeilDroit = 0
         self.posHautOeilGauche = 0
-        self.posHautOeilDroit = 0
+        self.posHautOeilDroit = 0 
 
     def getFacesPos(self, frame):
         """Retourne la position des visages détéctés de la forme [[x y w h]]"""
