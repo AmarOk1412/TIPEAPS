@@ -1,0 +1,34 @@
+Page de garde (non sans blague...) 
+
+* Abstract
+* Sommaire
+* Introduction
+  ** Pourquoi ce projet
+     *** Petite partie sur les projets identiques
+  ** Histoire de la reconnaissance Faciale
+     *** Ekman
+* Reconnaissance Faciale
+  ** Théorie
+     *** Général
+     *** Eigenface
+     *** FisherFace
+     *** LBPH
+  ** Expérimentations
+     *** Protocole
+     *** Réalisation
+     *** Résultats & Analyse
+* Reconnaissance des émotions
+  ** Théorie
+     *** Méthode générales
+     *** Méthode choisie plus détaillé (meilleur titre à trouver)
+  ** Expérimentations
+     *** Protocole
+     *** Réalisation
+     *** Résultats & Analyse
+* Prototype Final réalisé (systemes ou ça marche (linux, windows, mac non, bsd, raspy (embarqué, overclock ou non, suffisant ou non?), beagle)
+* Tests finaux
+* Discussion & Analyse des résultats
+* Conclusion
+* Code des applications
+* Bibliographie
+
