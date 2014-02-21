@@ -105,6 +105,16 @@ class Recognize():
         self.images = []
         self.imagesIndex = []
 
+        self.largeurBouche = 0
+        self.hauteurBouche = 0
+        self.hautBouche = 0
+        self.largeurOeilGauche = 0
+        self.largeurOeilDroit = 0
+        self.hauteurOeilGauche = 0
+        self.hauteurOeilDroit = 0
+        self.posHautOeilGauche = 0
+        self.posHautOeilDroit = 0
+
     def getFacesPos(self, frame):
         """Retourne la position des visages détéctés de la forme [[x y w h]]"""
         faces = self.classifier.detectMultiScale(frame)
@@ -150,6 +160,39 @@ class Recognize():
         #Prend la partie inférieure de la tête pour le traitement
         for rect in rects:
             if rect[0] > x1 and rect[0] + rect[2] < x2 and rect[1] > y1 and rect[1] + rect[3] < y2:
+                self.largeurBouche = rect[2]
+                self.hauteurBouche = rect[3]
+                self.hautBouche = rect[0]
+                if final is None:
+                    final = [rect]
+                else:
+                    final += [rect]
+        return final
+
+    def getCroppedEyesPos(self, croppedFrame):
+        #TODO:Meilleur classifier, la c'est merdique
+        """Retourne la position des bouches détéctés de la forme [[x y w h]]"""        
+        cascade = cv2.CascadeClassifier('haarcascade_lefteye_2splits.xml')
+        rects = cascade.detectMultiScale(croppedFrame)        
+        if len(rects) == 0:
+            return rects
+        final = None   
+        x1 = 0
+        x2 = 0 + len(croppedFrame)
+        y1 = 0
+        y2 = 0 + len(croppedFrame[0])*1/2
+        
+        #Prend la partie inférieure de la tête pour le traitement
+        for rect in rects:
+            if rect[0] > x1 and rect[0] + rect[2] < x2 and rect[1] > y1 and rect[1] + rect[3] < y2:
+                if rect[0] < len(croppedFrame)/2:
+		        self.largeurOeilGauche = rect[2]
+		        self.hauteurOeilGauche = rect[3]
+		        self.posHautOeilGauche = rect[1]
+                if rect[0] > len(croppedFrame)/2:
+		        self.largeurOeilDroit = rect[2]
+		        self.hauteurOeilDroit = rect[3]
+		        self.posHautOeilDroit = rect[1]
                 if final is None:
                     final = [rect]
                 else:
@@ -262,9 +305,20 @@ class Recognize():
 #                frame = self.drawDetected(frame, facePos, (0,140,255))
 #                frame = self.drawDetected(frame, self.getEyesPos(frame), (255,0,255))
 #                frame = self.drawDetected(frame, self.getMouthPos(frame, facePos), (0,0,255))
-                cropped = self.drawDetected(cropped, self.getEyesPos(cropped), (255,0,255))
+                cropped = self.drawDetected(cropped, self.getCroppedEyesPos(cropped), (255,0,255))
                 cropped = self.drawDetected(cropped, self.getCroppedMouthPos(cropped), (0,0,255))
                 cv2.imshow("CroppedPicture", cropped)
+                print("largeur bouche = " + str(self.largeurBouche))
+                print("hauteur bouche = " + str(self.hauteurBouche))
+                print("pos haut bouche = " + str(self.hautBouche))
+                
+                print("largeur oeil gauche = " + str(self.largeurOeilGauche))
+                print("hauteur oeil gauche = " + str(self.hauteurOeilGauche))
+                print("pos haut oeil gauche = " + str(self.posHautOeilGauche))
+                print("largeur oeil droit = " + str(self.largeurOeilDroit))
+                print("hauteur oeil droit = " + str(self.hauteurOeilDroit))
+                print("pos haut oeil droit = " + str(self.posHautOeilDroit))
+                
                 #cv2.imshow("CroppedPicture", self.gaborFilter(cropped))
             else :
                 intervalle = intervalle + 1
@@ -272,10 +326,6 @@ class Recognize():
             key = cv2.waitKey(20)
             if key in [27, ord('Q'), ord('q')]: #esc / Q
                 break
-
-#class RecognizeLPBH():
-#    def __init__(self):
-#        self.camera = CAMERA
 
 if __name__ == "__main__":
     individu = "User"
