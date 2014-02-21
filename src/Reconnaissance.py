@@ -223,27 +223,6 @@ class Recognize():
             y2 = y1 + facePos[0][3]
             return frame[y1:y2, x1:x2]
 
-    def gaborFilter(self, frame):
-        """Applique un filtre de Gabor"""
-        #parametres du filtre
-        sigma = 1
-        a = 10
-        b = 1
-
-        if len(frame) == 0:
-            return frame
-        else:
-            x = 0
-            y = 0
-            gaborFrame = frame
-            while x < len(frame)-10:
-                while y < len(frame[0])-10:
-                    gaborFrame[x][y] = frame[x][y]#math.cos(a*x+b*y)*math.exp(-((x*x+y*y)/(2*sigma*sigma)))
-                    x = x+1
-                    y = y+1
-            return gaborFrame
-                    
-
     def capture(self): 
         """Récupère le flux vidéo"""
         self.readImages()
