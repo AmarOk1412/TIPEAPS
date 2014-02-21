@@ -1,0 +1,42 @@
+./log1imageFisherFace : L'ajout des images dans la bdd a pris : 0.0099190139770508
+./log1imageFisherFace : La reconnaissance a pris : 0.6783968257904
+./log1imageFisherFace : L'ajout des images dans la bdd a pris : 0.0099190139770508
+./log1imageFisherFace : La reconnaissance a pris : 0.6783968257904
+./log1imageLBPH : L'ajout des images dans la bdd a pris : 0.018407192230222
+./log1imageLBPH : La reconnaissance a pris : 0.67822311878206
+./log2imagesFisherFace : L'ajout des images dans la bdd a pris : 0.020217499732964
+./log2imagesFisherFace : La reconnaissance a pris : 0.67893693923954
+./log2imagesFisherFace : L'ajout des images dans la bdd a pris : 0.020217499732964
+./log2imagesFisherFace : La reconnaissance a pris : 0.67893693923954
+./log2imagesLBPH : L'ajout des images dans la bdd a pris : 0.037757925987244
+./log2imagesLBPH : La reconnaissance a pris : 0.69533757209776
+./log4imagesFisherFace : L'ajout des images dans la bdd a pris : 0.046579194068914
+./log4imagesFisherFace : La reconnaissance a pris : 0.6795838260651
+./log4imagesFisherFace : L'ajout des images dans la bdd a pris : 0.046579194068914
+./log4imagesFisherFace : La reconnaissance a pris : 0.6795838260651
+./log4imagesLBPH : L'ajout des images dans la bdd a pris : 0.072963900566098
+./log4imagesLBPH : La reconnaissance a pris : 0.69052256584166
+./log6imagesFisherFace : L'ajout des images dans la bdd a pris : 0.077232804298398
+./log6imagesFisherFace : La reconnaissance a pris : 0.68012534618382
+./log6imagesFisherFace : L'ajout des images dans la bdd a pris : 0.077232804298398
+./log6imagesFisherFace : La reconnaissance a pris : 0.68012534618382
+./log6imagesLBPH : L'ajout des images dans la bdd a pris : 0.10854907989496
+./log6imagesLBPH : La reconnaissance a pris : 0.68396541118622
+./log8imagesFisherFace : L'ajout des images dans la bdd a pris : 0.11360348224638
+./log8imagesFisherFace : La reconnaissance a pris : 0.67941279888152
+./log8imagesFisherFace : L'ajout des images dans la bdd a pris : 0.11360348224638
+./log8imagesFisherFace : La reconnaissance a pris : 0.67941279888152
+./log8imagesLBPH : L'ajout des images dans la bdd a pris : 0.14305754184726
+./log8imagesLBPH : La reconnaissance a pris : 0.68878772258756
+./log10imagesFisherFace : L'ajout des images dans la bdd a pris : 0.16109169006346
+./log10imagesFisherFace : La reconnaissance a pris : 0.71711189746858
+./log10imagesFisherFace : L'ajout des images dans la bdd a pris : 0.16109169006346
+./log10imagesFisherFace : La reconnaissance a pris : 0.71711189746858
+./log10imagesLBPH : L'ajout des images dans la bdd a pris : 0.17906190872194
+./log10imagesLBPH : La reconnaissance a pris : 0.68412423133848
+./log12imagesFisherFace : L'ajout des images dans la bdd a pris : 0.19630846977234
+./log12imagesFisherFace : La reconnaissance a pris : 0.67638252735134
+./log12imagesFisherFace : L'ajout des images dans la bdd a pris : 0.19630846977234
+./log12imagesFisherFace : La reconnaissance a pris : 0.67638252735134
+./log12imagesLBPH : L'ajout des images dans la bdd a pris : 0.21880250930782
+./log12imagesLBPH : La reconnaissance a pris : 0.6892084312439
