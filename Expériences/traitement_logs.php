@@ -4,7 +4,7 @@
     {
         for($j = 0; $j < 3; $j++)
         {
-            $file = './log'.$i.'image'.(($i == 1)? "" : 's').(($j == 0)? 'EigenFace' : ($j == 1)? 'FisherFace' : 'LBPH');
+            $file = './log'.$i.'image'.(($i == 1)? "" : 's').(($j < 1)? 'EigenFace' : (($j < 2)? 'FisherFace' : 'LBPH'));
             if(file_exists($file))
             {
                 $ofile = fopen($file, 'r');
