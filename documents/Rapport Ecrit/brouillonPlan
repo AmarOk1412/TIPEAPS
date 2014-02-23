@@ -19,16 +19,19 @@ Page de garde (non sans blague...)
      *** Résultats & Analyse
 * Reconnaissance des émotions
   ** Théorie
-     *** Méthode générales
-     *** Méthode choisie plus détaillé (meilleur titre à trouver)
+     *** Différentes solutions
+     *** Solution choisie
   ** Expérimentations
      *** Protocole
      *** Réalisation
      *** Résultats & Analyse
-* Prototype Final réalisé (systemes ou ça marche (linux, windows, mac non, bsd, raspy (embarqué, overclock ou non, suffisant ou non?), beagle)
-* Tests finaux
-* Discussion & Analyse des résultats
+* Production
+   ** Prototype Final réalisé (systemes ou ça marche (linux, windows, mac non, bsd, raspy (embarqué, overclock ou non, suffisant ou non?), beagle)
+  ** Tests finaux
+     *** Protocole
+  ** Discussion & Analyse des résultats
 * Conclusion
+--- Annexes ---
 * Code des applications
 * Bibliographie
 
