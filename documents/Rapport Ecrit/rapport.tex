@@ -5,6 +5,14 @@
 \usepackage[francais]{babel}
 \usepackage[a4paper]{geometry}
 \usepackage{lmodern}
+\usepackage{listings}
+\usepackage{color}
+
+%definition des couleurs
+\definecolor{newGreen}{rgb}{0,0.6,0}
+\definecolor{newOrange}{rgb}{0.87,0.39,0.15}
+\definecolor{newBlue}{rgb}{0.36,0.51,0.77}
+\definecolor{newMauve}{rgb}{0.58,0,0.82}
 
 \begin{document}
 \renewcommand{\chaptername}{Partie}
@@ -55,6 +63,25 @@
 	\chapter*{Conclusion}
 \appendix
 	\chapter{Code des applications}
-		%TODO
+		%Modifications de l'affichage des codes source
+		\lstset{
+			numbers = left,
+			showspaces = none,
+			keepspaces = true,
+			showstringspaces = true,
+			basicstyle = \footnotesize,
+			commentstyle = \color{newGreen},
+			keywordstyle = \color{newOrange},
+			identifierstyle = \color{newBlue},
+			stringstyle = \color{newMauve}
+		}
+		\lstdefinestyle{arduino}{
+			language=C,
+			morekeywords = {HIGH, LOW, INPUT, OUTPUT}
+		}
+		\section{Application principale}
+			%TODO
+		\section{Code Arduino pour les tests}
+			\lstinputlisting[style=arduino]{../../src/tests/tests.ino}
 	%TODO : bibliographie
 \end{document}
