@@ -11,6 +11,7 @@ int ledWarning = 6;
 int ledLimiteAcceleration = 5;
 int ledFrein = 4;
 int speaker = 8;
+int incomingbyte = 0;
 
 void setup()
 {
@@ -18,6 +19,9 @@ void setup()
   pinMode(ledWarning,OUTPUT);
   pinMode(ledLimiteAcceleration,OUTPUT);
   pinMode(ledFrein,OUTPUT);
+  
+  Serial.begin(9600); //On demarre la connexion serie
+  while(!Serial){} // on attend que la connexion serie demarre
   
   /** allumage des LEDs pendant 2 secondes pour
    *  verifier leur fonctionnement
@@ -42,5 +46,8 @@ void setup()
 
 void loop()
 {
-  
+  if(Serial.available > 0) //si on recoit une donnee sur le port serie
+  {
+    incomingbyte = Serial.read();
+  }
 }
