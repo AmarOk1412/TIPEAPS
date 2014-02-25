@@ -210,6 +210,6 @@ if __name__ == "__main__":
     recognize = Recognize("images")
     recognize.recognize()
     #TODO : Améliorer la condition
-    if len(INDIVIDUS) > 50 and INDIVIDUS.count(INDIVIDUS[0]) > 50:
-        print('Bienvenu ' + INDIVIDUS[0])
+    if len(INDIVIDUS) > 50: #and INDIVIDUS.count(INDIVIDUS[0]) > 50:
+        print('Bienvenue ' + INDIVIDUS[0])
         ser.write('e')
