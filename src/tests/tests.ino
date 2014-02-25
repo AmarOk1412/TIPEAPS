@@ -41,12 +41,12 @@ void setup()
   /** emet un son pour signifier que le systeme est
    *  operationnel
    */
-  tone(speaker, 666, 1000);
+  tone(speaker, 666, 500);
 }
 
 void loop()
 {
-  if(Serial.available > 0) //si on recoit une donnee sur le port serie
+  if(Serial.available() > 0) //si on recoit une donnee sur le port serie
   {
     incomingbyte = Serial.read();
   }
