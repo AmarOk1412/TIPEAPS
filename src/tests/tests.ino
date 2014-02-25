@@ -6,48 +6,116 @@
  *    o888o     o888o o888o      o888ooo8888 o88o  o888o o888o      o88oooo888
  */
 
-int ledDemarrage = 7;
-int ledWarning = 6;
-int ledLimiteAcceleration = 5;
-int ledFrein = 4;
-int speaker = 8;
-int incomingbyte = 0;
+int pinEngine = 7;
+int pinWarning = 6;
+int pinAccelerationLimit = 5;
+int pinBrake = 4;
+int pinSound = 8;
+
+boolean engine = false;
+boolean warning = false;
+boolean accelerationLimit = false;
+boolean brake = false;
+boolean sound = false;
+
+char command = 0;
+
+void Engine()
+{
+  if(!engine)
+    digitalWrite(pinEngine, HIGH);
+  else
+    digitalWrite(pinEngine, LOW);
+  engine = !engine;
+}
+
+void Warning()
+{
+  if(!warning)
+    digitalWrite(pinWarning, HIGH);
+  else
+    digitalWrite(pinWarning, LOW);
+  warning = !warning;
+}
+
+void AccelerationLimit()
+{
+  if(!accelerationLimit)
+    digitalWrite(pinAccelerationLimit, HIGH);
+  else
+    digitalWrite(pinAccelerationLimit, LOW);
+  accelerationLimit = !accelerationLimit;
+}
+
+void Brake()
+{
+  if(!brake)
+    digitalWrite(pinBrake, HIGH);
+  else
+    digitalWrite(pinBrake, LOW);
+  brake = !brake;
+}
+
+void Sound()
+{
+  if(!sound)
+    tone(pinSound, 666);
+  else
+    noTone(pinSound);
+  sound = !sound;
+}
 
 void setup()
 {
-  pinMode(ledDemarrage, OUTPUT);
-  pinMode(ledWarning,OUTPUT);
-  pinMode(ledLimiteAcceleration,OUTPUT);
-  pinMode(ledFrein,OUTPUT);
+  pinMode(pinEngine, OUTPUT);
+  pinMode(pinWarning,OUTPUT);
+  pinMode(pinAccelerationLimit,OUTPUT);
+  pinMode(pinBrake,OUTPUT);
   
   Serial.begin(9600); //On demarre la connexion serie
   while(!Serial){} // on attend que la connexion serie demarre
   
-  /** allumage des LEDs pendant 2 secondes pour
-   *  verifier leur fonctionnement
+  /** 
+   *  verification du fonctionnement des systemes
+   *  (1/2 seconde)
    */ 
-  digitalWrite(ledDemarrage,HIGH);
-  digitalWrite(ledWarning,HIGH);
-  digitalWrite(ledLimiteAcceleration,HIGH);
-  digitalWrite(ledFrein,HIGH);
+  Engine();
+  Warning();
+  AccelerationLimit();
+  Brake();
+  Sound();
   
-  delay(2000);
+  delay(500);
   
-  digitalWrite(ledDemarrage,LOW);
-  digitalWrite(ledWarning,LOW);
-  digitalWrite(ledLimiteAcceleration,LOW);
-  digitalWrite(ledFrein,LOW);
-  
-  /** emet un son pour signifier que le systeme est
-   *  operationnel
-   */
-  tone(speaker, 666, 500);
+  Engine();
+  Warning();
+  AccelerationLimit();
+  Brake();
+  Sound();
 }
 
 void loop()
 {
   if(Serial.available() > 0) //si on recoit une donnee sur le port serie
   {
-    incomingbyte = Serial.read();
+    command = Serial.read();
+    switch(command)
+    {
+      case 'e':
+        Engine();
+      break;
+      case 'w':
+        Warning();
+      break;
+      case 'b':
+        Brake();
+      break;
+      case 'a':
+        AccelerationLimit();
+      break;
+      case 's':
+        Sound();
+      break;
+    }
   }
 }
