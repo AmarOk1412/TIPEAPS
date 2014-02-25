@@ -257,6 +257,8 @@ class Recognize():
     def cropFromFace(self, frame, facePos):
         """garde seulement la partie "tête" de la frame"""
         #X,Y,W,H
+        if facePos is None:
+            return frame
         if len(facePos) == 0 :
             return frame
         else :
@@ -286,6 +288,14 @@ class Recognize():
 #                frame = self.drawDetected(frame, self.getMouthPos(frame, facePos), (0,0,255))
                 cropped = self.drawDetected(cropped, self.getCroppedEyesPos(cropped), (255,0,255))
                 cropped = self.drawDetected(cropped, self.getCroppedMouthPos(cropped), (0,0,255))
+                
+                if(facePos is not None):
+                    bouche = self.cropFromFace(cropped, self.getCroppedMouthPos(cropped))
+                    imgray = cv2.cvtColor(bouche,cv2.COLOR_BGR2GRAY)
+                    ret,thresh = cv2.threshold(imgray,120,120,0)
+                    contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
+                    cv2.drawContours(bouche, contours, -1, (255,255,255), 1)
+                    cv2.imshow("Bouche", bouche)
                 cv2.imshow("CroppedPicture", cropped)
                 print("largeur bouche = " + str(self.largeurBouche))
                 print("hauteur bouche = " + str(self.hauteurBouche))

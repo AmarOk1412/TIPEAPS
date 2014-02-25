@@ -110,7 +110,7 @@ class Recognize():
     def detectOnPict(self):
         for i in range(0,100):     
 		self.readImages()
-		frame = cv2.imread('imagesExp/picSebLum'+str(i)+'.png')#Changer par le nom
+		frame = cv2.imread('imagesExp/picSebLum'+str(i)+'.png')
 		facePos = self.getFacesPos(frame)
 		self.recognizeLBPHFace()
 		for f in facePos: 

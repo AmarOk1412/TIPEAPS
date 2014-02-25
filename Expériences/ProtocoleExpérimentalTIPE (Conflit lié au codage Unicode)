@@ -21,10 +21,10 @@ Ajouter les personnes une à une
    _ Sous 3 luminosité : (Luminosité élevée, naturelle, faible)
    _ Orientation de la tête : (Tête tournée vers la gauche (environ 20°), de face, tournée vers la  droite, incliné vers la bas, incliné vers le haut)
    _ Déformation (Normal, Sourire, grimace, peur, dégout, fatigue)
-4) Vérifier que la personne est considérée comme elle-même (paramètres de base)
+4) Vérifier que la personne est considérée comme elle-même (paramètres de base) -> OK ! (Sauf quelques cas)
 5) Avec les paramètres de base, cacher au fur et à mesure le visage pour vérifier jusqu'à où la personne est reconnue.
-6)Avec les paramètres de base, changer petit à petit la luminosité (3 photos de bases (une de chaque luminosité)
-7) Avec les paramètres de base, changer la rotation du visage
+6)Avec les paramètres de base, changer petit à petit la luminosité (3 photos de bases (une de chaque luminosité) -> Surexposition ou sous -exposition cachant l'oeil
+7) Avec les paramètres de base, changer la rotation du visage (maximum 30 ° profil, 20° de basculement (même si 60° peut marcher))
 8) Avec les paramètres de base, changer la déformation du visage
 9) Avec les paramètres de base, changer la distance caméra/visage
 
