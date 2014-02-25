@@ -20,13 +20,26 @@ boolean sound = false;
 
 char command = 0;
 
+void Exit()
+{
+  engine = false;
+  warning = false;
+  accelerationLimit = false;
+  brake = false;
+  sound = false;
+  
+  digitalWrite(pinEngine,LOW);
+  digitalWrite(pinWarning,LOW);
+  digitalWrite(pinAccelerationLimit,LOW);
+  digitalWrite(pinBrake,LOW);
+  
+  noTone(pinSound);
+}
+
 void Engine()
 {
-  if(!engine)
-    digitalWrite(pinEngine, HIGH);
-  else
-    digitalWrite(pinEngine, LOW);
-  engine = !engine;
+  engine = true;
+  digitalWrite(pinEngine, HIGH);
 }
 
 void Warning()
@@ -79,7 +92,7 @@ void setup()
    *  verification du fonctionnement des systemes
    *  (1/2 seconde)
    */ 
-  Engine();
+  digitalWrite(pinEngine, HIGH);
   Warning();
   AccelerationLimit();
   Brake();
@@ -87,7 +100,7 @@ void setup()
   
   delay(500);
   
-  Engine();
+  digitalWrite(pinEngine, LOW);
   Warning();
   AccelerationLimit();
   Brake();
@@ -96,26 +109,37 @@ void setup()
 
 void loop()
 {
-  if(Serial.available() > 0) //si on recoit une donnee sur le port serie
+  if(!engine)//si non demarre
   {
     command = Serial.read();
-    switch(command)
+    if(command == 'e')
+      Engine();
+    command = 0;
+  }
+  else
+  {
+    if(Serial.available() > 0) //si on recoit une donnee sur le port serie
     {
-      case 'e':
-        Engine();
-      break;
-      case 'w':
-        Warning();
-      break;
-      case 'b':
-        Brake();
-      break;
-      case 'a':
-        AccelerationLimit();
-      break;
-      case 's':
-        Sound();
-      break;
+      command = Serial.read();
+      switch(command)
+      {
+        case 'x':
+          Exit();
+        break;
+        case 'w':
+          Warning();
+        break;
+        case 'b':
+          Brake();
+        break;
+        case 'a':
+          AccelerationLimit();
+        break;
+        case 's':
+          Sound();
+        break;
+      }
+      command = 0;
     }
   }
 }
