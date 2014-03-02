@@ -15,6 +15,7 @@ import os
 import sys
 import math
 import serial
+from collections import defaultdict
 
 #Constantes
 TRAINSET = "lbpcascade_frontalface.xml"    #Fichier de reconnaissance
@@ -177,6 +178,27 @@ class Recognize():
         found_identity = self.identities[p_index]
         return found_identity, p_confidence
 
+    def initNeutral(self, neutralImg):
+        return 0
+   
+    def emotions(self):
+        """Récupère le flux vidéo"""
+        intervalle = 0
+        if self.camera.isOpened():
+            (rval, frame) = self.camera.read()
+        else:
+            rval = False
+        i = 0
+        while rval:
+            (rval, frame) = self.camera.read()
+            facePos = self.getFacesPos(frame)
+            frame = self.drawDetected(frame, facePos, (0,140,255))
+            #for f in facePos:
+            cv2.imshow("Indentification", frame)
+            key = cv2.waitKey(20)
+            if key in [27, ord('Q'), ord('q')]: #esc / Q
+                break
+
     def capture(self): 
         """Récupère le flux vidéo"""
         intervalle = 0
@@ -206,10 +228,18 @@ class Recognize():
                 break
 
 if __name__ == "__main__":
-    ser = serial.Serial('/dev/ttyACM0', 9600)  
+    #ser = serial.Serial('/dev/ttyACM0', 9600)  
     recognize = Recognize("images")
     recognize.recognize()
-    #TODO : Améliorer la condition
-    if len(INDIVIDUS) > 50: #and INDIVIDUS.count(INDIVIDUS[0]) > 50:
-        print('Bienvenue ' + INDIVIDUS[0])
-        ser.write('e')
+    d = defaultdict(int)
+    for i in INDIVIDUS:
+        d[i] += 1
+    result = max(d.iteritems(), key=lambda x: x[1])
+    individu = result[0]
+    if result[1] > 50:
+        print('Bienvenue ' + individu)
+        print("images/"+individu+"/neutralBase.png")
+        #ser.write('e')
+        imgNeutralConducteur = "images/"+individu+"/neutralBase.png"
+        recognize.initNeutral(imgNeutralConducteur)
+        recognize.emotions()

@@ -302,16 +302,16 @@ class Recognize():
                     if i > 10:
                         print("bouche ouverte !")
                 cv2.imshow("CroppedPicture", cropped)
-                #print("largeur bouche = " + str(self.largeurBouche))
-                #print("hauteur bouche = " + str(self.hauteurBouche))
-                #print("pos haut bouche = " + str(self.hautBouche))
+                print("largeur bouche = " + str(self.largeurBouche))
+                print("hauteur bouche = " + str(self.hauteurBouche))
+                print("pos haut bouche = " + str(self.hautBouche))
                 
-                #print("largeur oeil gauche = " + str(self.largeurOeilGauche))
-                #print("hauteur oeil gauche = " + str(self.hauteurOeilGauche))
-                #print("pos haut oeil gauche = " + str(self.posHautOeilGauche))
-                #print("largeur oeil droit = " + str(self.largeurOeilDroit))
-                #print("hauteur oeil droit = " + str(self.hauteurOeilDroit))
-                #print("pos haut oeil droit = " + str(self.posHautOeilDroit))
+                print("largeur oeil gauche = " + str(self.largeurOeilGauche))
+                print("hauteur oeil gauche = " + str(self.hauteurOeilGauche))
+                print("pos haut oeil gauche = " + str(self.posHautOeilGauche))
+                print("largeur oeil droit = " + str(self.largeurOeilDroit))
+                print("hauteur oeil droit = " + str(self.hauteurOeilDroit))
+                print("pos haut oeil droit = " + str(self.posHautOeilDroit))
                 
                 #cv2.imshow("CroppedPicture", self.gaborFilter(cropped))
             else :
