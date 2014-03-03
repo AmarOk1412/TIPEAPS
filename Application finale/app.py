@@ -52,12 +52,7 @@ class CreateDataBase():
     def getFaceFrame(self, frame, x, y, w, h):
         """On récupère un rectangle (largeur, hauteur) (centreX, centreY)"""
         cropped = cv2.getRectSubPix(frame, (w, h), (x + w / 2, y + h / 2))
-        #On met l'image en niveaux de gris. TODO: gradient
         grayscale = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
-        #hsvMode = cv2.cvtColor(cropped, cv2.COLOR_BGR2HSV)
-        #hlsMode = cv2.cvtColor(cropped, cv2.COLOR_BGR2HLS)
-        #luvMode = cv2.cvtColor(cropped, cv2.COLOR_BGR2LUV)
-        #labMode = cv2.cvtColor(cropped, cv2.COLOR_BGR2LAB)
         self.faceFrame = cv2.resize(grayscale, (IMAGE_SIZE, IMAGE_SIZE))
         return self.faceFrame
 
@@ -109,6 +104,11 @@ class Recognize():
         self.imagesIndex = []
         self.time = time.time()
 
+        self.rightEyeWide = 0
+        self.rightEyeHeight = 0
+        self.leftEyeWide = 0
+        self.leftEyeHeight = 0
+
     def getFacesPos(self, frame):
         """Retourne la position des visages détéctés de la forme [[x y w h]]"""
         faces = self.classifier.detectMultiScale(frame)
@@ -130,6 +130,35 @@ class Recognize():
         grayscale = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
         self.faceFrame = cv2.resize(grayscale, (IMAGE_SIZE, IMAGE_SIZE))
         return self.faceFrame
+
+    def getCroppedEyesPos(self, croppedFrame):
+        """Retourne la position des bouches détéctés de la forme [[x y w h]]"""        
+        cascade = cv2.CascadeClassifier('haarcascade_lefteye_2splits.xml')
+        rects = cascade.detectMultiScale(croppedFrame)        
+        if len(rects) == 0:
+            return rects
+        final = None   
+        x1 = 0
+        x2 = 0 + len(croppedFrame)
+        y1 = 0
+        y2 = 0 + len(croppedFrame[0])*1/2
+        
+        #Prend la partie inférieure de la tête pour le traitement
+        for rect in rects:
+            if rect[0] > x1 and rect[0] + rect[2] < x2 and rect[1] > y1 and rect[1] + rect[3] < y2:
+                if rect[0] < len(croppedFrame)/2:
+		        self.largeurOeilGauche = rect[2]
+		        self.hauteurOeilGauche = rect[3]
+		        self.posHautOeilGauche = rect[1]
+                if rect[0] > len(croppedFrame)/2:
+		        self.largeurOeilDroit = rect[2]
+		        self.hauteurOeilDroit = rect[3]
+		        self.posHautOeilDroit = rect[1]
+                if final is None:
+                    final = [rect]
+                else:
+                    final += [rect]
+        return final
    
     def extractAndResize(self, frame, x, y, w, h):
         """On récupère juste la tête en noir et blanc"""
@@ -137,6 +166,20 @@ class Recognize():
         grayscale = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
         resized = cv2.resize(grayscale, (IMAGE_SIZE, IMAGE_SIZE))
         return resized
+
+    def cropFromFace(self, frame, facePos):
+        """garde seulement la partie "tête" de la frame"""
+        #X,Y,W,H
+        if facePos is None:
+            return frame
+        if len(facePos) == 0 :
+            return frame
+        else :
+            x1 = facePos[0][0]
+            x2 = x1 + facePos[0][2]
+            y1 = facePos[0][1]
+            y2 = y1 + facePos[0][3]
+            return frame[y1:y2, x1:x2]
 
     def readImages(self):
         """Récupère les images de bases pour effectuer la reconnaissance des visages"""
@@ -180,6 +223,28 @@ class Recognize():
 
     def initNeutral(self, neutralImg):
         return 0
+
+    def isMouthOpen(self, frameBouche):
+        i = 0
+        j = 0
+        for line in im:
+            for px in line:
+                j += 1
+                if px[0] <= 90 and px[0] >= 85 and px[1] <= 100 and px[1] >= 85 and px[2] >= 95 and px[2] < 110:
+                    i += 1
+        return i > 10
+
+    def rightEyeWideLargerThanNeutral(self, rightEyeWide):
+        return rightEyeWide > self.rightEyeWide
+        
+    def leftEyeWideLargerThanNeutral(self, leftEyeWide):
+        return leftEyeWide > self.leftEyeWide
+
+    def rightEyeHeightLargerThanNeutral(self, rightEyeHeight):
+        return rightEyeHeight > self.rightEyeHeight
+
+    def leftEyeHeightLargerThanNeutral(self, leftEyeHeight):
+        return leftEyeHeight > self.leftEyeHeight
    
     def emotions(self):
         """Récupère le flux vidéo"""
@@ -193,8 +258,11 @@ class Recognize():
             (rval, frame) = self.camera.read()
             facePos = self.getFacesPos(frame)
             frame = self.drawDetected(frame, facePos, (0,140,255))
+            cropped = self.cropFromFace(frame, facePos)
+            cropped = self.drawDetected(cropped, self.getCroppedEyesPos(cropped), (255,0,255))
             #for f in facePos:
             cv2.imshow("Indentification", frame)
+            cv2.imshow("Head Detect", cropped)
             key = cv2.waitKey(20)
             if key in [27, ord('Q'), ord('q')]: #esc / Q
                 break
