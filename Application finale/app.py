@@ -258,19 +258,28 @@ class Recognize():
         for line in frameBouche:
             for px in line:
                 j += 1
-                if px[0] <= 90 and px[0] >= 85 and px[1] <= 100 and px[1] >= 85 and px[2] >= 95 and px[2] < 110:
+                r, g, b = map(int, (px[0], px[1], px[2]))
+                gris = ((r+g+b)/3)
+                seuil = 3
+                if r-seuil <= gris and r+seuil >= gris and g-seuil <= gris and g+seuil >= gris and b-seuil <= gris and b+seuil >= gris:
                     i += 1
-        return i > 10
+        return i > 850
         
-    def EyeWideLargerThanNeutral(self, EyeWide):
-        return EyeWide > self.eyeWide
 
-    def EyeHeightHeightThanNeutral(self, EyeHeight):
-        return EyeHeight > self.eyeHeight
+    def EyeNotHeightThanNeutral(self, EyeHeight, seuil):
+        return EyeHeight < self.eyeHeight - seuil
+
+    def EyeHeightThanNeutral(self, EyeHeight, seuil):
+        return EyeHeight > self.eyeHeight + seuil
    
     def emotions(self):
         """Récupère le flux vidéo"""
         intervalle = 0
+        dontlook = 0
+        mouthOpen = 0
+        eyeClose = 0
+        eyeBigger = 0
+        eyeNotBigger = 0
         if self.camera.isOpened():
             (rval, frame) = self.camera.read()
         else:
@@ -279,19 +288,42 @@ class Recognize():
         while rval:
             (rval, frame) = self.camera.read()
             facePos = self.getFacesPos(frame)
-            frame = self.drawDetected(frame, facePos, (0,140,255))
-            cropped = self.cropFromFace(frame, facePos)
-            cropped = self.drawDetected(cropped, self.getCroppedEyesPos(cropped), (255,0,255))
-            bouchePos = self.getCroppedMouthPos(cropped)
-            cropped = self.drawDetected(cropped, bouchePos, (0,0,255))
-            if bouchePos is not None:
-                print(self.isMouthOpen(self.cropFromFace(frame, bouchePos)))
-            
-            #for f in facePos:
+            if len(facePos) is 0 or facePos is None:
+                dontlook += 1
+                if dontlook % 40 is 0:
+                    print('Conducteur inattentif')
+                    ser.write('b')
+            else:
+                frame = self.drawDetected(frame, facePos, (0,140,255))
+                cropped = self.cropFromFace(frame, facePos)
+                eyePos = self.getCroppedEyesPos(cropped)
+                if eyePos is not None:
+                    cropped = self.drawDetected(cropped, eyePos, (255,0,255))
+                    if self.EyeHeightThanNeutral(eyePos[0][3], 2):
+                        eyeBigger += 1
+                    else:
+                        eyeBigger = 0
+                    if self.EyeNotHeightThanNeutral(eyePos[0][3], 2):
+                        eyeNotBigger += 1
+                    else:
+                        eyeNotBigger = 0
+                bouchePos = self.getCroppedMouthPos(cropped)
+                cropped = self.drawDetected(cropped, bouchePos, (0,0,255))
+                if bouchePos is not None and self.isMouthOpen(self.cropFromFace(frame, bouchePos)):
+                    mouthOpen += 1
+                elif not self.isMouthOpen(self.cropFromFace(frame, bouchePos)):
+                    moutOpen = 0
+        
+                if mouthOpen > 5 and eyeBigger > 5:
+                    print('Surpris')
+                if mouthOpen > 5 and eyeNotBigger > 5:
+                    print('Super enerve')
+                if mouthOpen == 0 and eyeNotBigger > 10:
+                    print('enerve')
+                cv2.imshow("Head Detect", cropped)
             cv2.imshow("Indentification", frame)
-            cv2.imshow("Head Detect", cropped)
             key = cv2.waitKey(20)
-            if key in [27, ord('Q'), ord('q')]: #esc / Q
+            if key in [27, ord('Q'), ord('q')]:
                 break
 
     def capture(self): 
@@ -323,6 +355,7 @@ class Recognize():
                 break
 
 if __name__ == "__main__":
+    #TODO retravailler les seuils, yeux fermés, initialiser au début et pas se baser sur une image (distance/luminosité, ...)
     #ser = serial.Serial('/dev/ttyACM0', 9600)  
     recognize = Recognize("images")
     recognize.recognize()
