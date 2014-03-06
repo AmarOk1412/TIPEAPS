@@ -15,6 +15,7 @@ import os
 import sys
 import math
 import serial
+import glob
 from collections import defaultdict
 
 #Constantes
@@ -23,6 +24,7 @@ IMAGE_SIZE = 170                           #Normalisation des images de base
 NUMBER_OF_CAPTURE = 10                     #Nombre de captures a realiser pour la base de donnees
 SEUIL = 90                                 #Seuil de reconnaissance
 CAMERA = 0                                 #La camera
+ARDUINO = False                            #Utiliser l'arduino ?
 
 INDIVIDUS = []
 
@@ -106,6 +108,7 @@ class Recognize():
 
         self.eyeWide = 0
         self.eyeHeight = 0
+        self.grisBoucheFerme = 0
 
     def getFacesPos(self, frame):
         """Retourne la position des visages détéctés de la forme [[x y w h]]"""
@@ -247,6 +250,19 @@ class Recognize():
         facePos = self.getFacesPos(frame)
         cropped = self.cropFromFace(frame, facePos)
         bouchePos = self.getCroppedMouthPos(cropped)
+        frameBouche = self.cropFromFace(frame, bouchePos)
+        i = 0
+        j = 0
+        for line in frameBouche:
+            for px in line:
+                j += 1
+                r, g, b = map(int, (px[0], px[1], px[2]))
+                gris = ((r+g+b)/3)
+                seuil = 8
+                if r-seuil <= gris and r+seuil >= gris and g-seuil <= gris and g+seuil >= gris and b-seuil <= gris and b+seuil >= gris:
+                    i += 1
+        self.grisBoucheFerme = i
+        print(i)
         eyePos = self.getCroppedEyesPos(cropped)
         self.eyeWide = eyePos[0][2]
         self.eyeHeight = eyePos[0][3]
@@ -260,11 +276,10 @@ class Recognize():
                 j += 1
                 r, g, b = map(int, (px[0], px[1], px[2]))
                 gris = ((r+g+b)/3)
-                seuil = 3
-                if r-seuil <= gris and r+seuil >= gris and g-seuil <= gris and g+seuil >= gris and b-seuil <= gris and b+seuil >= gris:
+                seuil = 8
+                if r in range(gris-seuil, gris+seuil) and g in range(gris-seuil, gris+seuil) and b in range(gris-seuil, gris+seuil):
                     i += 1
-        #print(i)
-        return i > 850
+        return i > 300
         
 
     def EyeNotHeightThanNeutral(self, EyeHeight, seuil):
@@ -304,9 +319,9 @@ class Recognize():
                 frame = self.drawDetected(frame, facePos, (0,140,255))
                 cropped = self.cropFromFace(frame, facePos)
                 eyePos = self.getCroppedEyesPos(cropped)
-                if eyePos is not None:
+                if eyePos is not None and i > 10:
                     cropped = self.drawDetected(cropped, eyePos, (255,0,255))
-                    if len(eyePos) > 0 and self.EyeHeightThanNeutral(eyePos[0][3], 8):
+                    if len(eyePos) > 0 and self.EyeHeightThanNeutral(eyePos[0][3], 5):
                         print('plus grand')
                         eyeBigger += 1
                     else:
@@ -318,17 +333,17 @@ class Recognize():
                         eyeNotBigger = 0
                 bouchePos = self.getCroppedMouthPos(cropped)
                 cropped = self.drawDetected(cropped, bouchePos, (0,0,255))
-                if bouchePos is not None and self.isMouthOpen(self.cropFromFace(frame, bouchePos)):
+                if bouchePos is not None and self.isMouthOpen(self.cropFromFace(frame, bouchePos)) and i > 10:
                     print('bouche ouverte')
                     mouthOpen += 1
                 elif not self.isMouthOpen(self.cropFromFace(frame, bouchePos)):
                     moutOpen = 0
         
-                if mouthOpen > 5 and eyeBigger > 5:
+                if mouthOpen > 3 and eyeBigger > 3:
                     print('Surpris')
-                if mouthOpen > 5 and eyeNotBigger > 5:
+                if mouthOpen > 3 and eyeNotBigger > 5:
                     print('Super enerve')
-                if mouthOpen == 0 and eyeNotBigger > 10:
+                if mouthOpen <= 3 and eyeNotBigger > 5:
                     print('enerve')
                 cv2.imshow("Head Detect", cropped)
             cv2.imshow("Indentification", frame)
@@ -364,9 +379,34 @@ class Recognize():
             if key in [27, ord('Q'), ord('q')]: #esc / Q
                 break
 
+def sendSerial(ser, command):
+    """Envoie command a l'arduino"""
+    if(ARDUINO):
+        ser.write(command)
+
+def getSerialName():
+    """Retourne le fichier correspondant a l'arduino"""
+    serialName = '/dev/null'
+    osname = sys.platform.lower()
+    if 'darwin' in osname: #si mac OS X
+        for tty in glob.glob('/dev/tty*'):
+            if 'usbmodem' in tty:
+                serialName = tty
+    elif 'linux' in osname: #si linux
+        for tty in glob.glob('/dev/tty*'):
+            if 'ACM' in tty:
+                serialName = tty
+    return serialName
+
 if __name__ == "__main__":
     #TODO retravailler les seuils, yeux fermés, initialiser au début et pas se baser sur une image (distance/luminosité, ...)
-    #ser = serial.Serial('/dev/ttyACM0', 9600)  
+    #ser = serial.Serial('/dev/ttyACM0', 9600)
+    for i in range(1,len(sys.argv)):
+        if sys.argv[i] == '-n' and i < len(sys.argv):
+            individu = sys.argv[i + 1]
+        if sys.argv[i] == '-a':
+            ARDUINO = True
+            ser = serial.Serial(getSerialName(), 9600)
     recognize = Recognize("images")
     recognize.recognize()
     d = defaultdict(int)
@@ -376,5 +416,6 @@ if __name__ == "__main__":
     individu = result[0]
     if result[1] > 25:
         print('Bienvenue ' + individu)
-        #ser.write('e')
+        if ARDUINO:
+            sendSerial(ser, 'e')
         recognize.emotions()

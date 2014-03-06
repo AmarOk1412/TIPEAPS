@@ -108,6 +108,7 @@ class Recognize():
 
         self.eyeWide = 0
         self.eyeHeight = 0
+        self.grisBoucheFerme = 0
 
     def getFacesPos(self, frame):
         """Retourne la position des visages détéctés de la forme [[x y w h]]"""
@@ -249,6 +250,19 @@ class Recognize():
         facePos = self.getFacesPos(frame)
         cropped = self.cropFromFace(frame, facePos)
         bouchePos = self.getCroppedMouthPos(cropped)
+        frameBouche = self.cropFromFace(frame, bouchePos)
+        i = 0
+        j = 0
+        for line in frameBouche:
+            for px in line:
+                j += 1
+                r, g, b = map(int, (px[0], px[1], px[2]))
+                gris = ((r+g+b)/3)
+                seuil = 8
+                if r-seuil <= gris and r+seuil >= gris and g-seuil <= gris and g+seuil >= gris and b-seuil <= gris and b+seuil >= gris:
+                    i += 1
+        self.grisBoucheFerme = i
+        print(i)
         eyePos = self.getCroppedEyesPos(cropped)
         self.eyeWide = eyePos[0][2]
         self.eyeHeight = eyePos[0][3]
@@ -262,11 +276,10 @@ class Recognize():
                 j += 1
                 r, g, b = map(int, (px[0], px[1], px[2]))
                 gris = ((r+g+b)/3)
-                seuil = 3
-                if r-seuil <= gris and r+seuil >= gris and g-seuil <= gris and g+seuil >= gris and b-seuil <= gris and b+seuil >= gris:
+                seuil = 8
+                if r in range(gris-seuil, gris+seuil) and g in range(gris-seuil, gris+seuil) and b in range(gris-seuil, gris+seuil):
                     i += 1
-        #print(i)
-        return i > 850
+        return i > self.grisBoucheFerme
         
 
     def EyeNotHeightThanNeutral(self, EyeHeight, seuil):
@@ -330,7 +343,7 @@ class Recognize():
                     print('Surpris')
                 if mouthOpen > 5 and eyeNotBigger > 5:
                     print('Super enerve')
-                if mouthOpen == 0 and eyeNotBigger > 10:
+                if mouthOpen <= 5 and eyeNotBigger > 5:
                     print('enerve')
                 cv2.imshow("Head Detect", cropped)
             cv2.imshow("Indentification", frame)
@@ -403,5 +416,6 @@ if __name__ == "__main__":
     individu = result[0]
     if result[1] > 25:
         print('Bienvenue ' + individu)
-        sendSerial(ser, 'e')
+        if ARDUINO:
+            sendSerial(ser, 'e')
         recognize.emotions()
