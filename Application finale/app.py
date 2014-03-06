@@ -15,6 +15,7 @@ import os
 import sys
 import math
 import serial
+import glob
 from collections import defaultdict
 
 #Constantes
@@ -23,6 +24,7 @@ IMAGE_SIZE = 170                           #Normalisation des images de base
 NUMBER_OF_CAPTURE = 10                     #Nombre de captures a realiser pour la base de donnees
 SEUIL = 90                                 #Seuil de reconnaissance
 CAMERA = 0                                 #La camera
+ARDUINO = False                            #Utiliser l'arduino ?
 
 INDIVIDUS = []
 
@@ -364,9 +366,34 @@ class Recognize():
             if key in [27, ord('Q'), ord('q')]: #esc / Q
                 break
 
+def sendSerial(ser, command):
+    """Envoie command a l'arduino"""
+    if(ARDUINO):
+        ser.write(command)
+
+def getSerialName():
+    """Retourne le fichier correspondant a l'arduino"""
+    serialName = '/dev/null'
+    osname = sys.platform.lower()
+    if 'darwin' in osname: #si mac OS X
+        for tty in glob.glob('/dev/tty*'):
+            if 'usbmodem' in tty:
+                serialName = tty
+    elif 'linux' in osname: #si linux
+        for tty in glob.glob('/dev/tty*'):
+            if 'ACM' in tty:
+                serialName = tty
+    return serialName
+
 if __name__ == "__main__":
     #TODO retravailler les seuils, yeux fermés, initialiser au début et pas se baser sur une image (distance/luminosité, ...)
-    #ser = serial.Serial('/dev/ttyACM0', 9600)  
+    #ser = serial.Serial('/dev/ttyACM0', 9600)
+    for i in range(1,len(sys.argv)):
+        if sys.argv[i] == '-n' and i < len(sys.argv):
+            individu = sys.argv[i + 1]
+        if sys.argv[i] == '-a':
+            ARDUINO = True
+            ser = serial.Serial(getSerialName(), 9600)
     recognize = Recognize("images")
     recognize.recognize()
     d = defaultdict(int)
@@ -376,5 +403,5 @@ if __name__ == "__main__":
     individu = result[0]
     if result[1] > 25:
         print('Bienvenue ' + individu)
-        #ser.write('e')
+        sendSerial(ser, 'e')
         recognize.emotions()
