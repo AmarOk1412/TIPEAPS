@@ -243,7 +243,7 @@ class Recognize():
         return found_identity, p_confidence
 
     def initNeutral(self, neutralImg):
-        frame = cv2.imread(neutralImg)
+        frame = neutralImg
         facePos = self.getFacesPos(frame)
         cropped = self.cropFromFace(frame, facePos)
         bouchePos = self.getCroppedMouthPos(cropped)
@@ -263,6 +263,7 @@ class Recognize():
                 seuil = 3
                 if r-seuil <= gris and r+seuil >= gris and g-seuil <= gris and g+seuil >= gris and b-seuil <= gris and b+seuil >= gris:
                     i += 1
+        #print(i)
         return i > 850
         
 
@@ -294,22 +295,31 @@ class Recognize():
                     print('Conducteur inattentif')
                     ser.write('b')
             else:
+                dontlook = 0
+                if i < 10:
+                    i += 1
+                if i is 10:
+                    self.initNeutral(frame)
+                    i += 1
                 frame = self.drawDetected(frame, facePos, (0,140,255))
                 cropped = self.cropFromFace(frame, facePos)
                 eyePos = self.getCroppedEyesPos(cropped)
-                if eyePos is not None:
+                if eyePos is not None and i > 10:
                     cropped = self.drawDetected(cropped, eyePos, (255,0,255))
-                    if self.EyeHeightThanNeutral(eyePos[0][3], 2):
+                    if len(eyePos) > 0 and self.EyeHeightThanNeutral(eyePos[0][3], 5):
+                        print('plus grand')
                         eyeBigger += 1
                     else:
                         eyeBigger = 0
-                    if self.EyeNotHeightThanNeutral(eyePos[0][3], 2):
+                    if len(eyePos) > 0 and self.EyeNotHeightThanNeutral(eyePos[0][3], 4):
+                        print('plus petit')
                         eyeNotBigger += 1
                     else:
                         eyeNotBigger = 0
                 bouchePos = self.getCroppedMouthPos(cropped)
                 cropped = self.drawDetected(cropped, bouchePos, (0,0,255))
-                if bouchePos is not None and self.isMouthOpen(self.cropFromFace(frame, bouchePos)):
+                if bouchePos is not None and self.isMouthOpen(self.cropFromFace(frame, bouchePos)) and i > 10:
+                    print('bouche ouverte')
                     mouthOpen += 1
                 elif not self.isMouthOpen(self.cropFromFace(frame, bouchePos)):
                     moutOpen = 0
@@ -366,8 +376,5 @@ if __name__ == "__main__":
     individu = result[0]
     if result[1] > 25:
         print('Bienvenue ' + individu)
-        print("images/"+individu+"/neutralBase.jpg")
         #ser.write('e')
-        imgNeutralConducteur = "images/"+individu+"/neutralBase.jpg"
-        recognize.initNeutral(imgNeutralConducteur)
         recognize.emotions()
