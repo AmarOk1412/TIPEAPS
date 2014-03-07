@@ -22,7 +22,7 @@ from collections import defaultdict
 TRAINSET = "lbpcascade_frontalface.xml"    #Fichier de reconnaissance
 IMAGE_SIZE = 170                           #Normalisation des images de base
 NUMBER_OF_CAPTURE = 10                     #Nombre de captures a realiser pour la base de donnees
-SEUIL = 90                                 #Seuil de reconnaissance
+THRESHOLD = 90                                 #Seuil de reconnaissance
 CAMERA = 0                                 #La camera
 ARDUINO = False                            #Utiliser l'arduino ?
 
@@ -87,7 +87,7 @@ class CreateDataBase():
             frame = self.drawDetectedFace(frame, self.getFacesPos(frame))
             #Affichage du texte
             cv2.putText(frame, "Appuyez sur c pour collecter", (0,20), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,0,0))
-            cv2.imshow("Create Database Window", frame)
+            cv2.imshow("Creation de la BDD", frame)
             key = cv2.waitKey(20)
             if key in [27, ord('Q'), ord('q')]: #esc / Q
                 break
@@ -108,7 +108,7 @@ class Recognize():
 
         self.eyeWide = 0
         self.eyeHeight = 0
-        self.grisBoucheFerme = 0
+        self.grayMouthClosed = 0
 
     def getFacesPos(self, frame):
         """Retourne la position des visages détéctés de la forme [[x y w h]]"""
@@ -127,7 +127,6 @@ class Recognize():
     def getFaceFrame(self, frame, x, y, w, h):
         """On récupère un rectangle (largeur, hauteur) (centreX, centreY)"""
         cropped = cv2.getRectSubPix(frame, (w, h), (x + w / 2, y + h / 2))
-        #On met l'image en niveaux de gris. TODO: embossage
         grayscale = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
         self.faceFrame = cv2.resize(grayscale, (IMAGE_SIZE, IMAGE_SIZE))
         return self.faceFrame
@@ -147,14 +146,6 @@ class Recognize():
         #Prend la partie inférieure de la tête pour le traitement
         for rect in rects:
             if rect[0] > x1 and rect[0] + rect[2] < x2 and rect[1] > y1 and rect[1] + rect[3] < y2:
-                if rect[0] < len(croppedFrame)/2:
-		        self.largeurOeilGauche = rect[2]
-		        self.hauteurOeilGauche = rect[3]
-		        self.posHautOeilGauche = rect[1]
-                if rect[0] > len(croppedFrame)/2:
-		        self.largeurOeilDroit = rect[2]
-		        self.hauteurOeilDroit = rect[3]
-		        self.posHautOeilDroit = rect[1]
                 if final is None:
                     final = [rect]
                 else:
@@ -172,12 +163,10 @@ class Recognize():
         x2 = 0 + len(croppedFrame)
         y1 = 0 + len(croppedFrame[0])*5/8
         y2 = 0 + len(croppedFrame[0])
+
         #Prend la partie inférieure de la tête pour le traitement
         for rect in rects:
             if rect[0] > x1 and rect[0] + rect[2] < x2 and rect[1] > y1 and rect[1] + rect[3] < y2:
-                self.largeurBouche = rect[2]
-                self.hauteurBouche = rect[3]
-                self.hautBouche = rect[0]
                 if final is None:
                     final = [rect]
                 else:
@@ -192,7 +181,7 @@ class Recognize():
         return resized
 
     def cropFromFace(self, frame, facePos):
-        """garde seulement la partie "tête" de la frame"""
+        """Garde seulement la partie "tête" de la frame"""
         #X,Y,W,H
         if facePos is None:
             return frame
@@ -246,51 +235,55 @@ class Recognize():
         return found_identity, p_confidence
 
     def initNeutral(self, neutralImg):
+        """Initialise les thresholds + les largeurs/hauteurs pour la détection des émotions"""
         frame = neutralImg
         facePos = self.getFacesPos(frame)
         cropped = self.cropFromFace(frame, facePos)
-        bouchePos = self.getCroppedMouthPos(cropped)
-        frameBouche = self.cropFromFace(frame, bouchePos)
+        mouthPos = self.getCroppedMouthPos(cropped)
+        mouthFrame = self.cropFromFace(frame, mouthPos)
         i = 0
         j = 0
-        for line in frameBouche:
+        for line in mouthFrame:
             for px in line:
                 j += 1
                 r, g, b = map(int, (px[0], px[1], px[2]))
-                gris = ((r+g+b)/3)
-                seuil = 8
-                if r-seuil <= gris and r+seuil >= gris and g-seuil <= gris and g+seuil >= gris and b-seuil <= gris and b+seuil >= gris:
+                gray = ((r+g+b)/3)
+                threshold = 8
+                if r in range(gray-threshold, gray+threshold) and g in range(gray-threshold, gray+threshold) and b in range(gray-threshold, gray+threshold):
                     i += 1
-        self.grisBoucheFerme = i
+        self.grayMouthClosed = i
         print(i)
         eyePos = self.getCroppedEyesPos(cropped)
         self.eyeWide = eyePos[0][2]
         self.eyeHeight = eyePos[0][3]
         return 0
 
-    def isMouthOpen(self, frameBouche):
+    def isMouthOpen(self, mouthFrame):
+        """Détermine si la bouche est ouverte ou fermée"""
         i = 0
         j = 0
-        for line in frameBouche:
+        for line in mouthFrame:
             for px in line:
                 j += 1
                 r, g, b = map(int, (px[0], px[1], px[2]))
-                gris = ((r+g+b)/3)
-                seuil = 8
-                if r in range(gris-seuil, gris+seuil) and g in range(gris-seuil, gris+seuil) and b in range(gris-seuil, gris+seuil):
+                gray = ((r+g+b)/3)
+                threshold = 8
+                if r in range(gray-threshold, gray+threshold) and g in range(gray-threshold, gray+threshold) and b in range(gray-threshold, gray+threshold):
                     i += 1
-        return i > 300
+        return i > self.grayMouthClosed*3/2
         
 
-    def EyeNotHeightThanNeutral(self, EyeHeight, seuil):
-        return EyeHeight < self.eyeHeight - seuil
+    def EyeNotHeightThanNeutral(self, EyeHeight, threshold):
+        """Détermine si les yeux sont froncés"""
+        return EyeHeight < self.eyeHeight - threshold
 
-    def EyeHeightThanNeutral(self, EyeHeight, seuil):
-        return EyeHeight > self.eyeHeight + seuil
+    def EyeHeightThanNeutral(self, EyeHeight, threshold):
+        """Détermine si les yeux sont équarquillés"""
+        return EyeHeight > self.eyeHeight + threshold
    
     def emotions(self):
         """Récupère le flux vidéo"""
-        intervalle = 0
+        interval = 0
         dontlook = 0
         mouthOpen = 0
         eyeClose = 0
@@ -331,29 +324,29 @@ class Recognize():
                         eyeNotBigger += 1
                     else:
                         eyeNotBigger = 0
-                bouchePos = self.getCroppedMouthPos(cropped)
-                cropped = self.drawDetected(cropped, bouchePos, (0,0,255))
-                if bouchePos is not None and self.isMouthOpen(self.cropFromFace(frame, bouchePos)) and i > 10:
+                mouthPos = self.getCroppedMouthPos(cropped)
+                cropped = self.drawDetected(cropped, mouthPos, (0,0,255))
+                if mouthPos is not None and self.isMouthOpen(self.cropFromFace(frame, mouthPos)) and i > 10:
                     print('bouche ouverte')
                     mouthOpen += 1
-                elif not self.isMouthOpen(self.cropFromFace(frame, bouchePos)):
+                elif not self.isMouthOpen(self.cropFromFace(frame, mouthPos)):
                     moutOpen = 0
         
-                if mouthOpen > 3 and eyeBigger > 3:
+                if mouthOpen > 5 and eyeBigger > 5:
                     print('Surpris')
-                if mouthOpen > 3 and eyeNotBigger > 5:
+                if mouthOpen > 5 and eyeNotBigger > 5:
                     print('Super enerve')
-                if mouthOpen <= 3 and eyeNotBigger > 5:
+                if mouthOpen <= 5 and eyeNotBigger > 5:
                     print('enerve')
-                cv2.imshow("Head Detect", cropped)
-            cv2.imshow("Indentification", frame)
+                cv2.imshow("Tete", cropped)
+            cv2.imshow("TIPEAPS", frame)
             key = cv2.waitKey(20)
             if key in [27, ord('Q'), ord('q')]:
                 break
 
     def capture(self): 
         """Récupère le flux vidéo"""
-        intervalle = 0
+        interval = 0
         if self.camera.isOpened():
             (rval, frame) = self.camera.read()
         else:
@@ -369,12 +362,12 @@ class Recognize():
                 x,y,w,h = [v for v in f]
                 resized = self.extractAndResize(frame, x, y, w, h)
                 identity, confidence = self.identify(resized)
-                if confidence > SEUIL:
+                if confidence > THRESHOLD:
                     identity = "INCONNU"
                 INDIVIDUS.append(identity)
                 print(identity + " --- " + str(confidence))
                 cv2.putText(frame, "%s (%s)"%(identity, confidence), (x,y), cv2.FONT_HERSHEY_PLAIN, 1.5, (0,140,255))
-            cv2.imshow("Indentification", frame)
+            cv2.imshow("TIPEAPS", frame)
             key = cv2.waitKey(20)
             if key in [27, ord('Q'), ord('q')]: #esc / Q
                 break
@@ -399,23 +392,30 @@ def getSerialName():
     return serialName
 
 if __name__ == "__main__":
-    #TODO retravailler les seuils, yeux fermés, initialiser au début et pas se baser sur une image (distance/luminosité, ...)
-    #ser = serial.Serial('/dev/ttyACM0', 9600)
+    #TODO yeux fermés, réparer avec l'arduino
+    mode = 0
     for i in range(1,len(sys.argv)):
         if sys.argv[i] == '-n' and i < len(sys.argv):
             individu = sys.argv[i + 1]
         if sys.argv[i] == '-a':
             ARDUINO = True
             ser = serial.Serial(getSerialName(), 9600)
-    recognize = Recognize("images")
-    recognize.recognize()
-    d = defaultdict(int)
-    for i in INDIVIDUS:
-        d[i] += 1
-    result = max(d.iteritems(), key=lambda x: x[1])
-    individu = result[0]
-    if result[1] > 25:
-        print('Bienvenue ' + individu)
-        if ARDUINO:
-            sendSerial(ser, 'e')
-        recognize.emotions()
+        if sys.argv[i] == '-c':
+            mode = 1
+    if mode is 0:
+        recognize = Recognize("images")
+        recognize.recognize()
+        d = defaultdict(int)
+        for i in INDIVIDUS:
+            d[i] += 1
+        result = max(d.iteritems(), key=lambda x: x[1])
+        individu = result[0]
+        if result[1] > 25:
+            print('Bienvenue ' + individu)
+            if ARDUINO:
+                sendSerial(ser, 'e')
+            recognize.emotions()
+    if mode is 1:
+        createDB = CreateDataBase("images", individu)
+        createDB.capture()
+        
