@@ -109,6 +109,7 @@ class Recognize():
         self.eyeWide = 0
         self.eyeHeight = 0
         self.grayMouthClosed = 0
+        self.thresholdEyeClosed = 0
 
     def getFacesPos(self, frame):
         """Retourne la position des visages détéctés de la forme [[x y w h]]"""
@@ -240,37 +241,26 @@ class Recognize():
         facePos = self.getFacesPos(frame)
         cropped = self.cropFromFace(frame, facePos)
         mouthPos = self.getCroppedMouthPos(cropped)
-        mouthFrame = self.cropFromFace(frame, mouthPos)
-        i = 0
-        j = 0
-        for line in mouthFrame:
-            for px in line:
-                j += 1
-                r, g, b = map(int, (px[0], px[1], px[2]))
-                gray = ((r+g+b)/3)
-                threshold = 8
-                if r in range(gray-threshold, gray+threshold) and g in range(gray-threshold, gray+threshold) and b in range(gray-threshold, gray+threshold):
-                    i += 1
-        self.grayMouthClosed = i
-        print(i)
+        mouthFrame = self.cropFromFace(frame, mouthPos)        
+        gray = cv2.cvtColor(mouthFrame, cv2.COLOR_BGR2GRAY)
+        ret,thresh = cv2.threshold(gray,50,255,cv2.THRESH_BINARY)
+        self.grayMouthClosed = numpy.count_nonzero(thresh)
         eyePos = self.getCroppedEyesPos(cropped)
+        eyeFrame = self.cropFromFace(frame, eyePos)
+        hsv = cv2.cvtColor(eyeFrame, cv2.COLOR_BGR2HSV)
+        lowerColor = numpy.array([80, 0,0])
+        upperColor = numpy.array([160,100,100])
+        mask = cv2.inRange(hsv, lowerColor, upperColor)
+        self.thresholdEyeClosed = numpy.count_nonzero(mask)
         self.eyeWide = eyePos[0][2]
         self.eyeHeight = eyePos[0][3]
         return 0
 
+    
     def isMouthOpen(self, mouthFrame):
-        """Détermine si la bouche est ouverte ou fermée"""
-        i = 0
-        j = 0
-        for line in mouthFrame:
-            for px in line:
-                j += 1
-                r, g, b = map(int, (px[0], px[1], px[2]))
-                gray = ((r+g+b)/3)
-                threshold = 8
-                if r in range(gray-threshold, gray+threshold) and g in range(gray-threshold, gray+threshold) and b in range(gray-threshold, gray+threshold):
-                    i += 1
-        return i > self.grayMouthClosed*3/2
+        gray = cv2.cvtColor(mouthFrame, cv2.COLOR_BGR2GRAY)
+        ret,thresh = cv2.threshold(gray,50,255,cv2.THRESH_BINARY)
+        return self.grayMouthClosed < numpy.count_nonzero(thresh)-300
         
 
     def EyeNotHeightThanNeutral(self, EyeHeight, threshold):
@@ -280,11 +270,20 @@ class Recognize():
     def EyeHeightThanNeutral(self, EyeHeight, threshold):
         """Détermine si les yeux sont équarquillés"""
         return EyeHeight > self.eyeHeight + threshold
+
+    def isEyeClosed(self, eyeFrame):
+        hsv = cv2.cvtColor(eyeFrame, cv2.COLOR_BGR2HSV)
+        lowerColor = numpy.array([80, 0,0])
+        upperColor = numpy.array([160,100,100])
+        mask = cv2.inRange(hsv, lowerColor, upperColor)
+        return self.thresholdEyeClosed*2 < numpy.count_nonzero(mask)
+
    
     def emotions(self):
         """Récupère le flux vidéo"""
         interval = 0
         dontlook = 0
+        sleep = 0
         mouthOpen = 0
         eyeClose = 0
         eyeBigger = 0
@@ -312,8 +311,21 @@ class Recognize():
                 frame = self.drawDetected(frame, facePos, (0,140,255))
                 cropped = self.cropFromFace(frame, facePos)
                 eyePos = self.getCroppedEyesPos(cropped)
+                if eyePos is None:
+                    print('yeux fermes ou yeux non détectés')
+                    sleep += 1
+                else:
+                    sleep = 0
+                if sleep > 5:
+                    print('endormi')
                 if eyePos is not None and i > 10:
                     cropped = self.drawDetected(cropped, eyePos, (255,0,255))
+                    eyeFrame = self.cropFromFace(frame, eyePos)
+                    if self.isEyeClosed(eyeFrame):
+                        print('yeux fermes ou yeux non détectés')
+                        sleep += 1
+                    else:
+                        sleep = 0
                     if len(eyePos) > 0 and self.EyeHeightThanNeutral(eyePos[0][3], 5):
                         print('plus grand')
                         eyeBigger += 1
