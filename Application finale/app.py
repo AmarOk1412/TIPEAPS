@@ -29,6 +29,11 @@ ARDUINO = False                            #Utiliser l'arduino ?
 INDIVIDUS = []
 
 #####################################
+def sendSerial(ser, command):
+    """Envoie command a l'arduino"""
+    if(ARDUINO):
+        ser.write(command)
+
 class CreateDataBase():
     def __init__(self, imgPath ,ident):
         self.rval = False            
@@ -300,7 +305,7 @@ class Recognize():
                 dontlook += 1
                 if dontlook % 40 is 0:
                     print('Conducteur inattentif')
-                    ser.write('b')
+                    sendSerial(ser,'b')
             else:
                 dontlook = 0
                 if i < 10:
@@ -383,11 +388,6 @@ class Recognize():
             key = cv2.waitKey(20)
             if key in [27, ord('Q'), ord('q')]: #esc / Q
                 break
-
-def sendSerial(ser, command):
-    """Envoie command a l'arduino"""
-    if(ARDUINO):
-        ser.write(command)
 
 def getSerialName():
     """Retourne le fichier correspondant a l'arduino"""
