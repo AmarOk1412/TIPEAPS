@@ -293,6 +293,7 @@ class Recognize():
         eyeClose = 0
         eyeBigger = 0
         eyeNotBigger = 0
+        error = 0
         if self.camera.isOpened():
             (rval, frame) = self.camera.read()
         else:
@@ -305,7 +306,7 @@ class Recognize():
                 dontlook += 1
                 if dontlook % 40 is 0:
                     print('Conducteur inattentif')
-                    sendSerial(ser,'b')
+                    sendSerial(ser,'s')
             else:
                 dontlook = 0
                 if i < 10:
@@ -317,44 +318,64 @@ class Recognize():
                 cropped = self.cropFromFace(frame, facePos)
                 eyePos = self.getCroppedEyesPos(cropped)
                 if eyePos is None:
-                    print('yeux fermes ou yeux non détectés')
+                    #print('yeux fermes ou yeux non détectés')
                     sleep += 1
-                else:
+                    error = 1
+                elif error is not 1:
                     sleep = 0
-                if sleep > 5:
-                    print('endormi')
+                else:
+                    error = 0
+                if sleep > 3:
+                    print('Endormi')
+                    sendSerial(ser,'w')
+                    sendSerial(ser,'s')
                 if eyePos is not None and i > 10:
                     cropped = self.drawDetected(cropped, eyePos, (255,0,255))
                     eyeFrame = self.cropFromFace(frame, eyePos)
                     if self.isEyeClosed(eyeFrame):
-                        print('yeux fermes ou yeux non détectés')
+                        #print('yeux fermes ou yeux non détectés')
                         sleep += 1
-                    else:
+                        error = 1
+                    elif error is not 1:
                         sleep = 0
+                    else:
+                        error = 0
                     if len(eyePos) > 0 and self.EyeHeightThanNeutral(eyePos[0][3], 5):
-                        print('plus grand')
+                        #print('plus grand')
                         eyeBigger += 1
-                    else:
+                        error = 1
+                    elif error is not 1:
                         eyeBigger = 0
-                    if len(eyePos) > 0 and self.EyeNotHeightThanNeutral(eyePos[0][3], 4):
-                        print('plus petit')
-                        eyeNotBigger += 1
                     else:
+                        error = 0
+                    if len(eyePos) > 0 and self.EyeNotHeightThanNeutral(eyePos[0][3], 4):
+                        #print('plus petit')
+                        eyeNotBigger += 1
+                        error = 1
+                    elif error is not 1:
                         eyeNotBigger = 0
+                    else:
+                        error = 0
                 mouthPos = self.getCroppedMouthPos(cropped)
                 cropped = self.drawDetected(cropped, mouthPos, (0,0,255))
                 if mouthPos is not None and self.isMouthOpen(self.cropFromFace(frame, mouthPos)) and i > 10:
-                    print('bouche ouverte')
+                    #print('bouche ouverte')
                     mouthOpen += 1
-                elif not self.isMouthOpen(self.cropFromFace(frame, mouthPos)):
+                    error = 1
+                elif not self.isMouthOpen(self.cropFromFace(frame, mouthPos)) and error is not 1:
                     moutOpen = 0
+                else:
+                    error = 0
         
                 if mouthOpen > 5 and eyeBigger > 5:
                     print('Surpris')
-                if mouthOpen > 5 and eyeNotBigger > 5:
-                    print('Super enerve')
-                if mouthOpen <= 5 and eyeNotBigger > 5:
-                    print('enerve')
+                    sendSerial(ser,'b')
+                if eyeNotBigger > 5:
+                    print('Enerve')
+                    sendSerial(ser,'a')
+                #if mouthOpen <= 5 and eyeNotBigger > 5:
+                #    print('enerve')
+                #    sendSerial(ser,'a')
                 cv2.imshow("Tete", cropped)
             cv2.imshow("TIPEAPS", frame)
             key = cv2.waitKey(20)
@@ -404,7 +425,6 @@ def getSerialName():
     return serialName
 
 if __name__ == "__main__":
-    #TODO yeux fermés, réparer avec l'arduino
     mode = 0
     for i in range(1,len(sys.argv)):
         if sys.argv[i] == '-n' and i < len(sys.argv):
@@ -430,4 +450,3 @@ if __name__ == "__main__":
     if mode is 1:
         createDB = CreateDataBase("images", individu)
         createDB.capture()
-        
