@@ -308,6 +308,7 @@ class Recognize():
                     print('Conducteur inattentif')
                     sendSerial(ser,'s')
             else:
+                sendSerial(ser,'d')
                 dontlook = 0
                 if i < 10:
                     i += 1
@@ -318,23 +319,24 @@ class Recognize():
                 cropped = self.cropFromFace(frame, facePos)
                 eyePos = self.getCroppedEyesPos(cropped)
                 if eyePos is None:
-                    print('yeux fermes ou yeux non détectés')
+                    #print('yeux fermes ou yeux non détectés')
                     sleep += 1
                     error = 1
                 elif error is not 1:
                     sleep = 0
+                    sendSerial(ser,'d')
+                    sendSerial(ser,'r')
                 else:
                     error = 0
-                print(sleep)
                 if sleep > 3:
-                    print('endormi')
+                    print('Endormi')
                     sendSerial(ser,'w')
                     sendSerial(ser,'s')
                 if eyePos is not None and i > 10:
                     cropped = self.drawDetected(cropped, eyePos, (255,0,255))
                     eyeFrame = self.cropFromFace(frame, eyePos)
                     if self.isEyeClosed(eyeFrame):
-                        print('yeux fermes ou yeux non détectés')
+                        #print('yeux fermes ou yeux non détectés')
                         sleep += 1
                         error = 1
                     elif error is not 1:
@@ -342,7 +344,7 @@ class Recognize():
                     else:
                         error = 0
                     if len(eyePos) > 0 and self.EyeHeightThanNeutral(eyePos[0][3], 5):
-                        print('plus grand')
+                        #print('plus grand')
                         eyeBigger += 1
                         error = 1
                     elif error is not 1:
@@ -350,7 +352,7 @@ class Recognize():
                     else:
                         error = 0
                     if len(eyePos) > 0 and self.EyeNotHeightThanNeutral(eyePos[0][3], 4):
-                        print('plus petit')
+                        #print('plus petit')
                         eyeNotBigger += 1
                         error = 1
                     elif error is not 1:
@@ -360,7 +362,7 @@ class Recognize():
                 mouthPos = self.getCroppedMouthPos(cropped)
                 cropped = self.drawDetected(cropped, mouthPos, (0,0,255))
                 if mouthPos is not None and self.isMouthOpen(self.cropFromFace(frame, mouthPos)) and i > 10:
-                    print('bouche ouverte')
+                    #print('bouche ouverte')
                     mouthOpen += 1
                     error = 1
                 elif not self.isMouthOpen(self.cropFromFace(frame, mouthPos)) and error is not 1:
@@ -371,9 +373,13 @@ class Recognize():
                 if mouthOpen > 5 and eyeBigger > 5:
                     print('Surpris')
                     sendSerial(ser,'b')
+                else:                    
+                    sendSerial(ser,'n')
                 if eyeNotBigger > 5:
-                    print('enerve')
+                    print('Enerve')
                     sendSerial(ser,'a')
+                else:                    
+                    sendSerial(ser,'q')
                 #if mouthOpen <= 5 and eyeNotBigger > 5:
                 #    print('enerve')
                 #    sendSerial(ser,'a')

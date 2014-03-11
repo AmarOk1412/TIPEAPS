@@ -317,12 +317,15 @@ class Recognize():
                 frame = self.drawDetected(frame, facePos, (0,140,255))
                 cropped = self.cropFromFace(frame, facePos)
                 eyePos = self.getCroppedEyesPos(cropped)
+                sendSerial(ser,'d')
                 if eyePos is None:
                     #print('yeux fermes ou yeux non détectés')
                     sleep += 1
                     error = 1
                 elif error is not 1:
                     sleep = 0
+                    sendSerial(ser,'d')
+                    sendSerial(ser,'r')
                 else:
                     error = 0
                 if sleep > 3:
@@ -370,9 +373,13 @@ class Recognize():
                 if mouthOpen > 5 and eyeBigger > 5:
                     print('Surpris')
                     sendSerial(ser,'b')
+                else:                    
+                    sendSerial(ser,'n')
                 if eyeNotBigger > 5:
                     print('Enerve')
                     sendSerial(ser,'a')
+                else:                    
+                    sendSerial(ser,'q')
                 #if mouthOpen <= 5 and eyeNotBigger > 5:
                 #    print('enerve')
                 #    sendSerial(ser,'a')
