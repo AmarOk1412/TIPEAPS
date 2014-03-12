@@ -1,0 +1,90 @@
+\documentclass{report}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage[a4paper]{geometry}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{color}
+
+%definition des couleurs
+\definecolor{newGreen}{rgb}{0,0.6,0}
+\definecolor{newOrange}{rgb}{0.87,0.39,0.15}
+\definecolor{newBlue}{rgb}{0.36,0.51,0.77}
+\definecolor{newMauve}{rgb}{0.58,0,0.82}
+
+\begin{document}
+\renewcommand{\chaptername}{Partie}
+	\begin{abstract}
+		%TODO
+	\end{abstract}
+	\chapter*{Introduction}
+		\subsection{Pourquoi ce projet}
+			%TODO
+	\part{Origine du problème}
+		\chapter{Historique de la reconnaissance faciale}
+			%TODO
+		\chapter{Les enjeux de la sécurité routière}
+			%TODO
+	\part{Reconnaissance Faciale}
+		\chapter{Th\'eorie}
+			\section{G\'en\'eral}
+				%TODO
+			\section{Eigenface}
+				%TODO
+			\section{Fisherface}
+				%TODO
+			\section{LBPH}
+				%TODO
+		\chapter{Exp\'erimentations}
+			\section{Protocole}
+				%TODO
+			\section{R\'ealisation}
+				%TODO
+			\section{R\'esultats et analyse}
+				%TODO
+	\part{Reconnaissance des \'emotions}
+		\chapter{Th\'eorie}
+			\section{Diff\'erentes solutions}
+				%TODO
+			\section{Solution choisie}
+				%TODO
+		\chapter{Exp\'erimentations}
+			\section{Protocole}
+				%TODO
+			\section{R\'ealisation}
+				%TODO
+			\section{R\'esultats et analyse}
+				%TODO
+	\part{Production}
+		\chapter{Prototype final}
+			%TODO
+		\chapter{Tests finaux}
+			%TODO
+		\chapter{Discussion et analyse}
+	\chapter*{Conclusion}
+\appendix
+	\chapter{Code des applications}
+		%Modifications de l'affichage des codes source
+		\lstset{
+			numbers = left,
+			showspaces = none,
+			keepspaces = true,
+			showstringspaces = true,
+			basicstyle = \footnotesize,
+			commentstyle = \color{newGreen},
+			keywordstyle = \color{newOrange},
+			identifierstyle = \color{newBlue},
+			stringstyle = \color{newMauve}
+		}
+		\lstdefinestyle{arduino}{
+			language=C,
+			morekeywords = {HIGH, LOW, INPUT, OUTPUT}
+		}
+		\section{Application principale}
+			%TODO
+		\section{Code Arduino pour les tests}
+			\lstinputlisting[style=arduino]{../../src/tests/tests.ino}
+	%TODO : bibliographie
+\end{document}

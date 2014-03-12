@@ -304,11 +304,10 @@ class Recognize():
             facePos = self.getFacesPos(frame)
             if len(facePos) is 0 or facePos is None:
                 dontlook += 1
-                if dontlook % 40 is 0:
+                if dontlook % 20 is 0:
                     print('Conducteur inattentif')
                     sendSerial(ser,'s')
             else:
-                sendSerial(ser,'d')
                 dontlook = 0
                 if i < 10:
                     i += 1
@@ -318,6 +317,7 @@ class Recognize():
                 frame = self.drawDetected(frame, facePos, (0,140,255))
                 cropped = self.cropFromFace(frame, facePos)
                 eyePos = self.getCroppedEyesPos(cropped)
+                sendSerial(ser,'d')
                 if eyePos is None:
                     #print('yeux fermes ou yeux non détectés')
                     sleep += 1

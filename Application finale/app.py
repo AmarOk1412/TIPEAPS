@@ -23,7 +23,7 @@ TRAINSET = "lbpcascade_frontalface.xml"    #Fichier de reconnaissance
 IMAGE_SIZE = 170                           #Normalisation des images de base
 NUMBER_OF_CAPTURE = 10                     #Nombre de captures a realiser pour la base de donnees
 THRESHOLD = 90                                 #Seuil de reconnaissance
-CAMERA = 0                                 #La camera
+CAMERA = 1                                 #La camera
 ARDUINO = False                            #Utiliser l'arduino ?
 
 INDIVIDUS = []
@@ -304,7 +304,7 @@ class Recognize():
             facePos = self.getFacesPos(frame)
             if len(facePos) is 0 or facePos is None:
                 dontlook += 1
-                if dontlook % 40 is 0:
+                if dontlook % 20 is 0:
                     print('Conducteur inattentif')
                     sendSerial(ser,'s')
             else:
