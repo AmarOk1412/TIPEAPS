@@ -4,7 +4,15 @@ Page de garde
 * Sommaire
 * Introduction
   ** Pourquoi ce projet
-     *** Petite partie sur les projets identiques
+     *** Petite partie sur les projets identiquesPROJETS SIMILAIRES
+         .http://www.ictjournal.ch/fr-CH/News/2013/11/08/KeyLemon-entre-dans-votre-voiture.aspx
+La caméra regarde où regarde le chauffeur. Et un radar est utilisé pour détecter les piétons. Identifie le conducteur et règle le siège, rétro, ...
+         .http://www.gentside.com/denso/un-systeme-de-reconnaissance-faciale-detecte-la-somnolence-au-volant_art31705.html
+Denso détecte si le conducteur s'endort et possède 6 phases de notifications. La détection se fait à l'aide de 17 points sur le visage
+         .http://www.lemondeinformatique.fr/actualites/lire-ceatec-la-voiture-de-demain-diagnostiquera-le-conducteur-55202.html
+Alps Electric comme le premier projet. Identifie le conducteur et règle + bilan de santé + reconnaissance de la main
+         .http://www.generation-nt.com/toyota-fv2-concept-voiture-capable-lire-emotions-conducteur-actualite-1810542.html
+change la couleur du véhicule selon l'humeur du conducteur + pare brise avec réalité augmentée
   ** Histoire de la reconnaissance Faciale
      *** Ekman
 * Reconnaissance Faciale
@@ -69,11 +77,24 @@ Seb : Eigenface = 24.657534246575% / fisherface = 73.972602739726% / LBPH = 90.4
      *** Réalisation
      *** Résultats & Analyse
 * Production
-   ** Prototype Final réalisé (systemes ou ça marche (linux, windows, mac non, bsd, raspy (embarqué, overclock ou non, suffisant ou non?), beagle)
+  ** Prototype Final réalisé (systemes ou ça marche (linux, windows, mac non, bsd, raspy (embarqué, overclock ou non, suffisant ou non?), beagle)
   ** Tests finaux
      *** Protocole
   ** Discussion & Analyse des résultats
 * Conclusion
+  ** Bilan/synthèse
+     *** Réponse à la problématique
+     *** Compétences acquises
+         . travail de groupe
+         . techniques de communication
+         . git
+         . python 2 car python 3 mal supporté pour la reconnaissance faciale d'opencv
+         . opencv
+         . php
+  ** Ouverture
+     *** Utilité
+         . Plus comme gadget, endormi/inattentif/reconnaissance du conducteur pour éviter un vol, couleur en fonction de l'humeur, même si reconnaissance faible (une photo suffit pour contourner le systeme), les émotions sont peu fiables car peuvent provenir de beaucoup de sources.
+         . Compléter plus avec radars/caméras vers l'extérieur.
 --- Annexes ---
 * Code des applications
 * Bibliographie
