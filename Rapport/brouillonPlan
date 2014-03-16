@@ -18,9 +18,33 @@ change la couleur du véhicule selon l'humeur du conducteur + pare brise avec r�
 * Reconnaissance Faciale
   ** Théorie
      *** Général
+         . Enormément de méthodes, on peut aussi combiner avec des méthodes telles que la mise en place d'un réseau neuronnal (mais en 3 mois, pas le temps).
+         . On traite des images en n&b car la colorimétrie n'est pas importante.
      *** Eigenface
      *** FisherFace
      *** LBPH
+         . Méthode:
+Consiste à regarder le niveau d'un pixel par rapport à ses voisins. 
+La première étape consiste à diviser l'image en groupes de pixels. 
+Le pixel choisit sert de base pour effectuer un seuil avec les voisins (grâce à la fonction d'Heaviside. Qui dit 0 si x<0, 1 sinon. Ici on a 0 si x<pixel de base 1 sinon). 
+Puis une pondération de chaque pixel donne une valeur.
+Chaque groupe est passé à cette pondération. 
+Toutes les valeurs sont mises les unes à la suite des autres pour former l'histogramme de l'image.
+Il ne reste plus qu'à faire la différence entre deux histogrammes.
+         . Un algo très utilisé
+Cette algo est très utilisé comme dans :
+TITRE: 
+Facial expression recognition based on Local Binary Patterns:A comprehensive study
+AUTEURS:
+Caifeng Shan a, * , Shaogang Gong b , Peter W. McOwan b
+Ou il est combiné avec Adaboost pour obtenir de meilleurs résultats + un réseau neuronnal
+Ou TITRE:
+Face Recognition with Local Binary Patterns, Spatial Pyramid Histograms and
+Naive Bayes Nearest Neighbor classification
+AUTEURS:
+Daniel Maturana, Domingo Mery and Alvaro
+Soto
+où les auteurs essayent d'améliorer l'algo pour obtenir le leur : NNBN que nous n'utiliserons pas (temps, et LBPH est déjà intégré dans OpenCV)
   ** Expérimentations
      *** Protocole
          . Le but de cette expérimentation était de comparer les 3 méthodes implémentées par la librairie OpenCV pour voir laquelle on pouvait choisir pour l'application finale puis de voir la robustesse de cette méthode.
