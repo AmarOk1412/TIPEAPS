@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2014.3.10)  11 MAR 2014 11:24
+This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=latex 2014.3.13)  13 MAR 2014 10:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -53,10 +53,7 @@ Type  H <return>  for immediate help.
                                                   
 l.296 \ProcessOptions*
                       
-Valid options are: shorthands=, KeepShorthandsActive,
-activeacute, activegrave, noconfigs, safe=, main=, math=
-headfoot=, strings=, config=, hyphenmap=, or a language name.
-
+? 
 
 ! Package babel Error: You haven't specified a language option.
 
@@ -66,10 +63,7 @@ Type  H <return>  for immediate help.
                                                   
 l.329 ...ry to proceed from here, type x to quit.}
                                                   
-You need to specify a language, either as a global option
-or as an optional argument to the \usepackage command;
-You shouldn't try to proceed from here, type x to quit.
-
+? 
 ) (/usr/share/texlive/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
@@ -79,7 +73,7 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
 )
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifvtex.sty
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
@@ -167,32 +161,14 @@ Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: pdftex.def on input line 130.
+Package color Info: Driver file: dvips.def on input line 130.
 
-(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
 )
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count99
-))
-(./rapport.aux
-
-! Package babel Error: You haven't defined the language frenchb yet.
-
-See the babel package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1 \select@language{frenchb}
-                             
-Your command will be ignored, type <return> to proceed
-
-)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
+File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+)) (./rapport.aux)
 \openout1 = `rapport.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
@@ -212,9 +188,9 @@ LaTeX Font Info:    Try loading font information for T1+lmr on input line 17.
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 *geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+*geometry* detected driver: dvips
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: dvips
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -245,62 +221,68 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count100
-(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count101
-\scratchdimen=\dimen115
-\scratchbox=\box28
-\nofMPsegments=\count102
-\nofMParguments=\count103
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count104
-\MPscratchDim=\dimen116
-\MPnumerator=\count105
-\makeMPintoPDFobject=\count106
-\everyMPtoPDFconversion=\toks20
-) [1
-
-{/usr/share/texlive/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
+\c@lstlisting=\count99
 [1
+
+] [1
 
 ] [2
 
-] [3
-
 ]
 Partie 1.
-[4
+[3
 
 ]
 Partie 2.
-[5
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 28.
+(/usr/share/texlive/texmf-dist/tex/latex/lm/omslmr.fd
+File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 28.
 
-] [6
+
+(/usr/share/texlive/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `OMS/lmr/bx/n' in size <24.88> not available
+(Font)              Font shape `OMS/lmsy/b/n' tried instead on input line 28.
+ [4
+
+] [5
 
 ]
 Partie 3.
-[7
+[6
 
 ]
 Partie 4.
-[8
+[7
 
-] [9
+] [8
 
 ]
 Partie 5.
-[10
+[9
 
 ]
 Partie 6.
-[11
+[10
+
+] [11
 
 ]
 Partie 7.
 [12
 
-] [13
+]
+Partie 8.
+[13
+
+]
+Partie 9.
+[14
+
+] [15
 
 ]
 Appendix A.
@@ -310,21 +292,23 @@ Appendix A.
 Type X to quit or <RETURN> to proceed,
 or enter new name. (Default extension: ino)
 
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
-l.86 ...[style=arduino]{../../src/tests/tests.ino}
-                                                  ^^M
-*** (cannot \read from terminal in nonstop modes)
+Enter file name: rapport.dvi
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/08/26 1.5b listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
+) (./rapport.dvi)
+[16
 
- 
+] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 3246 strings out of 495034
- 44248 string characters out of 6181677
- 98105 words of memory out of 5000000
- 6460 multiletter control sequences out of 15000+600000
- 34408 words of font info for 25 fonts, out of 8000000 for 9000
+ 3181 strings out of 495035
+ 42398 string characters out of 6181703
+ 111043 words of memory out of 5000000
+ 6387 multiletter control sequences out of 15000+600000
+ 37701 words of font info for 27 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 26i,5n,32p,198b,219s stack positions out of 5000i,500n,10000p,200000b,80000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 32i,5n,59p,179b,1130s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on rapport.dvi (17 pages, 4868 bytes).
