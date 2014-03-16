@@ -15,8 +15,51 @@ Page de garde
      *** LBPH
   ** Expérimentations
      *** Protocole
-     *** Réalisation
-     *** Résultats & Analyse
+         . Le but de cette expérimentation était de comparer les 3 méthodes implémentées par la librairie OpenCV pour voir laquelle on pouvait choisir pour l'application finale puis de voir la robustesse de cette méthode.
+         . On a donc réaliser 2 expériences. La première pour regarder la vitesse selon le nombre de photos de bases. Puis de comparer le %age de réussite.
+         . La seconde pour regarder la robustesse (grimaces, visage caché, rotation, ...).
+     *** Réalisation Expérience 1
+         . On a regardé deux vitesses. Le temps de la construction du modèle puis le temps pour réaliser la reconnaissance.
+         . On a donc capturé une photo pour servir de base. La base de données était composée de 3 individus.
+         . Puis pour chaque algo, et pour éviter au max les impressisions due au processeur qui ne travaille pas toujours pareil on a passé l'image pour chaque algo 100 fois (puis on a fais la moyenne pour avoir le temps moyen) sur le même ordinateur.
+         . On a donc testé 3 algos (Eigenface, fisherface, LBPH) avec une image de base, avec une base de données de 3 individus avec le nombre de photo suivant : 1,2,4,6,8,10,12.
+     *** Résultats & Analyse Expérience 1
+         . Refaire les graphes avec latex
+         . Pour le temps de création du modele. FisherFace est le plus rapide. Puis EigenFace (qui deviens de plus en plus lent jusqu'à rattraper LBPH au bout de 36 photos). LBPH reste le plus lent.
+         . Pour la reconnaissance des visages, la durée reste la même avec environ 680<->690 ms avec un processeur i5 2 eme génération pour les 3 algos.
+         . Ainsi on remarque que le temps n'est pas le principal facteur. Si on prend LBPH, l'initialisation du système sera un peu plus longue, mais le temps de reconnaissance restera identique le reste de l'application.
+     *** Réalisation Expérience 2
+         . Pour déterminer le meilleur algorithme, on a donc :
+         . Pris une vidéo de 100 frames ou l'individu bouger la tête.
+         . Enregistré l'individu avec 12 photos dans la base de données.
+         . Passé la vidéo aux 3 algos pour voir le %age de reconnaissance.
+     *** Résultats & Analyse Expérience 2
+         . Refaire les graphes avec latex
+         . Amaury : Eigenface = 71.929824561404% / fisherface = 59.649122807018% / LBPH = 82.456140350877%
+Phenri : Eigenface = 7.4074074074074% / fisherface = 80.246913580247% / LBPH = 60.493827160494%
+Seb : Eigenface = 24.657534246575% / fisherface = 73.972602739726% / LBPH = 90.41095890411%
+         . On remarque que LBPH est globalement le meilleur des 3. Puis vient FisherFace puis EigenFace loin derrière.
+     *** Réalisation Expérience Robustesse
+         . On a donc choisit LBPH
+         . Pour la robustesse on a demandé à plusieurs personnes de s'enregistrer dans la base de données.
+         . Puis de prendre une vidéo de 100 frames.
+         . On a donc pris différente personne sous :
+           .. différentes luminosité (élevée, naturelle, faible)
+           .. différentes orientation de la tête
+           .. différentes inclinaison
+           .. différentes déformation du visage
+           .. différentes parties cachées du visage   
+           .. différentes distances
+     *** Résultats & Analyse Robustesse
+!!!!!!BESOIN DE PHOTOS, JE M'EN OCCUPE (SEB) + PH SI TU AS ES PARTIES DU VISAGE CACHEES!!!!!!!!       
+         . On en a donc déduit
+           .. différentes luminosité (élevée, naturelle, faible) : La luminosité peut être un probleme lorsque les yeux sont trop cachés par la lumièce ou lorsque la limite face/décor est difficile à voir).
+           .. différentes orientation de la tête (limite d'environ 20°, il faut au moins garder les deux yeux bien visible)
+           .. différentes inclinaison (idem)
+           .. différentes déformation du visage (pas de problème). Des accessoires telles que des lunettes ne changent pas beaucoup le résultat, mais le mieux reste de prendre des photos dans la base de données avec plusieurs accessoires.
+           .. différentes parties cachées du visage (réussite amoindrie lorsque l'on cache la bouche mais réalisable). Si on cache les yeux, la reconnaissance est impossible (embettant pour les cheveux longs)
+           .. différentes distances (On perd énormément de réussite lorsque la taille du visage reconnue est plus petite que celle dans la base de données).
+           .. La réalisation d'autres classifiers pour améliorer la reconnaissance pourrait être intéressant.
 * Reconnaissance des émotions
   ** Théorie
      *** Différentes solutions
