@@ -8,6 +8,12 @@
 \usepackage{listings}
 \usepackage{color}
 \usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{units}
 
 %definition des couleurs
 \definecolor{newGreen}{rgb}{0,0.6,0}
@@ -79,6 +85,35 @@
 				%TODO
 			\section{R\'esultats et analyse}
 				%TODO
+				%GRAPHIQUES A DEPLACER :
+				\begin{figure}
+					\begin{tikzpicture}
+						\begin{axis}[
+							xlabel={nombre d'images dans la base de donn\'ee},
+							ylabel={temps d'ajout},
+							y unit=\si{\second}
+						]
+							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_eigenface.csv};
+							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_fisherface.csv};
+							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_LBPH.csv};
+						\end{axis}
+					\end{tikzpicture}
+					\caption{Dur\'ee de reconnaissance par algorithme}
+				\end{figure}
+				\begin{figure}
+					\begin{tikzpicture}
+						\begin{axis}[
+							xlabel={nombre d'images dans la base de donn\'ee},
+							ylabel={temps pour la reconnaissance},
+							y unit=\si{\second}
+						]
+							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_eigenface.csv};
+							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_fisherface.csv};
+							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_LBPH.csv};
+						\end{axis}
+					\end{tikzpicture}
+					\caption{Dur\'ee d'ajout des images dans la base de connaissance}
+				\end{figure}
 	\part{Reconnaissance des \'emotions}
 		\chapter{Th\'eorie}
 			\section{Diff\'erentes solutions}
@@ -118,7 +153,7 @@
 			morekeywords = {HIGH, LOW, INPUT, OUTPUT}
 		}
 		\section{Application principale}
-			%TODO
+			\lstinputlisting[language=python]{../Application_finale/app.py}
 		\section{Code Arduino pour les tests}
 			\lstinputlisting[style=arduino]{../src/tests/tests.ino}
 	%TODO : bibliographie
