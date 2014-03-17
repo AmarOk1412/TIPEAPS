@@ -44,12 +44,12 @@ class CreateDataBase():
         self.imagesPath = imgPath
 
     def getFacesPos(self, frame):
-        """Retourne la position des visages détéctés de la forme [[x y w h]]"""
+        """Retourne la position des visages detectes de la forme [[x y w h]]"""
         faces = self.classifier.detectMultiScale(frame)
         return faces
 
     def drawDetectedFace(self, frame, faces):
-        """Dessine un rectangle autour du visage détecté"""
+        """Dessine un rectangle autour du visage detecte"""
         for f in faces: 
             x,y,w,h = [v for v in f]
             cv2.rectangle(frame, (x,y), (x+w, y+h), (0,140,255))
@@ -57,22 +57,22 @@ class CreateDataBase():
         return frame
 
     def getFaceFrame(self, frame, x, y, w, h):
-        """On récupère un rectangle (largeur, hauteur) (centreX, centreY)"""
+        """On recupere un rectangle (largeur, hauteur) (centreX, centreY)"""
         cropped = cv2.getRectSubPix(frame, (w, h), (x + w / 2, y + h / 2))
         grayscale = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
         self.faceFrame = cv2.resize(grayscale, (IMAGE_SIZE, IMAGE_SIZE))
         return self.faceFrame
 
     def collectFace(self, frame):
-        """On enregistre le visage récupéré"""     
+        """On enregistre le visage recupere"""     
         imageCreated = False
         captureNum = 0
-        #Créé le dossier s'il n'existe pas
+        #Cree le dossier s'il n'existe pas
         try:
             os.makedirs("{0}/{1}".format(self.imagesPath, self.identity))
         except OSError:
-            print("écriture dans dossier existant") 
-        #Créé l'image à la suite
+            print("ecriture dans dossier existant") 
+        #Cree l'image a la suite
         while not imageCreated:
             if not os.path.isfile("{0}/{1}/{2}.jpg".format(self.imagesPath, self.identity, captureNum)):
                 cv2.imwrite("{0}/{1}/{2}.jpg".format(self.imagesPath, self.identity, captureNum), frame)
@@ -81,7 +81,7 @@ class CreateDataBase():
                 captureNum += 1
 
     def capture(self): 
-        """Récupère le flux vidéo"""       
+        """Recupere le flux video"""       
         if self.camera.isOpened():
             (rval, frame) = self.camera.read()
         else:
@@ -117,12 +117,12 @@ class Recognize():
         self.thresholdEyeClosed = 0
 
     def getFacesPos(self, frame):
-        """Retourne la position des visages détéctés de la forme [[x y w h]]"""
+        """Retourne la position des visages detectes de la forme [[x y w h]]"""
         faces = self.classifier.detectMultiScale(frame)
         return faces
 
     def drawDetected(self, frame, detected, color):
-        """Dessine un rectangle autour du visage détecté"""
+        """Dessine un rectangle autour du visage detecte"""
         if detected is None:
             return frame
         for d in detected: 
@@ -131,14 +131,14 @@ class Recognize():
         return frame
 
     def getFaceFrame(self, frame, x, y, w, h):
-        """On récupère un rectangle (largeur, hauteur) (centreX, centreY)"""
+        """On recupere un rectangle (largeur, hauteur) (centreX, centreY)"""
         cropped = cv2.getRectSubPix(frame, (w, h), (x + w / 2, y + h / 2))
         grayscale = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
         self.faceFrame = cv2.resize(grayscale, (IMAGE_SIZE, IMAGE_SIZE))
         return self.faceFrame
 
     def getCroppedEyesPos(self, croppedFrame):
-        """Retourne la position des bouches détéctés de la forme [[x y w h]]"""        
+        """Retourne la position des bouches detectes de la forme [[x y w h]]"""        
         cascade = cv2.CascadeClassifier('haarcascade_lefteye_2splits.xml')
         rects = cascade.detectMultiScale(croppedFrame)        
         if len(rects) == 0:
@@ -149,7 +149,7 @@ class Recognize():
         y1 = 0
         y2 = 0 + len(croppedFrame[0])*1/2
         
-        #Prend la partie inférieure de la tête pour le traitement
+        #Prend la partie inferieure de la tete pour le traitement
         for rect in rects:
             if rect[0] > x1 and rect[0] + rect[2] < x2 and rect[1] > y1 and rect[1] + rect[3] < y2:
                 if final is None:
@@ -159,7 +159,7 @@ class Recognize():
         return final
 
     def getCroppedMouthPos(self, croppedFrame):
-        """Retourne la position des bouches détéctés de la forme [[x y w h]]"""        
+        """Retourne la position des bouches detectes de la forme [[x y w h]]"""        
         cascade = cv2.CascadeClassifier('mouth_classifier.xml')
         rects = cascade.detectMultiScale(croppedFrame)        
         if len(rects) == 0:
@@ -170,7 +170,7 @@ class Recognize():
         y1 = 0 + len(croppedFrame[0])*5/8
         y2 = 0 + len(croppedFrame[0])
 
-        #Prend la partie inférieure de la tête pour le traitement
+        #Prend la partie inferieure de la tete pour le traitement
         for rect in rects:
             if rect[0] > x1 and rect[0] + rect[2] < x2 and rect[1] > y1 and rect[1] + rect[3] < y2:
                 if final is None:
@@ -180,14 +180,14 @@ class Recognize():
         return final
    
     def extractAndResize(self, frame, x, y, w, h):
-        """On récupère juste la tête en noir et blanc"""
+        """On recupere juste la tete en noir et blanc"""
         cropped = cv2.getRectSubPix(frame, (w, h), (x + w / 2, y + h / 2))
         grayscale = cv2.cvtColor(cropped, cv2.COLOR_BGR2GRAY)
         resized = cv2.resize(grayscale, (IMAGE_SIZE, IMAGE_SIZE))
         return resized
 
     def cropFromFace(self, frame, facePos):
-        """Garde seulement la partie "tête" de la frame"""
+        """Garde seulement la partie "tete" de la frame"""
         #X,Y,W,H
         if facePos is None:
             return frame
@@ -201,7 +201,7 @@ class Recognize():
             return frame[y1:y2, x1:x2]
 
     def readImages(self):
-        """Récupère les images de bases pour effectuer la reconnaissance des visages"""
+        """Recupere les images de bases pour effectuer la reconnaissance des visages"""
         c = 0
         self.images = []
         self.imagesIndex = []
@@ -222,12 +222,12 @@ class Recognize():
                 c += 1 
 
     def recognizeLBPHFace(self):
-        """Reconnait par la méthode LBPH"""
+        """Reconnait par la methode LBPH"""
         self.model = cv2.createLBPHFaceRecognizer()        
         self.model.train(numpy.asarray(self.images), numpy.asarray(self.imagesIndex))
 
     def recognize(self):
-        """On choisit la méthode de reconnaissance et on construit la base de donnée"""
+        """On choisit la methode de reconnaissance et on construit la base de donnee"""
         self.readImages()
         self.recognizeLBPHFace()
         if not self.camera.isOpened():
@@ -235,13 +235,13 @@ class Recognize():
         self.capture()
     
     def identify(self, image):
-        """On reconnaît l'identité de la personne si enregistrée"""
+        """On reconnait l'identite de la personne si enregistree"""
         [p_index, p_confidence] = self.model.predict(image)
         found_identity = self.identities[p_index]
         return found_identity, p_confidence
 
     def initNeutral(self, neutralImg):
-        """Initialise les thresholds + les largeurs/hauteurs pour la détection des émotions"""
+        """Initialise les thresholds + les largeurs/hauteurs pour la detection des emotions"""
         frame = neutralImg
         facePos = self.getFacesPos(frame)
         cropped = self.cropFromFace(frame, facePos)
@@ -269,11 +269,11 @@ class Recognize():
         
 
     def EyeNotHeightThanNeutral(self, EyeHeight, threshold):
-        """Détermine si les yeux sont froncés"""
+        """Determine si les yeux sont fronces"""
         return EyeHeight < self.eyeHeight - threshold
 
     def EyeHeightThanNeutral(self, EyeHeight, threshold):
-        """Détermine si les yeux sont équarquillés"""
+        """Determine si les yeux sont equarquilles"""
         return EyeHeight > self.eyeHeight + threshold
 
     def isEyeClosed(self, eyeFrame):
@@ -285,7 +285,7 @@ class Recognize():
 
    
     def emotions(self):
-        """Récupère le flux vidéo"""
+        """Recupere le flux video"""
         interval = 0
         dontlook = 0
         sleep = 0
@@ -319,7 +319,7 @@ class Recognize():
                 eyePos = self.getCroppedEyesPos(cropped)
                 sendSerial(ser,'d')
                 if eyePos is None:
-                    #print('yeux fermes ou yeux non détectés')
+                    #print('yeux fermes ou yeux non detectes')
                     sleep += 1
                     error = 1
                 elif error is not 1:
@@ -336,7 +336,7 @@ class Recognize():
                     cropped = self.drawDetected(cropped, eyePos, (255,0,255))
                     eyeFrame = self.cropFromFace(frame, eyePos)
                     if self.isEyeClosed(eyeFrame):
-                        #print('yeux fermes ou yeux non détectés')
+                        #print('yeux fermes ou yeux non detectes')
                         sleep += 1
                         error = 1
                     elif error is not 1:
@@ -390,7 +390,7 @@ class Recognize():
                 break
 
     def capture(self): 
-        """Récupère le flux vidéo"""
+        """Recupere le flux video"""
         interval = 0
         if self.camera.isOpened():
             (rval, frame) = self.camera.read()
