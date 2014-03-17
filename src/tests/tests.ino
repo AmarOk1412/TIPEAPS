@@ -13,21 +13,11 @@ int pinBrake = 4;
 int pinSound = 8;
 
 boolean engine = false;
-boolean warning = false;
-boolean accelerationLimit = false;
-boolean brake = false;
-boolean sound = false;
 
 char command = 0;
 
-void Exit()
-{
+void Exit(){
   engine = false;
-  warning = false;
-  accelerationLimit = false;
-  brake = false;
-  sound = false;
-  
   digitalWrite(pinEngine,LOW);
   digitalWrite(pinWarning,LOW);
   digitalWrite(pinAccelerationLimit,LOW);
@@ -36,46 +26,41 @@ void Exit()
   noTone(pinSound);
 }
 
-void Engine()
-{
+void Engine(){
   engine = true;
   digitalWrite(pinEngine, HIGH);
 }
 
-void Warning()
-{
-  if(!warning)
-    digitalWrite(pinWarning, HIGH);
-  else
-    digitalWrite(pinWarning, LOW);
-  warning = !warning;
+void Warning(){
+  digitalWrite(pinWarning, HIGH);
 }
 
-void AccelerationLimit()
-{
-  if(!accelerationLimit)
-    digitalWrite(pinAccelerationLimit, HIGH);
-  else
-    digitalWrite(pinAccelerationLimit, LOW);
-  accelerationLimit = !accelerationLimit;
+void StopWarning(){
+  digitalWrite(pinWarning, LOW);
 }
 
-void Brake()
-{
-  if(!brake)
-    digitalWrite(pinBrake, HIGH);
-  else
-    digitalWrite(pinBrake, LOW);
-  brake = !brake;
+void AccelerationLimit(){
+  digitalWrite(pinAccelerationLimit, HIGH);
 }
 
-void Sound()
-{
-  if(!sound)
-    tone(pinSound, 666);
-  else
-    noTone(pinSound);
-  sound = !sound;
+void StopAccelerationLimit(){
+  digitalWrite(pinAccelerationLimit, LOW);
+}
+
+void Brake(){
+  digitalWrite(pinBrake, HIGH);
+}
+
+void StopBrake(){
+  digitalWrite(pinBrake, LOW);
+}
+
+void Sound(){
+  tone(pinSound, 666);
+}
+
+void StopSound(){
+  noTone(pinSound);
 }
 
 void setup()
@@ -101,10 +86,10 @@ void setup()
   delay(500);
   
   digitalWrite(pinEngine, LOW);
-  Warning();
-  AccelerationLimit();
-  Brake();
-  Sound();
+  StopWarning();
+  StopAccelerationLimit();
+  StopBrake();
+  StopSound();
 }
 
 void loop()
@@ -121,22 +106,33 @@ void loop()
     if(Serial.available() > 0) //si on recoit une donnee sur le port serie
     {
       command = Serial.read();
-      switch(command)
-      {
+      switch(command){
         case 'x':
           Exit();
         break;
         case 'w':
           Warning();
         break;
+        case 'r':
+          StopWarning();
+        break;
         case 'b':
           Brake();
+        break;
+        case 'n':
+          StopBrake();
         break;
         case 'a':
           AccelerationLimit();
         break;
+        case 'q':
+          StopAccelerationLimit();
+        break;
         case 's':
           Sound();
+        break;
+        case 'd':
+          StopSound();
         break;
       }
       command = 0;
