@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  17 MAR 2014 19:31
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  17 MAR 2014 19:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1336,10 +1336,10 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
 (../src/tests/tests.ino [25] [26] [27]) [28] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 29747 strings out of 493315
- 690617 string characters out of 6137905
- 822963 words of memory out of 5000000
- 32626 multiletter control sequences out of 15000+600000
+ 29749 strings out of 493315
+ 690669 string characters out of 6137905
+ 823058 words of memory out of 5000000
+ 32628 multiletter control sequences out of 15000+600000
  85546 words of font info for 57 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,19n,93p,703b,2340s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1358,7 +1358,7 @@ lmr7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr8.pfb></u
 sr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/t
 exlive/2013/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2013
 /texmf-dist/fonts/type1/public/lm/lmsy8.pfb>
-Output written on rapport.pdf (30 pages, 320597 bytes).
+Output written on rapport.pdf (30 pages, 320570 bytes).
 PDF statistics:
  161 PDF objects out of 1000 (max. 8388607)
  113 compressed objects within 2 object streams
