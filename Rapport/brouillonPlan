@@ -125,18 +125,26 @@ Seb : Eigenface = 24.657534246575% / fisherface = 73.972602739726% / LBPH = 90.4
            .. La réalisation d'autres classifiers pour améliorer la reconnaissance pourrait être intéressant.
 * Reconnaissance des émotions
   ** Théorie
-     *** Différentes solutions
-TODO     . contours bouche, couleur, ...
+     *** Solutions abandonnées
+         . Avant de choisir la solution présente plus loin, on a testé plusieurs autres méthodes pour détecter la forme de la bouche.
+           .. Find Contours (insérer l'image dans image + code en annexe dans data). Qui permet d'avoir des résultats assez bon (image fin), mais qui pouvait aussi donner n'importe quoi (image fin3). Par contre la détection de couleur (exemple de code dans data) a donné de meilleur résultat (détection de la couleur de la bouche : image fin2.jpg + code dans data).
+FindContours aurait été plus précis, mais peu fiable et nécessite pas mal de traitement derrière. La couleur avec des seuils bien spécifiques était la solution la plus rapide + la plus simple.
      *** Solution choisie
          . La solution qu'on a choisie est une méthode un peu différente de celle présentée. Le tracking de points ou les réseaux neuronaux demandent énormément de calcul. On doit se baser dans le cas d'une voiture, donc d'un ordinateur de bord, sans doute moins puissant qu'un pc de bureau. Pour simplifier les calculs voilà la méthode qu'on utilise pour la reco des émotions :
          . On obtient le visage. L'identité de la personne ne nous intéresse pas (on vérifie si la personne est autorisée au départ)
          . Avec un second classifier, on obtient la position des yeux. On enlève tous ceux que l'application peut trouver dans la partie basse du visage qui correspond à des erreurs. Pour ces yeux on récupère la hauteur du classifier pour savoir si les yeux sont froncés, équarquillés ou normaux). Pour détecter les yeux fermés, On regarde le nombre de pixels ayant une couleur entre (80, 0,0), (160,100,100).
          . Pour la bouche, la méthode est presque identique. Avec un classifier on récupère les bouches disponibles et on enlève les bouches impossibles (celles dans la partie haute du visage ou trop prêt du bord). Puis on converti la bouche en niveaux de gris et on effectue un seuil pour n'obtenir que l'intérieur de la bouche. Si y a de l'intérieur au-dessus du seuil de la bouche fermée c'est quelle est ouverte.
   ** Expérimentations
-TODO ici on parle des protocoles fait à l'arrêt
      *** Protocole
-     *** Réalisation
+         . Pour le réglage des seuils, il a fallu placer un sujet à une distance prédéfinie (50cm), initialiser les seuils avec une émotion neutre. Puis pour vérifier la détection :
+_ Froncer les sourcils
+_ Equarquiller les yeux
+_ Fermer les yeux
+_ Ouvrir la bouche
+Ce sont les choses à vérifier pour détecter la colère, la surprise et l'endormissement qu'on voulait.
+Recommencer jusqu'à réussir la détection.
      *** Résultats & Analyse
+à l'arrêt, avec une luminosité ne changeant pas énormément, la détection marchait bien. Juste des problemes dès qu'on avançait/reculait
 * Production
   ** Prototype Final réalisé
      . Dire que le code est dispo en annexe
@@ -145,13 +153,17 @@ TODO ici on parle des protocoles fait à l'arrêt
      . Le prototype n'est pas fonctionnel sous Rasbpy ni Beaglebone à cause d'une fonction non portée (createLBPHFaceRecognizer), et on avait pas le temps de se pencher sur le probleme.
   ** Tests finaux
      *** Protocole
+     L'initialisation c'est faite au départ. Pour la première partie du trajet, l'application fonctionnait sur le passager.
+La détection des émotions au départ a été réalisée pour voir le fonctionnement correct de l'application.
+Puis, un trajet a été réalisé pour trouver 3 points différents (1 avec forte luminosité, 1 luminosité naturelle, 1 dans un endroit sombre) pour voir si l'application fonctionnait correctement.
+Pour la seconde partie du trajet, une caméra a été placée devant le conducteur (niveau volant pour ne pas géner la vue). Puis le retour c'est effectué pour voir si dans une application pratique, l'application marchait correctement et s'il y avait des problèmes à signaler.
   ** Discussion & Analyse des résultats
      . Marche pour inatentif
      . Lent pour endormi (5/15 secondes)
      . Marche pour énervé & surpris, mais lent.
      . Qualité de la caméra à revoir
      . Placement de la caméra aussi, le volant gêne beaucoup
-     . Ne supporte pas les changements de luminosité (le conducteur devient tout blanc, dur de trouver le visage).
+     . Ne supporte pas les changements de luminosité (le conducteur devient tout blanc, dur de trouver le visage), pour les virages.
      . TODO CONTINUER
 * Conclusion
   ** Bilan/synthèse
