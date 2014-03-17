@@ -7,6 +7,7 @@
 \usepackage{lmodern}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{graphicx}
 
 %definition des couleurs
 \definecolor{newGreen}{rgb}{0,0.6,0}
@@ -16,16 +17,50 @@
 
 \begin{document}
 \renewcommand{\chaptername}{Partie}
+	\begin{titlepage}
+		\vspace{-10px}
+		\begin{tabular}{l}
+			\textsc{Blin} Sébastien, \\
+			\textsc{Collin} Pierre-Henri, \\
+			\textsc{Louarn} Amaury 
+		\end{tabular}
+		\hfill \vspace{10px}\includegraphics[scale=0.15]{ur1.png}\\
+		\vfill
+		\begin{center}
+			\Huge{Universit\'e de Rennes 1}\\
+			\large{Campus de Beaulieu}\\
+			\vspace{1cm}
+			\LARGE{Licence STS}\\
+			\large{Cycle Pr\'eparatoire Ing\'enieur Rennes 1 - Informatique et T\'el\'ecommunications}\\
+			\vspace{0.5cm}\hrule\vspace{0.5cm}
+			\LARGE{\textbf{Rapport de Travail d'Initiative Personnelle Encadr\'ee (TIPE)}}\\
+			\Large{Comment la reconnaissance faciale du conducteur peut-elle améliorer sa s\'ecurit\'e au volant ?}
+			\vfill
+			\vfill
+		\end{center}
+		\begin{flushleft}
+			\Large{Sous l'encadrement de~:}\\
+			\vspace{0.2cm}
+			\large{Johanne B\'ezy-Wendling}\\
+			\normalsize{Maître de Conférences\\
+			Responsable cycle préparatoire ingénieur de l'Universit\'e de Rennes I\\
+			(spécialité informatique et télécommunications)}\\
+			\vspace{0.2cm}
+			\large{Finn J\o rgensen}\\
+			\normalsize{Responsable L3 d'informatique - ISTIC}
+		\end{flushleft}
+		\vfill
+	\end{titlepage}
 	\begin{abstract}
 		%TODO
 	\end{abstract}
 	\chapter*{Introduction}
 		\subsection{Pourquoi ce projet}
 			%TODO
-	\part{Origine du problÃ¨me}
+	\part{Origine du probl\`eme}
 		\chapter{Historique de la reconnaissance faciale}
 			%TODO
-		\chapter{Les enjeux de la sÃ©curitÃ© routiÃ¨re}
+		\chapter{Les enjeux de la s\'ecurit\'e routi\`ere}
 			%TODO
 	\part{Reconnaissance Faciale}
 		\chapter{Th\'eorie}
@@ -85,6 +120,6 @@
 		\section{Application principale}
 			%TODO
 		\section{Code Arduino pour les tests}
-			\lstinputlisting[style=arduino]{../../src/tests/tests.ino}
+			\lstinputlisting[style=arduino]{../src/tests/tests.ino}
 	%TODO : bibliographie
 \end{document}
