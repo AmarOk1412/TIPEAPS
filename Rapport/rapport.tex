@@ -91,7 +91,9 @@
 						\begin{axis}[
 							xlabel={nombre d'images dans la base de donn\'ee},
 							ylabel={temps d'ajout},
-							y unit=\si{\second}
+							y unit=\si{\second},
+							legend style={at={(0.23,0.95)},anchor=north},
+							legend entries={eigenface,fisher face,LBPH}
 						]
 							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_eigenface.csv};
 							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_fisherface.csv};
@@ -105,7 +107,9 @@
 						\begin{axis}[
 							xlabel={nombre d'images dans la base de donn\'ee},
 							ylabel={temps pour la reconnaissance},
-							y unit=\si{\second}
+							y unit=\si{\second},
+							 legend style={at={(0.23,0.95)},anchor=north},
+							legend entries={eigenface,fisher face,LBPH}
 						]
 							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_eigenface.csv};
 							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_fisherface.csv};
@@ -113,6 +117,19 @@
 						\end{axis}
 					\end{tikzpicture}
 					\caption{Dur\'ee d'ajout des images dans la base de connaissance}
+				\end{figure}
+				\begin{figure}
+					\begin{tikzpicture}						\begin{axis}[							xbar,
+							xmin=0,							width=12cm,
+							height=7cm,
+							enlarge y limits=0.5,							xlabel={Pourcentage de reconnaissance},							symbolic y coords={Amaury, Pierre-Henri, S\'ebastien},							ytick=data,							nodes near coords,
+							nodes near coords align={horizontal},
+							legend style={at={(0.3,0.95)},anchor=north,legend columns=-1},						]							\addplot coordinates {(71.929824561404,Amaury) (7.4074074074074,Pierre-Henri) (24.657534246575,S\'ebastien)};
+							\addplot coordinates {(59.649122807018,Amaury) (80.246913580247,Pierre-Henri) (73.972602739726,S\'ebastien)};
+							\addplot coordinates {(82.456140350877,Amaury) (60.493827160494,Pierre-Henri) (90.41095890411,S\'ebastien)};
+							
+							\legend{Eigenface, Fisherface, LBPH}						\end{axis}					\end{tikzpicture}
+					\caption{Pourcentage de reconnaissance, en fonction du cobaye et de l'algorithme}
 				\end{figure}
 	\part{Reconnaissance des \'emotions}
 		\chapter{Th\'eorie}
