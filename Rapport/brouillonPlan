@@ -21,9 +21,39 @@ change la couleur du véhicule selon l'humeur du conducteur + pare brise avec r�
          . Enormément de méthodes, on peut aussi combiner avec des méthodes telles que la mise en place d'un réseau neuronnal (mais en 3 mois, pas le temps).
          . On traite des images en n&b car la colorimétrie n'est pas importante.
      *** Eigenface
+         . Définition :
+Eigenface -> se base sur les eigen vectors : vecteurs propres
+         . Algo
+Chaque image est considéré comme un vecteur de dimension son nombre de pixels.
+Puis un/des algos recherche(nt) les principales composantes.
+A l'aide de plusieurs images du même visage on peut alors composer une image de visage moyen qui contiendra elle aussi les principales composantes (l'eigenface).
+La méthode de reconnaissance des axes principaux peut être trouvée ici :
+Matthew Turk and Alex Pentland. Eigenfaces for recognition.
+J. Cognitive Neuroscience
+,
+3(1) :71{86, 1991}
+Il suffit ensuite de comparer l'eigenface et les composantes principales de la capture.
+
+TODO ALGO MATH ?
+         . Avantages/inconvénients
+. Comme chaque pixel est une dimension, une image 100*100 donne autant de vecteurs à traiter. Ce qui est énorme.
+. sensible à la lumière, à la déformation des visages
+. Avantage : connue depuis longtemps.
      *** FisherFace
+         . Algo
+L'algo fisherface se base sur les travaux  de  Sir R. A. Fisher.
+L'idée est simple. Tout ce qui se ressemble se retrouvent proche.
+Si on imagine un espace d'image. Et une échelle représentant les visages.
+Si on projette les images sur l'échelle, On peut donc dire que ce visage ressemble le plus à celui qui est à côté dans l'échelle.
+TODO FIGURE
+Plus mathématiquement :http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#fisherfaces
+         . Avantages/inconvénients
+. Comme chaque pixel est une dimension, une image 100*100 donne autant de vecteurs à traiter. Ce qui est énorme.
+. moins sensible à la lumière, à la déformation des visages que eigenface car ne se base pas sur les composantes discriminatoires
+. Avantage : connue depuis longtemps.
      *** LBPH
-         . Méthode:
+         . LBPH : Local Binary Patterns Histogram
+         . Description :
 Consiste à regarder le niveau d'un pixel par rapport à ses voisins. 
 La première étape consiste à diviser l'image en groupes de pixels. 
 Le pixel choisit sert de base pour effectuer un seuil avec les voisins (grâce à la fonction d'Heaviside. Qui dit 0 si x<0, 1 sinon. Ici on a 0 si x<pixel de base 1 sinon). 
