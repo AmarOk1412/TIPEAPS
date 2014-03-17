@@ -32,6 +32,19 @@ Chaque groupe est passé à cette pondération.
 Toutes les valeurs sont mises les unes à la suite des autres pour former l'histogramme de l'image.
 Il ne reste plus qu'à faire la différence entre deux histogrammes.
          . Un algo très utilisé
+Cette algo est très utilisé comme dans :
+TITRE: 
+Facial expression recognition based on Local Binary Patterns:A comprehensive study
+AUTEURS:
+Caifeng Shan a, * , Shaogang Gong b , Peter W. McOwan b
+Ou il est combiné avec Adaboost pour obtenir de meilleurs résultats + un réseau neuronnal
+Ou TITRE:
+Face Recognition with Local Binary Patterns, Spatial Pyramid Histograms and
+Naive Bayes Nearest Neighbor classification
+AUTEURS:
+Daniel Maturana, Domingo Mery and Alvaro
+Soto
+où les auteurs essayent d'améliorer l'algo pour obtenir le leur : NNBN que nous n'utiliserons pas (temps, et LBPH est déjà intégré dans OpenCV)
   ** Expérimentations
      *** Protocole
          . Le but de cette expérimentation était de comparer les 3 méthodes implémentées par la librairie OpenCV pour voir laquelle on pouvait choisir pour l'application finale puis de voir la robustesse de cette méthode.
@@ -82,13 +95,23 @@ Seb : Eigenface = 24.657534246575% / fisherface = 73.972602739726% / LBPH = 90.4
 * Reconnaissance des émotions
   ** Théorie
      *** Différentes solutions
+TODO     . contours bouche, couleur, ...
      *** Solution choisie
+         . La solution qu'on a choisie est une méthode un peu différente de celle présentée. Le tracking de points ou les réseaux neuronaux demandent énormément de calcul. On doit se baser dans le cas d'une voiture, donc d'un ordinateur de bord, sans doute moins puissant qu'un pc de bureau. Pour simplifier les calculs voilà la méthode qu'on utilise pour la reco des émotions :
+         . On obtient le visage. L'identité de la personne ne nous intéresse pas (on vérifie si la personne est autorisée au départ)
+         . Avec un second classifier, on obtient la position des yeux. On enlève tous ceux que l'application peut trouver dans la partie basse du visage qui correspond à des erreurs. Pour ces yeux on récupère la hauteur du classifier pour savoir si les yeux sont froncés, équarquillés ou normaux). Pour détecter les yeux fermés, On regarde le nombre de pixels ayant une couleur entre (80, 0,0), (160,100,100).
+         . Pour la bouche, la méthode est presque identique. Avec un classifier on récupère les bouches disponibles et on enlève les bouches impossibles (celles dans la partie haute du visage ou trop prêt du bord). Puis on converti la bouche en niveaux de gris et on effectue un seuil pour n'obtenir que l'intérieur de la bouche. Si y a de l'intérieur au-dessus du seuil de la bouche fermée c'est quelle est ouverte.
   ** Expérimentations
+TODO ici on parle des protocoles fait à l'arrêt
      *** Protocole
      *** Réalisation
      *** Résultats & Analyse
 * Production
-  ** Prototype Final réalisé (systemes ou ça marche (linux, windows, mac non, bsd, raspy (embarqué, overclock ou non, suffisant ou non?), beagle)
+  ** Prototype Final réalisé
+     . Dire que le code est dispo en annexe
+     . Schéma de l'arduino
+     . Le prototype est fonctionnel sous linux/windows/mac (quelques problèmes de dépendances)/BSD)
+     . Le prototype n'est pas fonctionnel sous Rasbpy ni Beaglebone à cause d'une fonction non portée (createLBPHFaceRecognizer), et on avait pas le temps de se pencher sur le probleme.
   ** Tests finaux
      *** Protocole
   ** Discussion & Analyse des résultats
