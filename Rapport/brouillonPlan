@@ -1,5 +1,6 @@
 Page de garde
 
+* Remerciements
 * Abstract
 * Sommaire
 * Introduction
@@ -45,7 +46,7 @@ L'algo fisherface se base sur les travaux  de  Sir R. A. Fisher.
 L'idée est simple. Tout ce qui se ressemble se retrouvent proche.
 Si on imagine un espace d'image. Et une échelle représentant les visages.
 Si on projette les images sur l'échelle, On peut donc dire que ce visage ressemble le plus à celui qui est à côté dans l'échelle.
-TODO FIGURE
+Figure présente dans le dossier image
 Plus mathématiquement :http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#fisherfaces
          . Avantages/inconvénients
 . Comme chaque pixel est une dimension, une image 100*100 donne autant de vecteurs à traiter. Ce qui est énorme.
