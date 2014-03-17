@@ -125,10 +125,35 @@ Seb : Eigenface = 24.657534246575% / fisherface = 73.972602739726% / LBPH = 90.4
            .. La réalisation d'autres classifiers pour améliorer la reconnaissance pourrait être intéressant.
 * Reconnaissance des émotions
   ** Théorie
+<<<<<<< HEAD
      *** Solutions abandonnées
          . Avant de choisir la solution présente plus loin, on a testé plusieurs autres méthodes pour détecter la forme de la bouche.
            .. Find Contours (insérer l'image dans image + code en annexe dans data). Qui permet d'avoir des résultats assez bon (image fin), mais qui pouvait aussi donner n'importe quoi (image fin3). Par contre la détection de couleur (exemple de code dans data) a donné de meilleur résultat (détection de la couleur de la bouche : image fin2.jpg + code dans data).
 FindContours aurait été plus précis, mais peu fiable et nécessite pas mal de traitement derrière. La couleur avec des seuils bien spécifiques était la solution la plus rapide + la plus simple.
+=======
+         . /!\ : on étudie les expressions faciales, et non directement les émotions.
+         . les expressions faciales sont breves (entre 250ms et 5s) [cf automaticFacialExpressionAnalysis]
+     *** Différentes solutions
+TODO     . contours bouche, couleur, ...
+         Pour récupérer les emotions :
+         . Approche holistique (= prendre comme un tout)
+            -> prendre toute la tete et regarder ce qui bouge
+         . Approche locale (ce qu’on fait)
+            -> prendre juste des parties de la tete, et analyser chaque partie indépendamment des autres
+        Pour « trouver » les emotions :
+         . Approche basée sur un modèle :
+            -> prendre l’image, la calquer sur un modèle et comparer ce qui se passe à comment le modèle réagit en fonction de l’émotion [ex: authenticFacialExpressionAnalysis]
+         . Approche basée sur l’image (nous) :
+            -> On regarde l’image, et on essaye de trouver ce qui s’apparente aux émotions primaires de Ekman & Friesen (qui sont constantes sur tous les continents, peu importe les différences culturelles [cf 2002ElfenbeinMeta - On the Universality and cultural Specificity of Emotion Recognition: A Meta-Analysis])
+            -> plus rapide et simple à mettre en place, mais moins robuste (notamment aux changements de positions de la tête)
+        Pour voir ce qui change :
+         . regarder les déformations
+            -> on classe les émotions primaires en termes de mouvements, translations, rotations, etc.
+            -> on regarde les images à différents moments, et on analyse les mouvements, translations, rotations, etc.
+         . Suivre des points du visage (nous)
+            -> on regarde comment sont les points sur chaque image, et on essaye de les calquer aux points sur les données de chaque expression primaire.
+            -> on prend ‘emotion la plus proche
+>>>>>>> 93e0528ba7f9aa79e2f5272ae3c0cd36380cc176
      *** Solution choisie
          . La solution qu'on a choisie est une méthode un peu différente de celle présentée. Le tracking de points ou les réseaux neuronaux demandent énormément de calcul. On doit se baser dans le cas d'une voiture, donc d'un ordinateur de bord, sans doute moins puissant qu'un pc de bureau. Pour simplifier les calculs voilà la méthode qu'on utilise pour la reco des émotions :
          . On obtient le visage. L'identité de la personne ne nous intéresse pas (on vérifie si la personne est autorisée au départ)
@@ -163,7 +188,7 @@ Pour la seconde partie du trajet, une caméra a été placée devant le conducte
      . Marche pour énervé & surpris, mais lent.
      . Qualité de la caméra à revoir
      . Placement de la caméra aussi, le volant gêne beaucoup
-     . Ne supporte pas les changements de luminosité (le conducteur devient tout blanc, dur de trouver le visage).
+     . Ne supporte pas les changements de luminosité (le conducteur devient tout blanc, dur de trouver le visage), pour les virages.
      . TODO CONTINUER
 * Conclusion
   ** Bilan/synthèse
