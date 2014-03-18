@@ -2,11 +2,6 @@
 VERSION 1
 #########
 
-FUN FACTS
-#########
-Occurences du mot : routière(24);sécurité(28)
-#########
-
 Première Partie : Les limites de la sécurité routière 
 
 Dans cette première partie, nous allons aborder les limites de la sécurité routière, qui sont à l'origine de notre problématique. D'abord, nous verrons les moyens mis en oeuvre pour protéger l'automobiliste. Puis, nous verrons les comportements à risque qui nuisent encore à sa sécurité.
@@ -40,7 +35,7 @@ Image[évolutionscomparéetraficetmortalitéroutièreannées1948à2011.png]
 
 Ces progrès observés en matière de sécurité routière ont été obtenus en agissant sur plusieurs facteurs. Lors d'un accident, quatre facteurs essentiels doivent être pris en compte : tout d'abord les facteurs liés à l'infrastructure (conception, entretien et exploitation), les facteurs liés aux véhicules (sécurité passive et active), les facteurs liés aux comportements des usagers (formation, communication, répression), et le progrès des services de secours et de soin. Cependant, il est très difficile de définir la part de chacun de ces facteurs dans l'amélioration de la sécurité routière. 
 
-Concernant les facteurs liés à l'infrastructure, nous pouvons retenir plusieurs points qui ont participé à l'amélioration de la sécurité routière : comme la construction d'un réseau autoroutier, le déploiement de barrières de sécurité le long des routes potentiellement dangereuses //--nouvelles barrières en béton armés -> meilleurs pour les deux roues --//, les protections anti-éblouissements, des bandes sonores anti-endormissement, les bandes d'arrêts d'urgences. 
+Concernant les facteurs liés à l'infrastructure, nous pouvons retenir plusieurs points qui ont participé à l'amélioration de la sécurité routière : comme la construction d'un réseau autoroutier, le déploiement de barrières de sécurité le long des routes potentiellement dangereuses, les protections anti-éblouissements, des bandes sonores anti-endormissement, les bandes d'arrêts d'urgences. 
 
 Ensuite parmi les facteurs liés aux véhicules, la situation actuelle n'a plus rien à voir avec celle d'il y a quarante ans. Le port obligatoire de la ceinture, l'obligation pour les enfants de s'asseoir à l'arrière du véhicule, l'apparition de différents coussins gonflables de sécurité dans le poste conducteur (airbags), la structure des véhicules qui absorbent mieux les chocs (à l'aide des pare-chocs par exemple) ont eu un impact considérable sur la diminution de la gravité des accidents. Nous pouvons aussi évoquer la mise en place progressive dans tous les véhicules de systèmes d'aide à la conduite (ABS par exemple). 
 
@@ -57,15 +52,21 @@ Malgré toutes les mesures prises pour protéger le conducteur, de nombreux acci
 
 Sous-partie 2-1 : Les principales causes d'accidents 
 
-D'après une étude réalisée par 40 millions d'automobilistes en 2011, dans 85 % des accidents mortels, le dommage est causé par l'automobiliste ou un passager du véhicule. 70% des accidents mortels ont lieu sur les routes départementales, nationales ou sur les rocades. Les lignes droites sont plus dangereuses que les virages. Ceci est dû à la monotonie du trajet. En effet, l'automobiliste est plus sujet à la distraction (par exemple: se retourner pour réprimander ses enfants).
+Les accidents corporels sont généralement déterminés par plusieurs facteurs.Ces facteurs peuvent influés sur l'occurence des accidents, mais aussi sur leur gravité. Ils sont souvent liés entre eux, et il est particulièrement difficile de déterminer le facteur principal, habituellement appelé la "cause" de l'accident.
 
-L'alcool est également un facteur important dans les accidents (il est impliqué dans 30% des accidents mortels). En effet, s'il est présent dans le sang en quantité trop importante, il entraîne une augmentation de la vitesse, la somnolence, l'oubli du port de la ceinture de sécurité.
+La vitesse est un facteur prépondérant dans les accidents corporels. C'est également un facteur transversal, car la vitesse est presque toujours présente comme facteur d'occurence et/ou facteur de gravité. En 2011, en France, au moins 26% des accidents mortels ont pour cause identifiée la vitesse d'apreès les forces de l'ordre. En Suisse et en Allemagne la vitesse, seule ou associée, représente 40 % des accidents mortels.
 
-Au Québec, la fatigue est la 3ème cause d'accidents mortels après l'alcool et la vitesse. Chaque année, en moyenne 104 personnes sont tuées et 9,289 sont blessées dans un accident lié à la fatigue.
+L 'alcool est également un facteur majeur présent dans les accidents. En effet, s'il est présent dans le sang en quantité trop importante, il entraîne une augmentation de la vitesse, la somnolence, l'oubli du port de la ceinture de sécurité. Le taux d'implication de l'alcool dans la mortalité routière reste constant : environ 31 %.Les 875 accidents mortels avec au moins un conducteur ayant une alcoolémie supérieur au seuil autorisé ont provoqué 964 victimes. Parmi les victimes des accidents mortels avec comme facteur l'alcool, les conducteurs ainsi que leurs passagers représentent 70% des personnes tuées.
 
-Comme nous venons de le voir, les principales causes d'accidents mettent en avant le comportement de l'usager. Nous allons nous attarder sur une cause en particulier : la conduite à l'aveugle car elle concerne précisément le sujet de notre projet.
+Les autres facteurs sont : 
+-L'usage des stupéfiants (en 2011, 455 accidents mortels avec au moins un conducteur testé positivment aux stupéfiants). Ces accidents ont entrainés le décès de 499 personnes (soit 13 % de la mortalité routière).
+-La prise de médicaments : une étude réalisée par une équipe de l'INSERM (projet CESIR-A) a montré que 3% des accidents étaient attribuables à la prise de produits médicamenteux.
+-le respect des distances de sécurité. D'après le Code de la Route : " Lorsque deux véhicules se suivent, le conducteur du second doit maintenir une distance de sécurité suffisante pour pouvoir éviter une collision en cas de ralentissement brusque ou d'arrêt subit du véhicule qui le précède. Cette distance est d'autant plus grande que la vitesse est plus élevée. Elle correspond à la distance parcourue par le véhicule pendant un délai d'au moins deux secondes." Globalement, plus de 50 % des conducteurs ne respectent pas cette règle. Or, le non-respect des distances de sécurité qui entrainent des collisions par l'arrière et des collisions en chaine totalise 6.2% de la mortalité routière.
+-Le port de la ceinture :en 2011, 22 % des personnes tuées n'étaient pas ceinturées.
 
-Sous-partie 2-2 : La conduite à l'aveugle ##à modifier + insérer les images## 
+Comme nous venons de le voir, les principales causes d'accidents mettent en avant le comportement de l'usager. Nous allons nous attarder sur une une cause d'accident qui n'a pas été évoquée précedemment : la conduite à l'aveugle.
+
+Sous-partie 2-2 : La conduite à l'aveugle
 
 Chaque jour au Etats-Unis, plus de 9 personnes sont tuées et plus de 1,060 personnes sont blessées dans des accidents où sont impliqués un conducteur distrait.
 
