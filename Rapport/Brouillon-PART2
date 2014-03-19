@@ -22,5 +22,15 @@ L'avantage de cette méthode est la connaissance de son existence depuis longtem
 
 Sous-partie 3 : La méthode Fisherface
 
+La méthode de reconnaissance faciale Fisherface se base sur les travaux de Sir R.A. Fisher. L'idée de base de l'algorithme est la suivante : tous ceux qui se ressemblent, se retrouvent proche(s). Concrètement, imaginons un espace d'images comprenant une échelle représentant les visages. Si nous projettons les images sur l'échelle, nous pouvons dire que //-- je n'ai pas compris la suite --//
+
+Figure présente dans le dossier image.
+
+Pour plus de détails : http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#fisherfaces.
+
+Globalement, cette méthode présente les mêmes avantages et inconvénients que la méthode Eighenface. Cependant, elle est moins sensible à la lumière et à la déformation des visages car elle ne se base pas sur des composantes discriminatoires.
+
+Sous-partie 4 : La méthode LBPH
+
 
 
