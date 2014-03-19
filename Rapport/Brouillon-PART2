@@ -8,6 +8,19 @@ Afin d'étudier l'aspect théorique de la reconnaissance faciale, nous allons d'
 
 Sous-partie 1 : Généralités
 
- 
+Après des recherches approfondies, nous avons pu constater qu'il existe énormément de méthodes possibles pour reconnaître un visage.  Ces méthodes peuvent également être combinées entre elles (par exemple, la mise en place en place d'un réseau neuronnal ##explication peut-être ?##). Cependant, en trois mois, nous nous n'aurions pas eu le temps de mettre en place une telle méthode.
+
+Par ailleurs, nous avons choisi de traiter uniquement des images en noir et blanc, car la colorimétrie a très peu d'impact dans le processus de reconnaissance.
+
+Sous-partie 2 : La méthode Eighenface
+
+La méthode de reconnaissance faciale Eighenface a pour particularité de se baser sur des "eighen vectors", c'est-à-dire des vecteurs propres.
+
+L'algorithme est le suivant : chaque image est considérée comme un vecteur avec pour dimension son nombre de pixels. Puis, un ou plusieurs algorithmes recherchent les principales composantes //--plus de précision sur composante ?--//. A l'aide de plusieurs images du même visage, nous pouvons alors composer une image du visage "moyen" qui contiendra également les principales composantes (l'eighenface). La méthode de reconnaissance des axes principaux est détaillée ici : Matthew Turk and Alex Pentland. Eigenfaces for recognition. J. Cognitive Neuroscience. 3(1) :71{86, 1991}. Enfin, il suffit de comparer l'eighenface et les composantes principales d'une capture d'un visage.
+
+L'avantage de cette méthode est la connaissance de son existence depuis longtemps. Cependant, elle présente également des désavantages non-négligeables. En effet, comme chaque pixel est une dimension, une image 100*100 donne 10000 vecteurs à traiter. Le nombre de données à analyser est donc trop important.
+
+Sous-partie 3 : La méthode Fisherface
+
 
 
