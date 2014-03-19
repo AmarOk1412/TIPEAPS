@@ -22,7 +22,7 @@ L'avantage de cette méthode est la connaissance de son existence depuis longtem
 
 Sous-partie 3 : La méthode Fisherface
 
-La méthode de reconnaissance faciale Fisherface se base sur les travaux de Sir R.A. Fisher. L'idée de base de l'algorithme est la suivante : tous ceux qui se ressemblent, se retrouvent proche(s). Concrètement, imaginons un espace d'images comprenant une échelle représentant les visages. Si nous projettons les images sur l'échelle, nous pouvons dire que //-- je n'ai pas compris la suite --//
+La méthode de reconnaissance faciale Fisherface se base sur les travaux de Sir R.A. Fisher. L'idée de base de l'algorithme est la suivante : toutes les images qui se ressemblent, se retrouvent proches. Concrètement, imaginons un espace d'images comprenant une échelle représentant les visages. Si nous projettons les images sur l'échelle, nous pouvons dire que //-- je n'ai pas compris la suite --//
 
 Figure présente dans le dossier image.
 
@@ -31,6 +31,18 @@ Pour plus de détails : http://docs.opencv.org/modules/contrib/doc/facerec/facer
 Globalement, cette méthode présente les mêmes avantages et inconvénients que la méthode Eighenface. Cependant, elle est moins sensible à la lumière et à la déformation des visages car elle ne se base pas sur des composantes discriminatoires.
 
 Sous-partie 4 : La méthode LBPH
+
+La méthode de reconaissance faciale LBPH (Local Binary Patterns Histogram) consiste à visualiser la valeur d'un pixel (moyenne des trois composantes RGB) par rapport aux pixels voisins.
+
+Pour commencer, l'image est divisé en groupe de pixels. Chaque groupe de pixels correspond à une matrice carré contenant les valeurs des pixels. Puis, le pixel placé au centre de la matrice est choisi comme valeur de référence. Ensuite, toutes les valeurs de la matrice sont remplacées soit par 0, soit par 1 en fonction de leur valeur. La fonction d'Heaviside, nous dit que pour tout x appartenant aux réels, H(x)=0 si x<=0, 1 sinon. Ici, si nous attribuons la valeur 0 si la valeur du pixel est inférieur à la valeur du pixel de référence, 1 sinon. Après cette opération, chaque pixel du groupe est pondéré avec un poinds plus ou moins fort (le pixel en haut à gauche a le poids le plus faible, tandis que le pixel en bas à droite a le poids le plus fort). Ainsi, nous obtenons un nombre binaire qui donne une certaine valeur en base 10. Tous les groupes de l'image sont soumis à ce processus pour finalement obtenir un histogramme de l'image. Enfin, il ne reste plus qu'à faire la différence entre deux histogrammes pour comparer deux images.
+
+Cet algorithme est très utilisé comme nous pouvons le voir dans : Facial expression recognition based on Local Binary Patterns:A comprehensive study de Caifeng Shan a, * , Shaogang Gong b , Peter W. McOwan b, où il est combiné avec Adaboost (plugin d'openCV) pour obtenir de meilleurs résultats, et un réseau neuronnal. Mais aussi dans : Face Recognition with Local Binary Patterns, Spatial Pyramid Histograms and Naive Bayes Nearest Neighbor (NBNN) classification de Daniel Maturana, Domingo Mery and Alvaro Soto où les auteurs essayent d'améliorer l'alogrithme dans le but d'en créer un nouveau : NBNN. Nous n'utiliserons pas cet algorithme par manque de temps, mais également car LBPH est déjà présent dans openCV.
+
+Comme nous venons de le voir, il existe différents méthodes 
+
+
+Partie 2 : Expérimentations
+
 
 
 
