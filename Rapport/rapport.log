@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  19 MAR 2014 19:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  19 MAR 2014 19:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1424,19 +1424,19 @@ Partie 4.
 File: images/schema_tests.png Graphic file (type png)
 
 <use images/schema_tests.png>
-Package pdftex.def Info: images/schema_tests.png used on input line 279.
+Package pdftex.def Info: images/schema_tests.png used on input line 286.
 (pdftex.def)             Requested size: 422.7756pt x 403.26286pt.
 
-Overfull \hbox (4.52193pt too wide) in paragraph at lines 279--280
-[][] 
+Overfull \hbox (4.52193pt too wide) in paragraph at lines 286--287
+ [] 
  []
 
 <images/schema_tests_elec.png, id=69, 205.568pt x 207.174pt>
 File: images/schema_tests_elec.png Graphic file (type png)
 
 <use images/schema_tests_elec.png>
-Package pdftex.def Info: images/schema_tests_elec.png used on input line 283.
-(pdftex.def)             Requested size: 185.00946pt x 186.45486pt.
+Package pdftex.def Info: images/schema_tests_elec.png used on input line 292.
+(pdftex.def)             Requested size: 205.56747pt x 207.17348pt.
  [13
 
 ] [14 <./images/schema_tests.png>]
@@ -1567,13 +1567,13 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
 (../src/tests/tests.ino [24] [25] [26]) [27] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 30501 strings out of 493315
- 699873 string characters out of 6137905
- 836318 words of memory out of 5000000
- 33343 multiletter control sequences out of 15000+600000
+ 30500 strings out of 493315
+ 699866 string characters out of 6137905
+ 836480 words of memory out of 5000000
+ 33342 multiletter control sequences out of 15000+600000
  87937 words of font info for 68 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,19n,93p,964b,2347s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,19n,93p,964b,2394s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texli
 ve/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2013/te
 xmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2013/texmf-dist/fonts
@@ -1593,7 +1593,7 @@ st/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
 pe1/public/lm/lmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
 lm/lmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb>
-Output written on rapport.pdf (29 pages, 701741 bytes).
+Output written on rapport.pdf (29 pages, 701602 bytes).
 PDF statistics:
  176 PDF objects out of 1000 (max. 8388607)
  121 compressed objects within 2 object streams
