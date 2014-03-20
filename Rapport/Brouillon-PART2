@@ -1,10 +1,11 @@
+//ALLER A LA SECONDE PARTIE POUR LE MOMENT PARTIE I NON RELUE//////////////////////
 Deuxième partie : La reconnaissance faciale
 
 Dans cette deuxieme partie, nous nous pencherons sur la reconnaissance faciale. Dans un premier temps, nous étudierons l'aspect théorique de la reconnaissance, puis  l'aspect expérimental.
 
 Partie 1 : Théorie
 
-Afin d'étudier l'aspect théorique de la reconnaissance faciale, nous allons d'abord l'aborder de façon général. Ensuite, nous analyserons plus en détail différentes méthodes de reconnaissance : Eighenface, Fisherface et LBPH.
+Afin d'étudier l'aspect théorique de la reconnaissance faciale, nous allons d'abord l'aborder de façon général. Ensuite, nous analyserons plus en détail différentes méthodes de reconnaissance : Eigenface, Fisherface et LBPH.
 
 Sous-partie 1 : Généralités
 
@@ -12,11 +13,11 @@ Après des recherches approfondies, nous avons pu constater qu'il existe énorm�
 
 Par ailleurs, nous avons choisi de traiter uniquement des images en noir et blanc, car la colorimétrie a très peu d'impact dans le processus de reconnaissance.
 
-Sous-partie 2 : La méthode Eighenface
+Sous-partie 2 : La méthode Eigenface
 
-La méthode de reconnaissance faciale Eighenface a pour particularité de se baser sur des "eighen vectors", c'est-à-dire des vecteurs propres.
+La méthode de reconnaissance faciale Eigenface a pour particularité de se baser sur des "eigen vectors", c'est-à-dire des vecteurs propres.
 
-L'algorithme est le suivant : chaque image est considérée comme un vecteur avec pour dimension son nombre de pixels. Puis, un ou plusieurs algorithmes recherchent les principales composantes //--plus de précision sur composante ?--//. A l'aide de plusieurs images du même visage, nous pouvons alors composer une image du visage "moyen" qui contiendra également les principales composantes (l'eighenface). La méthode de reconnaissance des axes principaux est détaillée ici : Matthew Turk and Alex Pentland. Eigenfaces for recognition. J. Cognitive Neuroscience. 3(1) :71{86, 1991}. Enfin, il suffit de comparer l'eighenface et les composantes principales d'une capture d'un visage.
+L'algorithme est le suivant : chaque image est considérée comme un vecteur avec pour dimension son nombre de pixels. Puis, un ou plusieurs algorithmes recherchent les principales composantes //--plus de précision sur composante ?--//. A l'aide de plusieurs images du même visage, nous pouvons alors composer une image du visage "moyen" qui contiendra également les principales composantes (l'eigenface). La méthode de reconnaissance des axes principaux est détaillée ici : Matthew Turk and Alex Pentland. Eigenfaces for recognition. J. Cognitive Neuroscience. 3(1) :71{86, 1991}. Enfin, il suffit de comparer l'eigenface et les composantes principales d'une capture d'un visage.
 
 L'avantage de cette méthode est la connaissance de son existence depuis longtemps. Cependant, elle présente également des désavantages non-négligeables. En effet, comme chaque pixel est une dimension, une image 100*100 donne 10000 vecteurs à traiter. Le nombre de données à analyser est donc trop important.
 
@@ -28,7 +29,7 @@ Figure présente dans le dossier image.
 
 Pour plus de détails : http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#fisherfaces.
 
-Globalement, cette méthode présente les mêmes avantages et inconvénients que la méthode Eighenface. Cependant, elle est moins sensible à la lumière et à la déformation des visages car elle ne se base pas sur des composantes discriminatoires.
+Globalement, cette méthode présente les mêmes avantages et inconvénients que la méthode Eigenface. Cependant, elle est moins sensible à la lumière et à la déformation des visages car elle ne se base pas sur des composantes discriminatoires.
 
 Sous-partie 4 : La méthode LBPH
 
@@ -38,36 +39,39 @@ Pour commencer, l'image est divisé en groupe de pixels. Chaque groupe de pixels
 
 Cet algorithme est très utilisé comme nous pouvons le voir dans : Facial expression recognition based on Local Binary Patterns:A comprehensive study de Caifeng Shan a, * , Shaogang Gong b , Peter W. McOwan b, où il est combiné avec Adaboost (plugin d'openCV) pour obtenir de meilleurs résultats, et un réseau neuronnal. Mais aussi dans : Face Recognition with Local Binary Patterns, Spatial Pyramid Histograms and Naive Bayes Nearest Neighbor (NBNN) classification de Daniel Maturana, Domingo Mery and Alvaro Soto où les auteurs essayent d'améliorer l'alogrithme dans le but d'en créer un nouveau : NBNN. Nous n'utiliserons pas cet algorithme par manque de temps, mais également car LBPH est déjà présent dans openCV.
 
-Nous venons de voir qu'il existe plusieurs méthodes de reconnaissance faciale, tels que Eighenface, Fisherface et LBPH. Nous allons donc, dans une seconde partie passer de la théorie à la pratique afin de mettre en application ces algorithmes.
+Nous venons de voir qu'il existe plusieurs méthodes de reconnaissance faciale, tels que Eigenface, Fisherface et LBPH. Nous allons donc, dans une seconde partie passer de la théorie à la pratique afin de mettre en application ces algorithmes.
 
 
+//////////////////////////////PARTIE RELUE//////////////////////////////////////////////////:
 Partie 2 : Expérimentations
 
 Dans cette partie, nous expérimenterons les méthodes de reconnaissance de visage évoquées dans la première partie. D'abord, nous verrons le protocole expérimental, puis la réalisation des expériences et enfin, les résultats et analyses de ces manipulations.
 
 Sous-partie 1 : Protocole
 
-Le but de l'expérimentation était de comparer les trois méthodes (Eighenface, Fisherface et LBPH) implémentées par la librairie OpenCV de façon à en choisir une pour notre application finale, puis d'étudier sa robustesse. Nous avons réalisé deux expériences : la première consistait à observer la vitesse de reconnaissance en fonction du nombre d'images présentes dans la base de donnée et, à comparer le pourcentage de réussite. La seconde expérience cherchait à étudier la robustesse de la méthode, c'est-à-dire si elle marchait également pour des cas particuliers comme un visage partiellement caché ou une grimace.
+Le but de l'expérimentation était de comparer les trois méthodes (Eigenface, Fisherface et LBPH) implémentées par la librairie OpenCV de façon à en choisir une pour notre application finale, puis d'étudier sa robustesse. Nous avons réalisé deux expériences : la première consistait à observer la vitesse de reconnaissance en fonction du nombre d'images présentes dans la base de données et de comparer le pourcentage de réussite. La seconde expérience cherchait à étudier la robustesse de la méthode, c'est-à-dire si elle marchait également pour des cas particuliers comme un visage partiellement caché ou quand l'utilisateur réalisait grimace.
 
 Sous-partie 2 : Réalisation des expériences
 
-Lors de la première expérience, nous avons mesurés deux vitesses d'éxécution : le temps de construction du modèle et le temps pour réaliser la reconnaissance. La base de données était composée de trois individus. Nous avons d'abord capturé une photo d'un des individus présents dans la base. Nous avons ensuite utilisée cette photo pour tester les trois algorithmes (Eigenface, Fisherface et LBPH). Pour chaque méthode, l'opération a été répétée cent fois sur le même ordinateur (afin d'éviter les imprécisions dues au processeur qui ne travaille pas toujours de manière identique). Nous avons également varié le nombre de photos présentes dans la base de données : 1, 2, 4, 6, 8, 10, puis 12 photos par individu. 
+Lors de la première expérience, nous avons mesuré deux vitesses d'exécution : le temps d'importation des images pour réaliser l'entrainement de l'algorithme et l'entrainement de l'algorithme (premier temps) et le temps pour réaliser la reconnaissance (second temps). La base de données était composée de trois individus. Nous avons d'abord capturé une photo d'un des individus présents dans la base. Nous avons ensuite utilisée cette photo pour tester les trois algorithmes (Eigenface, Fisherface et LBPH). Pour chaque méthode, l'opération a été répétée cent fois sur le même ordinateur (afin d'éviter les imprécisions dues au processeur qui ne travaille pas toujours de manière identique). Nous avons également varié le nombre de photos présentes dans la base de données : 1, 2, 4, 6, 8, 10, puis 12 photos par individu. 
 
-Dans la deuxième partie de l'expérience, nous avons pris une vidéo composée de cent images pendant laquelle le sujet bouge la tête dans toutes les directions. Par ailleurs, chaque sujet était enregistré dans la base de données à l'aide de douze photos prises dans différentes postures. Pour finir, chaque algorithme était appliquée aux cent images de la vidéo pour observer le pourcentage de réussite.
+Dans la deuxième partie de l'expérience, nous avons pris une vidéo composée de cent images pendant laquelle le sujet bougeait doucement la tête dans toutes les directions. Par ailleurs, chaque sujet était enregistré dans la base de données à l'aide de douze photos prises dans différentes postures. Pour finir, chaque algorithme était appliqué aux cent images de la vidéo pour observer le pourcentage de réussite.
 
-Dans la deuxième expérience qui cherche à étudier la robustesse d'un algorithme, nous avons privilégié la méthode LBPH qui montré de meilleurs résulats lors de la première expérience. Nous avons demandé à plusieurs personnes de s'enregistrer dans la base de données. Ensuite, pour chacune de ces personnes, une vidéo composée de 100 images a été prise. Par ailleurs, les sujets ont été fimées sous différentes conditions. Nous avons varié la luminosité (faible, naturelle, élevée), l'orientation et l'inclinaison de la tête. Nous avons aussi accentués la déformation du visage, cachés certaines parties du visage, et modifiés la distance par rapport à la caméra.
+Pour la seconde expérience qui cherche à étudier la robustesse d'un algorithme, nous avons privilégié la méthode LBPH qui montrait de meilleurs résultats lors de notre première expérience. Nous avons demandé à plusieurs personnes de s'enregistrer dans la base de données. Ensuite, pour chacune de ces personnes, une vidéo composée de 100 images a été prise. Par ailleurs, les sujets ont été filmées sous différentes conditions. Nous avons varié la luminosité (faible, naturelle, élevée), l'orientation et l'inclinaison de la tête. Nous avons aussi accentué la déformation du visage, caché certaines parties du visage et modifié la distance par rapport à la caméra. La caméra utilisée était la même que celle utilisée lors de l'enregistrement de l'individu dans la base de données pour éviter tout changement de résolution possible.
 
 Sous-partie 3 : Résultats et analyses 
 
-Concernant l'expérience n°1, l'algorithme Fisherface a été le plus rapide dans l'élaboration du modèle, suivi par Eigenface puis LBPH. Nous pouvons noter qu'Eighenface devient de plus en plus lent à mesure que le nombre d'images dans la base de données augmente (au bout de 36 images, la méthode est aussi lente que LBPH). Pour la reconnaissance des visages, la durée est quasiment identique pour les trois algorithmes. Elle est comprise entre 680 et 690 ms pour un processeur Intel Core i5 de deuxième génération. Nous pouvons donc conclure que le temps n'est pas le facteur principal. Si nous choississons de prendre LBPH, l'initialisation prendra plus le temps mais il n'y aura pas d'impact sur le temps de reconnaissance.
+Concernant l'expérience n°1, l'algorithme Fisherface a été le plus rapide dans l'élaboration du modèle, suivi par Eigenface puis LBPH. //--INSERER GRAPHE--// Nous pouvons noter qu'Eigenface devient de plus en plus lent à mesure que le nombre d'images dans la base de données augmente (au bout de 36 images, la méthode est aussi lente que LBPH). Pour la reconnaissance des visages, la durée est quasiment identique pour les trois algorithmes. Elle est comprise entre 680 et 690 ms pour un processeur Intel Core i5 de deuxième génération. Nous pouvons donc conclure que le temps n'est pas un facteur important dans le choix de l'algorithme. Si nous choisissons de prendre LBPH, l'initialisation prendra plus le temps, mais il n'y aura pas d'impact sur le temps de reconnaissance.
 
-Nous déduisons de la deuxième partie de l'expérience n°1 les résultats suivants : 
+Nous déduisons de la seconde partie de l'expérience n°1 les résultats suivants : 
 - Amaury : Eigenface = 71.929824561404% / fisherface = 59.649122807018% / LBPH = 82.456140350877%
 - Pierre-Henri : Eigenface = 7.4074074074074% / fisherface = 80.246913580247% / LBPH = 60.493827160494%
 - Sébastien : Eigenface = 24.657534246575% / fisherface = 73.972602739726% / LBPH = 90.41095890411%
+//--INSERER GRAPHE CORRESPONDANT--//
 Nous remarquons que l'algorithme LBPH est globalement meilleur que les deux autres. Fisherface arrive deuxième, suivi de loin par Eigenface.
 
-Nous pouvons conclure de la deuxième partie que la luminosité peut être un problème lorsque les yeux sont cachés par la lumière. Cela pose aussi un souci lorsque la limite entre le visage et l'arrière-plan est difficilement perceptible. L'orientation et l'inclinaison de la tête sont limitées à un certain angle (environ 20°), car au-delà les deux yeux ne sont pas bien visibles. La déformation du visage ne perturbe pas la reconnaissance, en outre le port de lunettes de vue ne modifie que très légèrement le résultat. Pour pallier cette difficulté, la meilleure solution serait d'inclure des photos avec accessoires dans la base de données. Masquer certaines parties du visage est beaucoup plus problématique. En effet, lorsque la bouche est cachée, la reconnaissance est réalisable mais plus difficilement. En revanche, si les yeux sont cachés, la reconnaissance est impossible. Ce qui pose un problème pour les personnes aux cheveux longs. La distance visage-caméra peut être également un obstacle à la reconnaissance dans le cas où la taille du visage reconnue est plus petite que celle dans la base de données. La réalisation de nouveaux classifiers pourraient être intéressants pour améliorer la reconnaissance.
+Nous pouvons conclure de la seconde partie que la luminosité peut être un problème lorsque les yeux sont cachés par la lumière. Cela pose aussi un souci lorsque la limite entre le visage et l'arrière-plan est difficilement perceptible (ce qui arrive assez souvent avec une caméra de faible qualité). L'orientation et l'inclinaison de la tête sont limitées à un certain angle (environ 20°), car au-delà les deux yeux ne sont pas bien visibles. La déformation du visage ne perturbe pas la reconnaissance, en outre le port de lunettes de vue ne modifie que très légèrement le résultat. Pour pallier cette difficulté, la meilleure solution serait d'inclure des photos avec accessoires dans la base de données. Masquer certaines parties du visage est beaucoup plus problématique. En effet, lorsque la bouche est cachée, la reconnaissance est réalisable, mais plus difficilement. En revanche, si les yeux sont cachés, la reconnaissance est impossible. Ce qui pose un problème pour les personnes aux cheveux longs. La distance visage-caméra peut être également un obstacle à la reconnaissance dans le cas où la taille du visage reconnue est plus petite que celle dans la base de données. La réalisation de nouveaux classifiers pourraient être intéressants pour améliorer la reconnaissance.
+//--SEB : JE M'OCCUPE DE FAIRE UNE IMAGE CONCLUSION--//
 
 Pour conclure, nous pouvons dire que les expérimentations ont montré que la méthode de reconnaissance faciale LBPH est la plus efficace. Cependant, nous avons également vu que de nombreux facteurs extérieurs influent sur la qualité de la reconnaissance et peuvent mettre en échec celle-ci.
 
