@@ -109,7 +109,7 @@ Des campagnes publicitaires (voir ci-dessous) parfois chocs ont fait prendre con
 \begin{figure}
 	\begin{center}
 		\includegraphics[scale=0.25]{images/karl-for-Securite-Routiere}
-		\caption{Karl Lagarfeld pour une affiche de pr\'éventions routi\`ere}
+		\caption{Karl Lagarfeld pour une affiche de pr\'eventions routi\`ere}
 	\end{center}
 \end{figure}
  
@@ -201,80 +201,93 @@ Cet algorithme est tr\`es utilis\'e comme nous pouvons le voir dans~: Facial exp
 
 Comme nous venons de le voir, il existe diff\'erents m\'ethodes 
 
-		\section{Exp\'erimentations}
-			\subsection{Protocole}
-				%TODO
-			\subsection{R\'ealisation}
-				%TODO
-			\subsection{R\'esultats et analyse}
-				%TODO
-				%GRAPHIQUES A DEPLACER~:
-				\begin{figure}
-					\begin{center}
-					\begin{tikzpicture}
-						\begin{axis}[
-							width=12cm,
-							height=7cm,
-							xlabel={nombre d'images dans la base de donn\'ee},
-							ylabel={temps d'ajout},
-							y unit=\si{\second},
-							legend style={at={(0.23,0.95)},anchor=north},
-							legend entries={eigenface,fisher face,LBPH}
-						]
-							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_eigenface.csv};
-							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_fisherface.csv};
-							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_LBPH.csv};
-						\end{axis}
-					\end{tikzpicture}
-					\caption{Dur\'ee de reconnaissance par algorithme}
-					\end{center}
-				\end{figure}
-				\begin{figure}
-					\begin{center}
-					\begin{tikzpicture}
-						\begin{axis}[
-							width=12cm,
-							height=7cm,
-							xlabel={nombre d'images dans la base de donn\'ee},
-							ylabel={temps pour la reconnaissance},
-							y unit=\si{\second},
-							 legend style={at={(0.23,0.95)},anchor=north},
-							legend entries={eigenface,fisher face,LBPH}
-						]
-							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_eigenface.csv};
-							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_fisherface.csv};
-							\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_LBPH.csv};
-						\end{axis}
-					\end{tikzpicture}
-					\caption{Dur\'ee d'ajout des images dans la base de connaissance}
-					\end{center}
-				\end{figure}
-				\begin{figure}
-					\begin{center}
-					\begin{tikzpicture}
-						\begin{axis}[
-							xbar,
-							xmin=0,
-							width=12cm,
-							height=7cm,
-							enlarge y limits=0.5,
-							xlabel={Pourcentage de reconnaissance},
-							symbolic y coords={Amaury, Pierre-Henri, S\'ebastien},
-							ytick=data,
-							nodes near coords,
-							nodes near coords align={horizontal},
-							legend style={at={(0.3,0.95)},anchor=north,legend columns=-1},
-						]
-							\addplot coordinates {(71.929824561404,Amaury) (7.4074074074074,Pierre-Henri) (24.657534246575,S\'ebastien)};
-							\addplot coordinates {(59.649122807018,Amaury) (80.246913580247,Pierre-Henri) (73.972602739726,S\'ebastien)};
-							\addplot coordinates {(82.456140350877,Amaury) (60.493827160494,Pierre-Henri) (90.41095890411,S\'ebastien)};
-							
-							\legend{Eigenface, Fisherface, LBPH}
-						\end{axis}
-					\end{tikzpicture}
-					\caption{Pourcentage de reconnaissance, en fonction du cobaye et de l'algorithme}
-					\end{center}
-				\end{figure}
+\section{Exp\'erimentations}
+Dans cette partie, nous exp\'erimenterons les m\'ethodes de reconnaissance de visage \'evoqu\'ees dans la premi\`ere partie. D'abord, nous verrons le protocole exp\'erimental, puis la r\'ealisation des exp\'eriences et enfin, les r\'esultats et analyses de ces manipulations.
+\subsection{Protocole}
+Le but de l'exp\'erimentation \'etait de comparer les trois m\'ethodes (Eigenface, Fisherface et LBPH) impl\'ement\'ees par la librairie OpenCV de façon \`a en choisir une pour notre application finale, puis d'\'etudier sa robustesse. Nous avons r\'ealis\'e deux exp\'eriences : la premi\`ere consistait \`a observer la vitesse de reconnaissance en fonction du nombre d'images pr\'esentes dans la base de donn\'ees et de comparer le pourcentage de r\'eussite. La seconde exp\'erience cherchait \`a \'etudier la robustesse de la m\'ethode, c'est-\`a-dire si elle marchait \'egalement pour des cas particuliers comme un visage partiellement cach\'e ou quand l'utilisateur r\'ealisait grimace.
+\subsection{R\'ealisation des exp\'eriences}
+Lors de la premi\`ere exp\'erience, nous avons mesur\'e deux vitesses d'ex\'ecution : le temps d'importation des images pour r\'ealiser l'entrainement de l'algorithme et l'entrainement de l'algorithme (premier temps) et le temps pour r\'ealiser la reconnaissance (second temps). La base de donn\'ees \'etait compos\'ee de trois individus. Nous avons d'abord captur\'e une photo d'un des individus pr\'esents dans la base. Nous avons ensuite utilis\'ee cette photo pour tester les trois algorithmes (Eigenface, Fisherface et LBPH). Pour chaque m\'ethode, l'op\'eration a \'et\'e r\'ep\'et\'ee cent fois sur le même ordinateur (afin d'\'eviter les impr\'ecisions dues au processeur qui ne travaille pas toujours de mani\`ere identique). Nous avons \'egalement vari\'e le nombre de photos pr\'esentes dans la base de donn\'ees : 1, 2, 4, 6, 8, 10, puis 12 photos par individu. \\
+
+Dans la deuxi\`eme partie de l'exp\'erience, nous avons pris une vid\'eo compos\'ee de cent images pendant laquelle le sujet bougeait doucement la tête dans toutes les directions. Par ailleurs, chaque sujet \'etait enregistr\'e dans la base de donn\'ees \`a l'aide de douze photos prises dans diff\'erentes postures. Pour finir, chaque algorithme \'etait appliqu\'e aux cent images de la vid\'eo pour observer le pourcentage de r\'eussite.\\
+
+Pour la seconde exp\'erience qui cherche \`a \'etudier la robustesse d'un algorithme, nous avons privil\'egi\'e la m\'ethode LBPH qui montrait de meilleurs r\'esultats lors de notre premi\`ere exp\'erience. Nous avons demand\'e \`a plusieurs personnes de s'enregistrer dans la base de donn\'ees. Ensuite, pour chacune de ces personnes, une vid\'eo compos\'ee de 100 images a \'et\'e prise. Par ailleurs, les sujets ont \'et\'e film\'ees sous diff\'erentes conditions. Nous avons vari\'e la luminosit\'e (faible, naturelle, \'elev\'ee), l'orientation et l'inclinaison de la tête. Nous avons aussi accentu\'e la d\'eformation du visage, cach\'e certaines parties du visage et modifi\'e la distance par rapport \`a la cam\'era. La cam\'era utilis\'ee \'etait la même que celle utilis\'ee lors de l'enregistrement de l'individu dans la base de donn\'ees pour \'eviter tout changement de r\'esolution possible.
+\subsection{R\'esultats et analyses}
+Concernant l'exp\'erience \no 1, l'algorithme Fisherface a \'et\'e le plus rapide dans l'\'elaboration du mod\`ele, suivi par Eigenface puis LBPH (voir Figure~\ref{fig:dureeInitialisation}). Nous pouvons noter qu'Eigenface devient de plus en plus lent \`a mesure que le nombre d'images dans la base de donn\'ees augmente (au bout de 36 images, la m\'ethode est aussi lente que LBPH). \\
+\begin{figure}[t]
+	\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=12cm,
+			height=7cm,
+			xlabel={nombre d'images dans la base de donn\'ee},
+			ylabel={temps d'ajout},
+			y unit=\si{\second},
+			legend style={at={(0.23,0.95)},anchor=north},
+			legend entries={eigenface,fisher face,LBPH}
+		]
+			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_eigenface.csv};
+			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_fisherface.csv};
+			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_LBPH.csv};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Dur\'ee d'initialisation des algorithme en fonction du nombre d'images}
+	\label{fig:dureeInitialisation}
+	\end{center}
+\end{figure}
+\begin{figure}[t]
+	\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=12cm,
+			height=7cm,
+			xlabel={nombre d'images dans la base de donn\'ee},
+			ylabel={temps pour la reconnaissance},
+			y unit=\si{\second},
+			 legend style={at={(0.23,0.95)},anchor=north},
+			legend entries={eigenface,fisher face,LBPH}
+		]
+			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_eigenface.csv};
+			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_fisherface.csv};
+			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_LBPH.csv};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Dur\'ee d'ajout des images dans la base de connaissance}
+	\label{fig:ajoutImagesBDD}
+	\end{center}
+\end{figure}
+Pour la reconnaissance des visages (Figure~\ref{fig:ajoutImagesBDD}) la dur\'ee est quasiment identique pour les trois algorithmes. Elle est comprise entre 680 et 690 ms pour un processeur Intel Core i5 de deuxi\`eme g\'en\'eration. Nous pouvons donc conclure que le temps n'est pas un facteur important dans le choix de l'algorithme. Si nous choisissons de prendre LBPH, l'initialisation prendra plus le temps, mais il n'y aura pas d'impact sur le temps de reconnaissance.
+
+\begin{figure}[t]
+	\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			xbar,
+			xmin=0,
+			width=12cm,
+			height=7cm,
+			enlarge y limits=0.5,
+			xlabel={Pourcentage de reconnaissance},
+			symbolic y coords={Amaury, Pierre-Henri, S\'ebastien},
+			ytick=data,
+			nodes near coords,
+			nodes near coords align={horizontal},
+			legend style={at={(0.3,0.95)},anchor=north,legend columns=-1},
+		]
+			\addplot coordinates {(71.929824561404,Amaury) (7.4074074074074,Pierre-Henri) (24.657534246575,S\'ebastien)};
+			\addplot coordinates {(59.649122807018,Amaury) (80.246913580247,Pierre-Henri) (73.972602739726,S\'ebastien)};
+			\addplot coordinates {(82.456140350877,Amaury) (60.493827160494,Pierre-Henri) (90.41095890411,S\'ebastien)};
+			
+			\legend{Eigenface, Fisherface, LBPH}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Pourcentage de reconnaissance, en fonction du cobaye et de l'algorithme}
+	\label{fig:pourcentageReco}
+	\end{center}
+\end{figure}
+Nous d\'eduisons de la seconde partie de l'exp\'erience \no 1 les r\'esultats affich\'es Figure~\ref{fig:pourcentageReco}. Nous remarquons que l'algorithme LBPH est globalement meilleur que les deux autres. Fisherface arrive deuxi\`eme, suivi de loin par Eigenface.\\
+
+Nous pouvons conclure de la seconde partie que la luminosit\'e peut être un probl\`eme lorsque les yeux sont cach\'es par la lumi\`ere. Cela pose aussi un souci lorsque la limite entre le visage et l'arri\`ere-plan est difficilement perceptible (ce qui arrive assez souvent avec une cam\'era de faible qualit\'e). L'orientation et l'inclinaison de la tête sont limit\'ees \`a un certain angle (environ 20°), car au-del\`a les deux yeux ne sont pas bien visibles. La d\'eformation du visage ne perturbe pas la reconnaissance, en outre le port de lunettes de vue ne modifie que tr\`es l\'eg\`erement le r\'esultat. Pour pallier cette difficult\'e, la meilleure solution serait d'inclure des photos avec accessoires dans la base de donn\'ees. Masquer certaines parties du visage est beaucoup plus probl\'ematique. En effet, lorsque la bouche est cach\'ee, la reconnaissance est r\'ealisable, mais plus difficilement. En revanche, si les yeux sont cach\'es, la reconnaissance est impossible. Ce qui pose un probl\`eme pour les personnes aux cheveux longs. La distance visage-cam\'era peut être \'egalement un obstacle \`a la reconnaissance dans le cas o\`u la taille du visage reconnue est plus petite que celle dans la base de donn\'ees. La r\'ealisation de nouveaux classifiers pourraient être int\'eressants pour am\'eliorer la reconnaissance.\\
+%TODO : image
 	\chapter{Reconnaissance des \'emotions}
 		\section{Th\'eorie}
 			\subsection{Diff\'erentes solutions}
