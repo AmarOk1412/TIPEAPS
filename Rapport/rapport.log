@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  21 MAR 2014 22:59
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  21 MAR 2014 23:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1442,28 +1442,51 @@ PGFPlots: reading {data/ByNumberOfImages_rec_LBPH.csv}
 PGFPlots: reading {data/ByNumberOfImages_bdd_eigenface.csv}
 PGFPlots: reading {data/ByNumberOfImages_bdd_fisherface.csv}
 PGFPlots: reading {data/ByNumberOfImages_bdd_LBPH.csv}
-[11] [12] [13]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+
+ []
+
+
+Package frenchb.ldf Warning: Degrees would look better in TS1-encoding: 
+(frenchb.ldf)                add \usepackage{textcomp} to the preamble. 
+(frenchb.ldf)                Degrees used on input line 281.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 281--284
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 285--286
+
+ []
+
+[12] [13]
 Partie 3.
 [14
 
 ]
 Partie 4.
-<images/schema_tests.png, id=78, 469.755pt x 448.074pt>
+<images/schema_tests.png, id=76, 469.755pt x 448.074pt>
 File: images/schema_tests.png Graphic file (type png)
 
 <use images/schema_tests.png>
-Package pdftex.def Info: images/schema_tests.png used on input line 306.
+Package pdftex.def Info: images/schema_tests.png used on input line 304.
 (pdftex.def)             Requested size: 422.7756pt x 403.26286pt.
 
-Overfull \hbox (4.52193pt too wide) in paragraph at lines 306--307
+Overfull \hbox (4.52193pt too wide) in paragraph at lines 304--305
  [] 
  []
 
-<images/schema_tests_elec.png, id=79, 205.568pt x 207.174pt>
+<images/schema_tests_elec.png, id=77, 205.568pt x 207.174pt>
 File: images/schema_tests_elec.png Graphic file (type png)
 
 <use images/schema_tests_elec.png>
-Package pdftex.def Info: images/schema_tests_elec.png used on input line 312.
+Package pdftex.def Info: images/schema_tests_elec.png used on input line 310.
 (pdftex.def)             Requested size: 205.56747pt x 207.17348pt.
  [15
 
@@ -1595,18 +1618,18 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
 (../src/tests/tests.ino [26] [27] [28]) [29] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 30517 strings out of 493315
- 700314 string characters out of 6137905
- 837243 words of memory out of 5000000
- 33354 multiletter control sequences out of 15000+600000
+ 30509 strings out of 493315
+ 700138 string characters out of 6137905
+ 833395 words of memory out of 5000000
+ 33346 multiletter control sequences out of 15000+600000
  90925 words of font info for 69 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,20n,93p,964b,2394s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,21n,93p,1372b,2392s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texli
 ve/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2013/te
 xmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2013/texmf-dist/fonts
-/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/
-lm-mathex.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathit.
+/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips
+/lm/lm-mathit.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-rm.
 enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/
 local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texl
 ive/2013/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2013/
@@ -1615,17 +1638,15 @@ texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2013/texmf-dist
 e1/public/lm/lmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/l
 m/lmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr17.pfb
 ></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local
-/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/201
-3/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2013/texmf-dist
-/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/public/lm/lmsy7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/l
-m/lmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmtt10.pf
-b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
-0.pfb>
-Output written on rapport.pdf (31 pages, 1071841 bytes).
+/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/201
+3/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2013/texmf-di
+st/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/lm/lmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
+/amsfonts/symbols/msbm10.pfb>
+Output written on rapport.pdf (31 pages, 1055443 bytes).
 PDF statistics:
- 190 PDF objects out of 1000 (max. 8388607)
- 129 compressed objects within 2 object streams
+ 182 PDF objects out of 1000 (max. 8388607)
+ 123 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -212,38 +212,30 @@ Dans la deuxi\`eme partie de l'exp\'erience, nous avons pris une vid\'eo compos\
 
 Pour la seconde exp\'erience qui cherche \`a \'etudier la robustesse d'un algorithme, nous avons privil\'egi\'e la m\'ethode LBPH qui montrait de meilleurs r\'esultats lors de notre premi\`ere exp\'erience. Nous avons demand\'e \`a plusieurs personnes de s'enregistrer dans la base de donn\'ees. Ensuite, pour chacune de ces personnes, une vid\'eo compos\'ee de 100 images a \'et\'e prise. Par ailleurs, les sujets ont \'et\'e film\'ees sous diff\'erentes conditions. Nous avons vari\'e la luminosit\'e (faible, naturelle, \'elev\'ee), l'orientation et l'inclinaison de la tête. Nous avons aussi accentu\'e la d\'eformation du visage, cach\'e certaines parties du visage et modifi\'e la distance par rapport \`a la cam\'era. La cam\'era utilis\'ee \'etait la même que celle utilis\'ee lors de l'enregistrement de l'individu dans la base de donn\'ees pour \'eviter tout changement de r\'esolution possible.
 \subsection{R\'esultats et analyses}
-Concernant l'exp\'erience \no 1, l'algorithme Fisherface a \'et\'e le plus rapide dans l'\'elaboration du mod\`ele, suivi par Eigenface puis LBPH (voir Figure~\ref{fig:dureeInitialisation}). Nous pouvons noter qu'Eigenface devient de plus en plus lent \`a mesure que le nombre d'images dans la base de donn\'ees augmente (au bout de 36 images, la m\'ethode est aussi lente que LBPH). \\
-\begin{figure}[t]
+Concernant l'exp\'erience \no 1, l'algorithme Fisherface a \'et\'e le plus rapide dans l'\'elaboration du mod\`ele, suivi par Eigenface puis LBPH (voir Figure~\ref{fig:dureesAlgos}). Nous pouvons noter qu'Eigenface devient de plus en plus lent \`a mesure que le nombre d'images dans la base de donn\'ees augmente (au bout de 36 images, la m\'ethode est aussi lente que LBPH). \\
+\begin{figure}[h]
 	\begin{center}
 	\begin{tikzpicture}
 		\begin{axis}[
-			width=12cm,
-			height=7cm,
+			width=5.9cm,
+			height=5cm,
 			xlabel={nombre d'images dans la base de donn\'ee},
 			ylabel={temps d'ajout},
-			y unit=\si{\second},
-			legend style={at={(0.23,0.95)},anchor=north},
-			legend entries={eigenface,fisher face,LBPH}
+			y unit=\si{\second}
 		]
 			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_eigenface.csv};
 			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_fisherface.csv};
 			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_LBPH.csv};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Dur\'ee d'initialisation des algorithme en fonction du nombre d'images}
-	\label{fig:dureeInitialisation}
-	\end{center}
-\end{figure}
-\begin{figure}[t]
-	\begin{center}
 	\begin{tikzpicture}
 		\begin{axis}[
-			width=12cm,
-			height=7cm,
+			width=5.9cm,
+			height=5cm,
 			xlabel={nombre d'images dans la base de donn\'ee},
-			ylabel={temps pour la reconnaissance},
+			ylabel={temps de reconnaissance},
 			y unit=\si{\second},
-			 legend style={at={(0.23,0.95)},anchor=north},
+			 legend style={at={(0.9,0.5)},anchor=west},
 			legend entries={eigenface,fisher face,LBPH}
 		]
 			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_eigenface.csv};
@@ -251,11 +243,11 @@ Concernant l'exp\'erience \no 1, l'algorithme Fisherface a \'et\'e le plus rapid
 			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_LBPH.csv};
 		\end{axis}
 	\end{tikzpicture}
-	\caption{Dur\'ee d'ajout des images dans la base de connaissance}
-	\label{fig:ajoutImagesBDD}
+	\caption{Dur\'ees d'initialisation, et de reconnaissance, par algorithme}
+	\label{fig:dureesAlgos}
 	\end{center}
 \end{figure}
-Pour la reconnaissance des visages (Figure~\ref{fig:ajoutImagesBDD}) la dur\'ee est quasiment identique pour les trois algorithmes. Elle est comprise entre 680 et 690 ms pour un processeur Intel Core i5 de deuxi\`eme g\'en\'eration. Nous pouvons donc conclure que le temps n'est pas un facteur important dans le choix de l'algorithme. Si nous choisissons de prendre LBPH, l'initialisation prendra plus le temps, mais il n'y aura pas d'impact sur le temps de reconnaissance.
+Pour la reconnaissance des visages, la dur\'ee est quasiment identique pour les trois algorithmes. Elle est comprise entre 680 et 690 ms pour un processeur Intel Core i5 de deuxi\`eme g\'en\'eration. Nous pouvons donc conclure que le temps n'est pas un facteur important dans le choix de l'algorithme. Si nous choisissons de prendre LBPH, l'initialisation prendra plus le temps, mais il n'y aura pas d'impact sur le temps de reconnaissance.
 
 \begin{figure}[t]
 	\begin{center}
@@ -288,6 +280,9 @@ Nous d\'eduisons de la seconde partie de l'exp\'erience \no 1 les r\'esultats af
 
 Nous pouvons conclure de la seconde partie que la luminosit\'e peut être un probl\`eme lorsque les yeux sont cach\'es par la lumi\`ere. Cela pose aussi un souci lorsque la limite entre le visage et l'arri\`ere-plan est difficilement perceptible (ce qui arrive assez souvent avec une cam\'era de faible qualit\'e). L'orientation et l'inclinaison de la tête sont limit\'ees \`a un certain angle (environ 20°), car au-del\`a les deux yeux ne sont pas bien visibles. La d\'eformation du visage ne perturbe pas la reconnaissance, en outre le port de lunettes de vue ne modifie que tr\`es l\'eg\`erement le r\'esultat. Pour pallier cette difficult\'e, la meilleure solution serait d'inclure des photos avec accessoires dans la base de donn\'ees. Masquer certaines parties du visage est beaucoup plus probl\'ematique. En effet, lorsque la bouche est cach\'ee, la reconnaissance est r\'ealisable, mais plus difficilement. En revanche, si les yeux sont cach\'es, la reconnaissance est impossible. Ce qui pose un probl\`eme pour les personnes aux cheveux longs. La distance visage-cam\'era peut être \'egalement un obstacle \`a la reconnaissance dans le cas o\`u la taille du visage reconnue est plus petite que celle dans la base de donn\'ees. La r\'ealisation de nouveaux classifiers pourraient être int\'eressants pour am\'eliorer la reconnaissance.\\
 %TODO : image
+Pour conclure, nous pouvons dire que les expérimentations ont montré que la méthode de reconnaissance faciale LBPH est la plus efficace. Cependant, nous avons également vu que de nombreux facteurs extérieurs influent sur la qualité de la reconnaissance et peuvent mettre en échec celle-ci.\\
+
+Dans cette partie, nous avons comparé différentes méthodes théoriques de reconnaissance faciale. Puis, nous avons réalisé des expériences sur chacun des algorithmes pour finalement en retenir un : LBPH. Nous allons maintenant passer à l'étape suivante de notre démarche qui est la reconnaissance des émotions. //--Trouver une meilleure transition--//\\
 	\chapter{Reconnaissance des \'emotions}
 		\section{Th\'eorie}
 			\subsection{Diff\'erentes solutions}
