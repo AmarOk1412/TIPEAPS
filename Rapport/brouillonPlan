@@ -21,32 +21,31 @@ change la couleur du véhicule selon l'humeur du conducteur + pare brise avec r�
      *** Général
          . Enormément de méthodes, on peut aussi combiner avec des méthodes telles que la mise en place d'un réseau neuronnal (mais en 3 mois, pas le temps).
          . On traite des images en n&b car la colorimétrie n'est pas importante.
+
      *** Eigenface
-         . Définition :
-Eigenface -> se base sur les eigen vectors : vecteurs propres
-         . Algo
-Chaque image est considéré comme un vecteur de dimension son nombre de pixels.
-Puis un/des algos recherche(nt) les principales composantes.
-A l'aide de plusieurs images du même visage on peut alors composer une image de visage moyen qui contiendra elle aussi les principales composantes (l'eigenface).
+         . Définition : 
+Eigenface -> se base sur les eigen vectors : vecteurs propres. Introduit en 1991 par Turk & Pentland
+         . Algo 
+On se base sur les composantes principales (ACP). La méthode EigenFace construit le visage propre à l'aide des premiers vecteurs propres de la matrice. On compare ensuite le visage en projetant dans la base.
 La méthode de reconnaissance des axes principaux peut être trouvée ici :
 Matthew Turk and Alex Pentland. Eigenfaces for recognition.
 J. Cognitive Neuroscience
 ,
 3(1) :71{86, 1991}
-Il suffit ensuite de comparer l'eigenface et les composantes principales de la capture.
+        . Avantages/inconvénients
+        . Comme chaque pixel est une dimension, une image 100*100 donne autant de vecteurs à traiter. Ce qui est énorme.
+        . sensible à la lumière, à la déformation des visages
+        . Avantage : connue depuis longtemps.
 
-TODO ALGO MATH ?
-         . Avantages/inconvénients
-. Comme chaque pixel est une dimension, une image 100*100 donne autant de vecteurs à traiter. Ce qui est énorme.
-. sensible à la lumière, à la déformation des visages
-. Avantage : connue depuis longtemps.
-     *** FisherFace
-         . Algo
-L'algo fisherface se base sur les travaux  de  Sir R. A. Fisher.
-L'idée est simple. Tout ce qui se ressemble se retrouvent proche.
-Si on imagine un espace d'image. Et une échelle représentant les visages.
-Si on projette les images sur l'échelle, On peut donc dire que ce visage ressemble le plus à celui qui est à côté dans l'échelle.
-Figure présente dans le dossier image
+      *** FisherFace
+          . Définition :
+            Evolution de l'algo Eigenface
+          . Algo:
+            EigenFace se base sur la méthode ACP. FisherFace se base sur son amélioration, l'Analyse discriminante linéaire (ADL) qui cherche le meilleur sous espace qui minimise la distance entre les images d'une même classe (ici une classe = un visage) en maximisant la distance inter-classe.
+Tout d'abord, l'algo calcul l'image moyenne de la classe. (caser la formule de moyenne ? (1/k)*somme de 1 à k de xj).
+Puis, on calcul les matrice de dispersion intra & inter classe (disons respectivement Mi et Me).
+Puis on trouve la matrice de projection (P) en résolvant Mi*x = lambda*Me*x
+Pour trouver la meilleure projection, il suffit de résoudre (P^-1*Me*P)/(P^-1*Mi*P)=argmax(P)
 Plus mathématiquement :http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#fisherfaces
          . Avantages/inconvénients
 . Comme chaque pixel est une dimension, une image 100*100 donne autant de vecteurs à traiter. Ce qui est énorme.
@@ -68,7 +67,7 @@ TITRE:
 Facial expression recognition based on Local Binary Patterns:A comprehensive study
 AUTEURS:
 Caifeng Shan a, * , Shaogang Gong b , Peter W. McOwan b
-Ou il est combiné avec Adaboost pour obtenir de meilleurs résultats + un réseau neuronnal
+Ou il est combiné avec Adaboost pour obtenir de meilleurs résultats + un réseau neuronnal (En gros, on entraine ce réseau en balancant une image brute. Le réseau calcul, apprend et sort en sortie le résultat. Le probleme est que pour une image de 100*100, il faut déjà 10000 neuronnes pour la couche d'entrée), les Modèles de Markov Cachés
 Ou TITRE:
 Face Recognition with Local Binary Patterns, Spatial Pyramid Histograms and
 Naive Bayes Nearest Neighbor classification
