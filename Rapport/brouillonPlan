@@ -121,7 +121,7 @@ Seb : Eigenface = 24.657534246575% / fisherface = 73.972602739726% / LBPH = 90.4
            .. différentes déformation du visage (pas de problème). Des accessoires telles que des lunettes ne changent pas beaucoup le résultat, mais le mieux reste de prendre des photos dans la base de données avec plusieurs accessoires.
            .. différentes parties cachées du visage (réussite amoindrie lorsque l'on cache la bouche mais réalisable). Si on cache les yeux, la reconnaissance est impossible (embettant pour les cheveux longs)
            .. différentes distances (On perd énormément de réussite lorsque la taille du visage reconnue est plus petite que celle dans la base de données).
-           .. La réalisation d'autres classifiers pour améliorer la reconnaissance pourrait être intéressant.
+           .. La réalisation d'autres classifiers (fichier servant à décrire l'image à l'aide de diagonales, lignes, points) pour améliorer la reconnaissance pourrait être intéressant.
 * Reconnaissance des émotions
   ** Théorie
          . /!\ : on étudie les expressions faciales, et non directement les émotions.
