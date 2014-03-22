@@ -4,9 +4,21 @@ Dans cette dernière partie , nous allons aborder la reconnaissance des émotion
 
 Partie 1 : Théorie
 
+Avant de passer à l'expérimentation, nous avons besoin de connaitre la méthode la plus adaptée à notre application. C'est pourquoi, dans un premier temps nous allons voir les différentes solutions possibles, puis nous allons choisir celle qui correspond le mieux à nos besoins.
+
 Sous-partie 1 : Différentes solutions
 
+Avant tout chose, nous étudions les expressions faciales, et non directement les émotions. Les expressions faciales sont brèves : entre 250ms et 5s. [cf automaticFacialExpressionAnalysis]. Il existe différentes façons de récupérer des expressions faciales : l'approche holistique (c'est-à-dire que la tête est analysée de façon globale) ou l'approche locale qui consiste à prendre des parties de la tête, et analyser ces parties indépendamment les unes des autres. 
+
+Ensuite, pour "trouver" les émotions, il existe également différentes manières de procéder. Nous avons l'approche basée sur un modèle : à partir d'une image, //-- à compléter --//. Nous avons aussi l'approche basée sur l'image : à partir d'une image, nous essayons de trouver des expressions faciales qui s'apparentent aux émotions primaires définies par Ekman & Friesen. Touts les humains ont la même façon d'exprimer ces émotions primaires, peu importe son origine ou sa culture [cf 2002ElfenbeinMeta - On the Universality and cultural Specificity of Emotion Recognition: A Meta-Analysis]. Cette méthode présente l'avantage d'être plus simple et plus rapide à mettre en place. Cependant, elle est moins robuste, notamment aux changements de position de la tête. 
+
+Enfin, pour visualiser les changements //--à préciser--//, nous pouvons regarder les déformations. Pour commencer, cela consiste à classer les émotions primaires en termes de mouvements, translations, rotations, etc. Puis, nous prenons des images à différents instants, et nous analysons les mouvements, translations, rotations, etc afin de les comparer à ceux des émotions primaires. Une autre solution est le suivi des points du visage : sur chaque image, nous relevons la position de certains points, et nous essayons de les aligner sur le modèle de chaque expression primaire. Finalement, l'émotion retenue est celle dont le modèle de points est le plus proche de celui de l'image.
+
 Sous-partie 2 : Solution choisie
+
+Avant de présenter la solution choisie, nous avons testé plusieurs autres méthodes que nous avons abandonné. Par exemple, pour détecter la forme de la bouche, nous avons utilisé une fonction présente dans OpenCV : "findContours" //-- (insérer l'image dans image + code en annexe dans data)--// qui permet d'obtenir des résultats plutôt bons //-- image fin--//. Cependant, dans certains cas, le résultat n'était pas du tout exploitable //--image fin3--//. Par ailleurs, la détection des couleurs //--exemple de code dans data--// a donné de bien meilleurs résultats //--détection de la couleur de la bouche : image fin2.jpg + code dans data--//. Utiliser "findContours" aurait été plus précis, mais son manque de fiabilité et la nécessité de traiter les images rend son utilisation contraignante. Une autre solution consistait à détecter les expressions à l'aide des couleurs et de l'utilisation de seuils spécifiques. C'était la solution la plus rapide et la plus simple à mettre en place ##need précisions : en quoi ça consiste; pourquoi nous l'avons abandonnée si elle rapide et simple, etc.##
+
+La solution choisie est une méthode légèrement différente de celle que nous avons présentée ##laquelle ?##. Le suivi des points ou les réseaux neuronnaux ont pour désavantage de demander énormément de calculs. Sachant que notre application a pour support l'ordinateur de bord d'une voiture (vraisemblablement moins puissant qu'un ordinateur portable), il est nécessaire de trouver une solution portable. Pour simplifier les calculs, voici la méthode utilisée pour la reconnaissance des émotions : la première étape est l'obtention d'un visage. L'identité de la personne nous importe peu (elle est uniquement utilisée pour le démarrage du véhicule).  
 
 Partie 2 : Expérimentations
 
@@ -16,10 +28,4 @@ Sous-partie 2 : Réalisation
 
 Sous-partie 3 : Résultats et analyse
 
-Partie 3 : Production 
 
-Sous-partie 1 : Prototype final  
-
-sous-partie 2 : Test finaux
-
-Sous-partie 3 : Discussion et analyse
