@@ -160,7 +160,7 @@ Par ailleurs, nous avons choisi de traiter uniquement des images en noir et blan
 
 \subsection{La m\'ethode Eighenface}
 
-La m\'ethode de reconnaissance faciale Eighenface a pour particularit\'e de se baser sur des \og eighen vectors\fg, c'est-\`a-dire des vecteurs propres.\\
+La m\'ethode de reconnaissance faciale Eighenface a pour particularit\'e de se baser sur des \og eighen vectors\fg, c'est-\`a-dire des vecteurs propres. Elle a \'et\'e introduite en 1991 par Turk & Pentland\\
 
 L'algorithme est le suivant~: chaque image est consid\'er\'ee comme un vecteur avec pour dimension son nombre de pixels. Puis, un ou plusieurs algorithmes recherchent les principales composantes //--plus de pr\'ecision sur composante ?--//. A l'aide de plusieurs images du même visage, nous pouvons alors composer une image du visage \og moyen\fg qui contiendra \'egalement les principales composantes (l'eighenface). La m\'ethode de reconnaissance des axes principaux est d\'etaill\'ee ici~: Matthew Turk and Alex Pentland. Eigenfaces for recognition. J. Cognitive Neuroscience. 3(1)~:71{86, 1991}. Enfin, il suffit de comparer l'eighenface et les composantes principales d'une capture d'un visage.\\
 
