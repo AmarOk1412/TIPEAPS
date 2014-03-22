@@ -28,8 +28,14 @@ Dans cette partie, nous allons présenter les expérimentations, nous allors d'a
 
 Sous-partie 1 : Protocole
 
+Dans le but de régler les seuils de façon précise, il a fallu définir une distance entre le sujet et l'objectif de la caméra (cette distance a été fixée à 50 cm), et effectuer une initialisation avec une émotion neutre. Puis, pour vérifier la robustesse de la détection, le sujet devait froncer les sourcils, écarquiller et fermer les yeux, et ouvrir la bouche. Ces déformations particulières du visage correspondent aux expressions faciales (la colère, la surprise et l'endormissement) que nous souhaitons récupérer pour notre application. Le processus est répétée jusqu'à la détection de l'expression faciale.
+
 Sous-partie 2 : Réalisation
 
+//--A COMPLETER--//
+
 Sous-partie 3 : Résultats et analyse
+
+//--à l'arrêt, avec une luminosité ne changeant pas énormément, la détection marchait bien. Juste des problemes dès qu'on avançait/reculait --> pourquoi à l'arrêt ? l'expérience dans la voiture, ce n'est pas plutôt pour la prod finale ?--//
 
 
