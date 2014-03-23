@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.26pt}
+\select@language {french}
+\beamer@sectionintoc {1}{Reconnaissance faciale}{2}{0}{1}
+\beamer@sectionintoc {2}{Reconnaissance des \'emotions}{4}{0}{2}
