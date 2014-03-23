@@ -160,7 +160,7 @@ Par ailleurs, nous avons choisi de traiter uniquement des images en noir et blan
 
 \subsection{La m\'ethode Eighenface}
 
-La m\'ethode de reconnaissance faciale Eighenface a pour particularit\'e de se baser sur des \og eighen vectors\fg, c'est-\`a-dire des vecteurs propres. Elle a \'et\'e introduite en 1991 par Turk & Pentland\\
+La m\'ethode de reconnaissance faciale Eighenface a pour particularit\'e de se baser sur des \og eighen vectors\fg, c'est-\`a-dire des vecteurs propres. Elle a \'et\'e introduite en 1991 par Turk et Pentland\\
 
 L'algorithme est le suivant~: chaque image est consid\'er\'ee comme un vecteur avec pour dimension son nombre de pixels. Puis, un ou plusieurs algorithmes recherchent les principales composantes //--plus de pr\'ecision sur composante ?--//. A l'aide de plusieurs images du même visage, nous pouvons alors composer une image du visage \og moyen\fg qui contiendra \'egalement les principales composantes (l'eighenface). La m\'ethode de reconnaissance des axes principaux est d\'etaill\'ee ici~: Matthew Turk and Alex Pentland. Eigenfaces for recognition. J. Cognitive Neuroscience. 3(1)~:71{86, 1991}. Enfin, il suffit de comparer l'eighenface et les composantes principales d'une capture d'un visage.\\
 
@@ -256,18 +256,18 @@ Pour la reconnaissance des visages, la dur\'ee est quasiment identique pour les 
 			xbar,
 			xmin=0,
 			width=12cm,
-			height=7cm,
-			enlarge y limits=0.5,
+			height=8cm,
+			enlarge y limits=0.15,
 			xlabel={Pourcentage de reconnaissance},
-			symbolic y coords={Amaury, Pierre-Henri, S\'ebastien},
+			symbolic y coords={Moyenne, {}, Amaury, Pierre-Henri, S\'ebastien},
 			ytick=data,
 			nodes near coords,
 			nodes near coords align={horizontal},
-			legend style={at={(0.3,0.95)},anchor=north,legend columns=-1},
+			legend style={at={(0.5,0.36)},anchor=north,legend columns=-1},
 		]
-			\addplot coordinates {(71.929824561404,Amaury) (7.4074074074074,Pierre-Henri) (24.657534246575,S\'ebastien)};
-			\addplot coordinates {(59.649122807018,Amaury) (80.246913580247,Pierre-Henri) (73.972602739726,S\'ebastien)};
-			\addplot coordinates {(82.456140350877,Amaury) (60.493827160494,Pierre-Henri) (90.41095890411,S\'ebastien)};
+			\addplot coordinates {(71.929824561404,Amaury) (7.4074074074074,Pierre-Henri) (24.657534246575,S\'ebastien) (34.6649220717955,Moyenne)};
+			\addplot coordinates {(59.649122807018,Amaury) (80.246913580247,Pierre-Henri) (73.972602739726,S\'ebastien) (71.2895463756637,Moyenne)};
+			\addplot coordinates {(82.456140350877,Amaury) (60.493827160494,Pierre-Henri) (90.41095890411,S\'ebastien) (77.786975471827,Moyenne)};
 			
 			\legend{Eigenface, Fisherface, LBPH}
 		\end{axis}
@@ -280,41 +280,55 @@ Nous d\'eduisons de la seconde partie de l'exp\'erience \no 1 les r\'esultats af
 
 Nous pouvons conclure de la seconde partie que la luminosit\'e peut être un probl\`eme lorsque les yeux sont cach\'es par la lumi\`ere. Cela pose aussi un souci lorsque la limite entre le visage et l'arri\`ere-plan est difficilement perceptible (ce qui arrive assez souvent avec une cam\'era de faible qualit\'e). L'orientation et l'inclinaison de la tête sont limit\'ees \`a un certain angle (environ 20°), car au-del\`a les deux yeux ne sont pas bien visibles. La d\'eformation du visage ne perturbe pas la reconnaissance, en outre le port de lunettes de vue ne modifie que tr\`es l\'eg\`erement le r\'esultat. Pour pallier cette difficult\'e, la meilleure solution serait d'inclure des photos avec accessoires dans la base de donn\'ees. Masquer certaines parties du visage est beaucoup plus probl\'ematique. En effet, lorsque la bouche est cach\'ee, la reconnaissance est r\'ealisable, mais plus difficilement. En revanche, si les yeux sont cach\'es, la reconnaissance est impossible. Ce qui pose un probl\`eme pour les personnes aux cheveux longs. La distance visage-cam\'era peut être \'egalement un obstacle \`a la reconnaissance dans le cas o\`u la taille du visage reconnue est plus petite que celle dans la base de donn\'ees. La r\'ealisation de nouveaux classifiers pourraient être int\'eressants pour am\'eliorer la reconnaissance.\\
 %TODO : image
-Pour conclure, nous pouvons dire que les expérimentations ont montré que la méthode de reconnaissance faciale LBPH est la plus efficace. Cependant, nous avons également vu que de nombreux facteurs extérieurs influent sur la qualité de la reconnaissance et peuvent mettre en échec celle-ci.\\
+Pour conclure, nous pouvons dire que les exp\'erimentations ont montr\'e que la m\'ethode de reconnaissance faciale LBPH est la plus efficace. Cependant, nous avons \'egalement vu que de nombreux facteurs ext\'erieurs influent sur la qualit\'e de la reconnaissance et peuvent mettre en \'echec celle-ci.\\
 
-Dans cette partie, nous avons comparé différentes méthodes théoriques de reconnaissance faciale. Puis, nous avons réalisé des expériences sur chacun des algorithmes pour finalement en retenir un : LBPH. Nous allons maintenant passer à l'étape suivante de notre démarche qui est la reconnaissance des émotions. //--Trouver une meilleure transition--//\\
-	\chapter{Reconnaissance des \'emotions}
-		\section{Th\'eorie}
-			\subsection{Diff\'erentes solutions}
-				%TODO
-			\subsection{Solution choisie}
-				%TODO
-		\section{Exp\'erimentations}
-			\subsection{Protocole}
-				%TODO
-			\subsection{R\'ealisation}
-				%TODO
-			\subsection{R\'esultats et analyse}
-				%TODO
-	\chapter{Production}
-		\section{Prototype final}
-			%TODO
-			\begin{figure}
-				\begin{center}
-					\includegraphics[scale=0.9]{images/schema_tests.png}
-					\caption{Sch\'ema du prototype de test}
-				\end{center}
-			\end{figure}
-			\begin{figure}
-				\begin{center}
-					\includegraphics[scale=1]{images/schema_tests_elec.png}
-					\caption{Sch\'ema \'electrique du prototype de test}
-				\end{center}
-			\end{figure}
-		\section{Tests finaux}
-			%TODO
-		\section{Discussion et analyse}
-	\chapter*{Conclusion}
+Dans cette partie, nous avons compar\'e diff\'erentes m\'ethodes th\'eoriques de reconnaissance faciale. Puis, nous avons r\'ealis\'e des exp\'eriences sur chacun des algorithmes pour finalement en retenir un : LBPH. Nous allons maintenant passer \`a l'\'etape suivante de notre d\'emarche qui est la reconnaissance des \'emotions. //--Trouver une meilleure transition--//\\
+\chapter{Reconnaissance des \'emotions}
+	Dans cette derni\`ere partie, nous allons aborder la reconnaissance des \'emotions. Comme pour la reconnaissance faciale, nous \'etudierons d'abord l'aspect th\'eorique, puis nous passerons aux exp\'erimentations.
+\section{Th\'eorie}
+Avant de passer \`a l'exp\'erimentation, nous avons besoin de connaitre la m\'ethode la plus adapt\'ee \`a notre application. C'est pourquoi, dans un premier temps nous allons voir les diff\'erentes solutions possibles, puis nous allons choisir celle qui correspond le mieux \`a nos besoins.
+\subsection{Diff\'erentes solutions}
+	Avant toute chose, nous \'etudions les expressions faciales et non directement les \'emotions. Les expressions faciales sont br\`eves : entre 250ms et 5s. [cf automaticFacialExpressionAnalysis]. Il existe diff\'erentes façons de r\'ecup\'erer des expressions faciales : l'approche holistique (c'est-\`a-dire que la tête est analys\'ee de façon globale) ou l'approche locale qui consiste \`a prendre des parties de la tête et analyser ces parties ind\'ependamment les unes des autres. \\
+
+Ensuite, pour "trouver" les \'emotions, il existe \'egalement diff\'erentes mani\`eres de proc\'eder. Nous avons l'approche bas\'ee sur un mod\`ele : \`a partir d'une image, //-- \`a compl\'eter --////--SEB : En gros, c'est pas comme ce qu'on a fait pour reconnaitre un visage, mais \`a la place de reconnaitre une personne, c'\'etait une \'emotion. Genre dans la BDD on aurait Seb content, seb pas content, seb dodo, ...--//. Nous avons aussi l'approche bas\'ee sur l'image : \`a partir d'une image, nous essayons de trouver des expressions faciales qui s'apparentent aux \'emotions primaires d\'efinies par Ekman et Friesen. Tous les humains ont la même façon d'exprimer ces \'emotions primaires, peu importe son origine ou sa culture [cf 2002ElfenbeinMeta - On the Universality and cultural Specificity of Emotion Recognition: A Meta-Analysis]. Cette m\'ethode pr\'esente l'avantage d'être plus simple et plus rapide \`a mettre en place. Cependant, elle est moins robuste, notamment aux changements de position de la tête. \\
+//--METTRE IMAGE DES 6 \'emotions de base--//
+
+Enfin, pour visualiser les changements //--\`a pr\'eciser--//, nous pouvons regarder les d\'eformations. Pour commencer, cela consiste \`a classer les \'emotions primaires en termes de mouvements, translations, rotations, etc. Puis, nous prenons des images \`a diff\'erents instants et nous analysons les mouvements, translations, rotations, etc... afin de les comparer \`a ceux des \'emotions primaires. Une autre solution est le suivi des points du visage : sur chaque image, nous relevons la position de certains points et nous essayons de les aligner sur le mod\`ele de chaque expression primaire. Finalement, l'\'emotion retenue est celle dont le mod\`ele de points est le plus proche de celui de l'image. C'est la m\'ethode la plus robuste, mais aussi la plus couteuse en calcul et plus difficile \`a mettre en place que la pr\'ec\'edente m\'ethode.\\
+\subsection{Solution choisie}
+	Avant de pr\'esenter la solution choisie, nous avons test\'e plusieurs autres m\'ethodes que nous avons abandonn\'e. Par exemple, pour d\'etecter la forme de la bouche, nous avons utilis\'e une fonction pr\'esente dans OpenCV : "findContours" //-- (ins\'erer l'image dans image + code en annexe dans data)--// qui permet d'obtenir des r\'esultats plutôt bons //-- image fin--//. Cependant, dans certains cas, le r\'esultat n'\'etait pas du tout exploitable //--image fin3--//. Par ailleurs, la d\'etection des couleurs //--exemple de code dans data--// a donn\'e de bien meilleurs r\'esultats //--d\'etection de la couleur de la bouche : image fin2.jpg + code dans data--//. Utiliser "findContours" aurait \'et\'e plus pr\'ecis, mais son manque de fiabilit\'e et la n\'ecessit\'e de traiter les images rend son utilisation contraignante. Une autre solution consistait \`a d\'etecter les expressions \`a l'aide des couleurs et de l'utilisation de seuils sp\'ecifiques. C'\'etait la solution la plus rapide et la plus simple \`a mettre en place, mais elle est impr\'ecise et difficile \`a utiliser pour savoir si les yeux sont fronc\'es ou \'ecarquill\'es par exemple.\\
+
+La solution choisie est une m\'ethode l\'eg\`erement diff\'erente de la m\'ethode de d\'etection de couleur. Le suivi des points ou les r\'eseaux neuronaux ont pour d\'esavantage de demander \'enorm\'ement de calculs. Sachant que notre application a pour support l'ordinateur de bord d'une voiture //-\`a reformuler--// (vraisemblablement moins puissant qu'un ordinateur portable), il est n\'ecessaire de trouver une solution portable. Pour simplifier les calculs, nous avons d\'efini la m\'ethode suivante pour effectuer la reconnaissance des \'emotions : la premi\`ere \'etape est l'obtention d'un visage. L'identit\'e de la personne nous importe peu (elle est uniquement utilis\'ee pour le d\'emarrage du v\'ehicule). Ensuite, \`a l'aide d'un second classifieur, nous obtenons toutes les positions susceptibles de correspondre \`a des yeux. Les yeux situ\'es dans la partie basse du visage sont \'elimin\'es. La hauteur du classifieur nous indique si les yeux sont en position normale, fronc\'es ou \'ecarquill\'es. Pour d\'etecter les yeux ferm\'es, il suffit de regarder le nombre de pixels ayant une couleur comprise entre (80,0,0) et (160,100,100) (on effectue donc une d\'etection par la couleur pour ce point). Concernant la bouche, la m\'ethode est presque identique \`a celle des yeux. Avec un classifier sp\'ecifique, toutes les bouches possibles sont r\'ecup\'er\'ees, puis les erreurs sont \'ecart\'ees (bouches situ\'ees dans la partie haute du visage ou trop pr\`es du bord). Ensuite, la bouche est convertie en niveaux de gris  et un seuil est appliqu\'ee pour n'obtenir que l'int\'erieur de la bouche. En effet, on peut remarquer que la couleur \`a l'int\'erieur d'une bouche ouverte tend vers le noir, alors que les l\`evres sont plus d'une couleur rouge. Ainsi, on a plus qu'\`a comparer le taux de noir de l'image au taux obtenu \`a l'initialisation du programme. Si le taux de noir de l'image est sup\'erieur \`a celui obtenu \`a l'initialisation plus un seuil, la bouche est ouverte. \\
+
+Apr\`es cet aperçu des diff\'erentes solutions possibles pour la reconnaissance faciale et du choix de notre m\'ethode, nous allons \`a pr\'esent l'exp\'erimenter.
+\section{Exp\'erimentations}
+	Dans cette partie, nous allons pr\'esenter les exp\'erimentations, nous allors d'abord exposer le protocole exp\'erimental, puis la r\'ealisation en elle-même, et enfin les conclusions que nous en avons tir\'e.
+\subsection{Protocole}
+	Dans le but de r\'egler les seuils de façon pr\'ecise, il a fallu d\'efinir une distance entre le sujet et l'objectif de la cam\'era (cette distance a \'et\'e fix\'ee \`a 50 cm), et effectuer une initialisation avec une \'emotion neutre. Puis, pour v\'erifier la robustesse de la d\'etection, le sujet devait froncer les sourcils, \'ecarquiller et fermer les yeux et ouvrir la bouche. Ces d\'eformations particuli\`eres du visage correspondent aux expressions faciales (la col\`ere, la surprise et si le conducteur \'etait endormi) que nous souhaitons r\'ecup\'erer pour notre application. Le processus est r\'ep\'et\'e jusqu'\`a la d\'etection de l'expression faciale.
+\subsection{R\'ealisation}
+	//--A COMPLETER--//\\
+//--SEB: Tu veux mettre quoi \`a part qu'on a r\'ealiser le protocole--//
+\subsection{R\'esultats et analyse}
+	//--REFORMULATION : Dans un lieu o\`u l'utilisateur de l'application ne bouge pas et o\`u la luminosit\'e ne change pas, on arrive \`a obtenir une d\'etection correcte des \'emotions. On pouvait tout de même observer des probl\`emes lorsque l'utilisateur s'\'eloignait ou reculait de la cam\'era. En effet les seuils et les tailles devenaient incorrects. Il fallait donc r\'einitialiser les seuils.--//\\
+//--\`a l'arrêt, avec une luminosit\'e ne changeant pas \'enorm\'ement, la d\'etection marchait bien. Juste des problemes d\`es qu'on avançait/reculait --> pourquoi \`a l'arrêt ? l'exp\'erience dans la voiture, ce n'est pas plutôt pour la prod finale ?--//
+\chapter{Production}
+\section{Prototype final}
+	%TODO
+	\begin{figure}
+		\begin{center}
+			\includegraphics[scale=0.9]{images/schema_tests.png}
+			\caption{Sch\'ema du prototype de test}
+		\end{center}
+	\end{figure}
+	\begin{figure}
+		\begin{center}
+			\includegraphics[scale=1]{images/schema_tests_elec.png}
+			\caption{Sch\'ema \'electrique du prototype de test}
+		\end{center}
+	\end{figure}
+\section{Tests finaux}
+	%TODO
+\section{Discussion et analyse}
+\chapter*{Conclusion}
 \appendix
 	\chapter{Code des applications}
 		%Modifications de l'affichage des codes source
