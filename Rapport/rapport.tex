@@ -62,6 +62,9 @@
 	\begin{abstract}
 		%TODO
 	\end{abstract}
+	\begin{remerciements}
+		%TODO
+	\end{remerciements}
 	\chapter*{Introduction}
 		\subsection*{Pourquoi ce projet}
 			%TODO
@@ -319,7 +322,28 @@ Ensuite, pour "trouver" les \'emotions, il existe \'egalement diff\'erentes mani
 
 Enfin, pour visualiser les changements //--\`a pr\'eciser--//, nous pouvons regarder les d\'eformations. Pour commencer, cela consiste \`a classer les \'emotions primaires en termes de mouvements, translations, rotations, etc. Puis, nous prenons des images \`a diff\'erents instants et nous analysons les mouvements, translations, rotations, etc... afin de les comparer \`a ceux des \'emotions primaires. Une autre solution est le suivi des points du visage : sur chaque image, nous relevons la position de certains points et nous essayons de les aligner sur le mod\`ele de chaque expression primaire. Finalement, l'\'emotion retenue est celle dont le mod\`ele de points est le plus proche de celui de l'image. C'est la m\'ethode la plus robuste, mais aussi la plus couteuse en calcul et plus difficile \`a mettre en place que la pr\'ec\'edente m\'ethode.\\
 \subsection{Solution choisie}
-	Avant de pr\'esenter la solution choisie, nous avons test\'e plusieurs autres m\'ethodes que nous avons abandonn\'e. Par exemple, pour d\'etecter la forme de la bouche, nous avons utilis\'e une fonction pr\'esente dans OpenCV : "findContours" //-- (ins\'erer l'image dans image + code en annexe dans data)--// qui permet d'obtenir des r\'esultats plutôt bons //-- image fin--//. Cependant, dans certains cas, le r\'esultat n'\'etait pas du tout exploitable //--image fin3--//. Par ailleurs, la d\'etection des couleurs //--exemple de code dans data--// a donn\'e de bien meilleurs r\'esultats //--d\'etection de la couleur de la bouche : image fin2.jpg + code dans data--//. Utiliser "findContours" aurait \'et\'e plus pr\'ecis, mais son manque de fiabilit\'e et la n\'ecessit\'e de traiter les images rend son utilisation contraignante. Une autre solution consistait \`a d\'etecter les expressions \`a l'aide des couleurs et de l'utilisation de seuils sp\'ecifiques. C'\'etait la solution la plus rapide et la plus simple \`a mettre en place, mais elle est impr\'ecise et difficile \`a utiliser pour savoir si les yeux sont fronc\'es ou \'ecarquill\'es par exemple.\\
+	Avant de pr\'esenter la solution choisie, nous avons test\'e plusieurs autres m\'ethodes que nous avons abandonn\'e. Par exemple, pour d\'etecter la forme de la bouche, nous avons utilis\'e une fonction pr\'esente dans OpenCV : "findContours" //-- (ins\'erer l'image dans image + code en annexe dans data)--// qui permet d'obtenir des r\'esultats plutôt bons. \\
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=1]{images/findContoursOk.jpg}
+		\caption{Utilisation de la m\'thode findContours sur une bouche}
+	\end{center}
+\end{figure}
+Cependant, dans certains cas, le r\'esultat n'\'etait pas du tout exploitable.\\
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=1]{images/findContoursNOk.jpg}
+		\caption{Utilisation de la m\'ethode findContours sur un oeil}
+	\end{center}
+\end{figure}
+Par ailleurs, la d\'etection des couleurs //--exemple de code dans data--// a donn\'e de bien meilleurs r\'esultats //--d\'etection de la couleur de la bouche : image fin2.jpg + code dans data--//.\\
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=1]{images/inRangeOk.jpg}
+		\caption{D\'etection d'une plage de couleur sur une bouche}
+	\end{center}
+\end{figure}
+Utiliser "findContours" aurait \'et\'e plus pr\'ecis, mais son manque de fiabilit\'e et la n\'ecessit\'e de traiter les images rend son utilisation contraignante. Une autre solution consistait \`a d\'etecter les expressions \`a l'aide des couleurs et de l'utilisation de seuils sp\'ecifiques. C'\'etait la solution la plus rapide et la plus simple \`a mettre en place, mais elle est impr\'ecise et difficile \`a utiliser pour savoir si les yeux sont fronc\'es ou \'ecarquill\'es par exemple.\\
 
 La solution choisie est une m\'ethode l\'eg\`erement diff\'erente de la m\'ethode de d\'etection de couleur. Le suivi des points ou les r\'eseaux neuronaux ont pour d\'esavantage de demander \'enorm\'ement de calculs. Sachant que notre application a pour support l'ordinateur de bord d'une voiture //-\`a reformuler--// (vraisemblablement moins puissant qu'un ordinateur portable), il est n\'ecessaire de trouver une solution portable. Pour simplifier les calculs, nous avons d\'efini la m\'ethode suivante pour effectuer la reconnaissance des \'emotions : la premi\`ere \'etape est l'obtention d'un visage. L'identit\'e de la personne nous importe peu (elle est uniquement utilis\'ee pour le d\'emarrage du v\'ehicule). Ensuite, \`a l'aide d'un second classifieur, nous obtenons toutes les positions susceptibles de correspondre \`a des yeux. Les yeux situ\'es dans la partie basse du visage sont \'elimin\'es. La hauteur du classifieur nous indique si les yeux sont en position normale, fronc\'es ou \'ecarquill\'es. Pour d\'etecter les yeux ferm\'es, il suffit de regarder le nombre de pixels ayant une couleur comprise entre (80,0,0) et (160,100,100) (on effectue donc une d\'etection par la couleur pour ce point). Concernant la bouche, la m\'ethode est presque identique \`a celle des yeux. Avec un classifier sp\'ecifique, toutes les bouches possibles sont r\'ecup\'er\'ees, puis les erreurs sont \'ecart\'ees (bouches situ\'ees dans la partie haute du visage ou trop pr\`es du bord). Ensuite, la bouche est convertie en niveaux de gris  et un seuil est appliqu\'ee pour n'obtenir que l'int\'erieur de la bouche. En effet, on peut remarquer que la couleur \`a l'int\'erieur d'une bouche ouverte tend vers le noir, alors que les l\`evres sont plus d'une couleur rouge. Ainsi, on a plus qu'\`a comparer le taux de noir de l'image au taux obtenu \`a l'initialisation du programme. Si le taux de noir de l'image est sup\'erieur \`a celui obtenu \`a l'initialisation plus un seuil, la bouche est ouverte. \\
 
