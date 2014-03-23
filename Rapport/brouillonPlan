@@ -41,7 +41,7 @@ J. Cognitive Neuroscience
           . Définition :
             Evolution de l'algo Eigenface
           . Algo:
-            EigenFace se base sur la méthode ACP. FisherFace se base sur son amélioration, l'Analyse discriminante linéaire (ADL) qui cherche le meilleur sous espace qui minimise la distance entre les images d'une même classe (ici une classe = un visage) en maximisant la distance inter-classe.
+            EigenFace se base sur la méthode ACP. FisherFace se base sur son amélioration, l'Analyse Discriminante Linéaire (ADL) qui cherche le meilleur sous espace qui minimise la distance entre les images d'une même classe (ici une classe = un visage) en maximisant la distance inter-classe.
 Tout d'abord, l'algo calcul l'image moyenne de la classe. (caser la formule de moyenne ? (1/k)*somme de 1 à k de xj).
 Puis, on calcul les matrice de dispersion intra & inter classe (disons respectivement Mi et Me).
 Puis on trouve la matrice de projection (P) en résolvant Mi*x = lambda*Me*x
