@@ -53,12 +53,12 @@
 		\begin{flushleft}
 			\Large{Sous l'encadrement de~:}\\
 			\vspace{0.2cm}
-			\large{Johanne B\'ezy-Wendling}\\
+			\large{Johanne \textsc{B\'ezy-Wendling}}\\
 			\normalsize{Ma\^itre de Conf\'erences\\
 			Responsable cycle pr\'eparatoire ing\'enieur de l'Universit\'e de Rennes I\\
 			(sp\'ecialit\'e informatique et t\'el\'ecommunications)}\\
 			\vspace{0.2cm}
-			\large{Finn J\o rgensen}\\
+			\large{Finn \textsc{J\o rgensen}}\\
 			\normalsize{Responsable L3 d'informatique - ISTIC}
 		\end{flushleft}
 		\vfill
@@ -68,10 +68,17 @@
 		%TODO
 	\end{abstract}
 	\chapter*{Remerciements}
-		%TODO
+	Nous tenons \'a exprimer nos remerciements et notre gratitude envers tous ceux qui ont bien voulu apporter leur assistance au bon d\'eroulement de ce projet.\\
+
+Nous remercions en particulier Finn J\o rgensen, Responsable L3 d?informatique de l'ISTIC et Madame Johanne B\'ezy-Wendling Ma\^itre de Conf\'erences et Responsable cycle pr\'eparatoire ing\'enieur de l?Universit\'e de Rennes I (sp\'ecialit\'e informatique et t\'el\'ecommunications) pour l'encadrement de ce TIPE et l'attention qu'ils ont bien voulus apporter \`a ce travail \`a divers stades de son \'elaboration.\\
+
+Nous remercions \'egalement Madame D\'eborah Mahieu Professeur Agr\'eg\'e et Responsable parcours communication pour l'apport de conseils et de m\'ethodes qui nous ont servi tout au long de ce projet.\\
+
+Enfin, nous remercions toutes les personnes qui nous aid\'e lors des exp\'erimentations pour la v\'erification du bon fonctionnement de l'application.\\
 	\tableofcontents
 	\chapter*{Introduction}
 	. caser \cite{linuxMagazine} qui nous a donne l'idee
+	. caser \cite{drivingEmotionalExperienceAutomotiveDesign} en projet similaire
 	\pagenumbering{arabic}
 	\setcounter{page}{1}
 		\subsection*{Pourquoi ce projet}
@@ -150,7 +157,7 @@ Comme nous venons de le voir, les principales causes d'accidents mettent en avan
 
 \subsection{La conduite \`a l'aveugle}
 
-La conduite \`a l'aveugle fait r\'ef\'erence au relâchement d'attention du conducteur pour effectuer d'autres tâches annexes \`a l'int\'erieur du v\'ehicule. Ainsi, ses capacit\'es d'analyse de la circulation et de r\'eaction sont fortement diminu\'ees.\\
+La conduite \`a l'aveugle fait r\'ef\'erence au rel\^achement d'attention du conducteur pour effectuer d'autres t\^aches annexes \`a l'int\'erieur du v\'ehicule. Ainsi, ses capacit\'es d'analyse de la circulation et de r\'eaction sont fortement diminu\'ees.\\
 
 Il existe trois types de distraction~: visuelle (regarder autre chose que la route), manuelle (d\'etacher ses mains du volant), cognitive (ne pas être concentr\'e sur la route). Concr\`etement, cela signifie~: utiliser sont t\'el\'ephone portable ou un smartphone, envoyer un sms, manger et boire, parler aux passagers, se maquiller, lire (y compris les cartes), utiliser un syst\`eme de navigation, regarder une vid\'eo, r\'egler la radio, un lecteur CD ou mp3, etc. Envoyer des sms est la distraction la plus dangereuse, car elle combine les trois types de distraction. De plus, envoyer ou lire un texte oblige \`a quitter des yeux la route pendant 4,6 s en moyenne. A 55 mph (environ 88 km/s), c'est comme conduire la longueur d'un terrain de football, les yeux band\'es.\\
 
@@ -165,7 +172,7 @@ Afin d'\'etudier l'aspect th\'eorique de la reconnaissance faciale, nous allons 
 
 \subsection{G\'en\'eralit\'es}
 
-Apr\`es des recherches approfondies, nous avons pu constater qu'il existe \'enorm\'ement de m\'ethodes possibles pour reconnaître un visage.  Ces m\'ethodes peuvent \'egalement être combin\'ees entre elles (par exemple, la mise en place en place d'un r\'eseau neuronal ou l'impl\'ementation de mod\`eles cach\'es de Markov \cite{analyseInterpretationMouvementsHumains}, \cite{facialExpressionRecognitionFromVideoSequences}). Cependant, en trois mois, nous nous n'aurions pas eu le temps de mettre en place une telle m\'ethode. De plus la mise en place d'un r\'eseau neuronnal n\'ecessite beaucoup de calculs. En effet, un r\'eseau neuronal est compos\'e d'une suite de couches de neurones. On donne la matrice de l'image en sortie et le r\'eseau nous donne en sortie le nom de la personne identifi\'ee. La couche de sortie est donc compos\'ee d'un neurone par personne enregistr\'ee, mais la couche d'entr\'ee n\'ecessite autant de neurones que de pixels dans l'image. Pour une image $100\times 100$ il faut donc $10 000$ neurones pour la couche d'entr\'ee. \\
+Apr\`es des recherches approfondies, nous avons pu constater qu'il existe \'enorm\'ement de m\'ethodes possibles pour reconnaître un visage.  Ces m\'ethodes peuvent \'egalement être combin\'ees entre elles (par exemple, la mise en place en place d'un r\'eseau neuronal \cite{emotionRecognitionNeurofuzzyNetwork} ou l'impl\'ementation de mod\`eles cach\'es de Markov \cite{analyseInterpretationMouvementsHumains}, \cite{facialExpressionRecognitionFromVideoSequences}, \cite{bimodalEmotionRecognition}). Cependant, en trois mois, nous nous n'aurions pas eu le temps de mettre en place une telle m\'ethode. De plus la mise en place d'un r\'eseau neuronnal n\'ecessite beaucoup de calculs. En effet, un r\'eseau neuronal est compos\'e d'une suite de couches de neurones. On donne la matrice de l'image en sortie et le r\'eseau nous donne en sortie le nom de la personne identifi\'ee. La couche de sortie est donc compos\'ee d'un neurone par personne enregistr\'ee, mais la couche d'entr\'ee n\'ecessite autant de neurones que de pixels dans l'image. Pour une image $100\times 100$ il faut donc $10 000$ neurones pour la couche d'entr\'ee. \\
 
 Par ailleurs, nous avons choisi de traiter uniquement des images en noir et blanc, car la colorim\'etrie a tr\`es peu d'impact dans le processus de reconnaissance.\\
 
@@ -202,7 +209,7 @@ Pour trouver la meilleure projection, il suffit de r\'esoudre\\$$\frac{P^{-1}\ti
 	\end{center}
 \end{figure}
 
-Vous pouvez retrouver plus de détails dans la documentation d'OpenCV (\cite{docOpenCVFisherFace} et \cite{docOpenCVFaceRecognizer})
+Vous pouvez retrouver plus de d\'etails dans la documentation d'OpenCV (\cite{docOpenCVFisherFace} et \cite{docOpenCVFaceRecognizer})
 
 Globalement, cette m\'ethode pr\'esente les mêmes avantages et inconv\'enients que la m\'ethode Eigenface. Cependant, elle est moins sensible \`a la lumi\`ere et \`a la d\'eformation des visages car elle ne se base pas sur des composantes discriminatoires.\\
 
@@ -321,7 +328,7 @@ Avant de passer \`a l'exp\'erimentation, nous avons besoin de connaitre la m\'et
 \subsection{Diff\'erentes solutions}
 	Avant toute chose, nous \'etudions les expressions faciales et non directement les \'emotions. Les expressions faciales sont br\`eves~: entre $250\si{\milli\second}$ et $5\si{\second}$ \cite{automaticFacialExpressionAnalysis}. Il existe diff\'erentes façons de r\'ecup\'erer des expressions faciales~: l'approche holistique (c'est-\`a-dire que la tête est analys\'ee de façon globale) ou l'approche locale qui consiste \`a prendre des parties de la tête et analyser ces parties ind\'ependamment les unes des autres. \\
 
-Ensuite, pour \og trouver\fg les \'emotions, il existe \'egalement diff\'erentes mani\`eres de proc\'eder. Nous avons l'approche bas\'ee sur un mod\`ele~: c'est la technique utilis\'ee pr\'ec\'edemment pour effectuer la reconnaissance des visages, mais \'a la place de s\'eparer la base de donn\'ees par individus, on s\'epare les image par individus et par \'emotions. On peut imaginer par exemple une arborescence avec un dossier nomm\'e Xavier contenant les sous-dossiers \verb|Xavier_Content|, \verb|Xavier_Peur|, \verb|Xavier_Degout|, ... Le probl\`eme de cette m\'ethode est qu'il faut que l'individu soit connu dans la base de donn\'ees pour reconna\^itre les \'emotions (ce qui explique pourquoi nous n'avons pas choisi cette m\'ethode). Nous avons aussi l'approche bas\'ee sur l'image~: \`a partir d'une image, nous essayons de trouver des expressions faciales qui s'apparentent aux \'emotions primaires d\'efinies par Ekman et Friesen. Tous les humains ont la même façon d'exprimer ces \'emotions primaires, peu importe son origine ou sa culture \cite{universalityCulturalSpecificityEmotionRecognitionMetaAnalysis}. Cette m\'ethode pr\'esente l'avantage d'être plus simple et plus rapide \`a mettre en place. Cependant, elle est moins robuste, notamment aux changements de position de la tête. \\
+Ensuite, pour \og trouver\fg les \'emotions, il existe \'egalement diff\'erentes mani\`eres de proc\'eder. Nous avons l'approche bas\'ee sur un mod\`ele~: c'est la technique utilis\'ee pr\'ec\'edemment pour effectuer la reconnaissance des visages, mais \'a la place de s\'eparer la base de donn\'ees par individus, on s\'epare les image par individus et par \'emotions. On peut imaginer par exemple une arborescence avec un dossier nomm\'e Xavier contenant les sous-dossiers \verb|Xavier_Content|, \verb|Xavier_Peur|, \verb|Xavier_Degout|, ... Le probl\`eme de cette m\'ethode est qu'il faut que l'individu soit connu dans la base de donn\'ees pour reconna\^itre les \'emotions (ce qui explique pourquoi nous n'avons pas choisi cette m\'ethode). Nous avons aussi l'approche bas\'ee sur l'image~: \`a partir d'une image, nous essayons de trouver des expressions faciales qui s'apparentent aux \'emotions primaires ( \cite{facialExpressionMegamix}) d\'efinies par Ekman \cite{ekman} et Friesen. Tous les humains ont la même façon d'exprimer ces \'emotions primaires, peu importe son origine ou sa culture \cite{universalityCulturalSpecificityEmotionRecognitionMetaAnalysis}. Cette m\'ethode pr\'esente l'avantage d'être plus simple et plus rapide \`a mettre en place. Cependant, elle est moins robuste, notamment aux changements de position de la tête. \\
 
 \begin{figure}[h]
 	\begin{center}
@@ -358,7 +365,7 @@ Par ailleurs, la d\'etection des couleurs //--INSERER CODE COULEUR + LIEN-// a d
 \end{figure}
 Utiliser\textit{findContours} aurait \'et\'e plus pr\'ecis, mais son manque de fiabilit\'e et la n\'ecessit\'e de traiter les images rend son utilisation contraignante. Une autre solution consistait \`a d\'etecter les expressions \`a l'aide des couleurs et de l'utilisation de seuils sp\'ecifiques. C'\'etait la solution la plus rapide et la plus simple \`a mettre en place, mais elle est impr\'ecise et difficile \`a utiliser pour savoir si les yeux sont fronc\'es ou \'ecarquill\'es par exemple.\\
 
-La solution choisie est une m\'ethode l\'eg\`erement diff\'erente de la m\'ethode de d\'etection de couleur. Le suivi des points (cf \cite{realTimeFacialFeaturePointsTrackingPyramidalLucasKanadeAlgorithm}) ou les r\'eseaux neuronaux ont pour d\'esavantage de demander \'enorm\'ement de calculs. Comme notre application a but d'avoir pour support un ordinateur de bord d'une voiture vraisemblablement moins puissant qu'un ordinateur portable, il est n\'ecessaire de trouver une solution portable. Pour simplifier les calculs, nous avons d\'efini la m\'ethode suivante pour effectuer la reconnaissance des \'emotions~: la premi\`ere \'etape est l'obtention d'un visage. L'identit\'e de la personne nous importe peu (elle est uniquement utilis\'ee pour le d\'emarrage du v\'ehicule). Ensuite, \`a l'aide d'un second classifieur, nous obtenons toutes les positions susceptibles de correspondre \`a des yeux. Les yeux situ\'es dans la partie basse du visage sont \'elimin\'es. La hauteur du classifieur nous indique si les yeux sont en position normale, fronc\'es ou \'ecarquill\'es. Pour d\'etecter les yeux ferm\'es, il suffit de regarder le nombre de pixels ayant une couleur comprise entre [80,0,0] et [160,100,100] avec la premi\'ere composante correspondant au rouge, la seconde au vert et la troisi\`eme au bleu (on effectue donc une d\'etection plut\^ot \`a dominance rouge pour ce point). Concernant la bouche, la m\'ethode est presque identique \`a celle des yeux. Avec un classifier sp\'ecifique, toutes les bouches possibles sont r\'ecup\'er\'ees, puis les erreurs sont \'ecart\'ees (bouches situ\'ees dans la partie haute du visage ou trop pr\`es du bord). Ensuite, la bouche est convertie en niveaux de gris  et un seuil est appliqu\'ee pour n'obtenir que l'int\'erieur de la bouche. En effet, on peut remarquer que la couleur \`a l'int\'erieur d'une bouche ouverte tend vers le noir, alors que les l\`evres sont plus d'une couleur rouge. Ainsi, on a plus qu'\`a comparer le taux de noir de l'image au taux obtenu \`a l'initialisation du programme. Si le taux de noir de l'image est sup\'erieur \`a celui obtenu \`a l'initialisation plus un seuil, la bouche est ouverte. \\
+La solution choisie est une m\'ethode l\'eg\`erement diff\'erente de la m\'ethode de d\'etection de couleur. Le suivi des points (cf \cite{realTimeFacialFeaturePointsTrackingPyramidalLucasKanadeAlgorithm}, \cite{emotionRecognitionCauchyNaiveBayes},  \cite{bimodalEmotionRecognition} et  \cite{authenticFacialExpressionAnalysis} ) ou les r\'eseaux neuronaux ont pour d\'esavantage de demander \'enorm\'ement de calculs. Comme notre application a but d'avoir pour support un ordinateur de bord d'une voiture vraisemblablement moins puissant qu'un ordinateur portable, il est n\'ecessaire de trouver une solution portable. Pour simplifier les calculs, nous avons d\'efini la m\'ethode suivante pour effectuer la reconnaissance des \'emotions~: la premi\`ere \'etape est l'obtention d'un visage. L'identit\'e de la personne nous importe peu (elle est uniquement utilis\'ee pour le d\'emarrage du v\'ehicule). Ensuite, \`a l'aide d'un second classifieur, nous obtenons toutes les positions susceptibles de correspondre \`a des yeux. Les yeux situ\'es dans la partie basse du visage sont \'elimin\'es. La hauteur du classifieur nous indique si les yeux sont en position normale, fronc\'es ou \'ecarquill\'es. Pour d\'etecter les yeux ferm\'es, il suffit de regarder le nombre de pixels ayant une couleur comprise entre [80,0,0] et [160,100,100] avec la premi\'ere composante correspondant au rouge, la seconde au vert et la troisi\`eme au bleu (on effectue donc une d\'etection plut\^ot \`a dominance rouge pour ce point). Concernant la bouche, la m\'ethode est presque identique \`a celle des yeux. Avec un classifier sp\'ecifique, toutes les bouches possibles sont r\'ecup\'er\'ees, puis les erreurs sont \'ecart\'ees (bouches situ\'ees dans la partie haute du visage ou trop pr\`es du bord). Ensuite, la bouche est convertie en niveaux de gris  et un seuil est appliqu\'ee pour n'obtenir que l'int\'erieur de la bouche. En effet, on peut remarquer que la couleur \`a l'int\'erieur d'une bouche ouverte tend vers le noir, alors que les l\`evres sont plus d'une couleur rouge. Ainsi, on a plus qu'\`a comparer le taux de noir de l'image au taux obtenu \`a l'initialisation du programme. Si le taux de noir de l'image est sup\'erieur \`a celui obtenu \`a l'initialisation plus un seuil, la bouche est ouverte. \\
 
 Apr\`es cet aperçu des diff\'erentes solutions possibles pour la reconnaissance faciale et du choix de notre m\'ethode, nous allons \`a pr\'esent l'exp\'erimenter.
 \section{Exp\'erimentations}
@@ -398,13 +405,22 @@ Le point le plus probl\'ematique concerne le changement de luminosit\'e~; lorsqu
 
 Nous venons donc de voir qu'une int\'egration de notre prototype est possible dans une voiture de tourisme. L'application d\'etecte bien les expressions recherch\'ees malgr\'e un temps de r\'eponse important. Cependant, plusieurs param\`etres doivent encore être am\'elior\'es comme une meilleure adaptation au changement de luminosit\'e ou le choix d'une cam\'era avec une r\'esolution plus \'elev\'ee.
 \chapter*{Conclusion}
-%TODO
+La d\'etection et la reconnaissance d'individus et d'\'emotions peut s'effectuer \`a l'aide d'une multitude d'algorithmes r\'esultant de dizaines d'ann\'ees de recherche (LBPH, FisherFace, EigenFace, R\'eseaux neuronaux, Mod\`ele de Markov Cach\'es, ...) dont beaucoup demandent \'enorm\'ement de calculs. Certains ont une approche plus simple et sont facilement int\'egrables \`a un projet tel que LBPH \`a l'aide de la librairie OpenCV. L'application d\'evelopp\'ee tout au long de ce TIPE nous montre que la reconnaissance faciale du conducteur peut être utile pour \'eviter un vol de voiture, même si la reconnaissance faciale n'est pas un facteur de s\'ecurit\'e fort. En effet, cette s\'ecurit\'e se contourne simplement en utilisant une photo du conducteur.\\
+
+L'application permet aussi de d\'etecter une personne endormie (seulement apr\`es quelques secondes) ou inattentive et permet donc d'\'eviter une conduite \`a l'aveugle. Par contre, l'application est tr\`es peu fiable pour la d\'etection de la surprise ou de l'\'enervement. De plus, la surprise et l'\'enervement peuvent provenir d'une multitude de sources tels que la pr\'esence d'un bouchon, une sortie rat\'ee, un enfant qui traverse au mauvais moment, etc. La d\'etection des \'emotions n'est donc pas forc\'ement la meilleure approche \`a avoir pour savoir comment la voiture doit r\'eagir. De plus, cette d\'etection peut être gên\'ee par de multiples facteurs tels que la luminosit\'e, une cam\'era de mauvaise qualit\'e, son placement (la tête peut-être cach\'ee par le volant), etc.\\
+
+Enfin, il faudrait plutôt prendre en compte le mouvement des points du visage plutôt que des seuils impr\'ecis qui peuvent s'av\'erer faux avec la modification de l'environnement ou trop peu r\'eactif (il faut parfois sur-jouer une \'emotion pour obtenir une d\'etection, ce qui n'est pas envisageable dans une application r\'eelle).\\
+
+Ce projet r\'ealis\'e dans le cadre du TIPE nous a permis d'acqu\'erir de nombreuses comp\'etences. Nous avons appris \`a travailler en groupe avec des outils tels que git (pour le partage des ressources, des images et des sources de l'application) ainsi que l'utilisation de pad collaboratif pour r\'ediger \`a plusieurs facilement (Framapad). Nous avons aussi appris des m\'ethodes de gestion de projets tels que la Check List (pour connaître les actions \`a r\'ealiser), la m\'ethode RACI (pour se r\'epartir les tâches), le diagramme de Gantt (pour planifier l'emploi du temps) ou la m\'ethode Scrum (pour se diviser l'\'ecriture de l'application). Par ailleurs, nous avons appris \`a programmer \`a l'aide de Python 2.7 (la norme python 3 est sortie, mais elle est encore mal support\'ee par OpenCV pour les m\'ethodes de reconnaissance faciale) ainsi qu'\`a maitriser la biblioth\`eque OpenCV (pour les parties reconnaissance faciale et traitement d'images). Pour analyser facilement nos r\'esultats donn\'es sous forme de log, nous avons utilis\'e le langage PHP. Enfin pour r\'ediger le rapport et g\'en\'erer les graphes, nous avons utilis\'e LaTeX. De plus, nous avons d\'evelopp\'e notre sens de l'autonomie en r\'epartissant les tâches entre les diff\'erents membres du groupe que ce soit pour les recherches, ou la r\'edaction du rapport. Nous avons \'egalement d\'evelopp\'e notre rigueur en suivant des protocoles pr\'ecis lors de nos exp\'eriences. Nous avons pris \'enorm\'ement de plaisir \`a r\'ealiser notre TIPE, ce qui nous a permis de confirmer notre projet professionnel qui est la poursuite d'\'etudes dans le domaine de l'informatique.\\
+
+Malgr\'e le fait que notre application fonctionne, nous pouvons l'am\'eliorer de plusieurs façons. Tout d'abord, en reliant directement l'application \`a la voiture et non \`a des LEDs qui s'allument. Pour le choix des technologies associ\'ees, nous pouvons imaginer un programme plutôt \'ecrit en C ou C++ (le python \'etant plus lent) tirant mieux parti de la programmation parall\`ele afin d'effectuer des tâches simultan\'ement. Le programme devrait tourner sur une architecture d\'edi\'ee (syst\`eme all\'eg\'e type linux/BSD all\'eg\'e). Enfin des algorithmes plus pr\'ecis devraient être envisag\'es tels que le suivi des points du visage. Même si cette m\'ethode n\'ecessite bien plus de calculs, l'application serait plus pr\'ecise. Pour pallier au probl\`eme de non information sur la cause de la surprise et de l'\'enervement de l'utilisateur, nous pouvons imaginer une am\'elioration du syst\`eme actuel avec des radars et des cam\'eras orient\'ees vers l'ext\'erieur de la voiture. Nous pouvons \'egalement renforcer la d\'etection d'un conducteur inattentif en g\'en\'erant des classifiers pour d\'etecter lorsque le conducteur utilise son t\'el\'ephone au volant. Enfin, la reconnaissance faciale du conducteur peut servir, en plus de la protection anti-vol \`a g\'en\'erer des profils de conduite (consommation d'essence, style de conduite, style de musique, ...). En outre, notre programme pourrait être impl\'ement\'e dans d'autres types de v\'ehicules comme des camions ou des bus. Si tous les v\'ehicules de tourisme \'etaient \'equip\'es de ce type de programme, nous pouvons envisager une r\'eduction signifivative du nombre de morts et de bless\'es sur les routes. Sachant que le co\^ut des accidents corporels en 2011 est estim\'e \`a 9,7 milliards d'euros, cela repr\'esenterait une \'economie non n\'egligeable. Enfin, la pr\'esence permanente d'une cam\'era dans l'habitacle pose le probl\`eme du respect de la vie priv\'ee. Il faudrait \`a veiller \`a ce que son utilisation soit r\'eserv\'e uniquement \`a des fins de protection du conducteur et pas \`a un moyen suppl\'ementaire d'espionner des individus.\\
+
 
 dans les ameliorations : \cite{improvingAutomotiveSafetyByPairingDriverEmotionAndCarVoiceEmotion} pour detecter via reco vocale. et ca pour le coeur : \cite{affectiveIntelligentCarInterfacesEmotionRecognition} 
 % /!\ TEST
-entr\'ee biblio \cite{bimodalEmotionRecognition}  \cite{drivingEmotionalExperienceAutomotiveDesign}  \cite{abnormalRecognitionFacialExpression} \cite{authenticFacialExpressionAnalysis} \cite{emotionRecognitionNeurofuzzyNetwork} \cite{emotionRecognitionCauchyNaiveBayes} \cite{facialEmotionrecognitionUsingMultiModalInformation} \cite{realisticFacialExpressionSynthesisImageBasedTalkingHead} \cite{facialExpressionMegamix} 
+entr\'ee biblio 
 \cite{reconnaissanceExpressionsFacialesMemoireAssociativeBidirectionnelleFonctionSortieChaotique} <- Amaury
-\cite{photorealisticExpressiveTextTalkingHeadSynthesis}<- je vois pas ou le caser, c'est plus simuler expression... Ph -> \cite{essentielSecuriteRoutiere} \cite{analyseQuantificationComportementsConducteursAutomobilesPreCrash}
+\cite{photorealisticExpressiveTextTalkingHeadSynthesis}<- je vois pas ou le caser, c'est plus simuler expression / dans l'intro, c'est un point de depart qu'on a eu... Ph -> \cite{essentielSecuriteRoutiere} \cite{analyseQuantificationComportementsConducteursAutomobilesPreCrash}
 % /test
 \bibliographystyle{plain}
 \bibliography{biblio_rapport}
@@ -440,32 +456,32 @@ entr\'ee biblio \cite{bimodalEmotionRecognition}  \cite{drivingEmotionalExperien
 		\item{Recherche bibliographique sur la reconnaissance des \'emotions \hfill $\Box$ oui $\Box$ non}
 		\item{Contacter des professionnels \hfill $\Box$ oui $\Box$ non}
 		\item{Apprendre Python \hfill $\Box$ oui $\Box$ non}
-		\item{Apprendre à utiliser git \hfill $\Box$ oui $\Box$ non}
-		\item{Créer le d\'ep\^ot git \hfill $\Box$ oui $\Box$ non}
-		\item{Apprendre à utiliser OpenCV \hfill $\Box$ oui $\Box$ non}
-		\item{Comparer les diff\'erents systèmes de reconnaissance faciale}
+		\item{Apprendre \`a utiliser git \hfill $\Box$ oui $\Box$ non}
+		\item{Cr\'eer le d\'ep\^ot git \hfill $\Box$ oui $\Box$ non}
+		\item{Apprendre \`a utiliser OpenCV \hfill $\Box$ oui $\Box$ non}
+		\item{Comparer les diff\'erents syst\`emes de reconnaissance faciale}
 			\begin{itemize}
-				\item{vitesse d'exécution \hfill $\Box$ oui $\Box$ non}
-				\item{fiabilité \hfill $\Box$ oui $\Box$ non}
+				\item{vitesse d'ex\'ecution \hfill $\Box$ oui $\Box$ non}
+				\item{fiabilit\'e \hfill $\Box$ oui $\Box$ non}
 			\end{itemize}
-		\item{Réaliser l'application}
+		\item{R\'ealiser l'application}
 			\begin{itemize}
 				\item{module de reconnaissance faciale \hfill $\Box$ oui $\Box$ non}
-				\item{module de reconnaissance des émotions \hfill $\Box$ oui $\Box$ non}
+				\item{module de reconnaissance des \'emotions \hfill $\Box$ oui $\Box$ non}
 			\end{itemize}
-		\item{Créer le prototype de test \hfill $\Box$ oui $\Box$ non}
-		\item{Réaliser des tests}
+		\item{Cr\'eer le prototype de test \hfill $\Box$ oui $\Box$ non}
+		\item{R\'ealiser des tests}
 			\begin{itemize}
-				\item{tests en situation idéale \hfill $\Box$ oui $\Box$ non}
-				\item{tests en situation réelle \hfill $\Box$ oui $\Box$ non}
-				\item{débuggage \hfill $\Box$ oui $\Box$ non}
+				\item{tests en situation id\'eale \hfill $\Box$ oui $\Box$ non}
+				\item{tests en situation r\'eelle \hfill $\Box$ oui $\Box$ non}
+				\item{d\'ebuggage \hfill $\Box$ oui $\Box$ non}
 			\end{itemize}
-		\item{Analyser les résultats des tests \hfill $\Box$ oui $\Box$ non}
-		\item{Rédiger le rapport écrit \hfill $\Box$ oui $\Box$ non}
-		\item{Relecture du rapport écrit \hfill $\Box$ oui $\Box$ non}
-		\item{Préparer l'oral \hfill $\Box$ oui $\Box$ non}
-		\item{Réaliser le diaporama \hfill $\Box$ oui $\Box$ non}
-		\item{Réaliser la fiche synoptique \hfill $\Box$ oui $\Box$ non}
+		\item{Analyser les r\'esultats des tests \hfill $\Box$ oui $\Box$ non}
+		\item{R\'ediger le rapport \'ecrit \hfill $\Box$ oui $\Box$ non}
+		\item{Relecture du rapport \'ecrit \hfill $\Box$ oui $\Box$ non}
+		\item{Pr\'eparer l'oral \hfill $\Box$ oui $\Box$ non}
+		\item{R\'ealiser le diaporama \hfill $\Box$ oui $\Box$ non}
+		\item{R\'ealiser la fiche synoptique \hfill $\Box$ oui $\Box$ non}
 	\end{enumerate}
 		\newpage
 		\section{Matrice RACI}
