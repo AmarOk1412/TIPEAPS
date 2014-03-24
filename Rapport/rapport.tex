@@ -63,12 +63,16 @@
 		\end{flushleft}
 		\vfill
 	\end{titlepage}
+	\pagenumbering{roman}
 	\begin{abstract}
 		%TODO
 	\end{abstract}
 	\chapter*{Remerciements}
 		%TODO
+	\tableofcontents
 	\chapter*{Introduction}
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
 		\subsection*{Pourquoi ce projet}
 			%TODO
 	\chapter{Les limites de la s\'ecurit\'e routi\`ere}
@@ -183,11 +187,11 @@ L'avantage de cette m\'ethode est la connaissance de son existence depuis longte
 
 La m\'ethode de reconnaissance faciale Fisherface se base sur les travaux de Sir R.A. Fisher. Il s'agit d'une \'evolution de l'algorithme Eigenface pr\'esent\'e pr\'ecedement. Alors que l'algorithme Eigenface se base sur l'Analyse des Composantes Principales (ACP), l'algorithme Fisherface utilise l'Analyse Discriminante Lin\'eaire (ADL) qui cherche le meilleur sous espace minimisant la distance entre les images d'une m\^eme classe (ici une classe = un visage) en maximisant la distance inter-classe.\\
 Tout d'abord, l'algorithme calcul l'image moyenne de la classe~:\\
-$$\frac{1}{n}*\sum_{i=1}^{n} x_i$$\\
+$$\frac{1}{n}\times\sum_{i=1}^{n} x_i$$\\
 avec $$x_0, x_1, ..., x_n$$ les images de la classe.\\
-Puis, on calcul les matrice de dispersion intra et inter classe (disons respectivement $$M_i$$ et $$M_e$$).\\
-Puis on trouve la matrice de projection (P) en r\'esolvant\\ $$M_i*x = \lambda*M_e*x$$\\
-Pour trouver la meilleure projection, il suffit de r\'esoudre\\ $$\frac{P^-1*M_e*P}{P^-1*M_i*P}=argmax(P)$$\\
+Puis, on calcul les matrice de dispersion intra et inter classe (disons respectivement $M_i$ et $M_e$).\\
+Puis on trouve la matrice de projection (P) en r\'esolvant \\$$M_i\times x = \lambda\times M_e\times x$$\\
+Pour trouver la meilleure projection, il suffit de r\'esoudre\\$$\frac{P^{-1}\times M_e\times P}{P^{-1}\times M_i\times P}=\mathrm{argmax}(P)$$\\
 
 \begin{figure}[h]
 	\begin{center}
@@ -394,6 +398,7 @@ Nous venons donc de voir qu'une int\'egration de notre prototype est possible da
 
 % /!\ TEST
 entr\'ee biblio \cite{bimodalEmotionRecognition} \cite{automaticFacialExpressionAnalysis} \cite{drivingEmotionalExperienceAutomotiveDesign} \cite{universalityCulturalSpecificityEmotionRecognitionMetaAnalysis} \cite{abnormalRecognitionFacialExpression} \cite{authenticFacialExpressionAnalysis} \cite{emotionRecognitionNeurofuzzyNetwork} \cite{emotionRecognitionCauchyNaiveBayes} \cite{facialEmotionrecognitionUsingMultiModalInformation} \cite{realisticFacialExpressionSynthesisImageBasedTalkingHead} \cite{facialExpressionMegamix} \cite{facialExpressionRecognitionFromVideoSequences} \cite{facialExpressionRecognitionLocalBinaryPatterns} \cite{analyseInterpretationMouvementsHumains} \cite{affectiveIntelligentCarInterfacesEmotionRecognition} \cite{improvingAutomotiveSafetyByPairingDriverEmotionAndCarVoiceEmotion} \cite{realTimeFacialFeaturePointsTrackingPyramidalLucasKanadeAlgorithm} \cite{reconnaissanceExpressionsFacialesMemoireAssociativeBidirectionnelleFonctionSortieChaotique} \cite{emotionRecognitionInHumanComputerInteraction} \cite{eigenfaceRecognition} \cite{faceRecognitionLocalBinaryPatternsSpatialPyramidHistogramsNaiveBayes} \cite{photorealisticExpressiveTextTalkingHeadSynthesis} \cite{essentielSecuriteRoutiere} \cite{analyseQuantificationComportementsConducteursAutomobilesPreCrash}
+\cite{linuxMagazine}
 % /test
 \bibliographystyle{plain}
 \bibliography{biblio_rapport}
