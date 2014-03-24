@@ -1,0 +1,71 @@
+\begin{thebibliography}{10}
+
+\bibitem{facialExpressionMegamix}
+Young Andrew, Rowland Duncan, Calder Andrew, Etcoff Nancy, Seth Anil, and
+  Perrett David.
+\newblock Facial expression megamix: Tests of dimensional and category accounts
+  of emotion recognition.
+\newblock {\em Cognition}, 63:271--313, 1997.
+
+\bibitem{automaticFacialExpressionAnalysis}
+Fasel B. and Luettin Juergen.
+\newblock Automatic facial expression analysis: a survey.
+\newblock {\em Pattern Recognition}, 36, 2003.
+
+\bibitem{abnormalRecognitionFacialExpression}
+Mikhailova Elena, Vladimirova Tatjana, Iznak Andre, Tsusulkovskaya Emily, and
+  Sushko Nataly.
+\newblock Abnormal recognition of facial expression of emotions in depressed
+  patients with major depression disorder and schizotypal personality disorder.
+\newblock {\em Biol Psychiatry}, 40:697--705, 1996.
+
+\bibitem{universalityCulturalSpecificityEmotionRecognitionMetaAnalysis}
+Elfenbein Hillary~Anger and Ambady Nalini.
+\newblock On the universality and cultural specificity of emotion recognition:
+  a meta-analysis.
+\newblock {\em Psychological Bulletin}, 128(2):203--235, 2002.
+
+\bibitem{realisticFacialExpressionSynthesisImageBasedTalkingHead}
+Liu Kang and Ostermann Joern.
+\newblock Realistic facial expression synthesis for an image-based talking
+  head.
+\newblock In {\em IEEE international conference on multimedia and expo},
+  Juillet 2011.
+
+\bibitem{facialEmotionrecognitionUsingMultiModalInformation}
+{De Silva} Liyanage, Miyasato Tsutomu, and Nakatsu Ryohei.
+\newblock Facial emotion recognition using multi-modal information.
+\newblock In {\em International conference on information, communications and
+  signal processing}, Septembre 1997.
+
+\bibitem{bimodalEmotionRecognition}
+{DeSilva} Liyanage and Ng~Pei~Chi.
+\newblock Bimodal emotion recognition.
+\newblock In {\em Fourth IEEE International Conference on Automatic Face and
+  Gesture Recognition}. National University of Singapore, mars 2000.
+
+\bibitem{authenticFacialExpressionAnalysis}
+Sebe N., Lew M.S., Y.~Sun, Cohen I., Gevers T., and Huang T.s.
+\newblock Authentic facial expression analysis.
+\newblock {\em Image and Vision Computing}, 25:1856--1863, 2007.
+
+\bibitem{emotionRecognitionCauchyNaiveBayes}
+Sebe Nicu, Lew Michael, Cohen Ira, Garg Ashutosh, and Huang Thomas.
+\newblock Emotion recognition using a cauchy naive bayes classifier.
+\newblock In {\em Sixteenth international conference on pattern recognition},
+  volume~1, pages 17--20, 2002.
+
+\bibitem{drivingEmotionalExperienceAutomotiveDesign}
+Gomez Rafael, Popovic Vesna, and Bucolo Sam.
+\newblock Driving: the emotional experience and automotive design.
+\newblock In {\em Fourth international conference on design and emotion}.
+  Middle East Technical University, Ankara, juillet 2004.
+
+\bibitem{emotionRecognitionNeurofuzzyNetwork}
+Ioannou Spiros, Raouzaiou Amaryllis, Tzouvaras Vasilis, Mailis Theofilos,
+  Karpouzis Kostas, and Kollias Stefanos.
+\newblock Emotion recognition through facial expression analysis based on a
+  neurofuzzy network.
+\newblock {\em Neural Networks}, 18:423--435, 2005.
+
+\end{thebibliography}
