@@ -13,6 +13,10 @@
 \usepackage{pgfplots}
 \usepackage{url}
 \usepackage{amsmath, amsfonts}
+\usepackage{wasysym}
+\usepackage{diagbox}
+\usepackage{array}
+\usepackage{pdfpages}
 
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{units}
@@ -389,7 +393,7 @@ Nous venons donc de voir qu'une int\'egration de notre prototype est possible da
 %TODO
 
 % /!\ TEST
-entr\'e biblio \cite{bimodalEmotionRecognition} \cite{automaticFacialExpressionAnalysis} \cite{drivingEmotionalExperienceAutomotiveDesign} \cite{universalityCulturalSpecificityEmotionRecognitionMetaAnalysis} \cite{abnormalRecognitionFacialExpression} \cite{authenticFacialExpressionAnalysis} \cite{emotionRecognitionNeurofuzzyNetwork} \cite{emotionRecognitionCauchyNaiveBayes} \cite{facialEmotionrecognitionUsingMultiModalInformation} \cite{realisticFacialExpressionSynthesisImageBasedTalkingHead} \cite{facialExpressionMegamix} \cite{facialExpressionRecognitionFromVideoSequences} \cite{facialExpressionRecognitionLocalBinaryPatterns} \cite{analyseInterpretationMouvementsHumains} \cite{affectiveIntelligentCarInterfacesEmotionRecognition} \cite{improvingAutomotiveSafetyByPairingDriverEmotionAndCarVoiceEmotion} \cite{realTimeFacialFeaturePointsTrackingPyramidalLucasKanadeAlgorithm} \cite{reconnaissanceExpressionsFacialesMemoireAssociativeBidirectionnelleFonctionSortieChaotique} \cite{emotionRecognitionInHumanComputerInteraction} \cite{eigenfaceRecognition} \cite{faceRecognitionLocalBinaryPatternsSpatialPyramidHistogramsNaiveBayes} \cite{photorealisticExpressiveTextTalkingHeadSynthesis} \cite{essentielSecuriteRoutiere} \cite{analyseQuantificationComportementsConducteursAutomobilesPreCrash}
+entr\'ee biblio \cite{bimodalEmotionRecognition} \cite{automaticFacialExpressionAnalysis} \cite{drivingEmotionalExperienceAutomotiveDesign} \cite{universalityCulturalSpecificityEmotionRecognitionMetaAnalysis} \cite{abnormalRecognitionFacialExpression} \cite{authenticFacialExpressionAnalysis} \cite{emotionRecognitionNeurofuzzyNetwork} \cite{emotionRecognitionCauchyNaiveBayes} \cite{facialEmotionrecognitionUsingMultiModalInformation} \cite{realisticFacialExpressionSynthesisImageBasedTalkingHead} \cite{facialExpressionMegamix} \cite{facialExpressionRecognitionFromVideoSequences} \cite{facialExpressionRecognitionLocalBinaryPatterns} \cite{analyseInterpretationMouvementsHumains} \cite{affectiveIntelligentCarInterfacesEmotionRecognition} \cite{improvingAutomotiveSafetyByPairingDriverEmotionAndCarVoiceEmotion} \cite{realTimeFacialFeaturePointsTrackingPyramidalLucasKanadeAlgorithm} \cite{reconnaissanceExpressionsFacialesMemoireAssociativeBidirectionnelleFonctionSortieChaotique} \cite{emotionRecognitionInHumanComputerInteraction} \cite{eigenfaceRecognition} \cite{faceRecognitionLocalBinaryPatternsSpatialPyramidHistogramsNaiveBayes} \cite{photorealisticExpressiveTextTalkingHeadSynthesis} \cite{essentielSecuriteRoutiere} \cite{analyseQuantificationComportementsConducteursAutomobilesPreCrash}
 % /test
 \bibliographystyle{plain}
 \bibliography{biblio_rapport}
@@ -415,4 +419,99 @@ entr\'e biblio \cite{bimodalEmotionRecognition} \cite{automaticFacialExpressionA
 			\lstinputlisting[language=python]{../Application_finale/app.py}
 		\section{Code Arduino pour les tests}
 			\lstinputlisting[style=arduino]{../src/tests/tests.ino}
+	\chapter{Documents utilis\'es en CST}
+		\section{check-list}
+	T\^aches~:\hfill R\'ealisation~:
+	\begin{enumerate}
+		\item{Recherche sur des projet similaires d\'ej\`a existants \hfill $\Box$ oui $\Box$ non}
+		\item{Recherche bibliographique sur la s\'ecurité routi\`ere \hfill $\Box$ oui $\Box$ non}
+		\item{Recherche bibliographique sur la reconnaissance faciale \hfill $\Box$ oui $\Box$ non}
+		\item{Recherche bibliographique sur la reconnaissance des \'emotions \hfill $\Box$ oui $\Box$ non}
+		\item{Contacter des professionnels \hfill $\Box$ oui $\Box$ non}
+		\item{Apprendre Python \hfill $\Box$ oui $\Box$ non}
+		\item{Apprendre à utiliser git \hfill $\Box$ oui $\Box$ non}
+		\item{Créer le d\'ep\^ot git \hfill $\Box$ oui $\Box$ non}
+		\item{Apprendre à utiliser OpenCV \hfill $\Box$ oui $\Box$ non}
+		\item{Comparer les diff\'erents systèmes de reconnaissance faciale}
+			\begin{itemize}
+				\item{vitesse d'exécution \hfill $\Box$ oui $\Box$ non}
+				\item{fiabilité \hfill $\Box$ oui $\Box$ non}
+			\end{itemize}
+		\item{Réaliser l'application}
+			\begin{itemize}
+				\item{module de reconnaissance faciale \hfill $\Box$ oui $\Box$ non}
+				\item{module de reconnaissance des émotions \hfill $\Box$ oui $\Box$ non}
+			\end{itemize}
+		\item{Créer le prototype de test \hfill $\Box$ oui $\Box$ non}
+		\item{Réaliser des tests}
+			\begin{itemize}
+				\item{tests en situation idéale \hfill $\Box$ oui $\Box$ non}
+				\item{tests en situation réelle \hfill $\Box$ oui $\Box$ non}
+				\item{débuggage \hfill $\Box$ oui $\Box$ non}
+			\end{itemize}
+		\item{Analyser les résultats des tests \hfill $\Box$ oui $\Box$ non}
+		\item{Rédiger le rapport écrit \hfill $\Box$ oui $\Box$ non}
+		\item{Relecture du rapport écrit \hfill $\Box$ oui $\Box$ non}
+		\item{Préparer l'oral \hfill $\Box$ oui $\Box$ non}
+		\item{Réaliser le diaporama \hfill $\Box$ oui $\Box$ non}
+		\item{Réaliser la fiche synoptique \hfill $\Box$ oui $\Box$ non}
+	\end{enumerate}
+		\newpage
+		\section{Matrice RACI}
+		\begin{tabular}{|>{\bfseries}c|c|c|c|c|c|}
+			\hline
+			\backslashbox{T\^ache}{Membre}  &  \textbf{S\'ebastien}  &  \textbf{Pierre-Henri}  &  \textbf{Amaury}  &  \textbf{Finn}  &  \textbf{D\'eborah}\\
+			\hline
+			1 & C & R-C & C & I & \\
+			\hline
+			2 & I & R-C & I & I & \\
+			\hline
+			3 & R-C & I & I & I & \\
+			\hline
+			4 & I & I & R-C & I & \\
+			\hline
+			5 & C & C & C & I & \\
+			\hline
+			6 & R & C & I &  & \\
+			\hline
+			7 & R & C & C &  & \\
+			\hline
+			8 & R-C & I & I &  & \\
+			\hline
+			9 & R-C & C & C &  & \\
+			\hline
+			10.1 & R-C & C & C & I & \\
+			\hline
+			10.2 & R-C & C & C & I & \\
+			\hline
+			11.1 & R-C & C & C & A & \\
+			\hline
+			11.2 & C & C & R-C & A & \\
+			\hline
+			12 & C & R-C & C & I & \\
+			\hline
+			13.1 & C & R-C & C & I & \\
+			\hline
+			13.2 & C & C & R-C & I & \\
+			\hline
+			13.3 & R-C & C & C & I & \\
+			\hline
+			14 & C & R-C & C & A & \\
+			\hline
+			15 & C & C & R-C & A & I\\
+			\hline
+			16 & I & I & R-C &  & \\
+			\hline
+			17 & C & R-C & C &  & \\
+			\hline
+			18 & C & C & R-C & A & I\\
+			\hline
+			19 & C & R-C & C & A & I\\
+			\hline
+		\end{tabular}
+		\newpage
+		\section{Diagramme de GANTT}
+		\begin{center}
+		\includegraphics[scale=0.7,angle=90]{../documents/GANTT/gantt.pdf}
+		\end{center}
 \end{document}

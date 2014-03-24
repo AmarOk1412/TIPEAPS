@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  24 MAR 2014 16:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  24 MAR 2014 16:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1035,30 +1035,146 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )
+(/usr/local/texlive/2013/texmf-dist/tex/latex/wasysym/wasysym.sty
+Package: wasysym 2003/10/30 v2.0 Wasy-2 symbol support package
+\symwasy=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `wasy' in version `bold'
+(Font)                  U/wasy/m/n --> U/wasy/b/n on input line 90.
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/diagbox/diagbox.sty
+Package: diagbox 2011/11/23 v2.0 Making table heads with diagonal lines
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pict2e/pict2e.sty
+Package: pict2e 2011/04/05 v0.2y Improved picture commands (HjG,RN,JT)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pict2e/pict2e.cfg
+File: pict2e.cfg 2011/04/05 v0.1t pict2e configuration for teTeX/TeXLive
+)
+Package pict2e Info: Driver file: pdftex.def on input line 119.
+Package pict2e Info: Driver file for pict2e: p2e-pdftex.def on input line 121.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pict2e/p2e-pdftex.def
+File: p2e-pdftex.def 2011/04/05 v0.1t Driver-dependant file (RN,HjG,JT)
+)
+\pIIe@GRAPH=\toks41
+\@arclen=\dimen286
+\@arcrad=\dimen287
+\@tempdimd=\dimen288
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/fp/fp.sty
+Package: fp 1995/04/02
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(/usr/local/texlive/2013/texmf-dist/tex/latex/fp/defpattern.sty
+Package: defpattern 1994/10/12
+\actioncount=\count192
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/fp/fp-basic.sty
+Package: fp-basic 1996/05/13
+\FP@xs=\count193
+\FP@xia=\count194
+\FP@xib=\count195
+\FP@xfa=\count196
+\FP@xfb=\count197
+\FP@rega=\count198
+\FP@regb=\count199
+\FP@regs=\count200
+\FP@times=\count201
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/fp/fp-addons.sty
+Package: fp-addons 1995/03/15
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/fp/fp-snap.sty
+Package: fp-snap 1995/04/05
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/fp/fp-exp.sty
+Package: fp-exp 1995/04/03
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/fp/fp-trigo.sty
+Package: fp-trigo 1995/04/14
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/fp/fp-pas.sty
+Package: fp-pas 1994/08/29
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/fp/fp-random.sty
+Package: fp-random 1995/02/23
+Normal \count register pool exhausted, switching to extended pool.
+\FPseed=\count277
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/fp/fp-eqn.sty
+Package: fp-eqn 1995/04/03
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/fp/fp-upn.sty
+Package: fp-upn 1996/10/21
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/fp/fp-eval.sty
+Package: fp-eval 1995/04/03
+))
+\diagbox@boxa=\box65
+\diagbox@boxb=\box66
+\diagbox@boxm=\box67
+\diagbox@wd=\dimen289
+\diagbox@ht=\dimen290
+\diagbox@sepl=\dimen291
+\diagbox@sepr=\dimen292
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2012/08/31 v0.4t Insert pages of external PDF documents (AM)
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count278
+\calc@Bcount=\count279
+\calc@Adimen=\dimen293
+\calc@Bdimen=\dimen294
+\calc@Askip=\skip61
+\calc@Bskip=\skip62
+LaTeX Info: Redefining \setlength on input line 76.
+LaTeX Info: Redefining \addtolength on input line 77.
+\calc@Ccount=\count280
+\calc@Cskip=\skip63
+)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2010/10/06 v2.0c eso-pic (RN)
+
+(/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+))
+(/usr/local/texlive/2013/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2012/08/31 v0.4t Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box68
+\AM@toc@title=\toks42
+\c@AM@survey=\count281
+\AM@templatesizebox=\box69
+)
 (/usr/local/texlive/2013/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplo
 ts.units.code.tex) (./rapport.aux)
 \openout1 = `rapport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
-LaTeX Font Info:    ... okay on input line 26.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 26.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 30.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Info: Redefining \degres on input line 26.
-LaTeX Info: Redefining \dots on input line 26.
-LaTeX Info: Redefining \up on input line 26.
+LaTeX Info: Redefining \degres on input line 30.
+LaTeX Info: Redefining \dots on input line 30.
+LaTeX Info: Redefining \up on input line 30.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1094,20 +1210,20 @@ LaTeX Info: Redefining \up on input line 26.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c@lstlisting=\count192
+\c@lstlisting=\count282
 (/usr/local/texlive/2013/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count193
-\scratchdimen=\dimen286
-\scratchbox=\box65
-\nofMPsegments=\count194
-\nofMParguments=\count195
-\everyMPshowfont=\toks41
-\MPscratchCnt=\count196
-\MPscratchDim=\dimen287
-\MPnumerator=\count197
-\makeMPintoPDFobject=\count198
-\everyMPtoPDFconversion=\toks42
+\scratchcounter=\count283
+\scratchdimen=\dimen295
+\scratchbox=\box70
+\nofMPsegments=\count284
+\nofMParguments=\count285
+\everyMPshowfont=\toks43
+\MPscratchCnt=\count286
+\MPscratchDim=\dimen296
+\MPnumerator=\count287
+\makeMPintoPDFobject=\count288
+\everyMPtoPDFconversion=\toks44
 ) (/usr/local/texlive/2013/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -1163,52 +1279,58 @@ File: siunitx-abbreviations.cfg 2013/03/11 v2.5q siunitx: Abbreviated units
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.8}).
 
-\c__siunitx_mathsf_int=\count199
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 26.
+\AtBeginShipoutBox=\box71
+\c__siunitx_mathsf_int=\count289
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 30.
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 26.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 30.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 26.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 30.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 26.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 30.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 26.
+(Font)              <10> on input line 30.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 26.
+(Font)              <7> on input line 30.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 26.
-LaTeX Font Info:    Try loading font information for U+msa on input line 26.
+(Font)              <5> on input line 30.
+LaTeX Font Info:    Try loading font information for U+msa on input line 30.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 26.
+LaTeX Font Info:    Try loading font information for U+msb on input line 30.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+lmss on input line 26.
+LaTeX Font Info:    Try loading font information for U+wasy on input line 30.
+
+(/usr/local/texlive/2013/texmf-dist/tex/latex/wasysym/uwasy.fd
+File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
+)
+LaTeX Font Info:    Try loading font information for OT1+lmss on input line 30.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-\c__siunitx_mathtt_int=\count200
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 26.
+\c__siunitx_mathtt_int=\count290
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 30.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/ot1lmtt.fd
@@ -1217,10 +1339,10 @@ File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 <ur1.png, id=4, 1123.19624pt x 414.54875pt>
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 35.
+Package pdftex.def Info: ur1.png used on input line 39.
 (pdftex.def)             Requested size: 168.47217pt x 62.17963pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 30--36
+Underfull \hbox (badness 10000) in paragraph at lines 34--40
 
  []
 
@@ -1234,16 +1356,6 @@ ng>] [1] [1
 ]
 Partie 1.
 
-Underfull \hbox (badness 10000) in paragraph at lines 76--77
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 78--79
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 80--81
 
  []
@@ -1253,20 +1365,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 82--83
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 84--85
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 86--87
+
+ []
+
 [3
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 84--86
+Underfull \hbox (badness 10000) in paragraph at lines 88--90
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 87--88
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
+Underfull \hbox (badness 10000) in paragraph at lines 91--92
 
  []
 
@@ -1275,34 +1392,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--94
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+
+ []
+
 <images/evolcompart48-11.png, id=30, 1021.8175pt x 413.545pt>
 File: images/evolcompart48-11.png Graphic file (type png)
 
 <use images/evolcompart48-11.png>
-Package pdftex.def Info: images/evolcompart48-11.png used on input line 97.
+Package pdftex.def Info: images/evolcompart48-11.png used on input line 101.
 (pdftex.def)             Requested size: 418.94789pt x 169.55453pt.
 
-Overfull \hbox (0.69421pt too wide) in paragraph at lines 97--98
+Overfull \hbox (0.69421pt too wide) in paragraph at lines 101--102
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
-
- []
-
-[4]
 Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 108--110
+Underfull \hbox (badness 10000) in paragraph at lines 108--109
+
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 110--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--114
 
  []
 
@@ -1311,35 +1433,30 @@ File: images/karl-for-Securite-Routiere.jpg Graphic file (type jpg)
 
 <use images/karl-for-Securite-Routiere.jpg>
 Package pdftex.def Info: images/karl-for-Securite-Routiere.jpg used on input li
-ne 113.
+ne 117.
 (pdftex.def)             Requested size: 355.57758pt x 237.13535pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 118--119
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
 [5 <./images/evolcompart48-11.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
 
-[6 <./images/karl-for-Securite-Routiere.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 137--138
+
+Underfull \hbox (badness 10000) in paragraph at lines 132--133
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
+Underfull \hbox (badness 10000) in paragraph at lines 134--135
+
+ []
+
+[6 <./images/karl-for-Securite-Routiere.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
 
@@ -1349,24 +1466,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 144--145
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 148--149
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
 
  []
 
 [7] [8]
 Partie 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 159--160
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 161--162
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
@@ -1376,14 +1493,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 165--166
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
+Underfull \hbox (badness 10000) in paragraph at lines 169--170
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
 [9
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
@@ -1391,25 +1513,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 169--170
 File: images/eigenfaces_OpenCV.png Graphic file (type png)
 
 <use images/eigenfaces_OpenCV.png>
-Package pdftex.def Info: images/eigenfaces_OpenCV.png used on input line 173.
+Package pdftex.def Info: images/eigenfaces_OpenCV.png used on input line 177.
 (pdftex.def)             Requested size: 138.51857pt x 67.45251pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--182
+Underfull \hbox (badness 10000) in paragraph at lines 184--186
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--186
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
 [10 <./images/eigenfaces_OpenCV.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 186--187
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
@@ -1417,26 +1539,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 186--187
 File: images/fisherfacedistrib.png Graphic file (type png)
 
 <use images/fisherfacedistrib.png>
-Package pdftex.def Info: images/fisherfacedistrib.png used on input line 190.
+Package pdftex.def Info: images/fisherfacedistrib.png used on input line 194.
 (pdftex.def)             Requested size: 308.05325pt x 248.43004pt.
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 195.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 199.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (2.85968pt too wide) in paragraph at lines 195--196
+Overfull \hbox (2.85968pt too wide) in paragraph at lines 199--200
 []\T1/lmr/m/n/10 Pour plus de dé-tails : $\T1/lmtt/m/n/10 http : / / docs . \te
 xtit{OpenCV} . org / modules / contrib / doc / facerec /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--196
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 197--198
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 
  []
 
@@ -1445,23 +1562,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+
+ []
+
 [11 <./images/fisherfacedistrib.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 212--214
+Underfull \hbox (badness 10000) in paragraph at lines 216--218
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--216
+Underfull \hbox (badness 10000) in paragraph at lines 219--220
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 224--225
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
 
  []
 
@@ -1472,7 +1594,7 @@ PGFPlots: reading {data/ByNumberOfImages_bdd_eigenface.csv}
 PGFPlots: reading {data/ByNumberOfImages_bdd_fisherface.csv}
 PGFPlots: reading {data/ByNumberOfImages_bdd_LBPH.csv}
 
-Underfull \hbox (badness 10000) in paragraph at lines 294--295
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
 
  []
 
@@ -1480,21 +1602,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 294--295
 
 Package frenchb.ldf Warning: Degrees would look better in TS1-encoding: 
 (frenchb.ldf)                add \usepackage{textcomp} to the preamble. 
-(frenchb.ldf)                Degrees used on input line 296.
+(frenchb.ldf)                Degrees used on input line 300.
 
 <images/detection_cut.png, id=78, 878.8032pt x 868.6854pt>
 File: images/detection_cut.png Graphic file (type png)
 
 <use images/detection_cut.png>
-Package pdftex.def Info: images/detection_cut.png used on input line 299.
+Package pdftex.def Info: images/detection_cut.png used on input line 303.
 (pdftex.def)             Requested size: 439.40053pt x 434.34164pt.
 
-Overfull \hbox (21.14685pt too wide) in paragraph at lines 299--300
+Overfull \hbox (21.14685pt too wide) in paragraph at lines 303--304
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 296--305
+Underfull \hbox (badness 10000) in paragraph at lines 300--309
 
  []
 
@@ -1502,19 +1624,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 296--305
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 306--307
+Underfull \hbox (badness 10000) in paragraph at lines 310--311
 
  []
 
 [14] [15 <./images/detection_cut.png>]
 Partie 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 312--313
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 314--315
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
 
  []
 
@@ -1522,14 +1644,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 314--315
 File: images/primaryexp.jpg Graphic file (type jpg)
 
 <use images/primaryexp.jpg>
-Package pdftex.def Info: images/primaryexp.jpg used on input line 318.
+Package pdftex.def Info: images/primaryexp.jpg used on input line 322.
 (pdftex.def)             Requested size: 75.78293pt x 167.62584pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+Underfull \hbox (badness 10000) in paragraph at lines 327--328
 
  []
 
@@ -1539,23 +1661,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 323--324
 File: images/findContoursOk.jpg Graphic file (type jpg)
 
 <use images/findContoursOk.jpg>
-Package pdftex.def Info: images/findContoursOk.jpg used on input line 328.
+Package pdftex.def Info: images/findContoursOk.jpg used on input line 332.
 (pdftex.def)             Requested size: 108.40472pt x 44.16487pt.
 
 <images/findContoursNOk.jpg, id=91, 158.5925pt x 83.31125pt>
 File: images/findContoursNOk.jpg Graphic file (type jpg)
 
 <use images/findContoursNOk.jpg>
-Package pdftex.def Info: images/findContoursNOk.jpg used on input line 335.
+Package pdftex.def Info: images/findContoursNOk.jpg used on input line 339.
 (pdftex.def)             Requested size: 158.59209pt x 83.31104pt.
 
 <images/inRangeOk.jpg, id=92, 72.27pt x 44.165pt>
 File: images/inRangeOk.jpg Graphic file (type jpg)
  <use images/inRangeOk.jpg>
-Package pdftex.def Info: images/inRangeOk.jpg used on input line 342.
+Package pdftex.def Info: images/inRangeOk.jpg used on input line 346.
 (pdftex.def)             Requested size: 72.2698pt x 44.16487pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--347
+Underfull \hbox (badness 10000) in paragraph at lines 329--351
 
  []
 
@@ -1566,7 +1688,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 348--349
+Underfull \hbox (badness 10000) in paragraph at lines 352--353
 
  []
 
@@ -1577,24 +1699,24 @@ Partie 4.
 File: images/schema_tests.png Graphic file (type png)
 
 <use images/schema_tests.png>
-Package pdftex.def Info: images/schema_tests.png used on input line 374.
+Package pdftex.def Info: images/schema_tests.png used on input line 378.
 (pdftex.def)             Requested size: 328.82626pt x 313.64964pt.
 
 <images/schema_tests_elec.png, id=104, 205.568pt x 207.174pt>
 File: images/schema_tests_elec.png Graphic file (type png)
 
 <use images/schema_tests_elec.png>
-Package pdftex.def Info: images/schema_tests_elec.png used on input line 375.
+Package pdftex.def Info: images/schema_tests_elec.png used on input line 379.
 (pdftex.def)             Requested size: 205.56747pt x 207.17348pt.
  [20
 
 ] [21 <./images/schema_tests.png> <./images/schema_tests_elec.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 385--386
+Underfull \hbox (badness 10000) in paragraph at lines 389--390
 
  []
 
@@ -1725,40 +1847,56 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 (/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-(../src/tests/tests.ino [33] [34] [35]) [36] (./rapport.aux) ) 
+(../src/tests/tests.ino [33] [34] [35]) [36]
+Annexe B.
+[37
+
+] [38] <../documents/GANTT/gantt.pdf, id=170, 845.0471pt x 597.50829pt>
+File: ../documents/GANTT/gantt.pdf Graphic file (type pdf)
+
+<use ../documents/GANTT/gantt.pdf>
+Package pdftex.def Info: ../documents/GANTT/gantt.pdf used on input line 515.
+(pdftex.def)             Requested size: 591.52895pt x 418.25294pt.
+
+Overfull \vbox (23.70139pt too high) has occurred while \output is active []
+
+
+[39 <../documents/GANTT/gantt.pdf>] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 30578 strings out of 493315
- 702331 string characters out of 6137905
- 834476 words of memory out of 5000000
- 33405 multiletter control sequences out of 15000+600000
- 95188 words of font info for 70 fonts, out of 8000000 for 9000
+ 32361 strings out of 493315
+ 726404 string characters out of 6137905
+ 880906 words of memory out of 5000000
+ 35103 multiletter control sequences out of 15000+600000
+ 96257 words of font info for 75 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,21n,93p,2040b,2392s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texli
-ve/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2013/te
-xmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2013/texmf-dist/fonts
-/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/
-lm-mathex.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathit.
-enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/
-local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texl
-ive/2013/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2013/
-texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2013/texmf-dist
-/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/typ
-e1/public/lm/lmmi7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/l
-m/lmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr12.pfb
-></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/loca
-l/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/20
-13/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2013/texmf-dis
-t/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type
-1/public/lm/lmri10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/l
-m/lmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy7.pf
-b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/loc
-al/texlive/2013/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive
-/2013/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on rapport.pdf (38 pages, 10560800 bytes).
+{/usr/local/texlive/2013/t
+exmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2013/texmf-dist/
+fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvip
+s/lm/lm-rm.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathex
+.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/tex
+live/2013/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2013/
+texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/lm/lmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
+/lm/lmmi7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr10.p
+fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2013/texmf-
+dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
+ype1/public/lm/lmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
+lm/lmr9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmri10.pf
+b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2013/texmf
+-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/wasy/wasy10.pfb>
+Output written on rapport.pdf (41 pages, 10665228 bytes).
 PDF statistics:
- 229 PDF objects out of 1000 (max. 8388607)
- 152 compressed objects within 2 object streams
+ 265 PDF objects out of 1000 (max. 8388607)
+ 180 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 78 words of extra memory for PDF output out of 10000 (max. 10000000)
 
