@@ -3,44 +3,44 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: rapport.aux
 The style file: plain.bst
 Database file #1: biblio_rapport.bib
-You've used 25 entries,
+You've used 27 entries,
             2118 wiz_defined-function locations,
-            674 strings with 11224 characters,
-and the built_in function-call counts, 8723 in all, are:
-= -- 784
-> -- 555
+            684 strings with 11536 characters,
+and the built_in function-call counts, 9139 in all, are:
+= -- 822
+> -- 569
 < -- 3
-+ -- 218
-- -- 193
-* -- 653
-:= -- 1528
-add.period$ -- 77
-call.type$ -- 25
-change.case$ -- 171
++ -- 224
+- -- 197
+* -- 669
+:= -- 1596
+add.period$ -- 83
+call.type$ -- 27
+change.case$ -- 179
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 304
-empty$ -- 630
-format.name$ -- 193
-if$ -- 1770
+cite$ -- 27
+duplicate$ -- 318
+empty$ -- 674
+format.name$ -- 197
+if$ -- 1860
 int.to.chr$ -- 0
-int.to.str$ -- 25
+int.to.str$ -- 27
 missing$ -- 22
-newline$ -- 127
-num.names$ -- 52
-pop$ -- 184
+newline$ -- 137
+num.names$ -- 56
+pop$ -- 202
 preamble$ -- 1
-purify$ -- 146
+purify$ -- 152
 quote$ -- 0
-skip$ -- 184
+skip$ -- 198
 stack$ -- 0
-substring$ -- 349
-swap$ -- 42
+substring$ -- 359
+swap$ -- 44
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 100
+type$ -- 108
 warning$ -- 0
-while$ -- 63
-width$ -- 27
-write$ -- 269
+while$ -- 67
+width$ -- 29
+write$ -- 289

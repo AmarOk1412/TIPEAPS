@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  24 MAR 2014 17:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  24 MAR 2014 17:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1351,13 +1351,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--40
 {/usr/local/texlive/2013/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./ur1.p
 ng>] [1] [1
 
-] (./rapport.toc)
+] (./rapport.toc [2
+
+])
 \tf@toc=\write4
 \openout4 = `rapport.toc'.
 
- [2
-
-] [1
+ [3] [1
 
 ]
 Partie 1.
@@ -1403,7 +1403,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--102
 
  []
 
-<images/evolcompart48-11.png, id=33, 1021.8175pt x 413.545pt>
+<images/evolcompart48-11.png, id=37, 1021.8175pt x 413.545pt>
 File: images/evolcompart48-11.png Graphic file (type png)
 
 <use images/evolcompart48-11.png>
@@ -1434,7 +1434,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 116--118
 
  []
 
-<images/karl-for-Securite-Routiere.jpg, id=38, 1422.31375pt x 948.54375pt>
+<images/karl-for-Securite-Routiere.jpg, id=41, 1422.31375pt x 948.54375pt>
 File: images/karl-for-Securite-Routiere.jpg Graphic file (type jpg)
 
 <use images/karl-for-Securite-Routiere.jpg>
@@ -1504,10 +1504,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 173--174
  []
 
 
-LaTeX Warning: Reference `fig:eigenfaces_OpenCV' on page 8 undefined on input l
-ine 175.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
@@ -1519,7 +1515,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 177--178
 
  []
 
-<images/eigenfaces_OpenCV.png, id=57, 461.725pt x 224.84pt>
+<images/eigenfaces_OpenCV.png, id=61, 461.725pt x 224.84pt>
 File: images/eigenfaces_OpenCV.png Graphic file (type png)
 
 <use images/eigenfaces_OpenCV.png>
@@ -1545,7 +1541,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 195--196
 
  []
 
-<images/fisherfacedistrib.png, id=58, 1026.83624pt x 828.09375pt>
+<images/fisherfacedistrib.png, id=62, 1026.83624pt x 828.09375pt>
 File: images/fisherfacedistrib.png Graphic file (type png)
 
 <use images/fisherfacedistrib.png>
@@ -1598,10 +1594,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 235--236
  []
 
 [11]
-
-LaTeX Warning: Reference `fig:dureesAlgos' on page 12 undefined on input line 2
-39.
-
 PGFPlots: reading {data/ByNumberOfImages_rec_eigenface.csv}
 PGFPlots: reading {data/ByNumberOfImages_rec_fisherface.csv}
 PGFPlots: reading {data/ByNumberOfImages_rec_LBPH.csv}
@@ -1609,24 +1601,16 @@ PGFPlots: reading {data/ByNumberOfImages_bdd_eigenface.csv}
 PGFPlots: reading {data/ByNumberOfImages_bdd_fisherface.csv}
 PGFPlots: reading {data/ByNumberOfImages_bdd_LBPH.csv}
 
-LaTeX Warning: Reference `fig:pourcentageReco' on page 12 undefined on input li
-ne 303.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 303--304
 
  []
-
-
-LaTeX Warning: Reference `fig:robustesseLBPH' on page 12 undefined on input lin
-e 305.
 
 
 Package frenchb.ldf Warning: Degrees would look better in TS1-encoding: 
 (frenchb.ldf)                add \usepackage{textcomp} to the preamble. 
 (frenchb.ldf)                Degrees used on input line 305.
 
-<images/detection_cut.png, id=77, 878.8032pt x 868.6854pt>
+<images/detection_cut.png, id=80, 878.8032pt x 868.6854pt>
 File: images/detection_cut.png Graphic file (type png)
 
 <use images/detection_cut.png>
@@ -1663,46 +1647,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 323--324
 
  []
 
-[15
-
-] <images/primaryexp.jpg, id=93, 151.56625pt x 335.2525pt>
+<images/primaryexp.jpg, id=93, 151.56625pt x 335.2525pt>
 File: images/primaryexp.jpg Graphic file (type jpg)
 
 <use images/primaryexp.jpg>
 Package pdftex.def Info: images/primaryexp.jpg used on input line 327.
 (pdftex.def)             Requested size: 75.78293pt x 167.62584pt.
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 332--333
 
  []
 
+[15
 
-LaTeX Warning: Reference `fig:findContoursOk' on page 16 undefined on input lin
-e 334.
-
-<images/findContoursOk.jpg, id=94, 108.405pt x 44.165pt>
+] <images/findContoursOk.jpg, id=97, 108.405pt x 44.165pt>
 File: images/findContoursOk.jpg Graphic file (type jpg)
 
 <use images/findContoursOk.jpg>
 Package pdftex.def Info: images/findContoursOk.jpg used on input line 337.
 (pdftex.def)             Requested size: 108.40472pt x 44.16487pt.
 
-
-LaTeX Warning: Reference `fig:findContoursNOk' on page 16 undefined on input li
-ne 342.
-
-<images/findContoursNOk.jpg, id=95, 158.5925pt x 83.31125pt>
+<images/findContoursNOk.jpg, id=98, 158.5925pt x 83.31125pt>
 File: images/findContoursNOk.jpg Graphic file (type jpg)
 
 <use images/findContoursNOk.jpg>
 Package pdftex.def Info: images/findContoursNOk.jpg used on input line 345.
 (pdftex.def)             Requested size: 158.59209pt x 83.31104pt.
 
-
-LaTeX Warning: Reference `fig:inRangeOk' on page 16 undefined on input line 350
-.
-
-<images/inRangeOk.jpg, id=96, 72.27pt x 44.165pt>
+<images/inRangeOk.jpg, id=99, 72.27pt x 44.165pt>
 File: images/inRangeOk.jpg Graphic file (type jpg)
  <use images/inRangeOk.jpg>
 Package pdftex.def Info: images/inRangeOk.jpg used on input line 353.
@@ -1730,18 +1706,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
 [18]
 Partie 4.
-
-LaTeX Warning: Reference `fig:protoTests' on page 19 undefined on input line 37
-5.
-
-<images/schema_tests.png, id=106, 469.755pt x 448.074pt>
+<images/schema_tests.png, id=109, 469.755pt x 448.074pt>
 File: images/schema_tests.png Graphic file (type png)
 
 <use images/schema_tests.png>
 Package pdftex.def Info: images/schema_tests.png used on input line 385.
 (pdftex.def)             Requested size: 328.82626pt x 313.64964pt.
 
-<images/schema_tests_elec.png, id=107, 205.568pt x 207.174pt>
+<images/schema_tests_elec.png, id=110, 205.568pt x 207.174pt>
 File: images/schema_tests_elec.png Graphic file (type png)
 
 <use images/schema_tests_elec.png>
@@ -1759,108 +1731,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 396--397
 
  []
 
-[21]
-
-LaTeX Warning: Citation `bimodalEmotionRecognition' on page 22 undefined on inp
-ut line 403.
-
-
-LaTeX Warning: Citation `automaticFacialExpressionAnalysis' on page 22 undefine
-d on input line 403.
-
-
-LaTeX Warning: Citation `drivingEmotionalExperienceAutomotiveDesign' on page 22
- undefined on input line 403.
-
-
-LaTeX Warning: Citation `universalityCulturalSpecificityEmotionRecognitionMetaA
-nalysis' on page 22 undefined on input line 403.
-
-
-LaTeX Warning: Citation `abnormalRecognitionFacialExpression' on page 22 undefi
-ned on input line 403.
-
-
-LaTeX Warning: Citation `authenticFacialExpressionAnalysis' on page 22 undefine
-d on input line 403.
-
-
-LaTeX Warning: Citation `emotionRecognitionNeurofuzzyNetwork' on page 22 undefi
-ned on input line 403.
-
-
-LaTeX Warning: Citation `emotionRecognitionCauchyNaiveBayes' on page 22 undefin
-ed on input line 403.
-
-
-LaTeX Warning: Citation `facialEmotionrecognitionUsingMultiModalInformation' on
- page 22 undefined on input line 403.
-
-
-LaTeX Warning: Citation `realisticFacialExpressionSynthesisImageBasedTalkingHea
-d' on page 22 undefined on input line 403.
-
-
-LaTeX Warning: Citation `facialExpressionMegamix' on page 22 undefined on input
- line 403.
-
-
-LaTeX Warning: Citation `facialExpressionRecognitionFromVideoSequences' on page
- 22 undefined on input line 403.
-
-
-LaTeX Warning: Citation `facialExpressionRecognitionLocalBinaryPatterns' on pag
-e 22 undefined on input line 403.
-
-
-LaTeX Warning: Citation `analyseInterpretationMouvementsHumains' on page 22 und
-efined on input line 403.
-
-
-LaTeX Warning: Citation `affectiveIntelligentCarInterfacesEmotionRecognition' o
-n page 22 undefined on input line 403.
-
-
-LaTeX Warning: Citation `improvingAutomotiveSafetyByPairingDriverEmotionAndCarV
-oiceEmotion' on page 22 undefined on input line 403.
-
-
-LaTeX Warning: Citation `realTimeFacialFeaturePointsTrackingPyramidalLucasKanad
-eAlgorithm' on page 22 undefined on input line 403.
-
-
-LaTeX Warning: Citation `reconnaissanceExpressionsFacialesMemoireAssociativeBid
-irectionnelleFonctionSortieChaotique' on page 22 undefined on input line 403.
-
-
-LaTeX Warning: Citation `emotionRecognitionInHumanComputerInteraction' on page 
-22 undefined on input line 403.
-
-
-LaTeX Warning: Citation `eigenfaceRecognition' on page 22 undefined on input li
-ne 403.
-
-
-LaTeX Warning: Citation `faceRecognitionLocalBinaryPatternsSpatialPyramidHistog
-ramsNaiveBayes' on page 22 undefined on input line 403.
-
-
-LaTeX Warning: Citation `photorealisticExpressiveTextTalkingHeadSynthesis' on p
-age 22 undefined on input line 403.
-
-
-LaTeX Warning: Citation `essentielSecuriteRoutiere' on page 22 undefined on inp
-ut line 403.
-
-
-LaTeX Warning: Citation `analyseQuantificationComportementsConducteursAutomobil
-esPreCrash' on page 22 undefined on input line 403.
-
-
-LaTeX Warning: Citation `linuxMagazine' on page 22 undefined on input line 404.
-
-
-(./rapport.bbl [22
+[21] (./rapport.bbl [22
 
 ] [23
 
@@ -1991,7 +1862,7 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 Annexe B.
 [36
 
-] [37] <../documents/GANTT/gantt.pdf, id=173, 845.0471pt x 597.50829pt>
+] [37] <../documents/GANTT/gantt.pdf, id=176, 845.0471pt x 597.50829pt>
 File: ../documents/GANTT/gantt.pdf Graphic file (type pdf)
 
 <use ../documents/GANTT/gantt.pdf>
@@ -2001,48 +1872,42 @@ Package pdftex.def Info: ../documents/GANTT/gantt.pdf used on input line 523.
 Overfull \vbox (23.70139pt too high) has occurred while \output is active []
 
 
-[38 <../documents/GANTT/gantt.pdf>] (./rapport.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[38 <../documents/GANTT/gantt.pdf>] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 32369 strings out of 493315
- 726526 string characters out of 6137905
- 880478 words of memory out of 5000000
- 35108 multiletter control sequences out of 15000+600000
+ 32371 strings out of 493315
+ 726572 string characters out of 6137905
+ 880647 words of memory out of 5000000
+ 35110 multiletter control sequences out of 15000+600000
  96257 words of font info for 75 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,21n,93p,2136b,2392s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
-cal/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/20
-13/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2013/texmf-dist/
-fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/
-dvips/lm/lm-mathit.enc}</usr/local/texlive/2013/texmf-dist/fonts/type1/public/l
-m/lmbx10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmbx12.p
-fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/
-local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texl
-ive/2013/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2013/t
-exmf-dist/fonts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2013/texmf-dist/f
-onts/type1/public/lm/lmr10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/
-public/lm/lmr12.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/l
-mr17.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr6.pfb></u
-sr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/tex
-live/2013/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2013/te
-xmf-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2013/texmf-dist/fon
-ts/type1/public/lm/lmri10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/p
-ublic/lm/lmsy10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/l
-msy7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></
-usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/
-texlive/2013/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/lo
-cal/texlive/2013/texmf-dist/fonts/type1/public/wasy/wasy10.pfb>
-Output written on rapport.pdf (42 pages, 10666289 bytes).
+ 56i,21n,93p,2139b,2392s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2013/t
+exmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2013/texmf-dist/
+fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvip
+s/lm/lm-rm.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathex
+.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr
+/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/tex
+live/2013/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2013/
+texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2013/texmf-dis
+t/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2013/texmf-dist/fonts/ty
+pe1/public/lm/lmmi10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public
+/lm/lmmi7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr10.p
+fb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2013/texmf-
+dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2013/texmf-dist/fonts/t
+ype1/public/lm/lmr8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/
+lm/lmr9.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmri10.pf
+b></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/lo
+cal/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive
+/2013/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2013/texmf
+-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2013/texmf-dist/font
+s/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2013/texmf-dist/
+fonts/type1/public/wasy/wasy10.pfb>
+Output written on rapport.pdf (43 pages, 10668756 bytes).
 PDF statistics:
- 268 PDF objects out of 1000 (max. 8388607)
- 182 compressed objects within 2 object streams
+ 272 PDF objects out of 1000 (max. 8388607)
+ 185 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  78 words of extra memory for PDF output out of 10000 (max. 10000000)
 
