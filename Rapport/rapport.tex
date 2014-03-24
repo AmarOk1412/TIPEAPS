@@ -53,12 +53,12 @@
 		\begin{flushleft}
 			\Large{Sous l'encadrement de~:}\\
 			\vspace{0.2cm}
-			\large{Johanne B\'ezy-Wendling}\\
+			\large{Johanne \textsc{B\'ezy-Wendling}}\\
 			\normalsize{Ma\^itre de Conf\'erences\\
 			Responsable cycle pr\'eparatoire ing\'enieur de l'Universit\'e de Rennes I\\
 			(sp\'ecialit\'e informatique et t\'el\'ecommunications)}\\
 			\vspace{0.2cm}
-			\large{Finn J\o rgensen}\\
+			\large{Finn \textsc{J\o rgensen}}\\
 			\normalsize{Responsable L3 d'informatique - ISTIC}
 		\end{flushleft}
 		\vfill
@@ -203,7 +203,7 @@ Pour trouver la meilleure projection, il suffit de r\'esoudre\\$$\frac{P^{-1}\ti
 	\end{center}
 \end{figure}
 
-Vous pouvez retrouver plus de détails dans la documentation d'OpenCV (\cite{docOpenCVFisherFace} et \cite{docOpenCVFaceRecognizer})
+Vous pouvez retrouver plus de d\'etails dans la documentation d'OpenCV (\cite{docOpenCVFisherFace} et \cite{docOpenCVFaceRecognizer})
 
 Globalement, cette m\'ethode pr\'esente les mêmes avantages et inconv\'enients que la m\'ethode Eigenface. Cependant, elle est moins sensible \`a la lumi\`ere et \`a la d\'eformation des visages car elle ne se base pas sur des composantes discriminatoires.\\
 
@@ -399,13 +399,24 @@ Le point le plus probl\'ematique concerne le changement de luminosit\'e~; lorsqu
 
 Nous venons donc de voir qu'une int\'egration de notre prototype est possible dans une voiture de tourisme. L'application d\'etecte bien les expressions recherch\'ees malgr\'e un temps de r\'eponse important. Cependant, plusieurs param\`etres doivent encore être am\'elior\'es comme une meilleure adaptation au changement de luminosit\'e ou le choix d'une cam\'era avec une r\'esolution plus \'elev\'ee.
 \chapter*{Conclusion}
-%TODO
+La d\'etection et la reconnaissance d'individus et d'\'emotions peut s'effectuer \`a l'aide d'une multitude d'algorithmes r\'esultant de dizaines d'ann\'ees de recherche (LBPH, FisherFace, EigenFace, R\'eseaux neuronaux, Mod\`ele de Markov Cach\'es, ...) dont beaucoup demandent \'enorm\'ement de calculs. Certains ont une approche plus simple et sont facilement int\'egrables \`a un projet tel que LBPH \`a l'aide de la librairie OpenCV. L'application d\'evelopp\'ee tout au long de ce TIPE nous montre que la reconnaissance faciale du conducteur peut être utile pour \'eviter un vol de voiture, même si la reconnaissance faciale n'est pas un facteur de s\'ecurit\'e fort. En effet, cette s\'ecurit\'e se contourne simplement en utilisant une photo du conducteur.\\
+
+L'application permet aussi de d\'etecter une personne endormie (seulement apr\`es quelques secondes) ou inattentive et permet donc d'\'eviter une conduite \`a l'aveugle. Par contre, l'application est tr\`es peu fiable pour la d\'etection de la surprise ou de l'\'enervement. De plus, la surprise et l'\'enervement peuvent provenir d'une multitude de sources tels que la pr\'esence d'un bouchon, une sortie rat\'ee, un enfant qui traverse au mauvais moment, etc. La d\'etection des \'emotions n'est donc pas forc\'ement la meilleure approche \`a avoir pour savoir comment la voiture doit r\'eagir. De plus, cette d\'etection peut être gên\'ee par de multiples facteurs tels que la luminosit\'e, une cam\'era de mauvaise qualit\'e, son placement (la tête peut-être cach\'ee par le volant), etc.\\
+
+Enfin, il faudrait plutôt prendre en compte le mouvement des points du visage plutôt que des seuils impr\'ecis qui peuvent s'av\'erer faux avec la modification de l'environnement ou trop peu r\'eactif (il faut parfois sur-jouer une \'emotion pour obtenir une d\'etection, ce qui n'est pas envisageable dans une application r\'eelle).\\
+
+Ce projet r\'ealis\'e dans le cadre du TIPE nous a permis d'acqu\'erir de nombreuses comp\'etences. Nous avons appris \`a travailler en groupe avec des outils tels que git (pour le partage des ressources, des images et des sources de l'application) ainsi que l'utilisation de pad collaboratif pour r\'ediger \`a plusieurs facilement (Framapad). Nous avons aussi appris des m\'ethodes de gestion de projets tels que la Check List (pour connaître les actions \`a r\'ealiser), la m\'ethode RACI (pour se r\'epartir les tâches), le diagramme de Gantt (pour planifier l'emploi du temps) ou la m\'ethode Scrum (pour se diviser l'\'ecriture de l'application). Par ailleurs, nous avons appris \`a programmer \`a l'aide de Python 2.7 (la norme python 3 est sortie, mais elle est encore mal support\'ee par OpenCV pour les m\'ethodes de reconnaissance faciale) ainsi qu'\`a maitriser la biblioth\`eque OpenCV (pour les parties reconnaissance faciale et traitement d'images). Pour analyser facilement nos r\'esultats donn\'es sous forme de log, nous avons utilis\'e le langage PHP. Enfin pour r\'ediger le rapport et g\'en\'erer les graphes, nous avons utilis\'e LaTeX. De plus, nous avons d\'evelopp\'e notre sens de l'autonomie en r\'epartissant les tâches entre les diff\'erents membres du groupe que ce soit pour les recherches, ou la r\'edaction du rapport. Nous avons \'egalement d\'evelopp\'e notre rigueur en suivant des protocoles pr\'ecis lors de nos exp\'eriences. Nous avons pris \'enorm\'ement de plaisir \`a r\'ealiser notre TIPE, ce qui nous a permis de confirmer notre projet professionnel qui est la poursuite d'\'etudes dans le domaine de l'informatique.\\
+
+Malgr\'e le fait que notre application fonctionne, nous pouvons l'am\'eliorer de plusieurs façons. Tout d'abord, en reliant directement l'application \`a la voiture et non \`a des LEDs qui s'allument. Pour le choix des technologies associ\'ees, nous pouvons imaginer un programme plutôt \'ecrit en C ou C++ (le python \'etant plus lent) tirant mieux parti de la programmation parall\`ele afin d'effectuer des tâches simultan\'ement. Le programme devrait tourner sur une architecture d\'edi\'ee (syst\`eme all\'eg\'e type linux/BSD all\'eg\'e). Enfin des algorithmes plus pr\'ecis devraient être envisag\'es tels que le suivi des points du visage. Même si cette m\'ethode n\'ecessite bien plus de calculs, l'application serait plus pr\'ecise. Pour pallier au probl\`eme de non information sur la cause de la surprise et de l'\'enervement de l'utilisateur, nous pouvons imaginer une am\'elioration du syst\`eme actuel avec des radars et des cam\'eras orient\'ees vers l'ext\'erieur de la voiture. Nous pouvons \'egalement renforcer la d\'etection d'un conducteur inattentif en g\'en\'erant des classifiers pour d\'etecter lorsque le conducteur utilise son t\'el\'ephone au volant. Enfin, la reconnaissance faciale du conducteur peut servir, en plus de la protection anti-vol \`a g\'en\'erer des profils de conduite (consommation d'essence, style de conduite, style de musique, ...). En outre, notre programme pourrait être impl\'ement\'e dans d'autres types de v\'ehicules comme des camions ou des bus. Si tous les v\'ehicules de tourisme \'etaient \'equip\'es de ce type de programme, nous pouvons envisager une r\'eduction signifivative du nombre de morts et de bless\'es sur les routes. Sachant que le co\^ut des accidents corporels en 2011 est estim\'e \`a 9,7 milliards d'euros, cela repr\'esenterait une \'economie non n\'egligeable. Enfin, la pr\'esence permanente d'une cam\'era dans l'habitacle pose le probl\`eme du respect de la vie priv\'ee. Il faudrait \`a veiller \`a ce que son utilisation soit r\'eserv\'e uniquement \`a des fins de protection du conducteur et pas \`a un moyen suppl\'ementaire d'espionner des individus.\\
+
 
 dans les ameliorations : \cite{improvingAutomotiveSafetyByPairingDriverEmotionAndCarVoiceEmotion} pour detecter via reco vocale. et ca pour le coeur : \cite{affectiveIntelligentCarInterfacesEmotionRecognition} 
 % /!\ TEST
 entr\'ee biblio 
 \cite{reconnaissanceExpressionsFacialesMemoireAssociativeBidirectionnelleFonctionSortieChaotique} <- Amaury
-\cite{photorealisticExpressiveTextTalkingHeadSynthesis}<- je vois pas ou le caser, c'est plus simuler expression... Ph -> \cite{essentielSecuriteRoutiere} \cite{analyseQuantificationComportementsConducteursAutomobilesPreCrash}
+\cite{photorealisticExpressiveTextTalkingHeadSynthesis}<- je vois pas ou le caser, c'est plus simuler expression / dans l'intro, c'est un point de depart qu'on a eu... Ph -> \cite{essentielSecuriteRoutiere} \cite{analyseQuantificationComportementsConducteursAutomobilesPreCrash}
+
+EKMAN EKMAN EKMAN EKMAN -> \cite{ekman} <- EKMAN EKMAN EKMAN
 % /test
 \bibliographystyle{plain}
 \bibliography{biblio_rapport}
@@ -441,32 +452,32 @@ entr\'ee biblio
 		\item{Recherche bibliographique sur la reconnaissance des \'emotions \hfill $\Box$ oui $\Box$ non}
 		\item{Contacter des professionnels \hfill $\Box$ oui $\Box$ non}
 		\item{Apprendre Python \hfill $\Box$ oui $\Box$ non}
-		\item{Apprendre à utiliser git \hfill $\Box$ oui $\Box$ non}
-		\item{Créer le d\'ep\^ot git \hfill $\Box$ oui $\Box$ non}
-		\item{Apprendre à utiliser OpenCV \hfill $\Box$ oui $\Box$ non}
-		\item{Comparer les diff\'erents systèmes de reconnaissance faciale}
+		\item{Apprendre \`a utiliser git \hfill $\Box$ oui $\Box$ non}
+		\item{Cr\'eer le d\'ep\^ot git \hfill $\Box$ oui $\Box$ non}
+		\item{Apprendre \`a utiliser OpenCV \hfill $\Box$ oui $\Box$ non}
+		\item{Comparer les diff\'erents syst\`emes de reconnaissance faciale}
 			\begin{itemize}
-				\item{vitesse d'exécution \hfill $\Box$ oui $\Box$ non}
-				\item{fiabilité \hfill $\Box$ oui $\Box$ non}
+				\item{vitesse d'ex\'ecution \hfill $\Box$ oui $\Box$ non}
+				\item{fiabilit\'e \hfill $\Box$ oui $\Box$ non}
 			\end{itemize}
-		\item{Réaliser l'application}
+		\item{R\'ealiser l'application}
 			\begin{itemize}
 				\item{module de reconnaissance faciale \hfill $\Box$ oui $\Box$ non}
-				\item{module de reconnaissance des émotions \hfill $\Box$ oui $\Box$ non}
+				\item{module de reconnaissance des \'emotions \hfill $\Box$ oui $\Box$ non}
 			\end{itemize}
-		\item{Créer le prototype de test \hfill $\Box$ oui $\Box$ non}
-		\item{Réaliser des tests}
+		\item{Cr\'eer le prototype de test \hfill $\Box$ oui $\Box$ non}
+		\item{R\'ealiser des tests}
 			\begin{itemize}
-				\item{tests en situation idéale \hfill $\Box$ oui $\Box$ non}
-				\item{tests en situation réelle \hfill $\Box$ oui $\Box$ non}
-				\item{débuggage \hfill $\Box$ oui $\Box$ non}
+				\item{tests en situation id\'eale \hfill $\Box$ oui $\Box$ non}
+				\item{tests en situation r\'eelle \hfill $\Box$ oui $\Box$ non}
+				\item{d\'ebuggage \hfill $\Box$ oui $\Box$ non}
 			\end{itemize}
-		\item{Analyser les résultats des tests \hfill $\Box$ oui $\Box$ non}
-		\item{Rédiger le rapport écrit \hfill $\Box$ oui $\Box$ non}
-		\item{Relecture du rapport écrit \hfill $\Box$ oui $\Box$ non}
-		\item{Préparer l'oral \hfill $\Box$ oui $\Box$ non}
-		\item{Réaliser le diaporama \hfill $\Box$ oui $\Box$ non}
-		\item{Réaliser la fiche synoptique \hfill $\Box$ oui $\Box$ non}
+		\item{Analyser les r\'esultats des tests \hfill $\Box$ oui $\Box$ non}
+		\item{R\'ediger le rapport \'ecrit \hfill $\Box$ oui $\Box$ non}
+		\item{Relecture du rapport \'ecrit \hfill $\Box$ oui $\Box$ non}
+		\item{Pr\'eparer l'oral \hfill $\Box$ oui $\Box$ non}
+		\item{R\'ealiser le diaporama \hfill $\Box$ oui $\Box$ non}
+		\item{R\'ealiser la fiche synoptique \hfill $\Box$ oui $\Box$ non}
 	\end{enumerate}
 		\newpage
 		\section{Matrice RACI}

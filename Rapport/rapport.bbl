@@ -61,13 +61,6 @@ OpenCV dev team.
 \newblock
   \url{http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#fisherfaces}.
 
-\bibitem{abnormalRecognitionFacialExpression}
-Mikhailova Elena, Vladimirova Tatjana, Iznak Andre, Tsusulkovskaya Emily, and
-  Sushko Nataly.
-\newblock Abnormal recognition of facial expression of emotions in depressed
-  patients with major depression disorder and schizotypal personality disorder.
-\newblock {\em Biol Psychiatry}, 40:697--705, 1996.
-
 \bibitem{realTimeFacialFeaturePointsTrackingPyramidalLucasKanadeAlgorithm}
 Abdat F., Maaoui C., and Pruski A.
 \newblock Real time facial feature points tracking with pyramidal lucas-kanade
@@ -92,25 +85,12 @@ Cohen Ira, Sebe Nicu, Garg Ashutosh, Chen Lawrence, and Huang Thomas.
   static modeling.
 \newblock {\em Computer Vision and Image Understanding}, 91:160--187, 2003.
 
-\bibitem{realisticFacialExpressionSynthesisImageBasedTalkingHead}
-Liu Kang and Ostermann Joern.
-\newblock Realistic facial expression synthesis for an image-based talking
-  head.
-\newblock In {\em IEEE international conference on multimedia and expo},
-  Juillet 2011.
-
 \bibitem{reconnaissanceExpressionsFacialesMemoireAssociativeBidirectionnelleFonctionSortieChaotique}
 Tabari Karmia, Boukadoum Mounir, Chartier Sylvain, and Lounis Hakim.
 \newblock Reconnaissance d'expressions faciales \`a l'aide d'une m\'emoire
   associative bidirectionnelle \`a fonction de sortie chaotique.
 \newblock In {\em Maghrébian Conference on Software Engineering and Artificial
   Intelligence}, d\'ecembre 2006.
-
-\bibitem{facialEmotionrecognitionUsingMultiModalInformation}
-{De Silva} Liyanage, Miyasato Tsutomu, and Nakatsu Ryohei.
-\newblock Facial emotion recognition using multi-modal information.
-\newblock In {\em International conference on information, communications and
-  signal processing}, Septembre 1997.
 
 \bibitem{bimodalEmotionRecognition}
 {DeSilva} Liyanage and Ng~Pei~Chi.
@@ -142,11 +122,11 @@ Sebe Nicu, Lew Michael, Cohen Ira, Garg Ashutosh, and Huang Thomas.
 \newblock In {\em Sixteenth international conference on pattern recognition},
   volume~1, pages 17--20, 2002.
 
-\bibitem{emotionRecognitionInHumanComputerInteraction}
-Cowie R., Douglas-Cowie E., Tsapatsoulis N., Votsis G., Kollias S., Fellenz W.,
-  and Taylor J.G.
-\newblock Emotion recognition in human-computer interaction.
-\newblock {\em Signal processing magazine}, 18:32--80, Janvier 2001.
+\bibitem{ekman}
+Ekman Paul.
+\newblock Basic emotions.
+\newblock In Dalgleish T. and Power M., editors, {\em Handbook on cognition and
+  emotion}, chapter~3. John Wiley \& Sons Ltd, 1999.
 
 \bibitem{drivingEmotionalExperienceAutomotiveDesign}
 Gomez Rafael, Popovic Vesna, and Bucolo Sam.
