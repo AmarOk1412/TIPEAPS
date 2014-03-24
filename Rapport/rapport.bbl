@@ -63,6 +63,11 @@ Abdat F., Maaoui C., and Pruski A.
 \newblock In Chugo Daisuke, editor, {\em Human-Robot Interaction}, chapter~13.
   InTech, F\'evrier 2010.
 
+\bibitem{linuxMagazine}
+{Le Roy} Fr\'ed\'eric.
+\newblock Reconnaissance faciale facile avec opencv et python.
+\newblock {\em Linux magazine}, 166, D\'ecembre 2013.
+
 \bibitem{universalityCulturalSpecificityEmotionRecognitionMetaAnalysis}
 Elfenbein Hillary~Anger and Ambady Nalini.
 \newblock On the universality and cultural specificity of emotion recognition:
@@ -107,7 +112,7 @@ Turk Matthew and Pentland Alex.
 \newblock {\em Journal of cognitive neuroscience}, 3:71--86, 1991.
 
 \bibitem{analyseQuantificationComportementsConducteursAutomobilesPreCrash}
-Hetier Micka\?el.
+Hetier Micka\"el.
 \newblock {\em Analyse et quantification des compoertements des conducteurs
   automobiles lors des phases de pr\'e-crash~: contribution au d\'eveloppement
   d'un mod\`ele de d\'etection des postures de conduite en temps r\'eel}.
@@ -147,7 +152,7 @@ Ioannou Spiros, Raouzaiou Amaryllis, Tzouvaras Vasilis, Mailis Theofilos,
 \bibitem{photorealisticExpressiveTextTalkingHeadSynthesis}
 Wan Vincent, Anderson Robert, Blokland Art, Braunschweiler Norbert, Chen
   Langzhou, Kolluru BalaKrishna, Latorre Javier, Maia Ranniery, Stenger
-  Bj\?orn, Yanagisawa Kayoko, Stylianou Yannis, Akamine Masami, Gales Mark, and
+  Bj\"orn, Yanagisawa Kayoko, Stylianou Yannis, Akamine Masami, Gales Mark, and
   Cipolla Roberto.
 \newblock Photo-realistic expressive text to talking head synthesis.
 \newblock In {\em Interspeech}, ao\^ut 2013.

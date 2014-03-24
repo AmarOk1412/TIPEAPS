@@ -1,0 +1,37 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Les limites de la s\'ecurit\'e routi\`ere}{2}
+\contentsline {section}{\numberline {1.1}Les moyens mis en place pour la s\'ecurit\'e du conducteur en France.}{2}
+\contentsline {subsection}{\numberline {1.1.1}Historique de la s\'ecurit\'e routi\`ere depuis 40 ans}{2}
+\contentsline {subsection}{\numberline {1.1.2}Bilan de quarante ann\'ees de mesures}{3}
+\contentsline {section}{\numberline {1.2}Les comportements \`a risques}{5}
+\contentsline {subsection}{\numberline {1.2.1}Les principales causes d'accidents}{5}
+\contentsline {subsection}{\numberline {1.2.2}La conduite \`a l'aveugle}{6}
+\contentsline {chapter}{\numberline {2}La reconnaissance faciale}{8}
+\contentsline {section}{\numberline {2.1}Th\'eorie}{8}
+\contentsline {subsection}{\numberline {2.1.1}G\'en\'eralit\'es}{8}
+\contentsline {subsection}{\numberline {2.1.2}La m\'ethode Eigenface}{8}
+\contentsline {subsection}{\numberline {2.1.3}La m\'ethode Fisherface}{9}
+\contentsline {subsection}{\numberline {2.1.4}La m\'ethode LBPH}{10}
+\contentsline {section}{\numberline {2.2}Exp\'erimentations}{11}
+\contentsline {subsection}{\numberline {2.2.1}Protocole}{11}
+\contentsline {subsection}{\numberline {2.2.2}R\'ealisation des exp\'eriences}{11}
+\contentsline {subsection}{\numberline {2.2.3}R\'esultats et analyses}{12}
+\contentsline {chapter}{\numberline {3}Reconnaissance des \'emotions}{15}
+\contentsline {section}{\numberline {3.1}Th\'eorie}{15}
+\contentsline {subsection}{\numberline {3.1.1}Diff\'erentes solutions}{15}
+\contentsline {subsection}{\numberline {3.1.2}Solution choisie}{16}
+\contentsline {section}{\numberline {3.2}Exp\'erimentations}{17}
+\contentsline {subsection}{\numberline {3.2.1}Protocole}{18}
+\contentsline {subsection}{\numberline {3.2.2}R\'ealisation}{18}
+\contentsline {subsection}{\numberline {3.2.3}R\'esultats et analyse}{18}
+\contentsline {chapter}{\numberline {4}Production}{19}
+\contentsline {section}{\numberline {4.1}Prototype final}{19}
+\contentsline {section}{\numberline {4.2}Protocole du test final}{19}
+\contentsline {section}{\numberline {4.3}Discussion et analyse des r\'esultats}{21}
+\contentsline {chapter}{\numberline {A}Code des applications}{25}
+\contentsline {section}{\numberline {A.1}Application principale}{25}
+\contentsline {section}{\numberline {A.2}Code Arduino pour les tests}{32}
+\contentsline {chapter}{\numberline {B}Documents utilis\'es en CST}{36}
+\contentsline {section}{\numberline {B.1}check-list}{36}
+\contentsline {section}{\numberline {B.2}Matrice RACI}{37}
+\contentsline {section}{\numberline {B.3}Diagramme de GANTT}{38}
