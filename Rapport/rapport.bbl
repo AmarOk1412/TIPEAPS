@@ -49,6 +49,18 @@ Maturana Daniel, Mery Domingo, and Soto \'Alvaro.
 \newblock {\em 2011 30th International Conference of the Chilean Computer
   Science Society}, 0:125--132, 2009.
 
+\bibitem{docOpenCVFaceRecognizer}
+OpenCV dev team.
+\newblock Facerecognizer, F\'evrier 2013.
+\newblock
+  \url{http://docs.opencv.org/modules/contrib/doc/facerec/facerec_api.html}.
+
+\bibitem{docOpenCVFisherFace}
+OpenCV dev team.
+\newblock Face recognition with fisherface, F\'evrier 2014.
+\newblock
+  \url{http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#fisherfaces}.
+
 \bibitem{abnormalRecognitionFacialExpression}
 Mikhailova Elena, Vladimirova Tatjana, Iznak Andre, Tsusulkovskaya Emily, and
   Sushko Nataly.
