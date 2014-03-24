@@ -88,13 +88,13 @@ Au d\'ebut des ann\'ees 80, les pouvoirs publics constat\`erent une stabilisatio
 \`a la fin des ann\'ees 80, un livre blanc de la s\'ecurit\'e routi\`ere fut publi\'e dans le but d'\'enoncer les orientations majeures des futures politiques de s\'ecurit\'e routi\`ere. Entre 1990 et 2000, de nombreuses mesures furent donc mises en oeuvre~: en 1990, la vitesse maximale autoris\'ee en agglom\'eration fut fix\'ee \`a 50km/h et un permis \`a points fut instaur\'e, le taux d'alcool autoris\'e dans le sang se limita \`a 0,5 g/l, l'essentiel du r\'eseau autoroutier \'etait quasiment achev\'e, la plupart des v\'ehicules furent \'equip\'es d'airbags. De plus, le continuum \'educatif est mis en place. D'apr\`es le site gouvernemental de la s\'ecurit\'e routi\`ere, le continuum \'educatif exprima l'id\'ee que \og l'\'education \`a la s\'ecurit\'e routi\`ere ne se fait pas seulement lors du passage du permis de conduire, mais tout au long de sa vie".\\
 En dix ans, le trafic global augmenta de 20\%, alors que la mortalit\'e routi\`ere diminua d'autant.\\
 
-En 2002, la s\'ecurit\'e routi\`ere \'etait l'un des principaux chantiers du Pr\'esident de la R\'epublique. Un an plus tard, les premiers radars de contrôle/sanction automatiques //--syst\`emes de sanction automatique--// arriv\`erent au bord des routes. La même ann\'ee, le Conseil National de la S\'ecurit\'e Routi\`ere (C.N.S.R) s'installa \#\#pr\'eciser ses missions\#\#. En 2004, le permis probatoire fit son apparition. Les sanctions sont devenues plus importantes pour les conducteurs en \'etat d'\'ebri\'et\'e. En effet, un d\'epassement du taux l\'egal d'alcool dans le sang entraine un retrait de six points sur le permis de conduire. En 2000 et 2010, la mortalit\'e baissa de 51,1\% alors que le trafic global augmenta de 7\%.\\
+En 2002, la s\'ecurit\'e routi\`ere \'etait l'un des principaux chantiers du Pr\'esident de la R\'epublique. Un an plus tard, les premiers radars de contrôle arriv\`erent au bord des routes. La même ann\'ee, le Conseil National de la S\'ecurit\'e Routi\`ere (C.N.S.R) s'installa \#\#pr\'eciser ses missions\#\#. En 2004, le permis probatoire fit son apparition. Les sanctions sont devenues plus importantes pour les conducteurs en \'etat d'\'ebri\'et\'e. En effet, un d\'epassement du taux l\'egal d'alcool dans le sang entraine un retrait de six points sur le permis de conduire. En 2000 et 2010, la mortalit\'e baissa de 51,1\% alors que le trafic global augmenta de 7\%.\\
 
 Apr\`es un bref aperçu sur l'\'etendu des d\'ecisions prises par les gouvernements depuis 1972 en mati\`ere de s\'ecurit\'e routi\`ere, nous allons maintenant voir quel est le bilan de ces mesures.\\
 
 \subsection{Bilan de quarante ann\'ees de mesures}
 
-Premi\`erement, le nombre de tu\'es sur la route a fortement diminu\'e depuis 1972 (ann\'ee qui marque la fin de la hausse constante de la mortalit\'e routi\`ere). Comme nous pouvons le constater sur le graphique ci-dessus/ci-dessous, ce nombre a \'et\'e divis\'e par plus de quatre en quarante ans malgr\'e un doublement du parc automobile. En 2012, 3 653 personnes ont \'et\'e tu\'ees en 30 jours contre plus de 18 000 en 1972.\\
+Premi\`erement, le nombre de tu\'es sur la route a fortement diminu\'e depuis 1972 (ann\'ee qui marque la fin de la hausse constante de la mortalit\'e routi\`ere). Comme nous pouvons le constater sur le graphique ci-dessous, ce nombre a \'et\'e divis\'e par plus de quatre en quarante ans malgr\'e un doublement du parc automobile. En 2012, 3 653 personnes ont \'et\'e tu\'ees en 30 jours contre plus de 18 000 en 1972.\\
 
 \begin{figure}
 	\begin{center}
@@ -156,11 +156,11 @@ En France, certaines \'etudes ont montr\'e que 25\% \`a 50\% des accidents corpo
 
 \section{Th\'eorie}
 
-Afin d'\'etudier l'aspect th\'eorique de la reconnaissance faciale, nous allons d'abord l'aborder de façon g\'en\'eral. Ensuite, nous analyserons plus en d\'etail diff\'erentes m\'ethodes de reconnaissance~: Eigenface, Fisherface et LBPH.
+Afin d'\'etudier l'aspect th\'eorique de la reconnaissance faciale, nous allons d'abord l'aborder de façon g\'en\'eral. Ensuite, nous analyserons plus en d\'etail trois diff\'erents algorithmes courament utilis\'e dans le domaine de la reconnaissance faciale //--CITER ARTICLES--//~: Eigenface, Fisherface et LBPH.
 
 \subsection{G\'en\'eralit\'es}
 
-Apr\`es des recherches approfondies, nous avons pu constater qu'il existe \'enorm\'ement de m\'ethodes possibles pour reconnaître un visage.  Ces m\'ethodes peuvent \'egalement être combin\'ees entre elles (par exemple, la mise en place en place d'un r\'eseau neuronal ou l'impl\'ementation de mod\`eles cach\'es de Markov). Cependant, en trois mois, nous nous n'aurions pas eu le temps de mettre en place une telle m\'ethode. De plus la mise en place d'un r\'eseau neuronnal n\'ecessite beaucoup de calculs. En effet, un r\'eseau neuronal est compos\'e d'une suite de couches de neurones. On donne la matrice de l'image en sortie et le r\'eseau nous donne en sortie le nom de la personne identifi\'ee. La couche de sortie est donc compos\'ee d'un neurone par personne enregistr\'ee, mais la couche d'entr\'ee n\'ecessite autant de neurones que de pixels dans l'image. Pour une image 100*100 il faut donc 10 000 neurones pour la couche d'entr\'ee. \\
+Apr\`es des recherches approfondies, nous avons pu constater qu'il existe \'enorm\'ement de m\'ethodes possibles pour reconnaître un visage.  Ces m\'ethodes peuvent \'egalement être combin\'ees entre elles (par exemple, la mise en place en place d'un r\'eseau neuronal ou l'impl\'ementation de mod\`eles cach\'es de Markov). Cependant, en trois mois, nous nous n'aurions pas eu le temps de mettre en place une telle m\'ethode. De plus la mise en place d'un r\'eseau neuronnal n\'ecessite beaucoup de calculs. En effet, un r\'eseau neuronal est compos\'e d'une suite de couches de neurones. On donne la matrice de l'image en sortie et le r\'eseau nous donne en sortie le nom de la personne identifi\'ee. La couche de sortie est donc compos\'ee d'un neurone par personne enregistr\'ee, mais la couche d'entr\'ee n\'ecessite autant de neurones que de pixels dans l'image. Pour une image $100\times 100$ il faut donc $10 000$ neurones pour la couche d'entr\'ee. \\
 
 Par ailleurs, nous avons choisi de traiter uniquement des images en noir et blanc, car la colorim\'etrie a tr\`es peu d'impact dans le processus de reconnaissance.\\
 
@@ -168,7 +168,7 @@ Par ailleurs, nous avons choisi de traiter uniquement des images en noir et blan
 
 La m\'ethode de reconnaissance faciale Eigenface a pour particularit\'e de se baser sur des \og eigen vectors\fg, c'est-\`a-dire des vecteurs propres. Elle a \'et\'e introduite en 1991 par Turk et Pentland\\
 
-L'algorithme est le suivant~: chaque image est consid\'er\'ee comme un vecteur avec pour dimension son nombre de pixels. Puis, un ou plusieurs algorithmes recherchent les principales composantes //--plus de pr\'ecision sur composante ?--//. \`A l'aide de plusieurs images du même visage, nous pouvons alors composer une image du visage \og moyen\fg qui contiendra \'egalement les principales composantes (l'eigenface). La m\'ethode de reconnaissance des axes principaux est d\'etaill\'ee ici~: Matthew Turk and Alex Pentland. Eigenfaces for recognition. J. Cognitive Neuroscience. 3(1)~:71{86, 1991}. Enfin, il suffit de comparer l'eigenface et les composantes principales d'une capture d'un visage.\\
+L'algorithme est le suivant~: chaque image est consid\'er\'ee comme un vecteur avec pour dimension son nombre de pixels. Puis, un ou plusieurs algorithmes recherchent les principales composantes (ces composantes peuvent être diverses comme le montre la figure \ref{fig:eigenfaces_OpenCV}). \`A l'aide de plusieurs images du même visage, nous pouvons alors composer une image du visage \og moyen\fg qui contiendra \'egalement les principales composantes (l'eigenface). La m\'ethode de reconnaissance des axes principaux est d\'etaill\'ee ici~: Matthew Turk and Alex Pentland. Eigenfaces for recognition. J. Cognitive Neuroscience. 3(1)~:71{86, 1991}. Enfin, il suffit de comparer l'eigenface et les composantes principales d'une capture d'un visage.\\
 
 L'avantage de cette m\'ethode est la connaissance de son existence depuis longtemps. Cependant, elle pr\'esente \'egalement des d\'esavantages non-n\'egligeables. En effet, comme chaque pixel est une dimension, une image $100\times100$ donne 10 000 vecteurs \`a traiter. Le nombre de donn\'ees \`a analyser est donc tr\`es important. De plus, cette m\'ethode est sensible \`a la luminosit\'e et \`a la d\'eformation des visages (grimaces, accessoires, ...).\\
 
@@ -176,6 +176,7 @@ L'avantage de cette m\'ethode est la connaissance de son existence depuis longte
 	\begin{center}
 		\includegraphics[scale=0.3]{images/eigenfaces_OpenCV.png}
 		\caption{Ensemble d'eigenfaces}
+		\label{fig:eigenfaces_OpenCV}
 	\end{center}
 \end{figure}
 
@@ -196,7 +197,7 @@ Pour trouver la meilleure projection, il suffit de r\'esoudre\\ $$\frac{P^-1*M_e
 	\end{center}
 \end{figure}
 
-Pour plus de d\'etails~: \url{http://docs.\textit{OpenCV}.org/modules/contrib/doc/facerec/facerec_tutorial.html#fisherfaces}.\\
+Pour plus de d\'etails~: //--BIBLIOGRAPHIE--//\url{http://docs.\textit{OpenCV}.org/modules/contrib/doc/facerec/facerec_tutorial.html#fisherfaces}.\\
 
 Globalement, cette m\'ethode pr\'esente les mêmes avantages et inconv\'enients que la m\'ethode Eigenface. Cependant, elle est moins sensible \`a la lumi\`ere et \`a la d\'eformation des visages car elle ne se base pas sur des composantes discriminatoires.\\
 
@@ -216,7 +217,7 @@ Pour commencer, l'image est divis\'e en groupe de pixels. Chaque groupe de pixel
 \]
 Ici, si nous attribuons la valeur 0 si la valeur du pixel est inf\'erieur \`a la valeur du pixel de r\'ef\'erence, 1 sinon. Apr\`es cette op\'eration, chaque pixel du groupe est pond\'er\'e avec un poids plus ou moins fort (le pixel en haut \`a gauche a le poids le plus faible, tandis que le pixel en bas \`a droite a le poids le plus fort). Ainsi, nous obtenons un nombre binaire qui donne une certaine valeur en base 10. Tous les groupes de l'image sont soumis \`a ce processus pour finalement obtenir un histogramme de l'image. Enfin, il ne reste plus qu'\`a faire la diff\'erence entre deux histogrammes pour comparer deux images.\\
 
-Cet algorithme est tr\`es utilis\'e comme nous pouvons le voir dans~: Facial expression recognition based on Local Binary Patterns:A comprehensive study de Caifeng Shan a, * , Shaogang Gong b , Peter W. McOwan b, o\`u il est combin\'e avec Adaboost (plugin d'\textit{OpenCV}) pour obtenir de meilleurs r\'esultats, et un r\'eseau neuronnal. Mais aussi dans~: Face Recognition with Local Binary Patterns, Spatial Pyramid Histograms and Naive Bayes Nearest Neighbor (NBNN) classification de Daniel Maturana, Domingo Mery and Alvaro Soto o\`u les auteurs essayent d'am\'eliorer l'algorithme dans le but d'en cr\'eer un nouveau~: NBNN. Nous n'utiliserons pas cet algorithme par manque de temps, mais \'egalement car LBPH est d\'ej\`a pr\'esent dans \textit{OpenCV}.\\
+Cet algorithme est tr\`es utilis\'e comme nous pouvons le voir dans~: //--BIBLIOGRAPHIE--// expression recognition based on Local Binary Patterns:A comprehensive study de Caifeng Shan a, * , Shaogang Gong b , Peter W. McOwan b, o\`u il est combin\'e avec Adaboost (plugin d'\textit{OpenCV}) pour obtenir de meilleurs r\'esultats, et un r\'eseau neuronnal. Mais aussi dans~: Face Recognition with Local Binary Patterns, Spatial Pyramid Histograms and Naive Bayes Nearest Neighbor (NBNN) classification de Daniel Maturana, Domingo Mery and Alvaro Soto o\`u les auteurs essayent d'am\'eliorer l'algorithme dans le but d'en cr\'eer un nouveau~: NBNN. Nous n'utiliserons pas cet algorithme par manque de temps, mais \'egalement car LBPH est d\'ej\`a pr\'esent dans \textit{OpenCV}.\\
 
 Comme nous venons de le voir, il existe diff\'erents m\'ethodes 
 
@@ -307,7 +308,7 @@ Nous pouvons conclure de la seconde partie que la luminosit\'e peut être un prob
 \end{figure}
 Pour conclure, nous pouvons dire que les exp\'erimentations ont montr\'e que la m\'ethode de reconnaissance faciale LBPH est la plus efficace. Cependant, nous avons \'egalement vu que de nombreux facteurs ext\'erieurs influent sur la qualit\'e de la reconnaissance et peuvent mettre en \'echec celle-ci.\\
 
-Dans cette partie, nous avons compar\'e diff\'erentes m\'ethodes th\'eoriques de reconnaissance faciale. Puis, nous avons r\'ealis\'e des exp\'eriences sur chacun des algorithmes pour finalement en retenir un~: LBPH. Nous allons maintenant passer \`a l'\'etape suivante de notre d\'emarche qui est la reconnaissance des \'emotions. //--Trouver une meilleure transition--//\\
+Dans cette partie, nous avons compar\'e diff\'erentes m\'ethodes th\'eoriques de reconnaissance faciale. Puis, nous avons r\'ealis\'e des exp\'eriences sur chacun des algorithmes pour finalement en retenir un~: LBPH. Nous allons maintenant passer \`a la partie principale de notre application qui est la reconnaissance des \'emotions.\\
 \chapter{Reconnaissance des \'emotions}
 	Dans cette derni\`ere partie, nous allons aborder la reconnaissance des \'emotions. Comme pour la reconnaissance faciale, nous \'etudierons d'abord l'aspect th\'eorique, puis nous passerons aux exp\'erimentations.
 \section{Th\'eorie}
@@ -315,7 +316,7 @@ Avant de passer \`a l'exp\'erimentation, nous avons besoin de connaitre la m\'et
 \subsection{Diff\'erentes solutions}
 	Avant toute chose, nous \'etudions les expressions faciales et non directement les \'emotions. Les expressions faciales sont br\`eves~: entre 250ms et 5s. [cf automaticFacialExpressionAnalysis]. Il existe diff\'erentes façons de r\'ecup\'erer des expressions faciales~: l'approche holistique (c'est-\`a-dire que la tête est analys\'ee de façon globale) ou l'approche locale qui consiste \`a prendre des parties de la tête et analyser ces parties ind\'ependamment les unes des autres. \\
 
-Ensuite, pour \og trouver\fg les \'emotions, il existe \'egalement diff\'erentes mani\`eres de proc\'eder. Nous avons l'approche bas\'ee sur un mod\`ele~: \`a partir d'une image, //-- \`a compl\'eter --////--SEB~: En gros, c'est pas comme ce qu'on a fait pour reconnaitre un visage, mais \`a la place de reconnaitre une personne, c'\'etait une \'emotion. Genre dans la BDD on aurait Seb content, seb pas content, seb dodo, ...--//. Nous avons aussi l'approche bas\'ee sur l'image~: \`a partir d'une image, nous essayons de trouver des expressions faciales qui s'apparentent aux \'emotions primaires d\'efinies par Ekman et Friesen. Tous les humains ont la même façon d'exprimer ces \'emotions primaires, peu importe son origine ou sa culture [cf 2002ElfenbeinMeta - On the Universality and cultural Specificity of Emotion Recognition: A Meta-Analysis]. Cette m\'ethode pr\'esente l'avantage d'être plus simple et plus rapide \`a mettre en place. Cependant, elle est moins robuste, notamment aux changements de position de la tête. \\
+Ensuite, pour \og trouver\fg les \'emotions, il existe \'egalement diff\'erentes mani\`eres de proc\'eder. Nous avons l'approche bas\'ee sur un mod\`ele~: c'est la technique utilis\'ee pr\'ec\'edemment pour effectuer la reconnaissance des visages, mais \'a la place de s\'eparer la base de donn\'ees par individus, on s\'epare les image par individus et par \'emotions. On peut imaginer par exemple une arborescence avec un dossier nomm\'e Xavier contenant les sous-dossiers Xavier_Content, Xavier_Peur, Xavier_Degout, ... Le probl\`eme de cette m\'ethode est qu'il faut que l'individu soit connu dans la base de donn\'ees pour reconna\^itre les \'emotions (ce qui explique pourquoi nous n'avons pas choisi cette m\'ethode).  \`a partir d'une image, //-- \`a compl\'eter --////--SEB~: En gros, c'est pas comme ce qu'on a fait pour reconnaitre un visage, mais \`a la place de reconnaitre une personne, c'\'etait une \'emotion. Genre dans la BDD on aurait Seb content, seb pas content, seb dodo, ...--//. Nous avons aussi l'approche bas\'ee sur l'image~: \`a partir d'une image, nous essayons de trouver des expressions faciales qui s'apparentent aux \'emotions primaires d\'efinies par Ekman et Friesen. Tous les humains ont la même façon d'exprimer ces \'emotions primaires, peu importe son origine ou sa culture [cf 2002ElfenbeinMeta - On the Universality and cultural Specificity of Emotion Recognition: A Meta-Analysis]. Cette m\'ethode pr\'esente l'avantage d'être plus simple et plus rapide \`a mettre en place. Cependant, elle est moins robuste, notamment aux changements de position de la tête. \\
 
 \begin{figure}[h]
 	\begin{center}
@@ -326,30 +327,33 @@ Ensuite, pour \og trouver\fg les \'emotions, il existe \'egalement diff\'erentes
 
 Enfin, pour visualiser les changements //--\`a pr\'eciser--//, nous pouvons regarder les d\'eformations. Pour commencer, cela consiste \`a classer les \'emotions primaires en termes de mouvements, translations, rotations, etc. Puis, nous prenons des images \`a diff\'erents instants et nous analysons les mouvements, translations, rotations, etc... afin de les comparer \`a ceux des \'emotions primaires. Une autre solution est le suivi des points du visage~: sur chaque image, nous relevons la position de certains points et nous essayons de les aligner sur le mod\`ele de chaque expression primaire. Finalement, l'\'emotion retenue est celle dont le mod\`ele de points est le plus proche de celui de l'image. C'est la m\'ethode la plus robuste, mais aussi la plus couteuse en calcul et plus difficile \`a mettre en place que la pr\'ec\'edente m\'ethode.\\
 \subsection{Solution choisie}
-	Avant de pr\'esenter la solution choisie, nous avons test\'e plusieurs autres m\'ethodes que nous avons abandonn\'e. Par exemple, pour d\'etecter la forme de la bouche, nous avons utilis\'e une fonction pr\'esente dans \textit{OpenCV}, \textit{findContours} //-- (ins\'erer l'image dans image + code en annexe dans data)--// qui permet d'obtenir des r\'esultats plutôt bons. \\
+	Avant de pr\'esenter la solution choisie, nous avons test\'e plusieurs autres m\'ethodes que nous avons abandonn\'e. Par exemple, pour d\'etecter la forme de la bouche, nous avons utilis\'e une fonction pr\'esente dans \textit{OpenCV}~: \textit{findContours} //--INSERER CODE FIND CONTOURS + LIEN--// qui permet d'obtenir des r\'esultats plutôt bons \ref{fig:findContoursOk}. \\
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=1]{images/findContoursOk.jpg}
 		\caption{Utilisation de la m\'thode findContours sur une bouche}
+		\label{fig:findContoursOk}
 	\end{center}
 \end{figure}
-Cependant, dans certains cas, le r\'esultat n'\'etait pas du tout exploitable.\\
+Cependant, dans certains cas, le r\'esultat n'\'etait pas du tout exploitable (cf \ref{fig:findContoursNOk}).\\
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=1]{images/findContoursNOk.jpg}
 		\caption{Utilisation de la m\'ethode findContours sur un oeil}
+		\label{fig:findContoursNOk}
 	\end{center}
 \end{figure}
-Par ailleurs, la d\'etection des couleurs //--exemple de code dans data--// a donn\'e de bien meilleurs r\'esultats //--d\'etection de la couleur de la bouche~: image fin2.jpg + code dans data--//.\\
+Par ailleurs, la d\'etection des couleurs //--INSERER CODE COULEUR + LIEN-// a donn\'e de bien meilleurs r\'esultats (\ref{fig:inRangeOk}).\\
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=1]{images/inRangeOk.jpg}
 		\caption{D\'etection d'une plage de couleur sur une bouche}
+		\label{fig:inRangeOk}
 	\end{center}
 \end{figure}
 Utiliser\textit{findContours} aurait \'et\'e plus pr\'ecis, mais son manque de fiabilit\'e et la n\'ecessit\'e de traiter les images rend son utilisation contraignante. Une autre solution consistait \`a d\'etecter les expressions \`a l'aide des couleurs et de l'utilisation de seuils sp\'ecifiques. C'\'etait la solution la plus rapide et la plus simple \`a mettre en place, mais elle est impr\'ecise et difficile \`a utiliser pour savoir si les yeux sont fronc\'es ou \'ecarquill\'es par exemple.\\
 
-La solution choisie est une m\'ethode l\'eg\`erement diff\'erente de la m\'ethode de d\'etection de couleur. Le suivi des points ou les r\'eseaux neuronaux ont pour d\'esavantage de demander \'enorm\'ement de calculs. Sachant que notre application a pour support l'ordinateur de bord d'une voiture //-\`a reformuler--// (vraisemblablement moins puissant qu'un ordinateur portable), il est n\'ecessaire de trouver une solution portable. Pour simplifier les calculs, nous avons d\'efini la m\'ethode suivante pour effectuer la reconnaissance des \'emotions~: la premi\`ere \'etape est l'obtention d'un visage. L'identit\'e de la personne nous importe peu (elle est uniquement utilis\'ee pour le d\'emarrage du v\'ehicule). Ensuite, \`a l'aide d'un second classifieur, nous obtenons toutes les positions susceptibles de correspondre \`a des yeux. Les yeux situ\'es dans la partie basse du visage sont \'elimin\'es. La hauteur du classifieur nous indique si les yeux sont en position normale, fronc\'es ou \'ecarquill\'es. Pour d\'etecter les yeux ferm\'es, il suffit de regarder le nombre de pixels ayant une couleur comprise entre (80,0,0) et (160,100,100) (on effectue donc une d\'etection par la couleur pour ce point). Concernant la bouche, la m\'ethode est presque identique \`a celle des yeux. Avec un classifier sp\'ecifique, toutes les bouches possibles sont r\'ecup\'er\'ees, puis les erreurs sont \'ecart\'ees (bouches situ\'ees dans la partie haute du visage ou trop pr\`es du bord). Ensuite, la bouche est convertie en niveaux de gris  et un seuil est appliqu\'ee pour n'obtenir que l'int\'erieur de la bouche. En effet, on peut remarquer que la couleur \`a l'int\'erieur d'une bouche ouverte tend vers le noir, alors que les l\`evres sont plus d'une couleur rouge. Ainsi, on a plus qu'\`a comparer le taux de noir de l'image au taux obtenu \`a l'initialisation du programme. Si le taux de noir de l'image est sup\'erieur \`a celui obtenu \`a l'initialisation plus un seuil, la bouche est ouverte. \\
+La solution choisie est une m\'ethode l\'eg\`erement diff\'erente de la m\'ethode de d\'etection de couleur. Le suivi des points ou les r\'eseaux neuronaux ont pour d\'esavantage de demander \'enorm\'ement de calculs. Comme notre application a but d'avoir pour support un ordinateur de bord d'une voiture vraisemblablement moins puissant qu'un ordinateur portable, il est n\'ecessaire de trouver une solution portable. Pour simplifier les calculs, nous avons d\'efini la m\'ethode suivante pour effectuer la reconnaissance des \'emotions~: la premi\`ere \'etape est l'obtention d'un visage. L'identit\'e de la personne nous importe peu (elle est uniquement utilis\'ee pour le d\'emarrage du v\'ehicule). Ensuite, \`a l'aide d'un second classifieur, nous obtenons toutes les positions susceptibles de correspondre \`a des yeux. Les yeux situ\'es dans la partie basse du visage sont \'elimin\'es. La hauteur du classifieur nous indique si les yeux sont en position normale, fronc\'es ou \'ecarquill\'es. Pour d\'etecter les yeux ferm\'es, il suffit de regarder le nombre de pixels ayant une couleur comprise entre [80,0,0] et [160,100,100] avec la premi\'ere composante correspondant au rouge, la seconde au vert et la troisi\`eme au bleu (on effectue donc une d\'etection plut\^ot \`a dominance rouge pour ce point). Concernant la bouche, la m\'ethode est presque identique \`a celle des yeux. Avec un classifier sp\'ecifique, toutes les bouches possibles sont r\'ecup\'er\'ees, puis les erreurs sont \'ecart\'ees (bouches situ\'ees dans la partie haute du visage ou trop pr\`es du bord). Ensuite, la bouche est convertie en niveaux de gris  et un seuil est appliqu\'ee pour n'obtenir que l'int\'erieur de la bouche. En effet, on peut remarquer que la couleur \`a l'int\'erieur d'une bouche ouverte tend vers le noir, alors que les l\`evres sont plus d'une couleur rouge. Ainsi, on a plus qu'\`a comparer le taux de noir de l'image au taux obtenu \`a l'initialisation du programme. Si le taux de noir de l'image est sup\'erieur \`a celui obtenu \`a l'initialisation plus un seuil, la bouche est ouverte. \\
 
 Apr\`es cet aperçu des diff\'erentes solutions possibles pour la reconnaissance faciale et du choix de notre m\'ethode, nous allons \`a pr\'esent l'exp\'erimenter.
 \section{Exp\'erimentations}
@@ -360,8 +364,7 @@ Apr\`es cet aperçu des diff\'erentes solutions possibles pour la reconnaissance 
 	//--A COMPLETER--//\\
 //--SEB: Tu veux mettre quoi \`a part qu'on a r\'ealis\'e le protocole--//
 \subsection{R\'esultats et analyse}
-	//--REFORMULATION~: Dans un lieu o\`u l'utilisateur de l'application ne bouge pas et o\`u la luminosit\'e ne change pas, on arrive \`a obtenir une d\'etection correcte des \'emotions. On pouvait tout de même observer des probl\`emes lorsque l'utilisateur s'\'eloignait ou reculait de la cam\'era. En effet les seuils et les tailles devenaient incorrects. Il fallait donc r\'einitialiser les seuils.--//\\
-//--\`a l'arrêt, avec une luminosit\'e ne changeant pas \'enorm\'ement, la d\'etection marchait bien. Juste des problemes d\`es qu'on avançait/reculait --> pourquoi \`a l'arrêt ? l'exp\'erience dans la voiture, ce n'est pas plutôt pour la prod finale ?--//
+	Nos exp\'erimentations nous ont montr\'e que dans un lieu o\`u l'utilisateur de l'application ne bouge pas et o\`u la luminosit\'e ne change pas, on arrive \`a obtenir une d\'etection correcte des \'emotions. On pouvait tout de même observer des probl\`emes lorsque l'utilisateur s'\'eloignait ou reculait de la cam\'era. En effet les seuils et les tailles devenaient incorrects. Il fallait donc r\'einitialiser les seuils ou se remettre \'a la distance que l'utilisateur avait \`a la pr\'ec\'edente initialisation.\\
 \chapter{Production}
 Dans cette derni\`ere partie, nous pr\'esenterons la r\'ealisation de notre application. Nous parlerons d'abord du prototype final, puis des tests r\'ealis\'es en situation r\'eelle et enfin, des r\'esultats de ces tests.
 \section{Prototype final}
@@ -424,7 +427,7 @@ entr\'ee biblio \cite{bimodalEmotionRecognition} \cite{automaticFacialExpression
 	T\^aches~:\hfill R\'ealisation~:
 	\begin{enumerate}
 		\item{Recherche sur des projet similaires d\'ej\`a existants \hfill $\Box$ oui $\Box$ non}
-		\item{Recherche bibliographique sur la s\'ecurité routi\`ere \hfill $\Box$ oui $\Box$ non}
+		\item{Recherche bibliographique sur la s\'ecurit\'e routi\`ere \hfill $\Box$ oui $\Box$ non}
 		\item{Recherche bibliographique sur la reconnaissance faciale \hfill $\Box$ oui $\Box$ non}
 		\item{Recherche bibliographique sur la reconnaissance des \'emotions \hfill $\Box$ oui $\Box$ non}
 		\item{Contacter des professionnels \hfill $\Box$ oui $\Box$ non}
