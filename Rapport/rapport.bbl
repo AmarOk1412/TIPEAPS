@@ -1,10 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{essentielSecuriteRoutiere}
-D\'el\'egation \`a la s\'ecurit\'e et \`a la circulation routi\`ere
-  minist\`ere~de l'int\'erieur.
-\newblock L'essentiel de la s\'ecurit\'e routi\`ere.
-
 \bibitem{analyseInterpretationMouvementsHumains}
 {Pascal Caplier} Alice.
 \newblock Big brother is watching but helping you~: analyse et interpr\'etation
@@ -28,6 +23,13 @@ Shan Caifeng, Gong Shaogang, and McOwan Peter.
 \newblock Facial expression recognition based on local binary patterns: a
   comprehensive study.
 \newblock {\em Image and Visin Computing}, 27:803--816, 2009.
+
+\bibitem{express}
+Politi Caroline.
+\newblock Les principales causes des accidents de la route, 2 F\'evrier 2012.
+\newblock
+  \url{http://www.lexpress.fr/actualite/societe/les-principales-causes-des-accidents-de-la-route_1078355.html},
+  consult\'e le 11 F\'evrier 2014.
 
 \bibitem{affectiveIntelligentCarInterfacesEmotionRecognition}
 Lisetti Chistine and Nasoz Fatma.
@@ -110,13 +112,6 @@ Cohen Ira, Sebe Nicu, Garg Ashutosh, Chen Lawrence, and Huang Thomas.
   static modeling.
 \newblock {\em Computer Vision and Image Understanding}, 91:160--187, 2003.
 
-\bibitem{reconnaissanceExpressionsFacialesMemoireAssociativeBidirectionnelleFonctionSortieChaotique}
-Tabari Karmia, Boukadoum Mounir, Chartier Sylvain, and Lounis Hakim.
-\newblock Reconnaissance d'expressions faciales \`a l'aide d'une m\'emoire
-  associative bidirectionnelle \`a fonction de sortie chaotique.
-\newblock In {\em Maghrébian Conference on Software Engineering and Artificial
-  Intelligence}, d\'ecembre 2006.
-
 \bibitem{conseilNationalSecuRoutiere}
 lefigaro.fr.
 \newblock \'a quoi sert le conseil national de la s\'ecurit\'e routi\`ere~?, 8
@@ -159,14 +154,6 @@ Haab M\'elanie.
   \url{http://www.ictjournal.ch/fr-CH/News/2013/11/08/KeyLemon-entre-dans-votre-voiture.aspx},
   consult\'e le 3 F\'evrier 2014.
 
-\bibitem{analyseQuantificationComportementsConducteursAutomobilesPreCrash}
-Hetier Micka\"el.
-\newblock {\em Analyse et quantification des compoertements des conducteurs
-  automobiles lors des phases de pr\'e-crash~: contribution au d\'eveloppement
-  d'un mod\`ele de d\'etection des postures de conduite en temps r\'eel}.
-\newblock PhD thesis, Universit\'e de Valenciennes et du Hainault-Cambr\'esis,
-  2008.
-
 \bibitem{authenticFacialExpressionAnalysis}
 Sebe N., Lew M.S., Y.~Sun, Cohen I., Gevers T., and Huang T.s.
 \newblock Authentic facial expression analysis.
@@ -204,14 +191,6 @@ Ioannou Spiros, Raouzaiou Amaryllis, Tzouvaras Vasilis, Mailis Theofilos,
 \newblock Emotion recognition through facial expression analysis based on a
   neurofuzzy network.
 \newblock {\em Neural Networks}, 18:423--435, 2005.
-
-\bibitem{photorealisticExpressiveTextTalkingHeadSynthesis}
-Wan Vincent, Anderson Robert, Blokland Art, Braunschweiler Norbert, Chen
-  Langzhou, Kolluru BalaKrishna, Latorre Javier, Maia Ranniery, Stenger
-  Bj\"orn, Yanagisawa Kayoko, Stylianou Yannis, Akamine Masami, Gales Mark, and
-  Cipolla Roberto.
-\newblock Photo-realistic expressive text to talking head synthesis.
-\newblock In {\em Interspeech}, ao\^ut 2013.
 
 \bibitem{govDistractedDriving}
 Official US~Government website for~distracted driving.

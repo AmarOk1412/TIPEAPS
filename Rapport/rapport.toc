@@ -13,26 +13,26 @@
 \contentsline {subsection}{\numberline {2.1.3}La m\'ethode Fisherface}{10}
 \contentsline {subsection}{\numberline {2.1.4}La m\'ethode LBPH}{11}
 \contentsline {section}{\numberline {2.2}Exp\'erimentations}{12}
-\contentsline {subsection}{\numberline {2.2.1}Protocole}{12}
-\contentsline {subsection}{\numberline {2.2.2}R\'ealisation des exp\'eriences}{12}
+\contentsline {subsection}{\numberline {2.2.1}Protocole}{13}
+\contentsline {subsection}{\numberline {2.2.2}R\'ealisation des exp\'eriences}{13}
 \contentsline {subsection}{\numberline {2.2.3}R\'esultats et analyses}{13}
-\contentsline {chapter}{\numberline {3}Reconnaissance des \'emotions}{16}
-\contentsline {section}{\numberline {3.1}Historique}{16}
-\contentsline {section}{\numberline {3.2}Th\'eorie}{16}
-\contentsline {subsection}{\numberline {3.2.1}Diff\'erentes solutions}{16}
-\contentsline {subsection}{\numberline {3.2.2}Solution choisie}{17}
-\contentsline {section}{\numberline {3.3}Exp\'erimentations}{19}
-\contentsline {subsection}{\numberline {3.3.1}Protocole}{19}
-\contentsline {subsection}{\numberline {3.3.2}R\'ealisation}{19}
-\contentsline {subsection}{\numberline {3.3.3}R\'esultats et analyse}{19}
-\contentsline {chapter}{\numberline {4}Production}{20}
-\contentsline {section}{\numberline {4.1}Prototype final}{20}
-\contentsline {section}{\numberline {4.2}Protocole du test final}{20}
-\contentsline {section}{\numberline {4.3}Discussion et analyse des r\'esultats}{22}
-\contentsline {chapter}{\numberline {A}Code des applications}{28}
-\contentsline {section}{\numberline {A.1}Application principale}{28}
-\contentsline {section}{\numberline {A.2}Code Arduino pour les tests}{35}
-\contentsline {chapter}{\numberline {B}Documents utilis\'es en CST}{39}
-\contentsline {section}{\numberline {B.1}check-list}{39}
-\contentsline {section}{\numberline {B.2}Matrice RACI}{40}
-\contentsline {section}{\numberline {B.3}Diagramme de GANTT}{41}
+\contentsline {chapter}{\numberline {3}Reconnaissance des \'emotions}{17}
+\contentsline {section}{\numberline {3.1}Historique}{17}
+\contentsline {section}{\numberline {3.2}Th\'eorie}{17}
+\contentsline {subsection}{\numberline {3.2.1}Diff\'erentes solutions}{17}
+\contentsline {subsection}{\numberline {3.2.2}Solution choisie}{18}
+\contentsline {section}{\numberline {3.3}Exp\'erimentations}{20}
+\contentsline {subsection}{\numberline {3.3.1}Protocole}{20}
+\contentsline {subsection}{\numberline {3.3.2}R\'ealisation}{20}
+\contentsline {subsection}{\numberline {3.3.3}R\'esultats et analyse}{20}
+\contentsline {chapter}{\numberline {4}Production}{21}
+\contentsline {section}{\numberline {4.1}Prototype final}{21}
+\contentsline {section}{\numberline {4.2}Protocole du test final}{21}
+\contentsline {section}{\numberline {4.3}Discussion et analyse des r\'esultats}{23}
+\contentsline {chapter}{\numberline {A}Code des applications}{29}
+\contentsline {section}{\numberline {A.1}Application principale}{29}
+\contentsline {section}{\numberline {A.2}Code Arduino pour les tests}{36}
+\contentsline {chapter}{\numberline {B}Documents utilis\'es en CST}{40}
+\contentsline {section}{\numberline {B.1}check-list}{40}
+\contentsline {section}{\numberline {B.2}Matrice RACI}{41}
+\contentsline {section}{\numberline {B.3}Diagramme de GANTT}{42}
