@@ -26,6 +26,22 @@
 \definecolor{newOrange}{rgb}{0.87,0.39,0.15}
 \definecolor{newBlue}{rgb}{0.36,0.51,0.77}
 \definecolor{newMauve}{rgb}{0.58,0,0.82}
+%Modifications de l'affichage des codes source
+\lstset{
+	numbers = left,
+	showspaces = none,
+	keepspaces = true,
+	showstringspaces = true,
+	basicstyle = \footnotesize,
+	commentstyle = \color{newGreen},
+	keywordstyle = \color{newOrange},
+	identifierstyle = \color{newBlue},
+	stringstyle = \color{newMauve}
+}
+\lstdefinestyle{arduino}{
+	language=C,
+	morekeywords = {HIGH, LOW, INPUT, OUTPUT}
+}
 
 \begin{document}
 \renewcommand{\chaptername}{Partie}
@@ -245,14 +261,14 @@ Ici, si nous attribuons la valeur 0 si la valeur du pixel est inf\'erieur \`a la
 	\end{center}
 \end{figure}
 
-Cet algorithme est tr\`es utilis\'e comme nous pouvons le voir dans~: \cite{facialExpressionRecognitionLocalBinaryPatterns} o\`u il est combin\'e avec Adaboost (plugin d'\textit{OpenCV}) pour obtenir de meilleurs r\'esultats et un r\'eseau neuronnal. Mais aussi dans \cite{faceRecognitionLocalBinaryPatternsSpatialPyramidHistogramsNaiveBayes} o\`u les auteurs essayent d'am\'eliorer l'algorithme dans le but d'en cr\'eer un nouveau~: NBNN (\textit{Naive Bayes Nearest Neighbor}). Nous n'utiliserons pas cet algorithme par manque de temps, mais \'egalement car LBPH est d\'ej\`a pr\'esent dans \textit{OpenCV}.\\
+Cet algorithme est tr\`es utilis\'e comme nous pouvons le voir dans~: \cite{facialExpressionRecognitionLocalBinaryPatterns} o\`u il est combin\'e avec Adaboost (plugin d'OpenCV) pour obtenir de meilleurs r\'esultats et un r\'eseau neuronnal. Mais aussi dans \cite{faceRecognitionLocalBinaryPatternsSpatialPyramidHistogramsNaiveBayes} o\`u les auteurs essayent d'am\'eliorer l'algorithme dans le but d'en cr\'eer un nouveau~: NBNN (\textit{Naive Bayes Nearest Neighbor}). Nous n'utiliserons pas cet algorithme par manque de temps, mais \'egalement car LBPH est d\'ej\`a pr\'esent dans OpenCV.\\
 
 Comme nous venons de le voir, il existe diff\'erentes m\'ethodes de reconnaissance des visages. Nous allons maintenant passer à l'expérimentation de ces méthodes.
 
 \section{Exp\'erimentations}
 Dans cette partie, nous exp\'erimenterons les m\'ethodes de reconnaissance de visage \'evoqu\'ees dans la premi\`ere partie. D'abord, nous verrons le protocole exp\'erimental, puis la r\'ealisation des exp\'eriences et enfin, les r\'esultats et analyses de ces manipulations.
 \subsection{Protocole}
-Le but de l'exp\'erimentation \'etait de comparer les trois m\'ethodes (Eigenface, Fisherface et LBPH) impl\'ement\'ees par la librairie \textit{OpenCV} de façon \`a en choisir une pour notre application finale, puis d'\'etudier sa robustesse. Nous avons r\'ealis\'e deux exp\'eriences~: la premi\`ere consistait \`a observer la vitesse de reconnaissance en fonction du nombre d'images pr\'esentes dans la base de donn\'ees et de comparer le pourcentage de r\'eussite. La seconde exp\'erience cherchait \`a \'etudier la robustesse de la m\'ethode, c'est-\`a-dire si elle marchait \'egalement pour des cas particuliers comme un visage partiellement cach\'e ou quand l'utilisateur r\'ealisait une grimace.
+Le but de l'exp\'erimentation \'etait de comparer les trois m\'ethodes (Eigenface, Fisherface et LBPH) impl\'ement\'ees par la librairie OpenCV de façon \`a en choisir une pour notre application finale, puis d'\'etudier sa robustesse. Nous avons r\'ealis\'e deux exp\'eriences~: la premi\`ere consistait \`a observer la vitesse de reconnaissance en fonction du nombre d'images pr\'esentes dans la base de donn\'ees et de comparer le pourcentage de r\'eussite. La seconde exp\'erience cherchait \`a \'etudier la robustesse de la m\'ethode, c'est-\`a-dire si elle marchait \'egalement pour des cas particuliers comme un visage partiellement cach\'e ou quand l'utilisateur r\'ealisait une grimace.
 \subsection{R\'ealisation des exp\'eriences}
 Lors de la premi\`ere exp\'erience, nous avons mesur\'e deux vitesses d'ex\'ecution~: le temps d'importation des images pour r\'ealiser l'entrainement de l'algorithme (premier temps) et le temps pour r\'ealiser la reconnaissance (second temps). La base de donn\'ees \'etait compos\'ee de trois individus. Nous avons d'abord captur\'e une photo d'un des individus pr\'esents dans la base. Nous avons ensuite utilis\'ee cette photo pour tester les trois algorithmes (Eigenface, Fisherface et LBPH). Pour chaque m\'ethode, l'op\'eration a \'et\'e r\'ep\'et\'ee cent fois sur le même ordinateur (afin d'\'eviter les impr\'ecisions dues au processeur qui ne travaille pas toujours de mani\`ere identique). Nous avons \'egalement vari\'e le nombre de photos pr\'esentes dans la base de donn\'ees~: 1, 2, 4, 6, 8, 10, puis 12 photos par individu. \\
 
@@ -340,8 +356,11 @@ Dans cette partie, nous avons compar\'e diff\'erentes m\'ethodes th\'eoriques de
 \chapter{Reconnaissance des \'emotions}
 	Dans cette derni\`ere partie, nous allons aborder la reconnaissance des \'emotions. Comme pour la reconnaissance faciale, nous \'etudierons d'abord l'aspect th\'eorique, puis nous passerons aux exp\'erimentations.
 \section{Historique}
-%TODO
-\cite{ekmangroup}
+Le domaine des \'emotions est un domaine psychologique \'etudi\'e depuis longtemps. En 1649, Ren\'e Descartes publie dans \textit{les passions de l'\^ame} une d\'ecomposition des \'emotions par une somme de six \'emotions primaires (l'admiration, l'amour, la haine, le d\'esir, la joie et la tristesse \cite{descartes}). Cependant, ces \og \'emotions primaires\fg sont des \'emotions ressenties, et non des \'emotions visibles de l'ext\'erieur.\\
+
+\`A la fin des ann\'ees 1970, Paul Ekman, chercheur en psychologie, montre que les \'emotions exprim\'ees par les individus sont compos\'ees de micro-expressions faciales \cite{whatTheFaceReveal}, et que chaque expression faciale est la somme de plusieurs des 7 expressions de base (tristesse, joie, col\`ere, peur, d\'ego\^ut, surprise et m\'epris).\\
+
+Aujourd'hui, les travaux d'Ekman ont permis de nombreuses applications, notamment dans le domaine de la d\'etection du mensonge, et surtout dans le domaine de l'interaction homme-machine \cite{ekmangroup}, o\`u les expressions faciales sont utilis\'ees, par exemple, pour adapter le comportement de la machine en fonction de l'\'etat d'esprit de la personne, ou pour fournir des \'emotions r\'ealistes \`a un avatar \cite{photorealisticExpressiveTextTalkingHeadSynthesis}.
 \section{Th\'eorie}
 Avant de passer \`a l'exp\'erimentation, nous avons besoin de connaitre la m\'ethode la plus adapt\'ee \`a notre application. C'est pourquoi, dans un premier temps nous allons voir les diff\'erentes solutions possibles, puis nous allons choisir celle qui correspond le mieux \`a nos besoins.
 \subsection{Diff\'erentes solutions}
@@ -358,13 +377,13 @@ Ensuite, pour \og trouver\fg les \'emotions, il existe \'egalement diff\'erentes
 
 Enfin, pour visualiser les changements d'expression, nous pouvons regarder les d\'eformations. Pour commencer, cela consiste \`a classer les \'emotions primaires en termes de mouvements, translations, rotations, etc. Puis, nous prenons des images \`a diff\'erents instants et nous analysons les mouvements, translations, rotations, etc... afin de les comparer \`a ceux des \'emotions primaires. Une autre solution est le suivi des points du visage~: sur chaque image, nous relevons la position de certains points et nous essayons de les aligner sur le mod\`ele de chaque expression primaire. Finalement, l'\'emotion retenue est celle dont le mod\`ele de points est le plus proche de celui de l'image. C'est la m\'ethode la plus robuste, mais aussi la plus couteuse en calcul et elle est plus difficile \`a mettre en place que la pr\'ec\'edente m\'ethode.\\
 \subsection{Solution choisie}
-	Avant de pr\'esenter la solution choisie, nous avons test\'e plusieurs autres m\'ethodes que nous avons abandonn\'e. Par exemple, pour d\'etecter la forme de la bouche, nous avons utilis\'e une fonction pr\'esente dans \textit{OpenCV}~: \textit{findContours} qui permet d'obtenir des r\'esultats plutôt bons (Voir Figure \ref{fig:findContoursOk}). \\
+	Avant de pr\'esenter la solution choisie, nous avons test\'e plusieurs autres m\'ethodes que nous avons abandonn\'e. Par exemple, pour d\'etecter la forme de la bouche, nous avons utilis\'e une fonction pr\'esente dans OpenCV~: \textit{findContours} qui permet d'obtenir des r\'esultats plutôt bons (Voir Figure \ref{fig:findContoursOk}). \\
 	Voici comment utiliser la fonction avec la librairie OpenCV:\\
 	\lstinputlisting[language=python]{data/contour.py}
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=1]{images/findContoursOk.jpg}
-		\caption{Utilisation de la m\'thode findContours sur une bouche}
+		\caption{Utilisation de la m\'ethode findContours sur une bouche}
 		\label{fig:findContoursOk}
 	\end{center}
 \end{figure}
@@ -410,7 +429,7 @@ Dans cette derni\`ere partie, nous pr\'esenterons la r\'ealisation de notre appl
 	\item{Une DEL jaune pour simuler une limitation de l'acc\'el\'eration}
 	\item{Une DEL verte pour simuler le droit de d\'emarrer}
 \end{itemize}
-De plus, une enceinte \'etait reli\'ee \`a l'Arduino pour \'emettre un signal sonore en cas d'inattention de la part du conducteur ou de son endormissement. Le prototype est fonctionnel sous Linux, Windows et Mac OS (il est \`a noter qu'il y a quelques probl\`emes de d\'ependances li\'es \`a \textit{OpenCV}). Nous voulions porter l'application sur une carte \'electronique de type Raspberry Pi ou Beaglebone, afin de se rapprocher au plus d'un ordinateur de bord, cependant une des fonctions d'\textit{OpenCV} que nous utilisons n'est pas disponible (\textit{createLBPHFaceRecognizer}, qui permet l'utilisation de la m\'ethode de reconnaissance faciale LBPH). N'ayant ni le temps, ni les moyens de recr\'eer cette fonction sur ces cartes, nous avons abandonn\'e cette id\'ee.
+De plus, une enceinte \'etait reli\'ee \`a l'Arduino pour \'emettre un signal sonore en cas d'inattention de la part du conducteur ou de son endormissement. Le prototype est fonctionnel sous Linux, Windows et Mac OS (il est \`a noter qu'il y a quelques probl\`emes de d\'ependances li\'es \`a OpenCV). Nous voulions porter l'application sur une carte \'electronique de type Raspberry Pi ou Beaglebone, afin de se rapprocher au plus d'un ordinateur de bord, cependant une des fonctions d'OpenCV que nous utilisons n'est pas disponible (\textit{createLBPHFaceRecognizer}, qui permet l'utilisation de la m\'ethode de reconnaissance faciale LBPH). N'ayant ni le temps, ni les moyens de recr\'eer cette fonction sur ces cartes, nous avons abandonn\'e cette id\'ee.
 	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=0.7]{images/schema_tests.png}
@@ -441,22 +460,6 @@ Malgr\'e le fait que notre application fonctionne, nous pouvons l'am\'eliorer de
 \bibliography{biblio_rapport}
 \appendix
 	\chapter{Code des applications}
-		%Modifications de l'affichage des codes source
-		\lstset{
-			numbers = left,
-			showspaces = none,
-			keepspaces = true,
-			showstringspaces = true,
-			basicstyle = \footnotesize,
-			commentstyle = \color{newGreen},
-			keywordstyle = \color{newOrange},
-			identifierstyle = \color{newBlue},
-			stringstyle = \color{newMauve}
-		}
-		\lstdefinestyle{arduino}{
-			language=C,
-			morekeywords = {HIGH, LOW, INPUT, OUTPUT}
-		}
 		\section{Application principale}
 			\lstinputlisting[language=python]{../Application_finale/app.py}
 		\section{Code Arduino pour les tests}
