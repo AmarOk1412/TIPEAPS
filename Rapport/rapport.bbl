@@ -49,17 +49,30 @@ Maturana Daniel, Mery Domingo, and Soto \'Alvaro.
 \newblock {\em 2011 30th International Conference of the Chilean Computer
   Science Society}, 0:125--132, 2009.
 
-\bibitem{docOpenCVFaceRecognizer}
-OpenCV dev team.
-\newblock Facerecognizer, F\'evrier 2013.
-\newblock
-  \url{http://docs.opencv.org/modules/contrib/doc/facerec/facerec_api.html}.
+\bibitem{secuRoutiere2011}
+Observatoire~Interminist\'eriel de~la S\'ecurit\'e~Routi\'ere.
+\newblock La s\'ecurit\'e routi\`ere en france (bilan de l'ann\'ee 2011).
+\newblock Technical report, Minist\'ere de l'int\'erieur, D\'ecembre 2012.
+
+\bibitem{accidentalite2012}
+Observatoire~Interminist\'eriel de~la S\'ecurit\'e~Routi\'ere.
+\newblock La s\'ecurit\'e routi\'ere en france - bilan de l'accidentalit\'e de
+  l'ann\'e 2012.
+\newblock Technical report, Minist\'ere de l'int\'erieur, 2013.
 
 \bibitem{docOpenCVFisherFace}
 OpenCV dev team.
-\newblock Face recognition with fisherface, F\'evrier 2014.
+\newblock Face recognition with fisherface, 2009.
 \newblock
-  \url{http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#fisherfaces}.
+  \url{http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#fisherfaces},
+  consult\'e durant F\'evrier et Mars 2014.
+
+\bibitem{docOpenCVFaceRecognizer}
+OpenCV dev team.
+\newblock Facerecognizer, 2009.
+\newblock
+  \url{http://docs.opencv.org/modules/contrib/doc/facerec/facerec_api.html},
+  consult\'e durant F\'evrier et Mars 2014.
 
 \bibitem{realTimeFacialFeaturePointsTrackingPyramidalLucasKanadeAlgorithm}
 Abdat F., Maaoui C., and Pruski A.
@@ -68,10 +81,11 @@ Abdat F., Maaoui C., and Pruski A.
 \newblock In Chugo Daisuke, editor, {\em Human-Robot Interaction}, chapter~13.
   InTech, F\'evrier 2010.
 
-\bibitem{linuxMagazine}
-{Le Roy} Fr\'ed\'eric.
-\newblock Reconnaissance faciale facile avec opencv et python.
-\newblock {\em Linux magazine}, 166, D\'ecembre 2013.
+\bibitem{cdc}
+Centers for Disease~Control and Prevention.
+\newblock Distracted driving, 28 Janvier 2014.
+\newblock \url{www.cdc.gov/Motorvehiclesafety/Distracted_Driving/index.html},
+  consult\'e le 17 F\'evrier 2014.
 
 \bibitem{universalityCulturalSpecificityEmotionRecognitionMetaAnalysis}
 Elfenbein Hillary~Anger and Ambady Nalini.
@@ -92,16 +106,47 @@ Tabari Karmia, Boukadoum Mounir, Chartier Sylvain, and Lounis Hakim.
 \newblock In {\em Maghrébian Conference on Software Engineering and Artificial
   Intelligence}, d\'ecembre 2006.
 
+\bibitem{conseilNationalSecuRoutiere}
+lefigaro.fr.
+\newblock \'a quoi sert le conseil national de la s\'ecurit\'e routi\`ere~?, 8
+  F\'evrier 2013.
+\newblock
+  \url{http://www.lefigaro.fr/assurance/2013/02/07/05005-20130207ARTFIG00481--quoi-sert-le-conseil-national-de-la-securite-routiere.php},
+  consult\'e le 3 F\'evrier 2014.
+
 \bibitem{bimodalEmotionRecognition}
 {DeSilva} Liyanage and Ng~Pei~Chi.
 \newblock Bimodal emotion recognition.
 \newblock In {\em Fourth IEEE International Conference on Automatic Face and
   Gesture Recognition}. National University of Singapore, mars 2000.
 
+\bibitem{alpsElectric}
+Williams Martyn.
+\newblock Ceatec~: la voiture de demain diagnostiquera le conducteur, 1 Octobre
+  2013.
+\newblock
+  \url{http://www.lemondeinformatique.fr/actualites/lire-ceatec-la-voiture-de-demain-diagnostiquera-le-conducteur-55202.html},
+  consult\'e le 3 F\'evrier 2014.
+
+\bibitem{gnt}
+Mercky Mathieu.
+\newblock Toyota fv2 concept~: une voiture capable de lire les \'emotions du
+  conducteur, 6 Novembre 2013.
+\newblock
+  \url{http://www.generation-nt.com/toyota-fv2-concept-voiture-capable-lire-emotions-conducteur-actualite-1810542.html},
+  consult\'e le 3 F\'evrier 2014.
+
 \bibitem{eigenfaceRecognition}
 Turk Matthew and Pentland Alex.
 \newblock Eigenfaces for recognition.
 \newblock {\em Journal of cognitive neuroscience}, 3:71--86, 1991.
+
+\bibitem{keyLemon}
+Haab M\'elanie.
+\newblock Keylemon entre dans votre voiture, 8 Novembre 2013.
+\newblock
+  \url{http://www.ictjournal.ch/fr-CH/News/2013/11/08/KeyLemon-entre-dans-votre-voiture.aspx},
+  consult\'e le 3 F\'evrier 2014.
 
 \bibitem{analyseQuantificationComportementsConducteursAutomobilesPreCrash}
 Hetier Micka\"el.
@@ -134,6 +179,14 @@ Gomez Rafael, Popovic Vesna, and Bucolo Sam.
 \newblock In {\em Fourth international conference on design and emotion}.
   Middle East Technical University, Ankara, juillet 2004.
 
+\bibitem{gentside}
+Courtin S\'ebastien.
+\newblock Un syst\`eme de reconnaissance faciale d\'etecte la somnolence au
+  volant, 7 D\'ecembre 2011.
+\newblock
+  \url{http://www.gentside.com/denso/un-systeme-de-reconnaissance-faciale-detecte-la-somnolence-au-volant_art31705.html},
+  consult\'e le 4 F\'evrier 2014.
+
 \bibitem{emotionRecognitionNeurofuzzyNetwork}
 Ioannou Spiros, Raouzaiou Amaryllis, Tzouvaras Vasilis, Mailis Theofilos,
   Karpouzis Kostas, and Kollias Stefanos.
@@ -148,5 +201,12 @@ Wan Vincent, Anderson Robert, Blokland Art, Braunschweiler Norbert, Chen
   Cipolla Roberto.
 \newblock Photo-realistic expressive text to talking head synthesis.
 \newblock In {\em Interspeech}, ao\^ut 2013.
+
+\bibitem{govDistractedDriving}
+Official US~Government website for~distracted driving.
+\newblock What is distracted driving?, Non dat\'e.
+\newblock
+  \url{www.distraction.gov/content/get-the-facts/facts-and-statistics.html},
+  consult\'e le 17 F\'evrier 2014.
 
 \end{thebibliography}
