@@ -17,13 +17,14 @@
 \contentsline {subsection}{\numberline {2.2.2}R\'ealisation des exp\'eriences}{12}
 \contentsline {subsection}{\numberline {2.2.3}R\'esultats et analyses}{13}
 \contentsline {chapter}{\numberline {3}Reconnaissance des \'emotions}{16}
-\contentsline {section}{\numberline {3.1}Th\'eorie}{16}
-\contentsline {subsection}{\numberline {3.1.1}Diff\'erentes solutions}{16}
-\contentsline {subsection}{\numberline {3.1.2}Solution choisie}{17}
-\contentsline {section}{\numberline {3.2}Exp\'erimentations}{19}
-\contentsline {subsection}{\numberline {3.2.1}Protocole}{19}
-\contentsline {subsection}{\numberline {3.2.2}R\'ealisation}{19}
-\contentsline {subsection}{\numberline {3.2.3}R\'esultats et analyse}{19}
+\contentsline {section}{\numberline {3.1}Historique}{16}
+\contentsline {section}{\numberline {3.2}Th\'eorie}{16}
+\contentsline {subsection}{\numberline {3.2.1}Diff\'erentes solutions}{16}
+\contentsline {subsection}{\numberline {3.2.2}Solution choisie}{17}
+\contentsline {section}{\numberline {3.3}Exp\'erimentations}{19}
+\contentsline {subsection}{\numberline {3.3.1}Protocole}{19}
+\contentsline {subsection}{\numberline {3.3.2}R\'ealisation}{19}
+\contentsline {subsection}{\numberline {3.3.3}R\'esultats et analyse}{19}
 \contentsline {chapter}{\numberline {4}Production}{20}
 \contentsline {section}{\numberline {4.1}Prototype final}{20}
 \contentsline {section}{\numberline {4.2}Protocole du test final}{20}

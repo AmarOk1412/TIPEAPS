@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  25 MAR 2014 13:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  25 MAR 2014 13:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1667,73 +1667,66 @@ Underfull \hbox (badness 10000) in paragraph at lines 330--331
 [14] [15 <./images/detection_cut.png>]
 Partie 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 336--337
+Underfull \hbox (badness 10000) in paragraph at lines 339--340
 
  []
 
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 338.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 341.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 338--339
-
- []
-
-<images/primaryexp.jpg, id=95, 151.56625pt x 335.2525pt>
-File: images/primaryexp.jpg Graphic file (type jpg)
-
-<use images/primaryexp.jpg>
-Package pdftex.def Info: images/primaryexp.jpg used on input line 342.
-(pdftex.def)             Requested size: 75.78293pt x 167.62584pt.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 347--348
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
 
  []
 
 [16
 
-] <images/findContoursOk.jpg, id=100, 108.405pt x 44.165pt>
+] <images/primaryexp.jpg, id=99, 151.56625pt x 335.2525pt>
+File: images/primaryexp.jpg Graphic file (type jpg)
+
+<use images/primaryexp.jpg>
+Package pdftex.def Info: images/primaryexp.jpg used on input line 345.
+(pdftex.def)             Requested size: 75.78293pt x 167.62584pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 350--351
+
+ []
+
+<images/findContoursOk.jpg, id=100, 108.405pt x 44.165pt>
 File: images/findContoursOk.jpg Graphic file (type jpg)
 
 <use images/findContoursOk.jpg>
-Package pdftex.def Info: images/findContoursOk.jpg used on input line 352.
+Package pdftex.def Info: images/findContoursOk.jpg used on input line 355.
 (pdftex.def)             Requested size: 108.40472pt x 44.16487pt.
 
 <images/findContoursNOk.jpg, id=101, 158.5925pt x 83.31125pt>
 File: images/findContoursNOk.jpg Graphic file (type jpg)
 
 <use images/findContoursNOk.jpg>
-Package pdftex.def Info: images/findContoursNOk.jpg used on input line 360.
+Package pdftex.def Info: images/findContoursNOk.jpg used on input line 363.
 (pdftex.def)             Requested size: 158.59209pt x 83.31104pt.
 
 <images/inRangeOk.jpg, id=102, 72.27pt x 44.165pt>
 File: images/inRangeOk.jpg Graphic file (type jpg)
  <use images/inRangeOk.jpg>
-Package pdftex.def Info: images/inRangeOk.jpg used on input line 368.
+Package pdftex.def Info: images/inRangeOk.jpg used on input line 371.
 (pdftex.def)             Requested size: 72.2698pt x 44.16487pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 349--374
+Underfull \hbox (badness 10000) in paragraph at lines 352--377
 
  []
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [17 <./images/primaryexp.jpg> <./images/findContoursOk.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
+Underfull \hbox (badness 10000) in paragraph at lines 378--379
 
  []
 
 [18 <./images/findContoursNOk.jpg> <./images/inRangeOk.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 385--386
+Underfull \hbox (badness 10000) in paragraph at lines 388--389
 
  []
 
@@ -1743,136 +1736,136 @@ Partie 4.
 File: images/schema_tests.png Graphic file (type png)
 
 <use images/schema_tests.png>
-Package pdftex.def Info: images/schema_tests.png used on input line 399.
+Package pdftex.def Info: images/schema_tests.png used on input line 402.
 (pdftex.def)             Requested size: 328.82626pt x 313.64964pt.
 
 <images/schema_tests_elec.png, id=113, 205.568pt x 207.174pt>
 File: images/schema_tests_elec.png Graphic file (type png)
 
 <use images/schema_tests_elec.png>
-Package pdftex.def Info: images/schema_tests_elec.png used on input line 400.
+Package pdftex.def Info: images/schema_tests_elec.png used on input line 403.
 (pdftex.def)             Requested size: 205.56747pt x 207.17348pt.
  [20
 
 ] [21 <./images/schema_tests.png> <./images/schema_tests_elec.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 408--409
+Underfull \hbox (badness 10000) in paragraph at lines 411--412
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 410--411
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
+Underfull \hbox (badness 10000) in paragraph at lines 417--418
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 416--417
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 418--419
+Underfull \hbox (badness 10000) in paragraph at lines 421--422
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 420--421
+Underfull \hbox (badness 10000) in paragraph at lines 423--424
 
  []
 
 [23
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 422--423
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 
  []
 
 (./rapport.bbl [24] [25
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 115--121
+Underfull \hbox (badness 10000) in paragraph at lines 121--127
 []\T1/lmr/m/n/10 lefigaro.fr.  á quoi sert le conseil na-tio-nal de la sé-cu-ri
 té rou-tière?,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 115--121
+Underfull \hbox (badness 10000) in paragraph at lines 121--127
 \T1/lmr/m/n/10 8 Fé-vrier 2013.  $\T1/lmtt/m/n/10 http : / / www . lefigaro . f
 r / assurance / 2013 / 02 / 07 /
  []
 
 
-Overfull \hbox (33.0506pt too wide) in paragraph at lines 115--121
+Overfull \hbox (33.0506pt too wide) in paragraph at lines 121--127
 \T1/lmtt/m/n/10 05005-[]20130207ARTFIG00481-[]-[]quoi-[]sert-[]le-[]conseil-[]n
 ational-[]de-[]la-[]securite-[]routiere .
  []
 
 
-Underfull \hbox (badness 4726) in paragraph at lines 129--135
+Underfull \hbox (badness 4726) in paragraph at lines 135--141
 []\T1/lmr/m/n/10 Williams Mar-tyn.  Cea-tec : la voi-ture de de-main diag-nos-t
 i-quera le conduc-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--135
+Underfull \hbox (badness 10000) in paragraph at lines 135--141
 \T1/lmr/m/n/10 teur, 1 Oc-tobre 2013.  $\T1/lmtt/m/n/10 http : / / www . lemond
 einformatique . fr / actualites /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--135
+Underfull \hbox (badness 10000) in paragraph at lines 135--141
 \T1/lmtt/m/n/10 lire-[]ceatec-[]la-[]voiture-[]de-[]demain-[]diagnostiquera-[]l
 e-[]conducteur-[]55202 . html$\T1/lmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 2781) in paragraph at lines 137--143
+Underfull \hbox (badness 2781) in paragraph at lines 143--149
 []\T1/lmr/m/n/10 Mercky Ma-thieu.  Toyota fv2 concept : une voi-ture ca-pable d
 e lire les émo-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 137--143
+Underfull \hbox (badness 10000) in paragraph at lines 143--149
 \T1/lmr/m/n/10 tions du conduc-teur, 6 No-vembre 2013.  $\T1/lmtt/m/n/10 http :
  / / www . generation-[]nt . com /
  []
 
 
-Overfull \hbox (16.30064pt too wide) in paragraph at lines 137--143
+Overfull \hbox (16.30064pt too wide) in paragraph at lines 143--149
 \T1/lmtt/m/n/10 toyota-[]fv2-[]concept-[]voiture-[]capable-[]lire-[]emotions-[]
 conducteur-[]actualite-[]1810542 .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--155
+Underfull \hbox (badness 10000) in paragraph at lines 156--161
 \T1/lmtt/m/n/10 ictjournal . ch / fr-[]CH / News / 2013 / 11 / 08 / KeyLemon-[]
 entre-[]dans-[]votre-[]voiture . aspx$\T1/lmr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--194
+Underfull \hbox (badness 10000) in paragraph at lines 194--200
 []\T1/lmr/m/n/10 Courtin Sé-bas-tien.  Un sys-tème de re-con-nais-sance fa-cial
 e dé-tecte la som-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--194
+Underfull \hbox (badness 10000) in paragraph at lines 194--200
 \T1/lmr/m/n/10 no-lence au vo-lant, 7 Dé-cembre 2011.  $\T1/lmtt/m/n/10 http : 
 / / www . gentside . com / denso /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--194
+Underfull \hbox (badness 10000) in paragraph at lines 194--200
 \T1/lmtt/m/n/10 un-[]systeme-[]de-[]reconnaissance-[]faciale-[]detecte-[]la-[]s
 omnolence-[]au-[]volant _
  []
 
 [26]
-Underfull \hbox (badness 1817) in paragraph at lines 211--216
+Underfull \hbox (badness 1817) in paragraph at lines 217--222
 \T1/lmr/m/n/10 Non daté.  $\T1/lmtt/m/n/10 www . distraction . gov / content / 
 get-[]the-[]facts / facts-[]and-[]statistics .
  []
@@ -2008,7 +2001,7 @@ Annexe B.
 File: ../documents/GANTT/gantt.pdf Graphic file (type pdf)
 
 <use ../documents/GANTT/gantt.pdf>
-Package pdftex.def Info: ../documents/GANTT/gantt.pdf used on input line 548.
+Package pdftex.def Info: ../documents/GANTT/gantt.pdf used on input line 551.
 (pdftex.def)             Requested size: 591.52895pt x 418.25294pt.
 
 Overfull \vbox (23.70139pt too high) has occurred while \output is active []
@@ -2016,13 +2009,13 @@ Overfull \vbox (23.70139pt too high) has occurred while \output is active []
 
 [41 <../documents/GANTT/gantt.pdf>] (./rapport.aux) ) 
 Here is how much of TeX's memory you used:
- 32378 strings out of 493315
- 726533 string characters out of 6137905
- 880425 words of memory out of 5000000
- 35117 multiletter control sequences out of 15000+600000
+ 32379 strings out of 493315
+ 726545 string characters out of 6137905
+ 880430 words of memory out of 5000000
+ 35118 multiletter control sequences out of 15000+600000
  99052 words of font info for 76 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,21n,93p,2429b,2392s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,21n,93p,2425b,2392s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/t
 exmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2013/texmf-dist/
 fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/2013/texmf-dist/fonts/enc/dvip
@@ -2046,7 +2039,7 @@ cal/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive
 -dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2013/texmf-dist/font
 s/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2013/texmf-dist/
 fonts/type1/public/wasy/wasy10.pfb>
-Output written on rapport.pdf (46 pages, 10685715 bytes).
+Output written on rapport.pdf (46 pages, 10686056 bytes).
 PDF statistics:
  281 PDF objects out of 1000 (max. 8388607)
  191 compressed objects within 2 object streams
