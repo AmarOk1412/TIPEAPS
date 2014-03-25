@@ -65,9 +65,9 @@
 	\end{titlepage}
 	\pagenumbering{roman}
 	\begin{abstract}
-		Dans ce rapport, nous expliquons le raisonnement que nous avons suivi dans l'optique de d\'evellopper une application de reconnaissance faciale et de reconnaissance des \'emotions, appliqu\'ee au domaine de la s\'ecurit\'e routi\`ere. Nous \'etudions tout d'abord la situation actuelle de la s\'ecurit\'e routi\`ere, et pourquoi une application de ce type peut trouver sa place dans l'automobile. Nous \'etudions ensuite l'existant, tant en reconnaissance faciale, qu'en reconnaissance des \'emotions.\\
+		Dans ce rapport, nous expliquons le raisonnement que nous avons suivi dans l'optique de d\'evelopper une application de reconnaissance faciale et de reconnaissance des \'emotions, appliqu\'ee au domaine de la s\'ecurit\'e routi\`ere. Nous \'etudions tout d'abord la situation actuelle de la s\'ecurit\'e routi\`ere et pourquoi une application de ce type peut trouver sa place dans l'automobile. Nous \'etudions ensuite l'existant, tant en reconnaissance faciale, qu'en reconnaissance des \'emotions.\\
 		
-		Enfin, nous d\'evellopons la mise en \oe uvre de notre application, de son fonctionnement, et des tests auxquels cette application a \'et\'e soumise. Nous expliquerons alors pourquoi cette application d\'emontre que le concept peut \^etre vu comme une r\'eussite, mais que nous manquons encore de puissance de calcul et de p\'eriph\'eriques fiables (notemment une cam\'era).
+		Enfin, nous d\'eveloppons la mise en \oe uvre de notre application, de son fonctionnement, et des tests auxquels cette application a \'et\'e soumise. Nous expliquerons alors pourquoi cette application d\'emontre que le concept peut \^etre vu comme une r\'eussite, mais que nous manquons encore de puissance de calcul et de p\'eriph\'eriques fiables (notamment une cam\'era).
 	\end{abstract}
 	\chapter*{Remerciements}
 	Nous tenons \`a exprimer nos remerciements et notre gratitude envers tous ceux qui ont bien voulu apporter leur assistance au bon d\'eroulement de ce projet.\\
@@ -393,7 +393,7 @@ Dans cette derni\`ere partie, nous pr\'esenterons la r\'ealisation de notre appl
 	\item{Une DEL jaune pour simuler une limitation de l'acc\'el\'eration}
 	\item{Une DEL verte pour simuler le droit de d\'emarrer}
 \end{itemize}
-De plus, une enceinte \'etait reli\'ee \`a l'Arduino pour \'emettre un signal sonore en cas d'inattention de la part du conducteur ou de son endormissement. Le prototype est fonctionnel sous Linux, Windows, et Mac OS (il est \`a noter qu'il y a quelques probl\`emes de d\'ependances li\'es \`a \textit{OpenCV}). Nous voulions porter l'application sur une carte \'electronique de type Raspberry Pi ou Beaglebone, afin de se rapprocher au plus d'un ordinateur de bord, cependant une des fonctions d'\textit{OpenCV} que nous utilisons n'est pas disponible (\textit{createLBPHFaceRecognizer}, qui permet l'utilisation de la m\'ethode de reconnaissance faciale LBPH). N'ayant ni le temps, ni les moyens de recr\'eer cette fonction sur ces cartes, nous avons abandonn\'e cette id\'ee.
+De plus, une enceinte \'etait reli\'ee \`a l'Arduino pour \'emettre un signal sonore en cas d'inattention de la part du conducteur ou de son endormissement. Le prototype est fonctionnel sous Linux, Windows et Mac OS (il est \`a noter qu'il y a quelques probl\`emes de d\'ependances li\'es \`a \textit{OpenCV}). Nous voulions porter l'application sur une carte \'electronique de type Raspberry Pi ou Beaglebone, afin de se rapprocher au plus d'un ordinateur de bord, cependant une des fonctions d'\textit{OpenCV} que nous utilisons n'est pas disponible (\textit{createLBPHFaceRecognizer}, qui permet l'utilisation de la m\'ethode de reconnaissance faciale LBPH). N'ayant ni le temps, ni les moyens de recr\'eer cette fonction sur ces cartes, nous avons abandonn\'e cette id\'ee.
 	\begin{figure}
 		\begin{center}
 			\includegraphics[scale=0.7]{images/schema_tests.png}
