@@ -87,6 +87,11 @@ Centers for Disease~Control and Prevention.
 \newblock \url{www.cdc.gov/Motorvehiclesafety/Distracted_Driving/index.html},
   consult\'e le 17 F\'evrier 2014.
 
+\bibitem{linuxMagazine}
+{Le Roy} Fr\'ed\'eric.
+\newblock Reconnaissance faciale facile avec opencv et python.
+\newblock {\em Linux magazine}, 166, D\'ecembre 2013.
+
 \bibitem{universalityCulturalSpecificityEmotionRecognitionMetaAnalysis}
 Elfenbein Hillary~Anger and Ambady Nalini.
 \newblock On the universality and cultural specificity of emotion recognition:

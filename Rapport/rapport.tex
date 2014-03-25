@@ -171,7 +171,7 @@ Il existe trois types de distraction~\cite{cdc}: visuelle (regarder autre chose 
 En France, certaines \'etudes ont montr\'e que 25\% \`a 50\% des accidents corporels \'etaient dus \`a la distraction du conducteur. A l'\'etranger, la conduite \`a l'aveugle est \'egalement un facteur de plus en plus important dans la mortalit\'e routi\`ere. Par exemple, chaque jour aux Etats-Unis, plus de 9 personnes sont tu\'ees et plus de 1,060 personnes sont bless\'ees dans des accidents o\`u sont impliqu\'es un conducteur distrait. Par ailleurs, beaucoup d'usagers (en particuliers les jeunes) ne semblent pas encore avoir pris conscience du danger de ces pratiques. En effet, d'apr\`es un sondage r\'ealis\'e en 2011 aux Etats-Unis, 69\% des conducteurs âg\'es de 18 \`a 64 ans avaient t\'el\'ephon\'e en conduisant (En Europe, ce taux varie entre 21\% au Royaume-Uni \`a 59\% au Portugal) et 31\% avaient lu ou envoy\'es un sms en conduisant dans les 30 derniers jours avant d'être sond\'es.\\
 
 	\chapter{La reconnaissance faciale}
-		Dans cette deuxieme partie, nous nous pencherons sur la reconnaissance faciale. Dans un premier temps, nous \'etudierons l'aspect th\'eorique de la reconnaissance, puis  l'aspect exp\'erimental.
+		Dans cette deuxieme partie, nous nous pencherons sur la reconnaissance faciale. Dans un premier temps, nous \'etudierons l'aspect th\'eorique de la reconnaissance, puis l'aspect exp\'erimental.
 
 \section{Th\'eorie}
 
@@ -179,7 +179,7 @@ Afin d'\'etudier l'aspect th\'eorique de la reconnaissance faciale, nous allons 
 
 \subsection{G\'en\'eralit\'es}
 
-Apr\`es des recherches approfondies, nous avons pu constater qu'il existe \'enorm\'ement de m\'ethodes possibles pour reconnaître un visage.  Ces m\'ethodes peuvent \'egalement être combin\'ees entre elles (par exemple, la mise en place en place d'un r\'eseau neuronal \cite{emotionRecognitionNeurofuzzyNetwork} ou l'impl\'ementation de mod\`eles cach\'es de Markov \cite{analyseInterpretationMouvementsHumains}, \cite{facialExpressionRecognitionFromVideoSequences}, \cite{bimodalEmotionRecognition}). Cependant, en trois mois, nous nous n'aurions pas eu le temps de mettre en place une telle m\'ethode. De plus la mise en place d'un r\'eseau neuronnal n\'ecessite beaucoup de calculs. En effet, un r\'eseau neuronal est compos\'e d'une suite de couches de neurones. On donne la matrice de l'image en sortie et le r\'eseau nous donne en sortie le nom de la personne identifi\'ee. La couche de sortie est donc compos\'ee d'un neurone par personne enregistr\'ee, mais la couche d'entr\'ee n\'ecessite autant de neurones que de pixels dans l'image. Pour une image $100\times 100$ il faut donc $10 000$ neurones pour la couche d'entr\'ee. Nous nous sommes donc rabattus vers des algorithmes d\'ej\`a impl\'ement\'es dans la librairie OpenCV qui sont Eigenface, Fisherface et LBPH qui sont rapides et simples \'a impl\'ementer \cite{linuxMagazine}. \\
+Apr\`es des recherches approfondies, nous avons pu constater qu'il existe \'enorm\'ement de m\'ethodes possibles pour reconnaître un visage. Ces m\'ethodes peuvent \'egalement être combin\'ees entre elles (par exemple, la mise en place en place d'un r\'eseau neuronal \cite{emotionRecognitionNeurofuzzyNetwork} ou l'impl\'ementation de mod\`eles cach\'es de Markov \cite{analyseInterpretationMouvementsHumains}, \cite{facialExpressionRecognitionFromVideoSequences}, \cite{bimodalEmotionRecognition}). Cependant, en trois mois, nous nous n'aurions pas eu le temps de mettre en place une telle m\'ethode. De plus la mise en place d'un r\'eseau neuronnal n\'ecessite beaucoup de calculs. En effet, un r\'eseau neuronal est compos\'e d'une suite de couches de neurones. On donne la matrice de l'image en sortie et le r\'eseau nous donne en sortie le nom de la personne identifi\'ee. La couche de sortie est donc compos\'ee d'un neurone par personne enregistr\'ee, mais la couche d'entr\'ee n\'ecessite autant de neurones que de pixels dans l'image. Pour une image $100\times 100$ il faut donc $10 000$ neurones pour la couche d'entr\'ee. Nous nous sommes donc rabattus vers des algorithmes d\'ej\`a impl\'ement\'es dans la librairie OpenCV qui sont Eigenface, Fisherface et LBPH qui sont rapides et simples \'a impl\'ementer \cite{linuxMagazine}. \\
 
 Par ailleurs, nous avons choisi de traiter uniquement des images en noir et blanc, car la colorim\'etrie a tr\`es peu d'impact dans le processus de reconnaissance.\\
 
@@ -262,9 +262,9 @@ Concernant l'exp\'erience \no 1, l'algorithme Fisherface a \'et\'e le plus rapid
 			ylabel={temps d'ajout},
 			y unit=\si{\second}
 		]
-			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_eigenface.csv};
-			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_fisherface.csv};
-			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_LBPH.csv};
+			\addplot table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_eigenface.csv};
+			\addplot table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_fisherface.csv};
+			\addplot table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_LBPH.csv};
 		\end{axis}
 	\end{tikzpicture}
 	\begin{tikzpicture}
@@ -277,9 +277,9 @@ Concernant l'exp\'erience \no 1, l'algorithme Fisherface a \'et\'e le plus rapid
 			 legend style={at={(0.9,0.5)},anchor=west},
 			legend entries={eigenface,fisher face,LBPH}
 		]
-			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_eigenface.csv};
-			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_fisherface.csv};
-			\addplot  table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_LBPH.csv};
+			\addplot table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_eigenface.csv};
+			\addplot table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_fisherface.csv};
+			\addplot table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_LBPH.csv};
 		\end{axis}
 	\end{tikzpicture}
 	\caption{Dur\'ees d'initialisation, et de reconnaissance, par algorithme}
@@ -330,6 +330,8 @@ Pour conclure, nous pouvons dire que les exp\'erimentations ont montr\'e que la 
 Dans cette partie, nous avons compar\'e diff\'erentes m\'ethodes th\'eoriques de reconnaissance faciale. Puis, nous avons r\'ealis\'e des exp\'eriences sur chacun des algorithmes pour finalement en retenir un~: LBPH. Nous allons maintenant passer \`a la partie principale de notre application qui est la reconnaissance des \'emotions.\\
 \chapter{Reconnaissance des \'emotions}
 	Dans cette derni\`ere partie, nous allons aborder la reconnaissance des \'emotions. Comme pour la reconnaissance faciale, nous \'etudierons d'abord l'aspect th\'eorique, puis nous passerons aux exp\'erimentations.
+\section{}
+
 \section{Th\'eorie}
 Avant de passer \`a l'exp\'erimentation, nous avons besoin de connaitre la m\'ethode la plus adapt\'ee \`a notre application. C'est pourquoi, dans un premier temps nous allons voir les diff\'erentes solutions possibles, puis nous allons choisir celle qui correspond le mieux \`a nos besoins.
 \subsection{Diff\'erentes solutions}
@@ -370,9 +372,9 @@ Par ailleurs, la d\'etection des couleurs //--INSERER CODE COULEUR + LIEN-// a d
 		\label{fig:inRangeOk}
 	\end{center}
 \end{figure}
-Utiliser\textit{findContours} aurait \'et\'e plus pr\'ecis, mais son manque de fiabilit\'e et la n\'ecessit\'e de traiter les images rend son utilisation contraignante. Une autre solution consistait \`a d\'etecter les expressions \`a l'aide des couleurs et de l'utilisation de seuils sp\'ecifiques. C'\'etait la solution la plus rapide et la plus simple \`a mettre en place, mais elle est impr\'ecise et difficile \`a utiliser pour savoir si les yeux sont fronc\'es ou \'ecarquill\'es par exemple.\\
+Utiliser \textit{findContours} aurait \'et\'e plus pr\'ecis, mais son manque de fiabilit\'e et la n\'ecessit\'e de traiter les images rend son utilisation contraignante. Une autre solution consistait \`a d\'etecter les expressions \`a l'aide des couleurs et de l'utilisation de seuils sp\'ecifiques. C'\'etait la solution la plus rapide et la plus simple \`a mettre en place, mais elle est impr\'ecise et difficile \`a utiliser pour savoir si les yeux sont fronc\'es ou \'ecarquill\'es par exemple.\\
 
-La solution choisie est une m\'ethode l\'eg\`erement diff\'erente de la m\'ethode de d\'etection de couleur. Le suivi des points (utilis\'es dans  \cite{realTimeFacialFeaturePointsTrackingPyramidalLucasKanadeAlgorithm}, \cite{emotionRecognitionCauchyNaiveBayes},  \cite{bimodalEmotionRecognition} et  \cite{authenticFacialExpressionAnalysis}) ou les r\'eseaux neuronaux ont pour d\'esavantage de demander \'enorm\'ement de calculs. Comme notre application a but d'avoir pour support un ordinateur de bord d'une voiture vraisemblablement moins puissant qu'un ordinateur portable, il est n\'ecessaire de trouver une solution peu co\^uteuse en puissance de calcul. Pour simplifier les calculs, nous avons d\'efini la m\'ethode suivante pour effectuer la reconnaissance des \'emotions~: la premi\`ere \'etape est l'obtention d'un visage. L'identit\'e de la personne nous importe peu (elle est uniquement utilis\'ee pour le d\'emarrage du v\'ehicule). Ensuite, \`a l'aide d'un second classifieur, nous obtenons toutes les positions susceptibles de correspondre \`a des yeux. Les yeux situ\'es dans la partie basse du visage sont \'elimin\'es. La hauteur du classifieur nous indique si les yeux sont en position normale, fronc\'es ou \'ecarquill\'es. Pour d\'etecter les yeux ferm\'es, il suffit de regarder le nombre de pixels ayant une couleur comprise entre [80,0,0] et [160,100,100] avec la premi\'ere composante correspondant au rouge, la seconde au vert et la troisi\`eme au bleu (on effectue donc une d\'etection plut\^ot \`a dominance rouge pour ce point). Concernant la bouche, la m\'ethode est presque identique \`a celle des yeux. Avec un classifier sp\'ecifique, toutes les bouches possibles sont r\'ecup\'er\'ees, puis les erreurs sont \'ecart\'ees (bouches situ\'ees dans la partie haute du visage ou trop pr\`es du bord). Ensuite, la bouche est convertie en niveaux de gris  et un seuil est appliqu\'ee pour n'obtenir que l'int\'erieur de la bouche. En effet, on peut remarquer que la couleur \`a l'int\'erieur d'une bouche ouverte tend vers le noir, alors que les l\`evres sont plus d'une couleur rouge. Ainsi, on a plus qu'\`a comparer le taux de noir de l'image au taux obtenu \`a l'initialisation du programme. Si le taux de noir de l'image est sup\'erieur \`a celui obtenu \`a l'initialisation plus un seuil, la bouche est ouverte. \\
+La solution choisie est une m\'ethode l\'eg\`erement diff\'erente de la m\'ethode de d\'etection de couleur. Le suivi des points (utilis\'es dans \cite{realTimeFacialFeaturePointsTrackingPyramidalLucasKanadeAlgorithm}, \cite{emotionRecognitionCauchyNaiveBayes}, \cite{bimodalEmotionRecognition} et \cite{authenticFacialExpressionAnalysis}) ou les r\'eseaux neuronaux ont pour d\'esavantage de demander \'enorm\'ement de calculs. Comme notre application a but d'avoir pour support un ordinateur de bord d'une voiture vraisemblablement moins puissant qu'un ordinateur portable, il est n\'ecessaire de trouver une solution peu co\^uteuse en puissance de calcul. Pour simplifier les calculs, nous avons d\'efini la m\'ethode suivante pour effectuer la reconnaissance des \'emotions~: la premi\`ere \'etape est l'obtention d'un visage. L'identit\'e de la personne nous importe peu (elle est uniquement utilis\'ee pour le d\'emarrage du v\'ehicule). Ensuite, \`a l'aide d'un second classifieur, nous obtenons toutes les positions susceptibles de correspondre \`a des yeux. Les yeux situ\'es dans la partie basse du visage sont \'elimin\'es. La hauteur du classifieur nous indique si les yeux sont en position normale, fronc\'es ou \'ecarquill\'es. Pour d\'etecter les yeux ferm\'es, il suffit de regarder le nombre de pixels ayant une couleur comprise entre [80,0,0] et [160,100,100] avec la premi\'ere composante correspondant au rouge, la seconde au vert et la troisi\`eme au bleu (on effectue donc une d\'etection plut\^ot \`a dominance rouge pour ce point). Concernant la bouche, la m\'ethode est presque identique \`a celle des yeux. Avec un classifier sp\'ecifique, toutes les bouches possibles sont r\'ecup\'er\'ees, puis les erreurs sont \'ecart\'ees (bouches situ\'ees dans la partie haute du visage ou trop pr\`es du bord). Ensuite, la bouche est convertie en niveaux de gris et un seuil est appliqu\'ee pour n'obtenir que l'int\'erieur de la bouche. En effet, on peut remarquer que la couleur \`a l'int\'erieur d'une bouche ouverte tend vers le noir, alors que les l\`evres sont plus d'une couleur rouge. Ainsi, on a plus qu'\`a comparer le taux de noir de l'image au taux obtenu \`a l'initialisation du programme. Si le taux de noir de l'image est sup\'erieur \`a celui obtenu \`a l'initialisation plus un seuil, la bouche est ouverte. \\
 
 Apr\`es cet aperçu des diff\'erentes solutions possibles pour la reconnaissance faciale et du choix de notre m\'ethode, nous allons \`a pr\'esent l'exp\'erimenter.
 \section{Exp\'erimentations}
@@ -493,7 +495,7 @@ entr\'ee biblio
 		\section{Matrice RACI}
 		\begin{tabular}{|>{\bfseries}c|c|c|c|c|c|}
 			\hline
-			\backslashbox{T\^ache}{Membre}  &  \textbf{S\'ebastien}  &  \textbf{Pierre-Henri}  &  \textbf{Amaury}  &  \textbf{Finn}  &  \textbf{D\'eborah}\\
+			\backslashbox{T\^ache}{Membre} & \textbf{S\'ebastien} & \textbf{Pierre-Henri} & \textbf{Amaury} & \textbf{Finn} & \textbf{D\'eborah}\\
 			\hline
 			1 & C & R-C & C & I & \\
 			\hline
@@ -505,13 +507,13 @@ entr\'ee biblio
 			\hline
 			5 & C & C & C & I & \\
 			\hline
-			6 & R & C & I &  & \\
+			6 & R & C & I & & \\
 			\hline
-			7 & R & C & C &  & \\
+			7 & R & C & C & & \\
 			\hline
-			8 & R-C & I & I &  & \\
+			8 & R-C & I & I & & \\
 			\hline
-			9 & R-C & C & C &  & \\
+			9 & R-C & C & C & & \\
 			\hline
 			10.1 & R-C & C & C & I & \\
 			\hline
@@ -533,9 +535,9 @@ entr\'ee biblio
 			\hline
 			15 & C & C & R-C & A & I\\
 			\hline
-			16 & I & I & R-C &  & \\
+			16 & I & I & R-C & & \\
 			\hline
-			17 & C & R-C & C &  & \\
+			17 & C & R-C & C & & \\
 			\hline
 			18 & C & C & R-C & A & I\\
 			\hline
