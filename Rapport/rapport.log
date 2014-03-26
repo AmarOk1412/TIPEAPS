@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  26 MAR 2014 19:20
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  26 MAR 2014 23:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1799,42 +1799,49 @@ File: images/schema_tests_elec.png Graphic file (type png)
 <use images/schema_tests_elec.png>
 Package pdftex.def Info: images/schema_tests_elec.png used on input line 441.
 (pdftex.def)             Requested size: 205.56747pt x 207.17348pt.
+
+<images/prototype.jpg, id=127, 3276.24pt x 1846.9pt>
+File: images/prototype.jpg Graphic file (type jpg)
+
+<use images/prototype.jpg>
+Package pdftex.def Info: images/prototype.jpg used on input line 450.
+(pdftex.def)             Requested size: 409.529pt x 230.86194pt.
  [22
 
 ] [23 <./images/schema_tests.png> <./images/schema_tests_elec.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 449--450
+Underfull \hbox (badness 10000) in paragraph at lines 456--457
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 451--452
+Underfull \hbox (badness 10000) in paragraph at lines 458--459
 
  []
 
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 455--456
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
+[24 <./images/prototype.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 462--463
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 459--460
+Underfull \hbox (badness 10000) in paragraph at lines 464--465
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 461--462
+Underfull \hbox (badness 10000) in paragraph at lines 466--467
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--469
 
  []
 
 [25
 
 ] (./rapport.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 463--1
+Underfull \hbox (badness 10000) in paragraph at lines 470--1
 
  []
 
@@ -2062,11 +2069,11 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 Annexe B.
 [41
 
-] [42] <../documents/GANTT/gantt.pdf, id=196, 845.0471pt x 597.50829pt>
+] [42] <../documents/GANTT/gantt.pdf, id=197, 845.0471pt x 597.50829pt>
 File: ../documents/GANTT/gantt.pdf Graphic file (type pdf)
 
 <use ../documents/GANTT/gantt.pdf>
-Package pdftex.def Info: ../documents/GANTT/gantt.pdf used on input line 565.
+Package pdftex.def Info: ../documents/GANTT/gantt.pdf used on input line 572.
 (pdftex.def)             Requested size: 591.52895pt x 418.25294pt.
 
 Overfull \vbox (23.70139pt too high) has occurred while \output is active []
@@ -2078,10 +2085,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 32407 strings out of 493315
- 726816 string characters out of 6137905
- 882246 words of memory out of 5000000
- 35137 multiletter control sequences out of 15000+600000
+ 32413 strings out of 493315
+ 726944 string characters out of 6137905
+ 882257 words of memory out of 5000000
+ 35142 multiletter control sequences out of 15000+600000
  99052 words of font info for 76 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,21n,93p,2490b,2392s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2107,10 +2114,10 @@ msy7.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></
 usr/local/texlive/2013/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/
 texlive/2013/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/lo
 cal/texlive/2013/texmf-dist/fonts/type1/public/wasy/wasy10.pfb>
-Output written on rapport.pdf (49 pages, 10712803 bytes).
+Output written on rapport.pdf (49 pages, 12385906 bytes).
 PDF statistics:
- 292 PDF objects out of 1000 (max. 8388607)
+ 293 PDF objects out of 1000 (max. 8388607)
  198 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 83 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 
