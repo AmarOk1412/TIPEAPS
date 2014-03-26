@@ -81,6 +81,7 @@
 	\end{titlepage}
 	\pagenumbering{roman}
 	\begin{abstract}
+	
 		Dans ce rapport, nous expliquons le raisonnement que nous avons suivi dans l'optique de d\'evelopper une application de reconnaissance faciale et de reconnaissance des \'emotions, appliqu\'ee au domaine de la s\'ecurit\'e routi\`ere. Nous \'etudions tout d'abord la situation actuelle de la s\'ecurit\'e routi\`ere et pourquoi une application de ce type peut trouver sa place dans l'automobile. Nous \'etudions ensuite l'existant, tant en reconnaissance faciale, qu'en reconnaissance des \'emotions.\\
 		
 		Enfin, nous d\'eveloppons la mise en \oe uvre de notre application, de son fonctionnement, et des tests auxquels cette application a \'et\'e soumise. Nous expliquerons alors pourquoi cette application d\'emontre que le concept peut \^etre vu comme une r\'eussite, mais que nous manquons encore de puissance de calcul et de p\'eriph\'eriques fiables (notamment une cam\'era).
@@ -94,6 +95,7 @@ Nous remercions \'egalement Madame D\'eborah \textsc{Mahieu} Professeur Agr\'eg\
 
 Enfin, nous remercions toutes les personnes qui nous ont aid\'e lors des exp\'erimentations pour la v\'erification du bon fonctionnement de l'application.\\
 	\tableofcontents
+	\listoffigures
 	\chapter*{Introduction}
 	\pagenumbering{arabic}
 	\setcounter{page}{1}
@@ -173,7 +175,7 @@ Les autres facteurs sont~:
 \begin{itemize}
 	\item{L'usage des stup\'efiants (en 2011, 455 accidents mortels avec au moins un conducteur test\'e positivement aux stup\'efiants). Ces accidents ont entrain\'e le d\'ec\`es de 499 personnes (soit 13\% de la mortalit\'e routi\`ere).}
 	\item{La prise de m\'edicaments~: une \'etude r\'ealis\'ee par une \'equipe de l'INSERM (projet CESIR-A) a montr\'e que 3\% des accidents \'etaient attribuables \`a la prise de produits m\'edicamenteux.}
-	\item{le respect des distances de s\'ecurit\'e. D'apr\`es le Code de la Route~: \og Lorsque deux v\'ehicules se suivent, le conducteur du second doit maintenir une distance de s\'ecurit\'e suffisante pour pouvoir \'eviter une collision en cas de ralentissement brusque ou d'arrêt subit du v\'ehicule qui le pr\'ec\`ede. Cette distance est d'autant plus grande que la vitesse est plus \'elev\'ee. Elle correspond \`a la distance parcourue par le v\'ehicule pendant un d\'elai d'au moins deux secondes\fg. Globalement, plus de 50\% des conducteurs ne respectent pas cette r\`egle. Or, le non-respect des distances de s\'ecurit\'e qui entrainent des collisions par l'arri\`ere et des collisions en chaine totalise 6.2\% de la mortalit\'e routi\`ere.}
+	\item{Le respect des distances de s\'ecurit\'e. D'apr\`es le Code de la Route~: \og Lorsque deux v\'ehicules se suivent, le conducteur du second doit maintenir une distance de s\'ecurit\'e suffisante pour pouvoir \'eviter une collision en cas de ralentissement brusque ou d'arrêt subit du v\'ehicule qui le pr\'ec\`ede. Cette distance est d'autant plus grande que la vitesse est plus \'elev\'ee. Elle correspond \`a la distance parcourue par le v\'ehicule pendant un d\'elai d'au moins deux secondes\fg. Globalement, plus de 50\% des conducteurs ne respectent pas cette r\`egle. Or, le non-respect des distances de s\'ecurit\'e qui entrainent des collisions par l'arri\`ere et des collisions en chaine totalise 6.2\% de la mortalit\'e routi\`ere.}
 	\item{Le port de la ceinture~: en 2011, 22\% des personnes tu\'ees n'\'etaient pas ceintur\'ees.}\\
 \end{itemize}
 
@@ -204,7 +206,7 @@ Par ailleurs, nous avons choisi de traiter uniquement des images en noir et blan
 
 La m\'ethode de reconnaissance faciale Eigenface a pour particularit\'e de se baser sur des \og eigen vectors\fg, c'est-\`a-dire des vecteurs propres. Elle a \'et\'e introduite en 1991 par Turk et Pentland \cite{eigenfaceRecognition}.\\
 
-L'algorithme est le suivant~: chaque image est consid\'er\'ee comme un vecteur avec pour dimension son nombre de pixels. Puis, un ou plusieurs algorithmes recherchent les principales composantes (ces composantes peuvent être diverses comme le montre la figure \ref{fig:eigenfaces_OpenCV}). \`A l'aide de plusieurs images du même visage, nous pouvons alors composer une image du visage \og moyen\fg qui contiendra \'egalement les principales composantes (l'eigenface). La m\'ethode de reconnaissance des axes principaux est d\'etaill\'ee ici~: Matthew Turk and Alex Pentland. Eigenfaces for recognition. J. Cognitive Neuroscience. 3(1)~:71{86, 1991}. Enfin, il suffit de comparer l'eigenface et les composantes principales d'une capture d'un visage.\\
+L'algorithme est le suivant~: chaque image est consid\'er\'ee comme un vecteur avec pour dimension son nombre de pixels. Puis, un ou plusieurs algorithmes recherchent les principales composantes (ces composantes peuvent être diverses comme le montre la Figure~\ref{fig:eigenfaces_OpenCV}). \`A l'aide de plusieurs images du même visage, nous pouvons alors composer une image du visage \og moyen\fg qui contiendra \'egalement les principales composantes (l'eigenface). La m\'ethode de reconnaissance des axes principaux est d\'etaill\'ee ici~: Matthew Turk and Alex Pentland. Eigenfaces for recognition. J. Cognitive Neuroscience. 3(1)~:71{86, 1991}. Enfin, il suffit de comparer l'eigenface et les composantes principales d'une capture d'un visage.\\
 
 L'avantage de cette m\'ethode est la connaissance de son existence depuis longtemps. Cependant, elle pr\'esente \'egalement des d\'esavantages non-n\'egligeables. En effet, comme chaque pixel est une dimension, une image $100\times100$ donne 10 000 vecteurs \`a traiter. Le nombre de donn\'ees \`a analyser est donc tr\`es important. De plus, cette m\'ethode est sensible \`a la luminosit\'e et \`a la d\'eformation des visages (grimaces, accessoires, ...).\\
 
@@ -220,10 +222,9 @@ L'avantage de cette m\'ethode est la connaissance de son existence depuis longte
 
 La m\'ethode de reconnaissance faciale Fisherface se base sur les travaux de Sir R.A. Fisher. Il s'agit d'une \'evolution de l'algorithme Eigenface pr\'esent\'e pr\'ecedemment. Alors que l'algorithme Eigenface se base sur l'Analyse des Composantes Principales (ACP), l'algorithme Fisherface utilise l'Analyse Discriminante Lin\'eaire (ADL) qui cherche le meilleur sous espace minimisant la distance entre les images d'une m\^eme classe (ici une classe = un visage) en maximisant la distance inter-classe.\\
 Tout d'abord, l'algorithme calcul l'image moyenne de la classe~:\\
-$$\frac{1}{n}\times\sum_{i=1}^{n} x_i$$\\
-avec $$x_0, x_1, ..., x_n$$ les images de la classe.\\
-Puis, on calcul les matrice de dispersion intra et inter classe (disons respectivement $M_i$ et $M_e$).\\
-Puis on trouve la matrice de projection (P) en r\'esolvant \\$$M_i\times x = \lambda\times M_e\times x$$\\
+$\frac{1}{n}\times\sum_{i=1}^{n} x_i$ avec $x_0, x_1, ..., x_n$ les images de la classe.\\
+Puis, on calcule les matrice de dispersion intra et inter classe (disons respectivement $M_i$ et $M_e$).\\
+Enfin, on trouve la matrice de projection $(P)$ en r\'esolvant \\$$M_i\times x = \lambda\times M_e\times x$$\\
 Pour trouver la meilleure projection, il suffit de r\'esoudre\\$$\frac{P^{-1}\times M_e\times P}{P^{-1}\times M_i\times P}=\mathrm{argmax}(P)$$\\
 
 \begin{figure}[h]
@@ -250,8 +251,9 @@ Pour commencer, l'image est divis\'e en groupe de pixels. Chaque groupe de pixel
 		1 & \text{sinon}
 	\end{array}
 	\right.
-\]
-Ici, si nous attribuons la valeur 0 si la valeur du pixel est inf\'erieur \`a la valeur du pixel de r\'ef\'erence, 1 sinon. Apr\`es cette op\'eration, chaque pixel du groupe est pond\'er\'e avec un poids plus ou moins fort (le pixel en haut \`a gauche a le poids le plus faible, tandis que le pixel en bas \`a droite a le poids le plus fort). Ainsi, nous obtenons un nombre binaire qui donne une certaine valeur en base 10. Tous les groupes de l'image sont soumis \`a ce processus pour finalement obtenir un histogramme de l'image. Enfin, il ne reste plus qu'\`a faire la diff\'erence entre deux histogrammes pour comparer deux images (cf \ref{fig:LBPHAlgo}).\\
+\]\\
+
+Ici, si nous attribuons la valeur 0 si la valeur du pixel est inf\'erieur \`a la valeur du pixel de r\'ef\'erence, 1 sinon. Apr\`es cette op\'eration, chaque pixel du groupe est pond\'er\'e avec un poids plus ou moins fort (le pixel en haut \`a gauche a le poids le plus faible, tandis que le pixel en bas \`a droite a le poids le plus fort). Ainsi, nous obtenons un nombre binaire qui donne une certaine valeur en base 10. Tous les groupes de l'image sont soumis \`a ce processus pour finalement obtenir un histogramme de l'image. Enfin, il ne reste plus qu'\`a faire la diff\'erence entre deux histogrammes pour comparer deux images (Figure~\ref{fig:LBPHAlgo}).\\
 
 \begin{figure}[h]
 	\begin{center}
@@ -311,8 +313,8 @@ Concernant l'exp\'erience \no 1, l'algorithme Fisherface a \'et\'e le plus rapid
 	\label{fig:dureesAlgos}
 	\end{center}
 \end{figure}
-Pour la reconnaissance des visages, la dur\'ee est quasiment identique pour les trois algorithmes. Elle est comprise entre 680 et 690 ms pour un processeur Intel Core i5 de deuxi\`eme g\'en\'eration. Nous pouvons donc conclure que le temps n'est pas un facteur important dans le choix de l'algorithme. Si nous choisissons de prendre LBPH, l'initialisation prendra plus le temps, mais il n'y aura pas d'impact sur le temps de reconnaissance.
 
+Pour la reconnaissance des visages, la dur\'ee est quasiment identique pour les trois algorithmes. Elle est comprise entre 680 et 690 ms pour un processeur Intel Core i5 de deuxi\`eme g\'en\'eration. Nous pouvons donc conclure que le temps n'est pas un facteur important dans le choix de l'algorithme. Si nous choisissons de prendre LBPH, l'initialisation prendra plus le temps, mais il n'y aura pas d'impact sur le temps de reconnaissance.\\
 \begin{figure}[t]
 	\begin{center}
 	\begin{tikzpicture}
@@ -340,9 +342,10 @@ Pour la reconnaissance des visages, la dur\'ee est quasiment identique pour les 
 	\label{fig:pourcentageReco}
 	\end{center}
 \end{figure}
+
 Nous d\'eduisons de la seconde partie de l'exp\'erience \no 1 les r\'esultats affich\'es (Figure~\ref{fig:pourcentageReco}). Nous remarquons que l'algorithme LBPH est globalement meilleur que les deux autres. Fisherface arrive deuxi\`eme, suivi de loin par Eigenface.\\
 
-Nous pouvons conclure de la seconde partie que la luminosit\'e peut être un probl\`eme lors d'une exposition trop forte du visage (voir Figure \ref{fig:robustesseLBPH}). Cela pose aussi un souci lorsque la limite entre le visage et l'arri\`ere-plan est difficilement perceptible (ce qui arrive assez souvent avec une cam\'era de faible qualit\'e). L'orientation et l'inclinaison de la tête sont limit\'ees \`a un certain angle (environ 20°), car au-del\`a les deux yeux ne sont pas bien visibles. La d\'eformation du visage ne perturbe pas la reconnaissance, en outre le port de lunettes de vue ne modifie que tr\`es l\'eg\`erement le r\'esultat. Pour pallier cette difficult\'e, la meilleure solution serait d'inclure des photos avec accessoires dans la base de donn\'ees. Masquer certaines parties du visage est beaucoup plus probl\'ematique. En effet, lorsque la bouche est cach\'ee, la reconnaissance est r\'ealisable, mais plus difficilement. En revanche, si les yeux sont cach\'es, la reconnaissance est impossible, ce qui pose un probl\`eme pour les personnes aux cheveux longs. La distance visage-cam\'era peut être \'egalement un obstacle \`a la reconnaissance dans le cas o\`u la taille du visage reconnue est plus petite que celle dans la base de donn\'ees. La r\'ealisation de nouveaux classifiers pourraient être int\'eressants pour am\'eliorer la reconnaissance.\\
+Nous pouvons conclure de la seconde partie que la luminosit\'e peut être un probl\`eme lors d'une exposition trop forte du visage (voir Figure~\ref{fig:robustesseLBPH}). Cela pose aussi un souci lorsque la limite entre le visage et l'arri\`ere-plan est difficilement perceptible (ce qui arrive assez souvent avec une cam\'era de faible qualit\'e). L'orientation et l'inclinaison de la tête sont limit\'ees \`a un certain angle (environ 20°), car au-del\`a les deux yeux ne sont pas bien visibles. La d\'eformation du visage ne perturbe pas la reconnaissance, en outre le port de lunettes de vue ne modifie que tr\`es l\'eg\`erement le r\'esultat. Pour pallier cette difficult\'e, la meilleure solution serait d'inclure des photos avec accessoires dans la base de donn\'ees. Masquer certaines parties du visage est beaucoup plus probl\'ematique. En effet, lorsque la bouche est cach\'ee, la reconnaissance est r\'ealisable, mais plus difficilement. En revanche, si les yeux sont cach\'es, la reconnaissance est impossible, ce qui pose un probl\`eme pour les personnes aux cheveux longs. La distance visage-cam\'era peut être \'egalement un obstacle \`a la reconnaissance dans le cas o\`u la taille du visage reconnue est plus petite que celle dans la base de donn\'ees. La r\'ealisation de nouveaux classifiers pourraient être int\'eressants pour am\'eliorer la reconnaissance.\\
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=0.5]{images/detection_cut.png}
@@ -350,9 +353,10 @@ Nous pouvons conclure de la seconde partie que la luminosit\'e peut être un prob
 		\label{fig:robustesseLBPH}
 	\end{center}
 \end{figure}
+
 Pour conclure, nous pouvons dire que les exp\'erimentations ont montr\'e que la m\'ethode de reconnaissance faciale LBPH est la plus efficace. Cependant, nous avons \'egalement vu que de nombreux facteurs ext\'erieurs influent sur la qualit\'e de la reconnaissance et peuvent mettre en \'echec celle-ci.\\
 
-Dans cette partie, nous avons compar\'e diff\'erentes m\'ethodes th\'eoriques de reconnaissance faciale. Puis, nous avons r\'ealis\'e des exp\'eriences sur chacun des algorithmes pour finalement en retenir un~: LBPH. Nous allons maintenant passer \`a la partie principale de notre application qui est la reconnaissance des \'emotions.\\
+Dans cette partie, nous avons compar\'e diff\'erentes m\'ethodes th\'eoriques de reconnaissance faciale. Puis, nous avons r\'ealis\'e des exp\'eriences sur chacun des algorithmes pour finalement en retenir un, LBPH. Nous allons maintenant passer \`a la partie principale de notre application qui est la reconnaissance des \'emotions.\\
 \chapter{Reconnaissance des \'emotions}
 	Dans cette derni\`ere partie, nous allons aborder la reconnaissance des \'emotions. Comme pour la reconnaissance faciale, nous \'etudierons d'abord l'aspect th\'eorique, puis nous passerons aux exp\'erimentations.
 \section{Historique}
@@ -377,7 +381,7 @@ Ensuite, pour \og trouver\fg les \'emotions, il existe \'egalement diff\'erentes
 
 Enfin, pour visualiser les changements d'expression, nous pouvons regarder les d\'eformations. Pour commencer, cela consiste \`a classer les \'emotions primaires en termes de mouvements, translations, rotations, etc. Puis, nous prenons des images \`a diff\'erents instants et nous analysons les mouvements, translations, rotations, etc... afin de les comparer \`a ceux des \'emotions primaires. Une autre solution est le suivi des points du visage~: sur chaque image, nous relevons la position de certains points et nous essayons de les aligner sur le mod\`ele de chaque expression primaire. Finalement, l'\'emotion retenue est celle dont le mod\`ele de points est le plus proche de celui de l'image. C'est la m\'ethode la plus robuste, mais aussi la plus couteuse en calcul et elle est plus difficile \`a mettre en place que la pr\'ec\'edente m\'ethode.\\
 \subsection{Solution choisie}
-	Avant de pr\'esenter la solution choisie, nous avons test\'e plusieurs autres m\'ethodes que nous avons abandonn\'e. Par exemple, pour d\'etecter la forme de la bouche, nous avons utilis\'e une fonction pr\'esente dans OpenCV~: \textit{findContours} qui permet d'obtenir des r\'esultats plutôt bons (Voir Figure \ref{fig:findContoursOk}). \\
+	Avant de pr\'esenter la solution choisie, nous avons test\'e plusieurs autres m\'ethodes que nous avons abandonn\'e. Par exemple, pour d\'etecter la forme de la bouche, nous avons utilis\'e une fonction pr\'esente dans OpenCV~: \textit{findContours} qui permet d'obtenir des r\'esultats plutôt bons (Voir Figure~\ref{fig:findContoursOk}). \\
 	Voici comment utiliser la fonction avec la librairie OpenCV:\\
 	\lstinputlisting[language=python]{data/contour.py}
 \begin{figure}[h]
@@ -387,7 +391,7 @@ Enfin, pour visualiser les changements d'expression, nous pouvons regarder les d
 		\label{fig:findContoursOk}
 	\end{center}
 \end{figure}
-Cependant, dans certains cas, le r\'esultat n'\'etait pas du tout exploitable (Figure \ref{fig:findContoursNOk}).\\
+Cependant, dans certains cas, le r\'esultat n'\'etait pas du tout exploitable (Figure~\ref{fig:findContoursNOk}).\\
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=1]{images/findContoursNOk.jpg}
@@ -395,7 +399,7 @@ Cependant, dans certains cas, le r\'esultat n'\'etait pas du tout exploitable (F
 		\label{fig:findContoursNOk}
 	\end{center}
 \end{figure}
-Par ailleurs, la d\'etection des couleurs a donn\'e de bien meilleurs r\'esultats (Figure \ref{fig:inRangeOk}).\\
+Par ailleurs, la d\'etection des couleurs a donn\'e de bien meilleurs r\'esultats (Figure~\ref{fig:inRangeOk}).\\
 \begin{figure}[h]
 	\begin{center}
 		\includegraphics[scale=1]{images/inRangeOk.jpg}
@@ -406,6 +410,7 @@ Par ailleurs, la d\'etection des couleurs a donn\'e de bien meilleurs r\'esultat
 
 	Voici comment utiliser la fonction avec la librairie OpenCV:\\
 	\lstinputlisting[language=python]{data/color.py}
+	
 Utiliser \textit{findContours} aurait \'et\'e plus pr\'ecis, mais son manque de fiabilit\'e et la n\'ecessit\'e de traiter les images rend son utilisation contraignante. Une autre solution consistait \`a d\'etecter les expressions \`a l'aide des couleurs et de l'utilisation de seuils sp\'ecifiques. C'\'etait la solution la plus rapide et la plus simple \`a mettre en place, mais elle est impr\'ecise et difficile \`a utiliser pour savoir si les yeux sont fronc\'es ou \'ecarquill\'es par exemple.\\
 
 La solution choisie est une m\'ethode l\'eg\`erement diff\'erente de la m\'ethode de d\'etection de couleur. Le suivi des points (utilis\'es dans \cite{realTimeFacialFeaturePointsTrackingPyramidalLucasKanadeAlgorithm}, \cite{emotionRecognitionCauchyNaiveBayes}, \cite{bimodalEmotionRecognition} et \cite{authenticFacialExpressionAnalysis}) ou les r\'eseaux neuronaux ont pour d\'esavantage de demander \'enorm\'ement de calculs. Comme notre application a but d'avoir pour support un ordinateur de bord d'une voiture vraisemblablement moins puissant qu'un ordinateur portable, il est n\'ecessaire de trouver une solution peu co\^uteuse en puissance de calcul. Pour simplifier les calculs, nous avons d\'efini la m\'ethode suivante pour effectuer la reconnaissance des \'emotions~: la premi\`ere \'etape est l'obtention d'un visage. L'identit\'e de la personne nous importe peu (elle est uniquement utilis\'ee pour le d\'emarrage du v\'ehicule). Ensuite, \`a l'aide d'un second classifieur, nous obtenons toutes les positions susceptibles de correspondre \`a des yeux. Les yeux situ\'es dans la partie basse du visage sont \'elimin\'es. La hauteur du classifieur nous indique si les yeux sont en position normale, fronc\'es ou \'ecarquill\'es. Pour d\'etecter les yeux ferm\'es, il suffit de regarder le nombre de pixels ayant une couleur comprise entre [80,0,0] et [160,100,100] avec la premi\'ere composante correspondant au rouge, la seconde au vert et la troisi\`eme au bleu (nous effectuons donc une d\'etection plut\^ot \`a dominance rouge pour ce point). Concernant la bouche, la m\'ethode est presque identique \`a celle des yeux. Avec un classifier sp\'ecifique, toutes les bouches possibles sont r\'ecup\'er\'ees, puis les erreurs sont \'ecart\'ees (bouches situ\'ees dans la partie haute du visage ou trop pr\`es du bord). Ensuite, la bouche est convertie en niveaux de gris et un seuil est appliqu\'ee pour n'obtenir que l'int\'erieur de la bouche. En effet, la couleur \`a l'int\'erieur d'une bouche ouverte tend vers le noir, alors que les l\`evres sont plus d'une couleur rouge. Ainsi, nous n'avons plus qu'\`a comparer le taux de noir de l'image au taux obtenu \`a l'initialisation du programme. Si le taux de noir de l'image est sup\'erieur \`a celui obtenu \`a l'initialisation plus un seuil, la bouche est ouverte. \\
@@ -422,7 +427,7 @@ Apr\`es cet aperçu des diff\'erentes solutions possibles pour la reconnaissance 
 \chapter{Production}
 Dans cette derni\`ere partie, nous pr\'esenterons la r\'ealisation de notre application. Nous parlerons d'abord du prototype final, puis des tests r\'ealis\'es en situation r\'eelle et enfin, des r\'esultats de ces tests.
 \section{Prototype final}
-	Afin de v\'erifier l'efficacit\'e de notre application (voir code source en annexe), nous avons d\'ecid\'e de la tester en situation r\'eelle, c'est-\`a-dire dans un v\'ehicule en mouvement. Cependant, nous ne pouvions pas relier directement notre programme \`a un v\'ehicule et modifier en temps r\'eel son comportement (le freinage par exemple). C'est pourquoi, \`a l'aide d'un jeu de DELs et d'un montage \'electronique r\'ealis\'e \`a l'aide d'une carte Arduino Uno (voir Figure \ref{fig:protoTests}), nous avons simul\'e les diff\'erentes r\'eactions du v\'ehicule en fonction du comportement du conducteur. Ainsi, nous avons choisi d'utiliser quatre DELs~:
+	Afin de v\'erifier l'efficacit\'e de notre application (voir code source en annexe), nous avons d\'ecid\'e de la tester en situation r\'eelle, c'est-\`a-dire dans un v\'ehicule en mouvement. Cependant, nous ne pouvions pas relier directement notre programme \`a un v\'ehicule et modifier en temps r\'eel son comportement (le freinage par exemple). C'est pourquoi, \`a l'aide d'un jeu de DELs et d'un montage \'electronique r\'ealis\'e \`a l'aide d'une carte Arduino Uno (voir Figure~\ref{fig:protoTests}), nous avons simul\'e les diff\'erentes r\'eactions du v\'ehicule en fonction du comportement du conducteur. Ainsi, nous avons choisi d'utiliser quatre DELs~:
 \begin{itemize}
 	\item{Une DEL rouge pour simuler le frein}
 	\item{Une DEL orange clignotante pour simuler les warnings}

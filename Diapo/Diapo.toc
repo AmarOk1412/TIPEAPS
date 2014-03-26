@@ -1,4 +1,9 @@
 \beamer@endinputifotherversion {3.26pt}
 \select@language {french}
 \beamer@sectionintoc {1}{Reconnaissance faciale}{2}{0}{1}
-\beamer@sectionintoc {2}{Reconnaissance des \'emotions}{4}{0}{2}
+\beamer@subsectionintoc {1}{1}{Explications}{6}{0}{1}
+\beamer@subsectionintoc {1}{2}{Pourquoi ce choix}{7}{0}{1}
+\beamer@sectionintoc {2}{Reconnaissance des \'emotions}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{Reconnaissance de la bouche}{12}{0}{2}
+\beamer@subsectionintoc {2}{2}{Reconnaissance des yeux}{13}{0}{2}
+\beamer@sectionintoc {3}{Application}{14}{0}{3}

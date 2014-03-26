@@ -13,7 +13,7 @@
 \contentsline {subsection}{\numberline {2.1.3}La m\'ethode Fisherface}{10}
 \contentsline {subsection}{\numberline {2.1.4}La m\'ethode LBPH}{11}
 \contentsline {section}{\numberline {2.2}Exp\'erimentations}{12}
-\contentsline {subsection}{\numberline {2.2.1}Protocole}{13}
+\contentsline {subsection}{\numberline {2.2.1}Protocole}{12}
 \contentsline {subsection}{\numberline {2.2.2}R\'ealisation des exp\'eriences}{13}
 \contentsline {subsection}{\numberline {2.2.3}R\'esultats et analyses}{13}
 \contentsline {chapter}{\numberline {3}Reconnaissance des \'emotions}{17}
