@@ -110,7 +110,7 @@ class Recognize():
     def detectOnPict(self):
         for i in range(0,100):     
 		self.readImages()
-		frame = cv2.imread('imagesExp/picSebLum'+str(i)+'.png')#Changer par le nom
+		frame = cv2.imread('imagesExp/picCachephenri'+str(i)+'.png')#Changer par le nom
 		facePos = self.getFacesPos(frame)
 		self.recognizeLBPHFace()
 		for f in facePos: 
@@ -119,7 +119,9 @@ class Recognize():
 		    identity, confidence = self.identify(resized)
 		    if confidence > SEUIL:
 		        identity = "INCONNU"
-		    print('imagesExp/picSebLum'+str(i)+'.png' + 'LBPH detecte : ' + identity)
+                    frame = self.drawDetected(frame, facePos, (0,140,255))
+                    cv2.imwrite("{0}{1}.jpg".format('finale6.', i), frame)
+		    print('imagesExp/pic'+str(i)+'.png' + 'LBPH detecte : ' + identity)
 
     def capture(self): 
         """Récupère le flux vidéo"""

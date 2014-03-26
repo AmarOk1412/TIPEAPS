@@ -21,32 +21,31 @@ change la couleur du véhicule selon l'humeur du conducteur + pare brise avec r�
      *** Général
          . Enormément de méthodes, on peut aussi combiner avec des méthodes telles que la mise en place d'un réseau neuronnal (mais en 3 mois, pas le temps).
          . On traite des images en n&b car la colorimétrie n'est pas importante.
+
      *** Eigenface
-         . Définition :
-Eigenface -> se base sur les eigen vectors : vecteurs propres
-         . Algo
-Chaque image est considéré comme un vecteur de dimension son nombre de pixels.
-Puis un/des algos recherche(nt) les principales composantes.
-A l'aide de plusieurs images du même visage on peut alors composer une image de visage moyen qui contiendra elle aussi les principales composantes (l'eigenface).
+         . Définition : 
+Eigenface -> se base sur les eigen vectors : vecteurs propres. Introduit en 1991 par Turk & Pentland
+         . Algo 
+On se base sur les composantes principales (ACP). La méthode EigenFace construit le visage propre à l'aide des premiers vecteurs propres de la matrice. On compare ensuite le visage en projetant dans la base.
 La méthode de reconnaissance des axes principaux peut être trouvée ici :
 Matthew Turk and Alex Pentland. Eigenfaces for recognition.
 J. Cognitive Neuroscience
 ,
 3(1) :71{86, 1991}
-Il suffit ensuite de comparer l'eigenface et les composantes principales de la capture.
+        . Avantages/inconvénients
+        . Comme chaque pixel est une dimension, une image 100*100 donne autant de vecteurs à traiter. Ce qui est énorme.
+        . sensible à la lumière, à la déformation des visages
+        . Avantage : connue depuis longtemps.
 
-TODO ALGO MATH ?
-         . Avantages/inconvénients
-. Comme chaque pixel est une dimension, une image 100*100 donne autant de vecteurs à traiter. Ce qui est énorme.
-. sensible à la lumière, à la déformation des visages
-. Avantage : connue depuis longtemps.
-     *** FisherFace
-         . Algo
-L'algo fisherface se base sur les travaux  de  Sir R. A. Fisher.
-L'idée est simple. Tout ce qui se ressemble se retrouvent proche.
-Si on imagine un espace d'image. Et une échelle représentant les visages.
-Si on projette les images sur l'échelle, On peut donc dire que ce visage ressemble le plus à celui qui est à côté dans l'échelle.
-Figure présente dans le dossier image
+      *** FisherFace
+          . Définition :
+            Evolution de l'algo Eigenface
+          . Algo:
+            EigenFace se base sur la méthode ACP. FisherFace se base sur son amélioration, l'Analyse Discriminante Linéaire (ADL) qui cherche le meilleur sous espace qui minimise la distance entre les images d'une même classe (ici une classe = un visage) en maximisant la distance inter-classe.
+Tout d'abord, l'algo calcul l'image moyenne de la classe. (caser la formule de moyenne ? (1/k)*somme de 1 à k de xj).
+Puis, on calcul les matrice de dispersion intra & inter classe (disons respectivement Mi et Me).
+Puis on trouve la matrice de projection (P) en résolvant Mi*x = lambda*Me*x
+Pour trouver la meilleure projection, il suffit de résoudre (P^-1*Me*P)/(P^-1*Mi*P)=argmax(P)
 Plus mathématiquement :http://docs.opencv.org/modules/contrib/doc/facerec/facerec_tutorial.html#fisherfaces
          . Avantages/inconvénients
 . Comme chaque pixel est une dimension, une image 100*100 donne autant de vecteurs à traiter. Ce qui est énorme.
@@ -68,7 +67,7 @@ TITRE:
 Facial expression recognition based on Local Binary Patterns:A comprehensive study
 AUTEURS:
 Caifeng Shan a, * , Shaogang Gong b , Peter W. McOwan b
-Ou il est combiné avec Adaboost pour obtenir de meilleurs résultats + un réseau neuronnal
+Ou il est combiné avec Adaboost pour obtenir de meilleurs résultats + un réseau neuronnal (En gros, on entraine ce réseau en balancant une image brute. Le réseau calcul, apprend et sort en sortie le résultat. Le probleme est que pour une image de 100*100, il faut déjà 10000 neuronnes pour la couche d'entrée), les Modèles de Markov Cachés
 Ou TITRE:
 Face Recognition with Local Binary Patterns, Spatial Pyramid Histograms and
 Naive Bayes Nearest Neighbor classification
@@ -122,19 +121,12 @@ Seb : Eigenface = 24.657534246575% / fisherface = 73.972602739726% / LBPH = 90.4
            .. différentes déformation du visage (pas de problème). Des accessoires telles que des lunettes ne changent pas beaucoup le résultat, mais le mieux reste de prendre des photos dans la base de données avec plusieurs accessoires.
            .. différentes parties cachées du visage (réussite amoindrie lorsque l'on cache la bouche mais réalisable). Si on cache les yeux, la reconnaissance est impossible (embettant pour les cheveux longs)
            .. différentes distances (On perd énormément de réussite lorsque la taille du visage reconnue est plus petite que celle dans la base de données).
-           .. La réalisation d'autres classifiers pour améliorer la reconnaissance pourrait être intéressant.
+           .. La réalisation d'autres classifiers (fichier servant à décrire l'image à l'aide de diagonales, lignes, points) pour améliorer la reconnaissance pourrait être intéressant.
 * Reconnaissance des émotions
   ** Théorie
-<<<<<<< HEAD
-     *** Solutions abandonnées
-         . Avant de choisir la solution présente plus loin, on a testé plusieurs autres méthodes pour détecter la forme de la bouche.
-           .. Find Contours (insérer l'image dans image + code en annexe dans data). Qui permet d'avoir des résultats assez bon (image fin), mais qui pouvait aussi donner n'importe quoi (image fin3). Par contre la détection de couleur (exemple de code dans data) a donné de meilleur résultat (détection de la couleur de la bouche : image fin2.jpg + code dans data).
-FindContours aurait été plus précis, mais peu fiable et nécessite pas mal de traitement derrière. La couleur avec des seuils bien spécifiques était la solution la plus rapide + la plus simple.
-=======
          . /!\ : on étudie les expressions faciales, et non directement les émotions.
-         . les expressions faciales sont breves (entre 250ms et 5s) [cf automaticFacialExpressionAnalysis]
+         . les expressions faciales sont breves (entre 250ms et 5s) [cf automaticFacialExpressionAnalysis]        
      *** Différentes solutions
-TODO     . contours bouche, couleur, ...
          Pour récupérer les emotions :
          . Approche holistique (= prendre comme un tout)
             -> prendre toute la tete et regarder ce qui bouge
@@ -153,7 +145,10 @@ TODO     . contours bouche, couleur, ...
          . Suivre des points du visage (nous)
             -> on regarde comment sont les points sur chaque image, et on essaye de les calquer aux points sur les données de chaque expression primaire.
             -> on prend ‘emotion la plus proche
->>>>>>> 93e0528ba7f9aa79e2f5272ae3c0cd36380cc176
+     *** Solutions abandonnées
+         . Avant de choisir la solution présente plus loin, on a testé plusieurs autres méthodes pour détecter la forme de la bouche.
+           .. Find Contours (insérer l'image dans image + code en annexe dans data). Qui permet d'avoir des résultats assez bon (image fin), mais qui pouvait aussi donner n'importe quoi (image fin3). Par contre la détection de couleur (exemple de code dans data) a donné de meilleur résultat (détection de la couleur de la bouche : image fin2.jpg + code dans data).
+FindContours aurait été plus précis, mais peu fiable et nécessite pas mal de traitement derrière. La couleur avec des seuils bien spécifiques était la solution la plus rapide + la plus simple. 
      *** Solution choisie
          . La solution qu'on a choisie est une méthode un peu différente de celle présentée. Le tracking de points ou les réseaux neuronaux demandent énormément de calcul. On doit se baser dans le cas d'une voiture, donc d'un ordinateur de bord, sans doute moins puissant qu'un pc de bureau. Pour simplifier les calculs voilà la méthode qu'on utilise pour la reco des émotions :
          . On obtient le visage. L'identité de la personne ne nous intéresse pas (on vérifie si la personne est autorisée au départ)
@@ -207,4 +202,18 @@ Pour la seconde partie du trajet, une caméra a été placée devant le conducte
 --- Annexes ---
 * Code des applications
 * Bibliographie
+
+
+
+
+
+
+
+
+
+
+Conclu:
+La détection et la reconnaissance d'individus et d'émotions peut s'effectuer à l'aide d'une multitude d'algorithmes résultant de dizaines d'années de recherche (LBPH, FisherFace, EigenFace, Réseaux neuronnaux, Modèle de Markov Cachés, ...) dont beaucoup demandent énormément de calculs. Certains ont une approche plus simple et sont facilement intégrable à un projet tel que LBPH à l'aide de la librairie OpenCV. L'application développée tout au long de ce TIPE nous montre que la reconnaissance faciale du conducteur peut être utile pour éviter un vol de voiture même si la reconnaissance faciale n'est pas un facteur de sécurité fort, car cette sécurité se contourne simplement en utilisant une photo du conducteur dont on vole la voiture). L'application permet aussi de détecter une personne endormie (seulement après quelques secondes) ou inatentive et permet donc d'éviter une conduite à l'aveugle. Par contre, l'application est très peu fiable pour la détection de la surprise ou de l'énervement. De plus cette détection pose un autre problème. La surprise et l'énervement peuvent provenir d'une multitude de sources telles qu'un bouchon, une sortie raté, un enfant qui traverse au mauvais moment, ... La détection des émotions n'est donc pas forcément la meilleure approche à avoir pour savoir comment la voiture doit réagir. De plus, cette détection peut être génée par de multiples facteurs telle que la luminosité, une caméra de mauvaise qualité, son placement (la tête peut-être cachée par le volant), ... Enfin, il faudrait plutôt prendre en compte le mouvement des points du visage plutôt que des seuils imprécis qui peuvent s'avérer faux avec la modification de l'environnement ou trop peu réactif (il faut parfois surjouer une émotion pour obtenir une détection, ce qui est inenvisageable dans une application réelle).
+Cependant, l'application marche mais est améliorable de plusieurs façons, tout d'abord en reliant l'application directement à la voiture et non à des LEDs qui s'allume. Pour le choix des technologies associées, on pourrait plus imaginer un programme en C ou C++ (le python étant plus lent) tirant parti de la programmation parrallèle afin d'effectuer des tâches simultanément. Le programme devrait tourner sur une architecture dédiée (système allégé type linux/BSD allégé). Enfin des algorithmes plus précis devraient être envisagés tels que le tracking des points du visage, même si cette méthode nécessiterait bien plus de calculs, l'application serait bien plus précise. Pour pallier au problème de non information sur la cause de la surprise et de l'énervement de l'utilisateur, on peut compléter le système par des radars et des caméras orientés vers l'extérieur de la voiture. On peut améliorer la détection de l'inattention de l'utilisateur en générant des classifiers pour détecter lorsque le conducteur utilise son téléphone au volant. Enfin, la reconnaissance faciale du conducteur peut servir, en plus de la protection anti-vol à générer des profils de conduite (consommation d'essence, style de conduite, style de musique, ...).
+
 
