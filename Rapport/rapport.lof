@@ -1,0 +1,20 @@
+\select@language {french}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces \'Evolution compar\'ee du traffic et de la mortalit\'e routi\`ere entre 1948 et 2011}}{5}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Karl Lagarfeld pour une affiche de pr\'evention routi\`ere}}{6}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Ensemble d'eigenfaces}}{10}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Distribution Fisherface}}{11}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces L'algorithme LBPH}}{12}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Dur\'ees d'initialisation, et de reconnaissance, par algorithme}}{14}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Pourcentage de reconnaissance, en fonction du cobaye et de l'algorithme}}{15}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Tests de robustesse pour la reconnaissance des visages.}}{16}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Les 6 \'emotions primaires}}{18}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Utilisation de la m\'ethode findContours sur une bouche}}{19}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Utilisation de la m\'ethode findContours sur un oeil}}{19}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces D\'etection d'une plage de couleur sur une bouche}}{19}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Prototype de test}}{23}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
