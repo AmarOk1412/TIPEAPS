@@ -10,7 +10,7 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Pourcentage de reconnaissance, en fonction du cobaye et de l'algorithme}}{15}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Tests de robustesse pour la reconnaissance des visages.}}{16}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Les 6 \'emotions primaires}}{18}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Les 6 \'emotions primaires \cite {artInvisible}}}{18}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Utilisation de la m\'ethode findContours sur une bouche}}{19}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Utilisation de la m\'ethode findContours sur un oeil}}{19}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces D\'etection d'une plage de couleur sur une bouche}}{19}
