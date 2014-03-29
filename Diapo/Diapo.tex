@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[frenchb]{babel}
 \usepackage{lmodern}
+\usepackage{graphicx}
 
 \usetheme{Ilmenau}
 \usecolortheme{seagull}
@@ -20,7 +21,7 @@
 {
   \begin{frame}
   \frametitle{Sommaire}
-  \tableofcontents[currentsection, hideothersubsections, pausesubsections]
+  \tableofcontents[currentsection, currentsubsections]
   \end{frame} 
 }
 
@@ -34,18 +35,32 @@
 	\end{frame}
 	\section{Reconnaissance faciale}
 	\begin{frame}
-		\frametitle{Impl\'ementation chosie}
+		\frametitle{Impl\'ementation choisie}
 	\end{frame}
 	\begin{frame}
 		\frametitle{Pourquoi ce choix d'impl\'ementation}
 	\end{frame}
 	\section{Reconnaissance des \'emotions}
+	\subsection{Expressions faciales}
+	\begin{frame}
+		\frametitle{Les 6 \'emotions primaires}
+		\begin{figure}
+			\begin{center}
+				\includegraphics[scale=0.5]{images/primaryexp}
+			\end{center}
+		\end{figure}
+	\end{frame}
+	\begin{frame}
+		\frametitle{\'Emotions \`a d\'etecter}
+	\end{frame}
+	\subsection{Impl\'ementation}
 	\begin{frame}
 		\frametitle{Reconnaissance de la bouche}
 	\end{frame}
 	\begin{frame}
 		\frametitle{Reconnaissance des yeux}
 	\end{frame}
+	\subsection{Pourquoi ce choix~?}
 	\begin{frame}
 		\frametitle{Pourquoi ce choix d'impl\'ementation}
 	\end{frame}
