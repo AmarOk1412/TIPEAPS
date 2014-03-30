@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  30 MAR 2014 22:44
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  30 MAR 2014 22:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1564,7 +1564,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
  []
 
-<images/evolcompart48-11.png, id=286, 1021.8175pt x 413.545pt>
+<images/evolcompart48-11.png, id=287, 1021.8175pt x 413.545pt>
 File: images/evolcompart48-11.png Graphic file (type png)
 
 <use images/evolcompart48-11.png>
@@ -1576,165 +1576,165 @@ Overfull \hbox (0.69421pt too wide) in paragraph at lines 141--142
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 150--151
+Underfull \hbox (badness 10000) in paragraph at lines 151--152
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 152--154
+Underfull \hbox (badness 10000) in paragraph at lines 153--155
 
  []
 
-<images/karl-for-Securite-Routiere.jpg, id=294, 1422.31375pt x 948.54375pt>
+<images/karl-for-Securite-Routiere.jpg, id=295, 1422.31375pt x 948.54375pt>
 File: images/karl-for-Securite-Routiere.jpg Graphic file (type jpg)
 
 <use images/karl-for-Securite-Routiere.jpg>
 Package pdftex.def Info: images/karl-for-Securite-Routiere.jpg used on input li
-ne 157.
+ne 158.
 (pdftex.def)             Requested size: 355.57758pt x 237.13535pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--163
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
 [5 <./images/evolcompart48-11.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 170--171
+Underfull \hbox (badness 10000) in paragraph at lines 171--172
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 172--173
+Underfull \hbox (badness 10000) in paragraph at lines 173--174
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--175
+Underfull \hbox (badness 10000) in paragraph at lines 175--176
 
  []
 
 [6 <./images/karl-for-Securite-Routiere.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--189
+Underfull \hbox (badness 10000) in paragraph at lines 189--190
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 190--191
+Underfull \hbox (badness 10000) in paragraph at lines 191--192
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 192--193
+Underfull \hbox (badness 10000) in paragraph at lines 193--194
 
  []
 
 [7] [8]
 Partie 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 203--204
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--206
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--210
+Underfull \hbox (badness 10000) in paragraph at lines 210--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--212
+Underfull \hbox (badness 10000) in paragraph at lines 212--213
 
  []
 
 [9
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 213--214
+Underfull \hbox (badness 10000) in paragraph at lines 214--215
 
  []
 
-<images/eigenfaces_OpenCV.png, id=340, 461.725pt x 224.84pt>
+<images/eigenfaces_OpenCV.png, id=341, 461.725pt x 224.84pt>
 File: images/eigenfaces_OpenCV.png Graphic file (type png)
 
 <use images/eigenfaces_OpenCV.png>
-Package pdftex.def Info: images/eigenfaces_OpenCV.png used on input line 217.
+Package pdftex.def Info: images/eigenfaces_OpenCV.png used on input line 218.
 (pdftex.def)             Requested size: 138.51857pt x 67.45251pt.
 
-<images/fisherfacedistrib.png, id=342, 1026.83624pt x 828.09375pt>
+<images/fisherfacedistrib.png, id=343, 1026.83624pt x 828.09375pt>
 File: images/fisherfacedistrib.png Graphic file (type png)
 
 <use images/fisherfacedistrib.png>
-Package pdftex.def Info: images/fisherfacedistrib.png used on input line 230.
+Package pdftex.def Info: images/fisherfacedistrib.png used on input line 231.
 (pdftex.def)             Requested size: 308.05325pt x 248.43004pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
+Underfull \hbox (badness 10000) in paragraph at lines 238--239
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 241--242
+Underfull \hbox (badness 10000) in paragraph at lines 242--243
 
  []
 
 [10 <./images/eigenfaces_OpenCV.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 252--253
+Underfull \hbox (badness 10000) in paragraph at lines 253--254
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--255
+Underfull \hbox (badness 10000) in paragraph at lines 255--256
 
  []
 
-<images/LBPHAlgo.png, id=353, 627.34375pt x 512.91624pt>
+<images/LBPHAlgo.png, id=354, 627.34375pt x 512.91624pt>
 File: images/LBPHAlgo.png Graphic file (type png)
 
 <use images/LBPHAlgo.png>
-Package pdftex.def Info: images/LBPHAlgo.png used on input line 258.
+Package pdftex.def Info: images/LBPHAlgo.png used on input line 259.
 (pdftex.def)             Requested size: 313.6711pt x 256.45749pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 264--265
+Underfull \hbox (badness 10000) in paragraph at lines 265--266
 
  []
 
 [11 <./images/fisherfacedistrib.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 273--274
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
 
  []
 
 [12 <./images/LBPHAlgo.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 275--276
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
 
  []
 
@@ -1748,23 +1748,23 @@ PGFPlots: reading {data/ByNumberOfImages_bdd_LBPH.csv}
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
 
  []
 
 
 Package frenchb.ldf Warning: Degrees would look better in TS1-encoding: 
 (frenchb.ldf)                add \usepackage{textcomp} to the preamble. 
-(frenchb.ldf)                Degrees used on input line 346.
+(frenchb.ldf)                Degrees used on input line 347.
 
-<images/detection_cut.png, id=372, 878.8032pt x 868.6854pt>
+<images/detection_cut.png, id=373, 878.8032pt x 868.6854pt>
 File: images/detection_cut.png Graphic file (type png)
 
 <use images/detection_cut.png>
-Package pdftex.def Info: images/detection_cut.png used on input line 349.
+Package pdftex.def Info: images/detection_cut.png used on input line 350.
 (pdftex.def)             Requested size: 439.40053pt x 434.34164pt.
 
-Overfull \hbox (21.14685pt too wide) in paragraph at lines 349--350
+Overfull \hbox (21.14685pt too wide) in paragraph at lines 350--351
  [] 
  []
 
@@ -1773,59 +1773,59 @@ Overfull \hbox (21.14685pt too wide) in paragraph at lines 349--350
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 355--356
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--358
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
 
  []
 
 [14] [15] [16 <./images/detection_cut.png>]
 Partie 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 361--362
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 363--364
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 369--370
+Underfull \hbox (badness 10000) in paragraph at lines 370--371
 
  []
 
 [17
 
 ]
-LaTeX Font Info:    Try loading font information for T1+lmtt on input line 371.
+LaTeX Font Info:    Try loading font information for T1+lmtt on input line 372.
 
  (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Underfull \hbox (badness 10000) in paragraph at lines 371--372
+Underfull \hbox (badness 10000) in paragraph at lines 372--373
 
  []
 
-<images/primaryexp.jpg, id=409, 151.56625pt x 335.2525pt>
+<images/primaryexp.jpg, id=410, 151.56625pt x 335.2525pt>
 File: images/primaryexp.jpg Graphic file (type jpg)
 
 <use images/primaryexp.jpg>
-Package pdftex.def Info: images/primaryexp.jpg used on input line 375.
+Package pdftex.def Info: images/primaryexp.jpg used on input line 376.
 (pdftex.def)             Requested size: 75.78293pt x 167.62584pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 380--381
+Underfull \hbox (badness 10000) in paragraph at lines 381--382
 
  []
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 382--384
+Underfull \hbox (badness 10000) in paragraph at lines 383--385
 
  []
 
@@ -1839,104 +1839,104 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 9.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 9.
-) <images/findContoursOk.jpg, id=420, 108.405pt x 44.165pt>
+) <images/findContoursOk.jpg, id=421, 108.405pt x 44.165pt>
 File: images/findContoursOk.jpg Graphic file (type jpg)
 
 <use images/findContoursOk.jpg>
-Package pdftex.def Info: images/findContoursOk.jpg used on input line 387.
+Package pdftex.def Info: images/findContoursOk.jpg used on input line 388.
 (pdftex.def)             Requested size: 108.40472pt x 44.16487pt.
 
-<images/findContoursNOk.jpg, id=422, 158.5925pt x 83.31125pt>
+<images/findContoursNOk.jpg, id=423, 158.5925pt x 83.31125pt>
 File: images/findContoursNOk.jpg Graphic file (type jpg)
 
 <use images/findContoursNOk.jpg>
-Package pdftex.def Info: images/findContoursNOk.jpg used on input line 395.
+Package pdftex.def Info: images/findContoursNOk.jpg used on input line 396.
 (pdftex.def)             Requested size: 158.59209pt x 83.31104pt.
 
-<images/inRangeOk.jpg, id=424, 72.27pt x 44.165pt>
+<images/inRangeOk.jpg, id=425, 72.27pt x 44.165pt>
 File: images/inRangeOk.jpg Graphic file (type jpg)
  <use images/inRangeOk.jpg>
-Package pdftex.def Info: images/inRangeOk.jpg used on input line 403.
+Package pdftex.def Info: images/inRangeOk.jpg used on input line 404.
 (pdftex.def)             Requested size: 72.2698pt x 44.16487pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 409--410
+Underfull \hbox (badness 10000) in paragraph at lines 410--411
 
  []
 
 (./data/color.py [19 <./images/findContoursOk.jpg> <./images/findContoursNOk.jp
 g> <./images/inRangeOk.jpg>])
-Underfull \hbox (badness 10000) in paragraph at lines 412--413
+Underfull \hbox (badness 10000) in paragraph at lines 413--414
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 414--415
+Underfull \hbox (badness 10000) in paragraph at lines 415--416
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 424--425
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
 
  []
 
 [21]
 Partie 4.
-<images/schema_tests.png, id=483, 469.755pt x 448.074pt>
+<images/schema_tests.png, id=484, 469.755pt x 448.074pt>
 File: images/schema_tests.png Graphic file (type png)
 
 <use images/schema_tests.png>
-Package pdftex.def Info: images/schema_tests.png used on input line 438.
+Package pdftex.def Info: images/schema_tests.png used on input line 439.
 (pdftex.def)             Requested size: 328.82626pt x 313.64964pt.
 
-<images/schema_tests_elec.png, id=484, 205.568pt x 207.174pt>
+<images/schema_tests_elec.png, id=485, 205.568pt x 207.174pt>
 File: images/schema_tests_elec.png Graphic file (type png)
 
 <use images/schema_tests_elec.png>
-Package pdftex.def Info: images/schema_tests_elec.png used on input line 439.
+Package pdftex.def Info: images/schema_tests_elec.png used on input line 440.
 (pdftex.def)             Requested size: 205.56747pt x 207.17348pt.
 
-<images/prototype.jpg, id=486, 3276.24pt x 1846.9pt>
+<images/prototype.jpg, id=487, 3276.24pt x 1846.9pt>
 File: images/prototype.jpg Graphic file (type jpg)
 
 <use images/prototype.jpg>
-Package pdftex.def Info: images/prototype.jpg used on input line 448.
+Package pdftex.def Info: images/prototype.jpg used on input line 449.
 (pdftex.def)             Requested size: 409.529pt x 230.86194pt.
  [22
 
 ] [23 <./images/schema_tests.png> <./images/schema_tests_elec.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 454--455
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 456--457
+Underfull \hbox (badness 10000) in paragraph at lines 457--458
 
  []
 
 [24 <./images/prototype.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 460--461
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 462--463
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 464--465
+Underfull \hbox (badness 10000) in paragraph at lines 465--466
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 466--467
+Underfull \hbox (badness 10000) in paragraph at lines 467--468
 
  []
 
 [25
 
 ] (./rapport.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 468--1
+Underfull \hbox (badness 10000) in paragraph at lines 469--1
 
  []
 
@@ -2164,41 +2164,35 @@ File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 Annexe B.
 [41
 
-] <../documents/GANTT/gantt.pdf, id=1231, 845.0471pt x 597.50829pt>
+] <../documents/GANTT/gantt.pdf, id=1232, 845.0471pt x 597.50829pt>
 File: ../documents/GANTT/gantt.pdf Graphic file (type pdf)
 
 <use ../documents/GANTT/gantt.pdf>
-Package pdftex.def Info: ../documents/GANTT/gantt.pdf used on input line 570.
+Package pdftex.def Info: ../documents/GANTT/gantt.pdf used on input line 571.
 (pdftex.def)             Requested size: 591.52895pt x 418.25294pt.
  [42] [43]
 Overfull \vbox (23.70139pt too high) has occurred while \output is active []
 
 
 [44 <../documents/GANTT/gantt.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 572.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 572.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 573.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 573.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 572.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 572.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 573.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 573.
+Package rerunfilecheck Info: File `rapport.out' has not changed.
+(rerunfilecheck)             Checksum: BA5FFA8129D1AE56CBB1424DD316910B;2667.
 
-
-Package rerunfilecheck Warning: File `rapport.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `rapport.out':
-(rerunfilecheck)             Before: F4CE6D8EBA16A1C1A249D4BEFF57A137;2667
-(rerunfilecheck)             After:  BA5FFA8129D1AE56CBB1424DD316910B;2667.
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 572.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 573.
  ) 
 Here is how much of TeX's memory you used:
- 36501 strings out of 493315
- 789792 string characters out of 6137905
- 961565 words of memory out of 5000000
- 38413 multiletter control sequences out of 15000+600000
+ 36502 strings out of 493315
+ 789818 string characters out of 6137905
+ 961671 words of memory out of 5000000
+ 38414 multiletter control sequences out of 15000+600000
  99052 words of font info for 76 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,21n,93p,2490b,2392s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2222,10 +2216,10 @@ fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
 /public/lm/lmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
 c/wasy/wasy10.pfb>
-Output written on rapport.pdf (50 pages, 12389656 bytes).
+Output written on rapport.pdf (50 pages, 12389773 bytes).
 PDF statistics:
- 1492 PDF objects out of 1728 (max. 8388607)
- 1387 compressed objects within 14 object streams
+ 1493 PDF objects out of 1728 (max. 8388607)
+ 1388 compressed objects within 14 object streams
  797 named destinations out of 1000 (max. 500000)
  384 words of extra memory for PDF output out of 10000 (max. 10000000)
 
