@@ -220,7 +220,7 @@ L'avantage de cette m\'ethode est la connaissance de son existence depuis longte
 
 \subsection{La m\'ethode Fisherface}
 
-La m\'ethode de reconnaissance faciale Fisherface se base sur les travaux de Sir R.A. Fisher. Il s'agit d'une \'evolution de l'algorithme Eigenface pr\'esent\'e pr\'ecedemment. Alors que l'algorithme Eigenface se base sur l'Analyse des Composantes Principales (ACP), l'algorithme Fisherface utilise l'Analyse Discriminante Lin\'eaire (ADL) qui cherche le meilleur sous espace minimisant la distance entre les images d'une m\^eme classe (ici une classe = un visage) en maximisant la distance inter-classe.\\
+La m\'ethode de reconnaissance faciale Fisherface se base sur les travaux de Sir R.A. Fisher \cite{fisher}. Il s'agit d'une \'evolution de l'algorithme Eigenface pr\'esent\'e pr\'ecedemment. Alors que l'algorithme Eigenface se base sur l'Analyse des Composantes Principales (ACP), l'algorithme Fisherface utilise l'Analyse Discriminante Lin\'eaire (ADL) qui cherche le meilleur sous espace minimisant la distance entre les images d'une m\^eme classe (ici une classe = un visage) en maximisant la distance inter-classe.\\
 Tout d'abord, l'algorithme calcul l'image moyenne de la classe~:\\
 $\frac{1}{n}\times\sum_{i=1}^{n} x_i$ avec $x_0, x_1, ..., x_n$ les images de la classe.\\
 Puis, on calcule les matrice de dispersion intra et inter classe (disons respectivement $M_i$ et $M_e$).\\
