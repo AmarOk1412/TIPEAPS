@@ -207,7 +207,7 @@ Par ailleurs, nous avons choisi de traiter uniquement des images en noir et blan
 
 La m\'ethode de reconnaissance faciale Eigenface a pour particularit\'e de se baser sur des \og eigen vectors\fg, c'est-\`a-dire des vecteurs propres. Elle a \'et\'e introduite en 1991 par Turk et Pentland \cite{eigenfaceRecognition}.\\
 
-L'algorithme est le suivant~: On calcule la matrice de covariance \`a partir de l'ensemble d'images servant \`a l'identification. Puis on construit une base avec les vecteurs propres de cette matrice. On projette ensuite le visage captur\'e dans cette base. On peut alors calculer la distance de l'image captur\'ee aux visages de la base, tout en rejetant les visages trop \'eloign\'es \`a l'aide d'un seuil. Les principales composantes d\'etect\'ees peuvent \^etre diverses comme le montre la Figure~\ref{fig:eigenfaces_OpenCV}). La m\'ethode de reconnaissance des axes principaux est d\'etaill\'ee ici~: Matthew Turk and Alex Pentland. Eigenfaces for recognition. J. Cognitive Neuroscience. 3(1)~:71{86, 1991}. Enfin, il suffit de comparer l'eigenface et les composantes principales d'une capture d'un visage.\\
+L'algorithme est le suivant~: On calcule la matrice de covariance \`a partir de l'ensemble d'images servant \`a l'identification. Puis on construit une base avec les vecteurs propres de cette matrice. On projette ensuite le visage captur\'e dans cette base. On peut alors calculer la distance de l'image captur\'ee aux visages de la base, tout en rejetant les visages trop \'eloign\'es \`a l'aide d'un seuil. Les principales composantes d\'etect\'ees peuvent \^etre diverses comme le montre la Figure~\ref{fig:eigenfaces_OpenCV}). La m\'ethode de reconnaissance des axes principaux est d\'etaill\'ee ici~: \cite{eigenfaceRecognition}. Enfin, il suffit de comparer l'eigenface et les composantes principales d'une capture d'un visage.\\
 
 L'avantage de cette m\'ethode est la connaissance de son existence depuis longtemps. Cependant, elle pr\'esente \'egalement des d\'esavantages non-n\'egligeables. En effet, comme chaque pixel est une dimension, une image $100\times100$ donne 10 000 vecteurs \`a traiter, mais on peut r\'ealiser la reconnaissance sur des images bien plus petites. Le nombre de donn\'ees \`a analyser est donc tr\`es important. De plus, cette m\'ethode est sensible \`a la luminosit\'e et \`a la d\'eformation des visages (grimaces, accessoires, ...).\\
 
@@ -563,7 +563,7 @@ Malgr\'e le fait que notre application fonctionne, nous pouvons l'am\'eliorer de
 			19 & C & R-C & C & A & I\\
 			\hline
 		\end{tabular}
-		\newpage
+		%\newpage
 		\section{Diagramme de GANTT}
 		\begin{center}
 		\includegraphics[scale=0.7,angle=90]{../documents/GANTT/gantt.pdf}
