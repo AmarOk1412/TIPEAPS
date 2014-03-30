@@ -222,13 +222,40 @@ L'avantage de cette m\'ethode est la connaissance de son existence depuis longte
 \subsection{La m\'ethode Fisherface}
 
 La m\'ethode de reconnaissance faciale Fisherface se base sur les travaux de Sir R.A. Fisher \cite{fisher}. Il s'agit d'une \'evolution de l'algorithme Eigenface pr\'esent\'e pr\'ecedemment. Alors que l'algorithme Eigenface se base sur l'Analyse des Composantes Principales (ACP), l'algorithme Fisherface utilise l'Analyse Discriminante Lin\'eaire (ADL) qui cherche le meilleur sous espace minimisant la distance entre les images d'une m\^eme classe (ici une classe = un visage) en maximisant la distance inter-classe.\\
-Tout d'abord, l'algorithme calcule l'image moyenne de la classe~:\\
+Voici l'algorithme utilis\'e~: (traduction depuis la documentation d'OpenCV \cite{docOpenCVFisherFace})\\
+Soit $X$ notre image, de taille $c\times n$, et décomposée en classes $X_i$~:\\
 \[
-\frac{1}{n}\times\sum_{i=1}^{n} x_i \text{ avec } x_0, x_1, ..., x_n \text{ les images de la classe.}
-\]\\
-Puis, on calcule les matrices de dispersion intra et inter classe (disons respectivement $M_i$ et $M_e$).\\
-Enfin, on trouve la matrice de projection $P$ en r\'esolvant \\$$M_i\times x = \lambda\times M_e\times x$$\\
-Pour trouver la meilleure projection, il suffit de r\'esoudre\\$$\frac{P^{-1}\times M_e\times P}{P^{-1}\times M_i\times P}=\mathrm{argmax}(P)$$\\
+	X = \{X_1, \dotsb, X_c\}
+\]
+\[
+	\text{o\`u } X_i = \{x_1, \dotsb, x_n\}
+\]
+Nous calculons les matrices de dispersion, $S_B$ et $S_W$.\\
+\[
+	S_B = \sum_{i=1}^{c} N_i (\mu_i - \mu) (\mu_i - \mu)^\top
+\]
+\[
+	S_W = \sum_{i=1}^{c} \sum_{x_j \in X_i} (x_j - \mu_i)(x_j - \mu_i)^\top
+\]
+o\`u $\mu$ est la moyenne~:\\
+\[
+	\mu = \frac{1}{N} \sum_{i=1}^{N} x_i
+\]
+et o\`u $\mu_i$ est la moyenne de chaque classe ($i \in \{1, \dotsb, c\}$)~:\\
+\[
+	\mu_i = \frac{1}{|N|} \sum_{x_j \in X_i} x_j
+\]
+Nous cherchons maintenant une projection $W$, maximisant l'\'ecart inter-classes, puis nous optimisons $W$~:
+\[
+	W_{opt} = \mathrm{argmax}_{W}\frac{|W^\top \cdot S_B \cdot W|}{|W^\top \cdot S_W \cdot W|}
+\]
+%Tout d'abord, l'algorithme calcule l'image moyenne de la classe~:\\
+%\[
+%\frac{1}{n}\times\sum_{i=1}^{n} x_i \text{ avec } x_0, x_1, ..., x_n \text{ les images de la classe.}
+%\]\\
+%Puis, on calcule les matrices de dispersion intra et inter classe (disons respectivement $M_i$ et $M_e$).\\
+%Enfin, on trouve la matrice de projection $P$ en r\'esolvant \\$$M_i\times x = \lambda\times M_e\times x$$\\
+%Pour trouver la meilleure projection, il suffit de r\'esoudre\\$$\frac{P^{-1}\times M_e\times P}{P^{-1}\times M_i\times P}=\mathrm{argmax}(P)$$\\
 
 \begin{figure}[h]
 	\begin{center}
