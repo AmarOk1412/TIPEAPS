@@ -1,7 +1,7 @@
 TIPEAPS
 =======
 
-Tous les documents non écrits par notre groupe (regroupés dans le dossier "Ressources") sont soumis au droit d'auteur. Merci de le respecter.
+Tous les documents non écrits par notre groupe sont soumis au droit d'auteur. Merci de le respecter.
 
 Description
 -----------
