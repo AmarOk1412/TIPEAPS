@@ -33,6 +33,6 @@
 \contentsline {section}{\numberline {A.1}Application principale}{30}{section.A.1}
 \contentsline {section}{\numberline {A.2}Code Arduino pour les tests}{37}{section.A.2}
 \contentsline {chapter}{\numberline {B}Documents utilis\'es en CST}{41}{appendix.B}
-\contentsline {section}{\numberline {B.1}check-list}{41}{section.B.1}
+\contentsline {section}{\numberline {B.1}Check-list}{41}{section.B.1}
 \contentsline {section}{\numberline {B.2}Matrice RACI}{42}{section.B.2}
 \contentsline {section}{\numberline {B.3}Diagramme de GANTT}{44}{section.B.3}
