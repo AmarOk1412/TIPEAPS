@@ -42,12 +42,28 @@
 	\subsection{L'Algorithme~?}
 	\begin{frame}
 		\frametitle{Description de l'algorithme}
+		\begin{figure}
+			\begin{center}
+				\includegraphics[scale=1]{images/LBPHAlgo}
+			\end{center}
+		\end{figure}
 	\end{frame}
 	\begin{frame}
 		\frametitle{Pourquoi ce choix d'impl\'ementation}
+		. Rapide
+		. Robuste
+		\begin{figure}
+			\begin{center}
+				\includegraphics[scale=0.5]{images/lbphlumi}
+			\end{center}
+		\end{figure}
+		. Bien documt\'e
 	\end{frame}
 	\begin{frame}
 		\frametitle{Probl\`emes d\'et\'ect\'es}
+		. Probl\`emes au changement de luminosit\'e (le classifier ne trouve pas de t\^ete)
+		. Le classifier ne d\'etecte pas que la t\^ete
+		. Pas impl\'ement\'ee sur la BeagleBone et la Raspberry pi
 	\end{frame}	
 	\section{Reconnaissance des \'emotions}
 	\subsection{Expressions faciales}
