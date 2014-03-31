@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  30 MAR 2014 23:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  31 MAR 2014 10:52
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2195,7 +2195,7 @@ Here is how much of TeX's memory you used:
  38415 multiletter control sequences out of 15000+600000
  99052 words of font info for 76 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 56i,21n,93p,2493b,2392s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,21n,93p,2496b,2392s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/lo
 cal/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{/usr/local/texlive/20
 13/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2013/texmf-d
@@ -2216,7 +2216,7 @@ fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
 /public/lm/lmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
 c/wasy/wasy10.pfb>
-Output written on rapport.pdf (50 pages, 12389923 bytes).
+Output written on rapport.pdf (50 pages, 12389930 bytes).
 PDF statistics:
  1494 PDF objects out of 1728 (max. 8388607)
  1389 compressed objects within 14 object streams

@@ -6,7 +6,7 @@
 \usepackage{lmodern}
 \usepackage{graphicx}
 
-\usetheme{Darmstadt}%Ilmenau}
+\usetheme{Darmstadt}
 \usecolortheme{seagull}
 
 \logo{\includegraphics[height=10mm]{ur1.png}}
@@ -21,7 +21,7 @@
 {
   \begin{frame}
   \frametitle{Sommaire}
-  \tableofcontents[currentsection, currentsubsections]
+  \tableofcontents[currentsection, currentsubsections, hideothersubsections]
   \end{frame} 
 }
 
@@ -29,7 +29,10 @@
 	\begin{frame}
 		\titlepage
 	\end{frame}
-	
+	\begin{frame}
+		\frametitle{Sommaire}
+		\tableofcontents[pausesections, hidesubsections]
+	\end{frame}
 	\section{Introduction}
 	\begin{frame}
 		\frametitle{Introduction}
