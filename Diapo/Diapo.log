@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  31 MAR 2014 20:25
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  31 MAR 2014 21:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1047,167 +1047,195 @@ Package pdftex.def Info: ur1.png used on input line 41.
  [9
 
 ]
+<images/LBPHAlgo.png, id=553, 627.34375pt x 512.91624pt>
+File: images/LBPHAlgo.png Graphic file (type png)
+
+<use images/LBPHAlgo.png>
+Package pdftex.def Info: images/LBPHAlgo.png used on input line 50.
+(pdftex.def)             Requested size: 627.34221pt x 512.915pt.
+
+Overfull \hbox (320.05234pt too wide) in paragraph at lines 50--50
+ [] 
+ []
+
+
+Overfull \vbox (321.10518pt too high) detected at line 50
+ []
+
 File: ur1.png Graphic file (type png)
- <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 45.
+<use ur1.png>
+Package pdftex.def Info: ur1.png used on input line 50.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [10
 
-]
+ <./images/LBPHAlgo.png (PNG copy)>]
+<images/lbphlumi.jpg, id=599, 666.49pt x 381.425pt>
+File: images/lbphlumi.jpg Graphic file (type jpg)
+ <use images/lbphlumi.jpg>
+Package pdftex.def Info: images/lbphlumi.jpg used on input line 61.
+(pdftex.def)             Requested size: 333.24419pt x 190.71202pt.
+
+Overfull \hbox (25.95432pt too wide) in paragraph at lines 61--61
+ [] 
+ []
+
+
+Overfull \vbox (26.10222pt too high) detected at line 61
+ []
+
 File: ur1.png Graphic file (type png)
- <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 48.
+<use ur1.png>
+Package pdftex.def Info: ur1.png used on input line 61.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [11
 
-]
+ <./images/lbphlumi.jpg>]
 File: ur1.png Graphic file (type png)
-
-<use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 51.
+ <use ur1.png>
+Package pdftex.def Info: ur1.png used on input line 67.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [12
 
 ] (./Diapo.toc)
 File: ur1.png Graphic file (type png)
- <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 52.
+
+<use ur1.png>
+Package pdftex.def Info: ur1.png used on input line 68.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [13
 
-]
-<images/6emotions.png, id=739, 417.56pt x 136.51pt>
+] <images/6emotions.png, id=741, 417.56pt x 136.51pt>
 File: images/6emotions.png Graphic file (type png)
- <use images/6emotions.png>
-Package pdftex.def Info: images/6emotions.png used on input line 61.
+
+<use images/6emotions.png>
+Package pdftex.def Info: images/6emotions.png used on input line 77.
 (pdftex.def)             Requested size: 208.77948pt x 68.25482pt.
 File: ur1.png Graphic file (type png)
-
-<use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 61.
+ <use ur1.png>
+Package pdftex.def Info: ur1.png used on input line 77.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [14
 
  <./images/6emotions.png>]
-<images/6emotions_clean.png, id=785, 417.56pt x 136.51pt>
+<images/6emotions_clean.png, id=787, 417.56pt x 136.51pt>
 File: images/6emotions_clean.png Graphic file (type png)
 
 <use images/6emotions_clean.png>
-Package pdftex.def Info: images/6emotions_clean.png used on input line 69.
+Package pdftex.def Info: images/6emotions_clean.png used on input line 85.
 (pdftex.def)             Requested size: 208.77948pt x 68.25482pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 69.
+Package pdftex.def Info: ur1.png used on input line 85.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [15
 
  <./images/6emotions_clean.png>]
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 82.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 98.
  (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 82.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 98.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 82.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 98.
 
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 82.
+(Font)              <10.95> on input line 98.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 82.
+(Font)              <8> on input line 98.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 82.
-LaTeX Font Info:    Try loading font information for U+msa on input line 82.
+(Font)              <6> on input line 98.
+LaTeX Font Info:    Try loading font information for U+msa on input line 98.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 82.
+LaTeX Font Info:    Try loading font information for U+msb on input line 98.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 82.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 98.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 82.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 98.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 82.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 98.
 
-<images/tests_enerve.png, id=832, 388.45125pt x 444.66125pt>
+<images/tests_enerve.png, id=834, 388.45125pt x 444.66125pt>
 File: images/tests_enerve.png Graphic file (type png)
 
 <use images/tests_enerve.png>
-Package pdftex.def Info: images/tests_enerve.png used on input line 82.
+Package pdftex.def Info: images/tests_enerve.png used on input line 98.
 (pdftex.def)             Requested size: 64.0087pt x 73.27402pt.
 
-<images/tests_surpris.png, id=833, 388.45125pt x 434.62375pt>
+<images/tests_surpris.png, id=835, 388.45125pt x 434.62375pt>
 File: images/tests_surpris.png Graphic file (type png)
 
 <use images/tests_surpris.png>
-Package pdftex.def Info: images/tests_surpris.png used on input line 82.
+Package pdftex.def Info: images/tests_surpris.png used on input line 98.
 (pdftex.def)             Requested size: 65.49052pt x 73.27402pt.
 
-<images/tests_endormi.png, id=834, 388.45125pt x 434.62375pt>
+<images/tests_endormi.png, id=836, 388.45125pt x 434.62375pt>
 File: images/tests_endormi.png Graphic file (type png)
 
 <use images/tests_endormi.png>
-Package pdftex.def Info: images/tests_endormi.png used on input line 82.
+Package pdftex.def Info: images/tests_endormi.png used on input line 98.
 (pdftex.def)             Requested size: 65.49052pt x 73.27402pt.
 
-<images/tests_inattentif.png, id=835, 388.45125pt x 434.62375pt>
+<images/tests_inattentif.png, id=837, 388.45125pt x 434.62375pt>
 File: images/tests_inattentif.png Graphic file (type png)
 
 <use images/tests_inattentif.png>
-Package pdftex.def Info: images/tests_inattentif.png used on input line 82.
+Package pdftex.def Info: images/tests_inattentif.png used on input line 98.
 (pdftex.def)             Requested size: 65.49052pt x 73.27402pt.
 
-Overfull \hbox (1.1904pt too wide) in paragraph at lines 82--82
+Overfull \hbox (1.1904pt too wide) in paragraph at lines 98--98
  [] 
  []
 
 File: ur1.png Graphic file (type png)
 <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 82.
+Package pdftex.def Info: ur1.png used on input line 98.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [16
 
  <./images/tests_enerve.png> <./images/tests_surpris.png> <./images/tests_endor
 mi.png> <./images/tests_inattentif.png>]
-<images/findContoursOK.jpg, id=884, 108.405pt x 44.165pt>
+<images/findContoursOK.jpg, id=886, 108.405pt x 44.165pt>
 File: images/findContoursOK.jpg Graphic file (type jpg)
 
 <use images/findContoursOK.jpg>
-Package pdftex.def Info: images/findContoursOK.jpg used on input line 92.
+Package pdftex.def Info: images/findContoursOK.jpg used on input line 108.
 (pdftex.def)             Requested size: 49.27472pt x 20.07507pt.
 
-<images/contourBouche.png, id=885, 100.375pt x 40.15pt>
+<images/contourBouche.png, id=887, 100.375pt x 40.15pt>
 File: images/contourBouche.png Graphic file (type png)
 
 <use images/contourBouche.png>
-Package pdftex.def Info: images/contourBouche.png used on input line 92.
+Package pdftex.def Info: images/contourBouche.png used on input line 108.
 (pdftex.def)             Requested size: 50.18889pt x 20.07507pt.
-LaTeX Font Info:    Try loading font information for T1+lmr on input line 92.
+LaTeX Font Info:    Try loading font information for T1+lmr on input line 108.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 
 LaTeX Font Warning: Font shape `T1/lmss/m/sc' in size <10> not available
-(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 92.
+(Font)              Font shape `T1/lmr/m/sc' tried instead on input line 108.
 
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 92.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 108.
 File: ur1.png Graphic file (type png)
 <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 92.
+Package pdftex.def Info: ur1.png used on input line 108.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [17
 
@@ -1215,86 +1243,86 @@ Package pdftex.def Info: ur1.png used on input line 92.
 File: ur1.png Graphic file (type png)
 
 <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 95.
+Package pdftex.def Info: ur1.png used on input line 111.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [18
 
 ]
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 99.
+Package pdftex.def Info: ur1.png used on input line 115.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [19
 
 ] (./Diapo.toc)
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 101.
+Package pdftex.def Info: ur1.png used on input line 117.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [20
 
 ]
-<images/video_init.png, id=1073, 1686.3pt x 1053.9375pt>
+<images/video_init.png, id=1075, 1686.3pt x 1053.9375pt>
 File: images/video_init.png Graphic file (type png)
 
 <use images/video_init.png>
-Package pdftex.def Info: images/video_init.png used on input line 108.
+Package pdftex.def Info: images/video_init.png used on input line 124.
 (pdftex.def)             Requested size: 252.93408pt x 158.0838pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 108.
+Package pdftex.def Info: ur1.png used on input line 124.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [21
 
  <./images/video_init.png>]
-<images/video_inattentif.png, id=1120, 1686.3pt x 1053.9375pt>
+<images/video_inattentif.png, id=1122, 1686.3pt x 1053.9375pt>
 File: images/video_inattentif.png Graphic file (type png)
 
 <use images/video_inattentif.png>
-Package pdftex.def Info: images/video_inattentif.png used on input line 114.
+Package pdftex.def Info: images/video_inattentif.png used on input line 130.
 (pdftex.def)             Requested size: 252.93408pt x 158.0838pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 114.
+Package pdftex.def Info: ur1.png used on input line 130.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [22
 
- <./images/video_inattentif.png>] <images/video_surpris.png, id=1166, 1686.3pt 
+ <./images/video_inattentif.png>] <images/video_surpris.png, id=1168, 1686.3pt 
 x 1053.9375pt>
 File: images/video_surpris.png Graphic file (type png)
 
 <use images/video_surpris.png>
-Package pdftex.def Info: images/video_surpris.png used on input line 120.
+Package pdftex.def Info: images/video_surpris.png used on input line 136.
 (pdftex.def)             Requested size: 252.93408pt x 158.0838pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 120.
+Package pdftex.def Info: ur1.png used on input line 136.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [23
 
  <./images/video_surpris.png>]
-<images/video_enerve.png, id=1212, 1686.3pt x 1053.9375pt>
+<images/video_enerve.png, id=1214, 1686.3pt x 1053.9375pt>
 File: images/video_enerve.png Graphic file (type png)
 
 <use images/video_enerve.png>
-Package pdftex.def Info: images/video_enerve.png used on input line 126.
+Package pdftex.def Info: images/video_enerve.png used on input line 142.
 (pdftex.def)             Requested size: 252.93408pt x 158.0838pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 126.
+Package pdftex.def Info: ur1.png used on input line 142.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [24
 
  <./images/video_enerve.png>]
-<images/video_endormi.png, id=1259, 1686.3pt x 1053.9375pt>
+<images/video_endormi.png, id=1261, 1686.3pt x 1053.9375pt>
 File: images/video_endormi.png Graphic file (type png)
 
 <use images/video_endormi.png>
-Package pdftex.def Info: images/video_endormi.png used on input line 132.
+Package pdftex.def Info: images/video_endormi.png used on input line 148.
 (pdftex.def)             Requested size: 252.93408pt x 158.0838pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 132.
+Package pdftex.def Info: ur1.png used on input line 148.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [25
 
@@ -1302,21 +1330,21 @@ Package pdftex.def Info: ur1.png used on input line 132.
 (./Diapo.toc)
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 134.
+Package pdftex.def Info: ur1.png used on input line 150.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [26
 
 ]
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 137.
+Package pdftex.def Info: ur1.png used on input line 153.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [27
 
 ]
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 144.
+Package pdftex.def Info: ur1.png used on input line 160.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [28
 
@@ -1330,21 +1358,21 @@ Package pdftex.def Info: ur1.png used on input line 144.
 \tf@snm=\write8
 \openout8 = `Diapo.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 145.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 145.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 161.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 161.
 
 (./Diapo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 145.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 145.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 161.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 161.
 Package rerunfilecheck Info: File `Diapo.out' has not changed.
 (rerunfilecheck)             Checksum: 9B9AA46672C0272EE32234D61EC9D7D8;591.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 145.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 161.
  ) 
 Here is how much of TeX's memory you used:
- 17184 strings out of 493315
- 318860 string characters out of 6137905
- 403638 words of memory out of 5000000
- 20093 multiletter control sequences out of 15000+600000
+ 17194 strings out of 493315
+ 319074 string characters out of 6137905
+ 402638 words of memory out of 5000000
+ 20101 multiletter control sequences out of 15000+600000
  39704 words of font info for 43 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,20n,64p,394b,754s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1354,10 +1382,10 @@ texlive/2013/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2
 dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2013/texmf-dist/fonts
 /type1/public/lm/lmss8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publ
 ic/lm/lmsso10.pfb>
-Output written on Diapo.pdf (28 pages, 8364131 bytes).
+Output written on Diapo.pdf (28 pages, 8482537 bytes).
 PDF statistics:
- 1479 PDF objects out of 1728 (max. 8388607)
+ 1481 PDF objects out of 1728 (max. 8388607)
  1373 compressed objects within 14 object streams
  67 named destinations out of 1000 (max. 500000)
- 251 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 261 words of extra memory for PDF output out of 10000 (max. 10000000)
 
