@@ -8,4 +8,5 @@
 \beamer@subsectionintoc {3}{2}{Impl\'ementation}{16}{0}{3}
 \beamer@subsectionintoc {3}{3}{Pourquoi ce choix~?}{18}{0}{3}
 \beamer@sectionintoc {4}{D\'emonstration}{19}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{21}{0}{5}
+\beamer@subsectionintoc {4}{1}{video}{20}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{25}{0}{5}
