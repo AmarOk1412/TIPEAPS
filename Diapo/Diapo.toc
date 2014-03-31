@@ -6,7 +6,6 @@
 \beamer@sectionintoc {3}{Reconnaissance des \'emotions}{13}{0}{3}
 \beamer@subsectionintoc {3}{1}{Expressions faciales}{14}{0}{3}
 \beamer@subsectionintoc {3}{2}{Impl\'ementation}{17}{0}{3}
-\beamer@subsectionintoc {3}{3}{Pourquoi ce choix~?}{19}{0}{3}
 \beamer@sectionintoc {4}{D\'emonstration}{20}{0}{4}
 \beamer@subsectionintoc {4}{1}{video}{21}{0}{4}
 \beamer@sectionintoc {5}{Conclusion}{26}{0}{5}
