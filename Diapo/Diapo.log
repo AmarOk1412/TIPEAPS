@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  29 MAR 2014 22:18
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  31 MAR 2014 10:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -766,25 +766,25 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/beamer/themes/theme/beamerthemeIl
-menau.sty
-Package: beamerthemeIlmenau 2010/06/17  (rcs-revision d02a7cf4d8ae)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/beamer/themes/theme/beamerthemeDa
+rmstadt.sty
+Package: beamerthemeDarmstadt 2010/06/17  (rcs-revision d02a7cf4d8ae)
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/beamer/themes/outer/beamerouterth
-ememiniframes.sty
-Package: beamerouterthememiniframes 2010/06/17  (rcs-revision d02a7cf4d8ae)
+emesmoothbars.sty
+Package: beamerouterthemesmoothbars 2010/06/17  (rcs-revision d02a7cf4d8ae)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/beamer/themes/color/beamercolorth
-emewhale.sty
-Package: beamercolorthemewhale 2010/06/17  (rcs-revision d02a7cf4d8ae)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/beamer/themes/inner/beamerinnerth
+emerounded.sty
+Package: beamerinnerthemerounded 2010/06/17  (rcs-revision d02a7cf4d8ae)
 )
 (/usr/local/texlive/2013/texmf-dist/tex/latex/beamer/themes/color/beamercolorth
 emeorchid.sty
 Package: beamercolorthemeorchid 2010/06/17  (rcs-revision d02a7cf4d8ae)
 )
-(/usr/local/texlive/2013/texmf-dist/tex/latex/beamer/themes/inner/beamerinnerth
-emerounded.sty
-Package: beamerinnerthemerounded 2010/06/17  (rcs-revision d02a7cf4d8ae)
+(/usr/local/texlive/2013/texmf-dist/tex/latex/beamer/themes/color/beamercolorth
+emewhale.sty
+Package: beamercolorthemewhale 2010/06/17  (rcs-revision d02a7cf4d8ae)
 ))
 (/usr/local/texlive/2013/texmf-dist/tex/latex/beamer/themes/color/beamercolorth
 emeseagull.sty
@@ -975,7 +975,7 @@ Package frenchb.ldf Warning: Setting StandardEnumerateEnv=true for
 (frenchb.ldf)                 on input line 28.
 
 LaTeX Info: Redefining \up on input line 28.
-(./Diapo.nav) <ur1.png, id=56, 1123.19624pt x 414.54875pt>
+(./Diapo.nav) <ur1.png, id=61, 1123.19624pt x 414.54875pt>
 File: ur1.png Graphic file (type png)
  <use ur1.png>
 Package pdftex.def Info: ur1.png used on input line 31.
@@ -1027,7 +1027,7 @@ Package pdftex.def Info: ur1.png used on input line 45.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [7
 
-] <images/primaryexp.jpg, id=358, 151.56625pt x 335.2525pt>
+] <images/primaryexp.jpg, id=362, 151.56625pt x 335.2525pt>
 File: images/primaryexp.jpg Graphic file (type jpg)
 
 <use images/primaryexp.jpg>
@@ -1125,21 +1125,21 @@ Package rerunfilecheck Info: File `Diapo.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
  ) 
 Here is how much of TeX's memory you used:
- 16897 strings out of 493315
- 314285 string characters out of 6137905
- 396836 words of memory out of 5000000
- 19896 multiletter control sequences out of 15000+600000
+ 16857 strings out of 493315
+ 312560 string characters out of 6137905
+ 396992 words of memory out of 5000000
+ 19856 multiletter control sequences out of 15000+600000
  18885 words of font info for 22 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 49i,19n,65p,394b,745s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,20n,65p,394b,748s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2013/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/
 texlive/2013/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/20
 13/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2013/texmf-d
 ist/fonts/type1/public/lm/lmss8.pfb>
-Output written on Diapo.pdf (17 pages, 170709 bytes).
+Output written on Diapo.pdf (17 pages, 168411 bytes).
 PDF statistics:
- 764 PDF objects out of 1000 (max. 8388607)
- 710 compressed objects within 8 object streams
+ 757 PDF objects out of 1000 (max. 8388607)
+ 699 compressed objects within 7 object streams
  43 named destinations out of 1000 (max. 500000)
- 141 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 177 words of extra memory for PDF output out of 10000 (max. 10000000)
 
