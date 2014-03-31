@@ -1,10 +1,11 @@
 \beamer@endinputifotherversion {3.26pt}
 \select@language {french}
-\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
-\beamer@sectionintoc {2}{Reconnaissance faciale}{4}{0}{2}
-\beamer@sectionintoc {3}{Reconnaissance des \'emotions}{7}{0}{3}
-\beamer@subsectionintoc {3}{1}{Expressions faciales}{8}{0}{3}
-\beamer@subsectionintoc {3}{2}{Impl\'ementation}{10}{0}{3}
-\beamer@subsectionintoc {3}{3}{Pourquoi ce choix~?}{12}{0}{3}
-\beamer@sectionintoc {4}{D\'emonstration}{13}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{15}{0}{5}
+\beamer@sectionintoc {1}{Introduction}{7}{0}{1}
+\beamer@sectionintoc {2}{Reconnaissance faciale}{9}{0}{2}
+\beamer@subsectionintoc {2}{1}{L'Algorithme~?}{10}{0}{2}
+\beamer@sectionintoc {3}{Reconnaissance des \'emotions}{13}{0}{3}
+\beamer@subsectionintoc {3}{1}{Expressions faciales}{14}{0}{3}
+\beamer@subsectionintoc {3}{2}{Impl\'ementation}{16}{0}{3}
+\beamer@subsectionintoc {3}{3}{Pourquoi ce choix~?}{18}{0}{3}
+\beamer@sectionintoc {4}{D\'emonstration}{19}{0}{4}
+\beamer@sectionintoc {5}{Conclusion}{21}{0}{5}

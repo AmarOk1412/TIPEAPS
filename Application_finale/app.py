@@ -23,7 +23,7 @@ TRAINSET = "lbpcascade_frontalface.xml"    #Fichier de reconnaissance
 IMAGE_SIZE = 170                           #Normalisation des images de base
 NUMBER_OF_CAPTURE = 10                     #Nombre de captures a realiser pour la base de donnees
 THRESHOLD = 90                                 #Seuil de reconnaissance
-CAMERA = 1                                 #La camera
+CAMERA = 0                                 #La camera
 ARDUINO = False                            #Utiliser l'arduino ?
 
 INDIVIDUS = []
@@ -253,8 +253,8 @@ class Recognize():
         eyePos = self.getCroppedEyesPos(cropped)
         eyeFrame = self.cropFromFace(frame, eyePos)
         hsv = cv2.cvtColor(eyeFrame, cv2.COLOR_BGR2HSV)
-        lowerColor = numpy.array([80, 0,0])
-        upperColor = numpy.array([160,100,100])
+        lowerColor = numpy.array([20, 0,0])
+        upperColor = numpy.array([160,200,200])
         mask = cv2.inRange(hsv, lowerColor, upperColor)
         self.thresholdEyeClosed = numpy.count_nonzero(mask)
         self.eyeWide = eyePos[0][2]
@@ -278,8 +278,8 @@ class Recognize():
 
     def isEyeClosed(self, eyeFrame):
         hsv = cv2.cvtColor(eyeFrame, cv2.COLOR_BGR2HSV)
-        lowerColor = numpy.array([80, 0,0])
-        upperColor = numpy.array([160,100,100])
+        lowerColor = numpy.array([20, 0,0])
+        upperColor = numpy.array([160,200,200])
         mask = cv2.inRange(hsv, lowerColor, upperColor)
         return self.thresholdEyeClosed*2 < numpy.count_nonzero(mask)
 
