@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  31 MAR 2014 23:35
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  1 APR 2014 10:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1564,7 +1564,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--138
 
  []
 
-<images/evolcompart48-11.png, id=287, 1021.8175pt x 413.545pt>
+<images/evolcompart48-11.png, id=291, 1021.8175pt x 413.545pt>
 File: images/evolcompart48-11.png Graphic file (type png)
 
 <use images/evolcompart48-11.png>
@@ -1595,7 +1595,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 153--155
 
  []
 
-<images/karl-for-Securite-Routiere.jpg, id=296, 1422.31375pt x 948.54375pt>
+<images/karl-for-Securite-Routiere.jpg, id=300, 1422.31375pt x 948.54375pt>
 File: images/karl-for-Securite-Routiere.jpg Graphic file (type jpg)
 
 <use images/karl-for-Securite-Routiere.jpg>
@@ -1676,14 +1676,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 215--216
 
  []
 
-<images/eigenfaces_OpenCV.png, id=342, 461.725pt x 224.84pt>
+<images/eigenfaces_OpenCV.png, id=346, 461.725pt x 224.84pt>
 File: images/eigenfaces_OpenCV.png Graphic file (type png)
 
 <use images/eigenfaces_OpenCV.png>
 Package pdftex.def Info: images/eigenfaces_OpenCV.png used on input line 219.
 (pdftex.def)             Requested size: 138.51857pt x 67.45251pt.
 
-<images/fisherfacedistrib.png, id=344, 1026.83624pt x 828.09375pt>
+<images/fisherfacedistrib.png, id=348, 1026.83624pt x 828.09375pt>
 File: images/fisherfacedistrib.png Graphic file (type png)
 
 <use images/fisherfacedistrib.png>
@@ -1713,7 +1713,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 256--257
 
  []
 
-<images/LBPHAlgo.png, id=355, 627.34375pt x 512.91624pt>
+<images/LBPHAlgo.png, id=359, 627.34375pt x 512.91624pt>
 File: images/LBPHAlgo.png Graphic file (type png)
 
 <use images/LBPHAlgo.png>
@@ -1757,7 +1757,7 @@ Package frenchb.ldf Warning: Degrees would look better in TS1-encoding:
 (frenchb.ldf)                add \usepackage{textcomp} to the preamble. 
 (frenchb.ldf)                Degrees used on input line 348.
 
-<images/detection_cut.png, id=374, 878.8032pt x 868.6854pt>
+<images/detection_cut.png, id=378, 878.8032pt x 868.6854pt>
 File: images/detection_cut.png Graphic file (type png)
 
 <use images/detection_cut.png>
@@ -1811,7 +1811,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 373--374
 
  []
 
-<images/primaryexp.jpg, id=411, 151.56625pt x 335.2525pt>
+<images/primaryexp.jpg, id=415, 151.56625pt x 335.2525pt>
 File: images/primaryexp.jpg Graphic file (type jpg)
 
 <use images/primaryexp.jpg>
@@ -1839,21 +1839,21 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 9.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <6> on input line 9.
-) <images/findContoursOk.jpg, id=422, 108.405pt x 44.165pt>
+) <images/findContoursOk.jpg, id=426, 108.405pt x 44.165pt>
 File: images/findContoursOk.jpg Graphic file (type jpg)
 
 <use images/findContoursOk.jpg>
 Package pdftex.def Info: images/findContoursOk.jpg used on input line 389.
 (pdftex.def)             Requested size: 108.40472pt x 44.16487pt.
 
-<images/findContoursNOk.jpg, id=424, 158.5925pt x 83.31125pt>
+<images/findContoursNOk.jpg, id=428, 158.5925pt x 83.31125pt>
 File: images/findContoursNOk.jpg Graphic file (type jpg)
 
 <use images/findContoursNOk.jpg>
 Package pdftex.def Info: images/findContoursNOk.jpg used on input line 397.
 (pdftex.def)             Requested size: 158.59209pt x 83.31104pt.
 
-<images/inRangeOk.jpg, id=426, 72.27pt x 44.165pt>
+<images/inRangeOk.jpg, id=430, 72.27pt x 44.165pt>
 File: images/inRangeOk.jpg Graphic file (type jpg)
  <use images/inRangeOk.jpg>
 Package pdftex.def Info: images/inRangeOk.jpg used on input line 405.
@@ -1874,73 +1874,115 @@ Underfull \hbox (badness 10000) in paragraph at lines 416--417
 
  []
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 426--427
+[20] <images/tests_enerve.png, id=485, 388.45125pt x 444.66125pt>
+File: images/tests_enerve.png Graphic file (type png)
+
+<use images/tests_enerve.png>
+Package pdftex.def Info: images/tests_enerve.png used on input line 426.
+(pdftex.def)             Requested size: 78.91582pt x 90.33783pt.
+
+<images/tests_surpris.png, id=486, 388.45125pt x 434.62375pt>
+File: images/tests_surpris.png Graphic file (type png)
+
+<use images/tests_surpris.png>
+Package pdftex.def Info: images/tests_surpris.png used on input line 427.
+(pdftex.def)             Requested size: 80.74141pt x 90.33783pt.
+
+<images/tests_endormi.png, id=487, 388.45125pt x 434.62375pt>
+File: images/tests_endormi.png Graphic file (type png)
+
+<use images/tests_endormi.png>
+Package pdftex.def Info: images/tests_endormi.png used on input line 428.
+(pdftex.def)             Requested size: 80.74141pt x 90.33783pt.
+
+<images/tests_inattentif.png, id=488, 388.45125pt x 434.62375pt>
+File: images/tests_inattentif.png Graphic file (type png)
+
+<use images/tests_inattentif.png>
+Package pdftex.def Info: images/tests_inattentif.png used on input line 429.
+(pdftex.def)             Requested size: 80.74141pt x 90.33783pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
 
  []
 
-[21]
+[21 <./images/tests_enerve.png> <./images/tests_surpris.png> <./images/tests_en
+dormi.png> <./images/tests_inattentif.png>]
 Partie 4.
-<images/schema_tests.png, id=485, 469.755pt x 448.074pt>
+<images/schema_tests.png, id=498, 469.755pt x 448.074pt>
 File: images/schema_tests.png Graphic file (type png)
 
 <use images/schema_tests.png>
-Package pdftex.def Info: images/schema_tests.png used on input line 440.
+Package pdftex.def Info: images/schema_tests.png used on input line 457.
 (pdftex.def)             Requested size: 328.82626pt x 313.64964pt.
 
-<images/schema_tests_elec.png, id=486, 205.568pt x 207.174pt>
+<images/schema_tests_elec.png, id=499, 205.568pt x 207.174pt>
 File: images/schema_tests_elec.png Graphic file (type png)
 
 <use images/schema_tests_elec.png>
-Package pdftex.def Info: images/schema_tests_elec.png used on input line 441.
+Package pdftex.def Info: images/schema_tests_elec.png used on input line 458.
 (pdftex.def)             Requested size: 205.56747pt x 207.17348pt.
 
-<images/prototype.jpg, id=488, 3276.24pt x 1846.9pt>
+<images/prototype.jpg, id=501, 3276.24pt x 1846.9pt>
 File: images/prototype.jpg Graphic file (type jpg)
 
 <use images/prototype.jpg>
-Package pdftex.def Info: images/prototype.jpg used on input line 450.
+Package pdftex.def Info: images/prototype.jpg used on input line 467.
 (pdftex.def)             Requested size: 409.529pt x 230.86194pt.
  [22
 
 ] [23 <./images/schema_tests.png> <./images/schema_tests_elec.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 456--457
+Underfull \hbox (badness 10000) in paragraph at lines 473--474
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 458--459
+Underfull \hbox (badness 10000) in paragraph at lines 475--476
 
  []
 
-[24 <./images/prototype.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 462--463
+<images/tests_soleil_crop.png, id=513, 1403.2425pt x 1053.9375pt>
+File: images/tests_soleil_crop.png Graphic file (type png)
+
+<use images/tests_soleil_crop.png>
+Package pdftex.def Info: images/tests_soleil_crop.png used on input line 479.
+(pdftex.def)             Requested size: 420.976pt x 316.18369pt.
+
+Overfull \hbox (2.72232pt too wide) in paragraph at lines 479--480
+ [] 
+ []
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[24 <./images/prototype.jpg>] [25 <./images/tests_soleil_crop.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 487--488
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 464--465
+Underfull \hbox (badness 10000) in paragraph at lines 489--490
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 466--467
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 468--469
+Underfull \hbox (badness 10000) in paragraph at lines 493--494
 
  []
 
-[25
+[26
 
 ] (./rapport.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 470--1
+Underfull \hbox (badness 10000) in paragraph at lines 495--1
 
  []
 
-[26]
+[27]
 Underfull \hbox (badness 10000) in paragraph at lines 17--23
 []\T1/lmr/m/n/10 Sébastien Cour-tin.  Un sys-tème de re-con-nais-sance fa-ciale
  dé-tecte la som-
@@ -1958,7 +2000,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--23
 omnolence-[]au-[]volant _
  []
 
-[27
+[28
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 107--112
@@ -2026,7 +2068,7 @@ Underfull \hbox (badness 1817) in paragraph at lines 202--207
 / get-[]the-[]facts / facts-[]and-[]statistics .
  []
 
-[28]
+[29]
 Underfull \hbox (badness 4726) in paragraph at lines 217--223
 []\T1/lmr/m/n/10 Martyn Williams.  Cea-tec : la voi-ture de de-main diag-nos-ti
 -quera le conduc-
@@ -2044,7 +2086,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 217--223
 e-[]conducteur-[]55202 . html$[]\T1/lmr/m/n/10 ,
  []
 
-) [29]
+) [30]
 Annexe A.
 (../Application_finale/app.py
 LaTeX Font Info:    Try loading font information for OMS+lmr on input line 2.
@@ -2061,7 +2103,7 @@ Overfull \hbox (76.45135pt too wide) in paragraph at lines 24--25
 [][][][][][][][][][][][][] 
  []
 
-[30
+[31
 
 ]
 Overfull \hbox (112.15172pt too wide) in paragraph at lines 77--78
@@ -2081,14 +2123,14 @@ Overfull \hbox (142.75203pt too wide) in paragraph at lines 94--95
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[31]
+[32]
 Overfull \hbox (86.65146pt too wide) in paragraph at lines 154--155
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][] 
  []
 
-[32]
+[33]
 Overfull \hbox (86.65146pt too wide) in paragraph at lines 175--176
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -2108,7 +2150,7 @@ Overfull \hbox (15.25073pt too wide) in paragraph at lines 227--229
 ][][][][][][][][][][][][][][][][][] 
  []
 
-[33]
+[34]
 Overfull \hbox (25.45084pt too wide) in paragraph at lines 230--231
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -2122,13 +2164,13 @@ Overfull \hbox (61.1512pt too wide) in paragraph at lines 244--245
 [][][][][][][][] 
  []
 
-[34]
+[35]
 Overfull \hbox (20.35078pt too wide) in paragraph at lines 346--347
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][] 
  []
 
-[35]
+[36]
 Overfull \hbox (35.65094pt too wide) in paragraph at lines 354--355
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][] 
@@ -2147,7 +2189,7 @@ Overfull \hbox (76.45135pt too wide) in paragraph at lines 368--369
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[36]
+[37]
 Overfull \hbox (178.4524pt too wide) in paragraph at lines 414--415
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -2160,39 +2202,39 @@ File: lstlang1.sty 2004/09/05 1.3 listings language file
 (/usr/local/texlive/2013/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
 )
-(../src/tests/tests.ino [37] [38] [39]) [40]
+(../src/tests/tests.ino [38] [39] [40]) [41]
 Annexe B.
-[41
+[42
 
-] <../documents/GANTT/gantt.pdf, id=1233, 845.0471pt x 597.50829pt>
+] <../documents/GANTT/gantt.pdf, id=1253, 845.0471pt x 597.50829pt>
 File: ../documents/GANTT/gantt.pdf Graphic file (type pdf)
 
 <use ../documents/GANTT/gantt.pdf>
-Package pdftex.def Info: ../documents/GANTT/gantt.pdf used on input line 572.
+Package pdftex.def Info: ../documents/GANTT/gantt.pdf used on input line 597.
 (pdftex.def)             Requested size: 591.52895pt x 418.25294pt.
- [42] [43]
+ [43] [44]
 Overfull \vbox (23.70139pt too high) has occurred while \output is active []
 
 
-[44 <../documents/GANTT/gantt.pdf>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 574.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 574.
+[45 <../documents/GANTT/gantt.pdf>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 599.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 599.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 574.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 574.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 599.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 599.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
 (rerunfilecheck)             Checksum: BA5FFA8129D1AE56CBB1424DD316910B;2667.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 574.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 599.
  ) 
 Here is how much of TeX's memory you used:
- 36503 strings out of 493315
- 789828 string characters out of 6137905
- 961753 words of memory out of 5000000
- 38415 multiletter control sequences out of 15000+600000
+ 36533 strings out of 493315
+ 790577 string characters out of 6137905
+ 961905 words of memory out of 5000000
+ 38437 multiletter control sequences out of 15000+600000
  99052 words of font info for 76 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  56i,21n,93p,2496b,2392s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2216,10 +2258,10 @@ fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1
 /public/lm/lmtt10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msbm10.pfb></usr/local/texlive/2013/texmf-dist/fonts/type1/publi
 c/wasy/wasy10.pfb>
-Output written on rapport.pdf (50 pages, 12389707 bytes).
+Output written on rapport.pdf (51 pages, 15424549 bytes).
 PDF statistics:
- 1494 PDF objects out of 1728 (max. 8388607)
- 1389 compressed objects within 14 object streams
- 797 named destinations out of 1000 (max. 500000)
- 384 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1515 PDF objects out of 1728 (max. 8388607)
+ 1399 compressed objects within 14 object streams
+ 800 named destinations out of 1000 (max. 500000)
+ 409 words of extra memory for PDF output out of 10000 (max. 10000000)
 

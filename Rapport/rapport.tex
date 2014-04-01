@@ -419,11 +419,28 @@ Apr\`es cet aperçu des diff\'erentes solutions possibles pour la reconnaissance 
 \section{Exp\'erimentations}
 	Dans cette partie, nous allons pr\'esenter les exp\'erimentations, d'abord nous exposerons le protocole exp\'erimental, puis la r\'ealisation en elle-même, et enfin les conclusions que nous en avons tir\'e.
 \subsection{Protocole}
-	Dans le but de r\'egler les seuils de façon pr\'ecise, il a fallu d\'efinir une distance entre le sujet et l'objectif de la cam\'era (cette distance a \'et\'e fix\'ee \`a 50 cm), et effectuer une initialisation avec une \'emotion neutre. Puis, pour v\'erifier la robustesse de la d\'etection, le sujet devait froncer les sourcils, \'ecarquiller et fermer les yeux et ouvrir la bouche. Ces d\'eformations particuli\`eres du visage correspondent aux expressions faciales (la col\`ere, la surprise et l'endormissement du conducteur) que nous souhaitons r\'ecup\'erer pour notre application. Le processus est r\'ep\'et\'e jusqu'\`a la d\'etection de l'expression faciale.
+	Dans le but de r\'egler les seuils de façon pr\'ecise, il a fallu d\'efinir une distance entre le sujet et l'objectif de la cam\'era (cette distance a \'et\'e fix\'ee \`a 50 cm), et effectuer une initialisation avec une \'emotion neutre. Puis, pour v\'erifier la robustesse de la d\'etection, le sujet devait froncer les sourcils, \'ecarquiller et fermer les yeux et ouvrir la bouche. Ces d\'eformations particuli\`eres du visage correspondent aux expressions faciales (voir Figure \ref{fig:4situ}) que nous souhaitons r\'ecup\'erer pour notre application. Le processus est r\'ep\'et\'e jusqu'\`a la d\'etection de l'expression faciale.
+	\begin{figure}[h]
+		\begin{center}
+			\begin{tabular}{cccc}
+				\includegraphics[height=90px]{images/tests_enerve}&
+				\includegraphics[height=90px]{images/tests_surpris}&
+				\includegraphics[height=90px]{images/tests_endormi}&
+				\includegraphics[height=90px]{images/tests_inattentif}\\
+				\'Enerv\'e&
+				Surpris&
+				Endormi&
+				Inattentif
+			\end{tabular}
+		\end{center}
+		\caption{Les 4 situations \`a d\'etecter}
+		\label{fig:4situ}
+	\end{figure}
 \subsection{R\'ealisation}
 	Nous avons donc r\'egl\'e les seuils de l'application en r\'ealisant des d\'etections successives \`a la distance fix\'ee dans le protocole exp\'erimental. L'identification se faisait directement depuis la capture r\'ealis\'ee par la cam\'era utilis\'ee tout au long du projet. Il a fallu tester les seuils avec des variations de luminosit\'e et de distance pour rendre l'application la plus robuste possible.
 \subsection{R\'esultats et analyse}
 	Nos exp\'erimentations nous ont montr\'e que dans un lieu o\`u l'utilisateur de l'application ne bouge pas et o\`u la luminosit\'e ne change pas, nous arrivons \`a obtenir une d\'etection correcte des \'emotions. Nous pouvions tout de même observer des probl\`emes lorsque l'utilisateur s'\'eloignait ou avançait vers la cam\'era. En effet, les seuils et les tailles devenaient incorrects. Il fallait donc r\'einitialiser les seuils ou se remettre \`a la distance à laquelle était l'utilisateur \`a la pr\'ec\'edente initialisation.\\
+	
 \chapter{Production}
 Dans cette derni\`ere partie, nous pr\'esenterons la r\'ealisation de notre application. Nous parlerons d'abord du prototype final, puis des tests r\'ealis\'es en situation r\'eelle et enfin, des r\'esultats de ces tests.
 \section{Prototype final}
@@ -455,7 +472,15 @@ De plus, une enceinte \'etait reli\'ee \`a l'Arduino pour \'emettre un signal so
 \section{Discussion et analyse des r\'esultats}
 Premi\`erement, l'application fonctionne bien dans le cas o\`u le conducteur est inattentif. Quand nous avons simul\'e un conducteur endormi, la d\'etection s'effectuait dans un temps compris entre $5$ et $15$ secondes. Le programme marche \'egalement pour les expressions faciales \og\'enerv\'e\fg et \og surpris\fg mais comme pr\'ec\'edemment, la r\'eaction du programme n'est pas instantan\'ee et les \'emotions doivent être sur-jou\'ee la plupart du temps. Nous en avons conclu que la qualit\'e de la cam\'era \'etait \`a revoir, ainsi que son placement dans l'habitacle. En effet, le volant empêchait la cam\'era de bien visualiser le visage du conducteur.\\
 
-Le point le plus probl\'ematique concerne le changement de luminosit\'e~; lorsque la luminosit\'e est trop importante, le visage du conducteur devient blanc et se confond avec l'arri\`ere-plan. Il est alors impossible d'identifier une quelconque expression faciale, ni même de reconnaître le visage.\\
+Le point le plus probl\'ematique concerne le changement de luminosit\'e~; lorsque la luminosit\'e est trop importante, le visage du conducteur devient blanc et se confond avec l'arri\`ere-plan (voir Figure \ref{fig:testsTropSoleil}). Il est alors impossible d'identifier une quelconque expression faciale, ni même de reconnaître le visage.\\
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.3]{images/tests_soleil_crop}
+	\end{center}
+	\caption{Un changement de luminosit\'e entrainant une reconnaissance impossible}
+	\label{fig:testsTropSoleil}
+\end{figure}
 
 Nous venons donc de voir qu'une int\'egration de notre prototype est possible dans une voiture de tourisme. L'application d\'etecte bien les expressions recherch\'ees malgr\'e un temps de r\'eponse important. Cependant, plusieurs param\`etres doivent encore être am\'elior\'es comme une meilleure adaptation au changement de luminosit\'e ou le choix d'une cam\'era avec une r\'esolution plus \'elev\'ee.
 \chapter*{Conclusion}
