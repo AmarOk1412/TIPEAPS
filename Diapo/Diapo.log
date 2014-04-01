@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  1 APR 2014 13:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  1 APR 2014 13:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1238,7 +1238,7 @@ Package pdftex.def Info: ur1.png used on input line 143.
  [17
 
  <./images/video_init.png>]
-<images/video_inattentif.png, id=921, 1686.3pt x 1053.9375pt>
+<images/video_inattentif.png, id=920, 1686.3pt x 1053.9375pt>
 File: images/video_inattentif.png Graphic file (type png)
 
 <use images/video_inattentif.png>
@@ -1250,7 +1250,7 @@ Package pdftex.def Info: ur1.png used on input line 149.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [18
 
- <./images/video_inattentif.png>] <images/video_surpris.png, id=967, 1686.3pt x
+ <./images/video_inattentif.png>] <images/video_surpris.png, id=965, 1686.3pt x
  1053.9375pt>
 File: images/video_surpris.png Graphic file (type png)
 
@@ -1264,7 +1264,7 @@ Package pdftex.def Info: ur1.png used on input line 155.
  [19
 
  <./images/video_surpris.png>]
-<images/video_enerve.png, id=1014, 1686.3pt x 1053.9375pt>
+<images/video_enerve.png, id=1011, 1686.3pt x 1053.9375pt>
 File: images/video_enerve.png Graphic file (type png)
 
 <use images/video_enerve.png>
@@ -1277,7 +1277,7 @@ Package pdftex.def Info: ur1.png used on input line 161.
  [20
 
  <./images/video_enerve.png>]
-<images/video_endormi.png, id=1061, 1686.3pt x 1053.9375pt>
+<images/video_endormi.png, id=1057, 1686.3pt x 1053.9375pt>
 File: images/video_endormi.png Graphic file (type png)
 
 <use images/video_endormi.png>
@@ -1332,10 +1332,10 @@ Package rerunfilecheck Info: File `Diapo.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
  ) 
 Here is how much of TeX's memory you used:
- 17165 strings out of 493315
- 318825 string characters out of 6137905
+ 17157 strings out of 493315
+ 318745 string characters out of 6137905
  402638 words of memory out of 5000000
- 20090 multiletter control sequences out of 15000+600000
+ 20089 multiletter control sequences out of 15000+600000
  31334 words of font info for 40 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,20n,64p,394b,748s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1343,10 +1343,10 @@ Here is how much of TeX's memory you used:
 texlive/2013/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/20
 13/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2013/texmf-d
 ist/fonts/type1/public/lm/lmss8.pfb>
-Output written on Diapo.pdf (24 pages, 8458016 bytes).
+Output written on Diapo.pdf (24 pages, 8458711 bytes).
 PDF statistics:
- 1272 PDF objects out of 1440 (max. 8388607)
- 1167 compressed objects within 12 object streams
+ 1267 PDF objects out of 1440 (max. 8388607)
+ 1162 compressed objects within 12 object streams
  58 named destinations out of 1000 (max. 500000)
  268 words of extra memory for PDF output out of 10000 (max. 10000000)
 
