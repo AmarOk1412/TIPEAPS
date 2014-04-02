@@ -22,7 +22,7 @@
 {
   \begin{frame}
   \frametitle{Sommaire}
-  \tableofcontents[currentsection, currentsubsections, hideothersubsections]
+  \tableofcontents[currentsection, hideallsubsections]
   \end{frame} 
 }
 
@@ -31,12 +31,8 @@
 		\titlepage
 	\end{frame}
 	\begin{frame}
-		\frametitle{Sommaire}
+		\frametitle{Plan}
 		\tableofcontents[hidesubsections]
-	\end{frame}
-	\section{Introduction}
-	\begin{frame}
-		\frametitle{Introduction}
 	\end{frame}
 	\section{Reconnaissance faciale}
 	\subsection{Description de l'algorithme}
@@ -116,6 +112,23 @@
 		\end{center}
 	\end{frame}
 	\begin{frame}
+		\frametitle{R\'esultats - Reconnaissance de la bouche}
+		\begin{center}
+			\begin{tabular}{cccc}
+				\includegraphics[height=65px]{images/tests_enerve}&
+				\includegraphics[height=65px]{images/tests_surpris}&
+				\includegraphics[height=65px]{images/tests_endormi}&
+				\includegraphics[height=65px]{images/tests_inattentif}\\
+				\'Enerv\'e&Surpris&Endormi&Inattentif\\
+				\includegraphics[height=65px]{images/finnb3}&
+				\includegraphics[height=65px]{images/finnb}&
+				\includegraphics[height=65px]{images/finnb4}&
+				\includegraphics[height=65px]{images/finnb2}
+			\end{tabular}
+		\end{center}
+	\end{frame}
+	
+	\begin{frame}
 		\frametitle{Reconnaissance des yeux}
 		\begin{center}
 			\begin{tabular}{c|c}
@@ -127,13 +140,31 @@
 		\end{center}
 	\end{frame}
 	\begin{frame}
-		\frametitle{TODO}
-		\begin{itemize}
-			\item{detection bouche/yeux sur chaque image du d\'ebut}
-		\end{itemize}
+		\frametitle{R\'esultats - Reconnaissance des yeux}
+		\begin{center}
+			\begin{tabular}{cccc}
+				\includegraphics[height=65px]{images/tests_enerve}&
+				\includegraphics[height=65px]{images/tests_surpris}&
+				\includegraphics[height=65px]{images/tests_endormi}&
+				\includegraphics[height=65px]{images/tests_inattentif}\\
+				\'Enerv\'e&Surpris&Endormi&Inattentif\\
+				\includegraphics[height=65px]{images/fincolor2}&
+				\includegraphics[height=65px]{images/fincolor}&
+				\includegraphics[height=65px]{images/fincolorendormi}&
+				\includegraphics[height=65px]{images/fincolorin}
+			\end{tabular}
+		\end{center}
 	\end{frame}
 	
 	\section{D\'emonstration}
+	\subsection{tests}
+	\begin{frame}
+		\frametitle{Prototype de test}
+		\begin{center}
+			\includegraphics[scale=0.09]{images/prototype}
+		\end{center}
+		\hfill
+	\end{frame}
 	\subsection{video}
 	\begin{frame}
 		\frametitle{Initialisation}

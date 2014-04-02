@@ -1,11 +1,11 @@
 \beamer@endinputifotherversion {3.26pt}
 \select@language {french}
-\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
-\beamer@sectionintoc {2}{Reconnaissance faciale}{5}{0}{2}
-\beamer@subsectionintoc {2}{1}{Description de l'algorithme}{6}{0}{2}
-\beamer@sectionintoc {3}{Reconnaissance des \'emotions}{10}{0}{3}
-\beamer@subsectionintoc {3}{1}{Expressions faciales}{11}{0}{3}
-\beamer@subsectionintoc {3}{2}{Impl\'ementation}{13}{0}{3}
-\beamer@sectionintoc {4}{D\'emonstration}{16}{0}{4}
-\beamer@subsectionintoc {4}{1}{video}{17}{0}{4}
-\beamer@sectionintoc {5}{Conclusion}{22}{0}{5}
+\beamer@sectionintoc {1}{Reconnaissance faciale}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{Description de l'algorithme}{4}{0}{1}
+\beamer@sectionintoc {2}{Reconnaissance des \'emotions}{8}{0}{2}
+\beamer@subsectionintoc {2}{1}{Expressions faciales}{9}{0}{2}
+\beamer@subsectionintoc {2}{2}{Impl\'ementation}{11}{0}{2}
+\beamer@sectionintoc {3}{D\'emonstration}{15}{0}{3}
+\beamer@subsectionintoc {3}{1}{tests}{16}{0}{3}
+\beamer@subsectionintoc {3}{2}{video}{17}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{22}{0}{4}

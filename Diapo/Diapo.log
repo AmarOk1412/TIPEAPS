@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  1 APR 2014 20:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013) (format=pdflatex 2014.2.4)  2 APR 2014 10:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -979,7 +979,7 @@ Package frenchb.ldf Warning: Setting StandardEnumerateEnv=true for
 (frenchb.ldf)                 on input line 29.
 
 LaTeX Info: Redefining \up on input line 29.
-(./Diapo.nav) <ur1.png, id=75, 1123.19624pt x 414.54875pt>
+(./Diapo.nav) <ur1.png, id=76, 1123.19624pt x 414.54875pt>
 File: ur1.png Graphic file (type png)
  <use ur1.png>
 Package pdftex.def Info: ur1.png used on input line 32.
@@ -1002,291 +1002,387 @@ Package pdftex.def Info: ur1.png used on input line 37.
  [3
 
 ]
-File: ur1.png Graphic file (type png)
-
-<use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 40.
-(pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
- [4
-
-] (./Diapo.toc)
-File: ur1.png Graphic file (type png)
- <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 41.
-(pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
- [5
-
-]
-<images/robustesse.png, id=350, 728.7225pt x 440.64626pt>
+<images/robustesse.png, id=257, 728.7225pt x 440.64626pt>
 File: images/robustesse.png Graphic file (type png)
 
 <use images/robustesse.png>
-Package pdftex.def Info: images/robustesse.png used on input line 50.
+Package pdftex.def Info: images/robustesse.png used on input line 46.
 (pdftex.def)             Requested size: 240.47916pt x 145.41371pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 50.
+Package pdftex.def Info: ur1.png used on input line 46.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
- [6
+ [4
 
  <./images/robustesse.png>]
-<images/LBPHAlgo.png, id=396, 627.34375pt x 512.91624pt>
+<images/LBPHAlgo.png, id=304, 627.34375pt x 512.91624pt>
 File: images/LBPHAlgo.png Graphic file (type png)
 
 <use images/LBPHAlgo.png>
-Package pdftex.def Info: images/LBPHAlgo.png used on input line 58.
+Package pdftex.def Info: images/LBPHAlgo.png used on input line 54.
 (pdftex.def)             Requested size: 207.02406pt x 169.26288pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 58.
+Package pdftex.def Info: ur1.png used on input line 54.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
- [7
+ [5
 
  <./images/LBPHAlgo.png (PNG copy)>]
-<images/lbphlumi.jpg, id=442, 666.49pt x 381.425pt>
+<images/lbphlumi.jpg, id=351, 666.49pt x 381.425pt>
 File: images/lbphlumi.jpg Graphic file (type jpg)
  <use images/lbphlumi.jpg>
-Package pdftex.def Info: images/lbphlumi.jpg used on input line 72.
+Package pdftex.def Info: images/lbphlumi.jpg used on input line 68.
 (pdftex.def)             Requested size: 199.94853pt x 114.42838pt.
 File: ur1.png Graphic file (type png)
 
 <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 72.
+Package pdftex.def Info: ur1.png used on input line 68.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
- [8
+ [6
 
  <./images/lbphlumi.jpg>]
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 80.
+Package pdftex.def Info: ur1.png used on input line 76.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
- [9
+ [7
 
 ] (./Diapo.toc)
 File: ur1.png Graphic file (type png)
 
 <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 81.
+Package pdftex.def Info: ur1.png used on input line 77.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
- [10
+ [8
 
-] <images/6emotions.png, id=582, 417.56pt x 136.51pt>
+] <images/6emotions.png, id=494, 417.56pt x 136.51pt>
 File: images/6emotions.png Graphic file (type png)
 
 <use images/6emotions.png>
-Package pdftex.def Info: images/6emotions.png used on input line 90.
+Package pdftex.def Info: images/6emotions.png used on input line 86.
 (pdftex.def)             Requested size: 208.77948pt x 68.25482pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 90.
+Package pdftex.def Info: ur1.png used on input line 86.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
- [11
+ [9
 
  <./images/6emotions.png>]
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 103.
-
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 99.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 103
-.
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 99.
+
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 103
-.
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 99.
+
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 103.
+(Font)              <10.95> on input line 99.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 103.
+(Font)              <8> on input line 99.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 103.
-LaTeX Font Info:    Try loading font information for U+msa on input line 103.
+(Font)              <6> on input line 99.
+LaTeX Font Info:    Try loading font information for U+msa on input line 99.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 103.
+LaTeX Font Info:    Try loading font information for U+msb on input line 99.
 
 (/usr/local/texlive/2013/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 103.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 99.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 103.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 99.
 LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 103.
+(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 99.
 
-<images/tests_enerve.png, id=629, 388.45125pt x 444.66125pt>
+<images/tests_enerve.png, id=541, 388.45125pt x 444.66125pt>
 File: images/tests_enerve.png Graphic file (type png)
 
 <use images/tests_enerve.png>
-Package pdftex.def Info: images/tests_enerve.png used on input line 103.
+Package pdftex.def Info: images/tests_enerve.png used on input line 99.
 (pdftex.def)             Requested size: 64.0087pt x 73.27402pt.
 
-<images/tests_surpris.png, id=630, 388.45125pt x 434.62375pt>
+<images/tests_surpris.png, id=542, 388.45125pt x 434.62375pt>
 File: images/tests_surpris.png Graphic file (type png)
 
 <use images/tests_surpris.png>
-Package pdftex.def Info: images/tests_surpris.png used on input line 103.
+Package pdftex.def Info: images/tests_surpris.png used on input line 99.
 (pdftex.def)             Requested size: 65.49052pt x 73.27402pt.
 
-<images/tests_endormi.png, id=631, 388.45125pt x 434.62375pt>
+<images/tests_endormi.png, id=543, 388.45125pt x 434.62375pt>
 File: images/tests_endormi.png Graphic file (type png)
 
 <use images/tests_endormi.png>
-Package pdftex.def Info: images/tests_endormi.png used on input line 103.
+Package pdftex.def Info: images/tests_endormi.png used on input line 99.
 (pdftex.def)             Requested size: 65.49052pt x 73.27402pt.
 
-<images/tests_inattentif.png, id=632, 388.45125pt x 434.62375pt>
+<images/tests_inattentif.png, id=544, 388.45125pt x 434.62375pt>
 File: images/tests_inattentif.png Graphic file (type png)
 
 <use images/tests_inattentif.png>
-Package pdftex.def Info: images/tests_inattentif.png used on input line 103.
+Package pdftex.def Info: images/tests_inattentif.png used on input line 99.
 (pdftex.def)             Requested size: 65.49052pt x 73.27402pt.
 
-Overfull \hbox (1.1904pt too wide) in paragraph at lines 103--103
+Overfull \hbox (1.1904pt too wide) in paragraph at lines 99--99
  [] 
  []
 
 File: ur1.png Graphic file (type png)
 <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 103.
+Package pdftex.def Info: ur1.png used on input line 99.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
- [12
+ [10
 
  <./images/tests_enerve.png> <./images/tests_surpris.png> <./images/tests_endor
 mi.png> <./images/tests_inattentif.png>]
-<images/findContoursOk.jpg, id=681, 108.405pt x 44.165pt>
+<images/findContoursOk.jpg, id=594, 108.405pt x 44.165pt>
 File: images/findContoursOk.jpg Graphic file (type jpg)
 
 <use images/findContoursOk.jpg>
-Package pdftex.def Info: images/findContoursOk.jpg used on input line 117.
+Package pdftex.def Info: images/findContoursOk.jpg used on input line 113.
 (pdftex.def)             Requested size: 73.9129pt x 30.11261pt.
 
-<images/contourBouche.png, id=682, 100.375pt x 40.15pt>
+<images/contourBouche.png, id=595, 100.375pt x 40.15pt>
 File: images/contourBouche.png Graphic file (type png)
 
 <use images/contourBouche.png>
-Package pdftex.def Info: images/contourBouche.png used on input line 117.
+Package pdftex.def Info: images/contourBouche.png used on input line 113.
 (pdftex.def)             Requested size: 75.2841pt x 30.11261pt.
 
-<images/inRangeOk.jpg, id=683, 72.27pt x 44.165pt>
+<images/inRangeOk.jpg, id=596, 72.27pt x 44.165pt>
 File: images/inRangeOk.jpg Graphic file (type jpg)
  <use images/inRangeOk.jpg>
-Package pdftex.def Info: images/inRangeOk.jpg used on input line 117.
+Package pdftex.def Info: images/inRangeOk.jpg used on input line 113.
 (pdftex.def)             Requested size: 49.27527pt x 30.11261pt.
 File: ur1.png Graphic file (type png)
 
 <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 117.
+Package pdftex.def Info: ur1.png used on input line 113.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
- [13
+ [11
 
  <./images/findContoursOk.jpg> <./images/contourBouche.png> <./images/inRangeOk
 .jpg>]
-<images/findContoursYeux.png, id=731, 158.5925pt x 83.31125pt>
+File: images/tests_enerve.png Graphic file (type png)
+ <use images/tests_enerve.png>
+Package pdftex.def Info: images/tests_enerve.png used on input line 129.
+(pdftex.def)             Requested size: 56.99672pt x 65.24399pt.
+File: images/tests_surpris.png Graphic file (type png)
+
+<use images/tests_surpris.png>
+Package pdftex.def Info: images/tests_surpris.png used on input line 129.
+(pdftex.def)             Requested size: 58.31258pt x 65.24399pt.
+File: images/tests_endormi.png Graphic file (type png)
+ <use images/tests_endormi.png>
+Package pdftex.def Info: images/tests_endormi.png used on input line 129.
+(pdftex.def)             Requested size: 58.31258pt x 65.24399pt.
+File: images/tests_inattentif.png Graphic file (type png)
+
+<use images/tests_inattentif.png>
+Package pdftex.def Info: images/tests_inattentif.png used on input line 129.
+(pdftex.def)             Requested size: 58.31258pt x 65.24399pt.
+
+<images/finnb3.png, id=644, 388.45125pt x 444.66125pt>
+File: images/finnb3.png Graphic file (type png)
+ <use images/finnb3.png>
+Package pdftex.def Info: images/finnb3.png used on input line 129.
+(pdftex.def)             Requested size: 56.99672pt x 65.24399pt.
+
+<images/finnb.png, id=645, 388.45125pt x 434.62375pt>
+File: images/finnb.png Graphic file (type png)
+ <use images/finnb.png>
+Package pdftex.def Info: images/finnb.png used on input line 129.
+(pdftex.def)             Requested size: 58.31258pt x 65.24399pt.
+
+<images/finnb4.png, id=646, 388.45125pt x 434.62375pt>
+File: images/finnb4.png Graphic file (type png)
+ <use images/finnb4.png>
+Package pdftex.def Info: images/finnb4.png used on input line 129.
+(pdftex.def)             Requested size: 58.31258pt x 65.24399pt.
+
+<images/finnb2.png, id=647, 388.45125pt x 434.62375pt>
+File: images/finnb2.png Graphic file (type png)
+ <use images/finnb2.png>
+Package pdftex.def Info: images/finnb2.png used on input line 129.
+(pdftex.def)             Requested size: 58.31258pt x 65.24399pt.
+File: ur1.png Graphic file (type png)
+
+<use ur1.png>
+Package pdftex.def Info: ur1.png used on input line 129.
+(pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
+ [12
+
+ <./images/finnb3.png (PNG copy)> <./images/finnb.png (PNG copy)> <./images/fin
+nb4.png (PNG copy)> <./images/finnb2.png (PNG copy)>]
+<images/findContoursYeux.png, id=693, 158.5925pt x 83.31125pt>
 File: images/findContoursYeux.png Graphic file (type png)
 
 <use images/findContoursYeux.png>
-Package pdftex.def Info: images/findContoursYeux.png used on input line 128.
+Package pdftex.def Info: images/findContoursYeux.png used on input line 141.
 (pdftex.def)             Requested size: 76.43085pt x 40.15015pt.
 
-<images/EyeColor.png, id=732, 59.22125pt x 30.1125pt>
+<images/EyeColor.png, id=694, 59.22125pt x 30.1125pt>
 File: images/EyeColor.png Graphic file (type png)
 
 <use images/EyeColor.png>
-Package pdftex.def Info: images/EyeColor.png used on input line 128.
+Package pdftex.def Info: images/EyeColor.png used on input line 141.
 (pdftex.def)             Requested size: 78.96927pt x 40.15015pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 128.
+Package pdftex.def Info: ur1.png used on input line 141.
+(pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
+ [13
+
+ <./images/findContoursYeux.png> <./images/EyeColor.png>]
+File: images/tests_enerve.png Graphic file (type png)
+ <use images/tests_enerve.png>
+Package pdftex.def Info: images/tests_enerve.png used on input line 157.
+(pdftex.def)             Requested size: 56.99672pt x 65.24399pt.
+File: images/tests_surpris.png Graphic file (type png)
+
+<use images/tests_surpris.png>
+Package pdftex.def Info: images/tests_surpris.png used on input line 157.
+(pdftex.def)             Requested size: 58.31258pt x 65.24399pt.
+File: images/tests_endormi.png Graphic file (type png)
+ <use images/tests_endormi.png>
+Package pdftex.def Info: images/tests_endormi.png used on input line 157.
+(pdftex.def)             Requested size: 58.31258pt x 65.24399pt.
+File: images/tests_inattentif.png Graphic file (type png)
+
+<use images/tests_inattentif.png>
+Package pdftex.def Info: images/tests_inattentif.png used on input line 157.
+(pdftex.def)             Requested size: 58.31258pt x 65.24399pt.
+
+<images/fincolor2.jpg, id=744, 388.45125pt x 444.66125pt>
+File: images/fincolor2.jpg Graphic file (type jpg)
+
+<use images/fincolor2.jpg>
+Package pdftex.def Info: images/fincolor2.jpg used on input line 157.
+(pdftex.def)             Requested size: 56.99672pt x 65.24399pt.
+
+<images/fincolor.jpg, id=745, 388.45125pt x 434.62375pt>
+File: images/fincolor.jpg Graphic file (type jpg)
+
+<use images/fincolor.jpg>
+Package pdftex.def Info: images/fincolor.jpg used on input line 157.
+(pdftex.def)             Requested size: 58.31258pt x 65.24399pt.
+
+<images/fincolorendormi.jpg, id=746, 388.45125pt x 434.62375pt>
+File: images/fincolorendormi.jpg Graphic file (type jpg)
+
+<use images/fincolorendormi.jpg>
+Package pdftex.def Info: images/fincolorendormi.jpg used on input line 157.
+(pdftex.def)             Requested size: 58.31258pt x 65.24399pt.
+
+<images/fincolorin.jpg, id=747, 388.45125pt x 434.62375pt>
+File: images/fincolorin.jpg Graphic file (type jpg)
+
+<use images/fincolorin.jpg>
+Package pdftex.def Info: images/fincolorin.jpg used on input line 157.
+(pdftex.def)             Requested size: 58.31258pt x 65.24399pt.
+File: ur1.png Graphic file (type png)
+ <use ur1.png>
+Package pdftex.def Info: ur1.png used on input line 157.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [14
 
- <./images/findContoursYeux.png> <./images/EyeColor.png>]
+ <./images/fincolor2.jpg> <./images/fincolor.jpg> <./images/fincolorendormi.jpg
+> <./images/fincolorin.jpg>]
+(./Diapo.toc)
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 134.
+Package pdftex.def Info: ur1.png used on input line 159.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [15
 
-] (./Diapo.toc)
+]
+<images/prototype.jpg, id=842, 3276.24pt x 1846.9pt>
+File: images/prototype.jpg Graphic file (type jpg)
+
+<use images/prototype.jpg>
+Package pdftex.def Info: images/prototype.jpg used on input line 167.
+(pdftex.def)             Requested size: 294.84888pt x 166.21382pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 136.
+Package pdftex.def Info: ur1.png used on input line 167.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [16
 
-]
-<images/video_init.png, id=873, 1686.3pt x 1053.9375pt>
+ <./images/prototype.jpg>]
+<images/video_init.png, id=888, 1686.3pt x 1053.9375pt>
 File: images/video_init.png Graphic file (type png)
 
 <use images/video_init.png>
-Package pdftex.def Info: images/video_init.png used on input line 143.
+Package pdftex.def Info: images/video_init.png used on input line 174.
 (pdftex.def)             Requested size: 252.93408pt x 158.0838pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 143.
+Package pdftex.def Info: ur1.png used on input line 174.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [17
 
  <./images/video_init.png>]
-<images/video_inattentif.png, id=919, 1686.3pt x 1053.9375pt>
+<images/video_inattentif.png, id=935, 1686.3pt x 1053.9375pt>
 File: images/video_inattentif.png Graphic file (type png)
 
 <use images/video_inattentif.png>
-Package pdftex.def Info: images/video_inattentif.png used on input line 149.
+Package pdftex.def Info: images/video_inattentif.png used on input line 180.
 (pdftex.def)             Requested size: 252.93408pt x 158.0838pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 149.
+Package pdftex.def Info: ur1.png used on input line 180.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [18
 
- <./images/video_inattentif.png>] <images/video_surpris.png, id=964, 1686.3pt x
+ <./images/video_inattentif.png>] <images/video_surpris.png, id=981, 1686.3pt x
  1053.9375pt>
 File: images/video_surpris.png Graphic file (type png)
 
 <use images/video_surpris.png>
-Package pdftex.def Info: images/video_surpris.png used on input line 155.
+Package pdftex.def Info: images/video_surpris.png used on input line 186.
 (pdftex.def)             Requested size: 252.93408pt x 158.0838pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 155.
+Package pdftex.def Info: ur1.png used on input line 186.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [19
 
  <./images/video_surpris.png>]
-<images/video_enerve.png, id=1010, 1686.3pt x 1053.9375pt>
+<images/video_enerve.png, id=1029, 1686.3pt x 1053.9375pt>
 File: images/video_enerve.png Graphic file (type png)
 
 <use images/video_enerve.png>
-Package pdftex.def Info: images/video_enerve.png used on input line 161.
+Package pdftex.def Info: images/video_enerve.png used on input line 192.
 (pdftex.def)             Requested size: 252.93408pt x 158.0838pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 161.
+Package pdftex.def Info: ur1.png used on input line 192.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [20
 
  <./images/video_enerve.png>]
-<images/video_endormi.png, id=1056, 1686.3pt x 1053.9375pt>
+<images/video_endormi.png, id=1075, 1686.3pt x 1053.9375pt>
 File: images/video_endormi.png Graphic file (type png)
 
 <use images/video_endormi.png>
-Package pdftex.def Info: images/video_endormi.png used on input line 167.
+Package pdftex.def Info: images/video_endormi.png used on input line 198.
 (pdftex.def)             Requested size: 252.93408pt x 158.0838pt.
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 167.
+Package pdftex.def Info: ur1.png used on input line 198.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [21
 
@@ -1294,21 +1390,21 @@ Package pdftex.def Info: ur1.png used on input line 167.
 (./Diapo.toc)
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 169.
+Package pdftex.def Info: ur1.png used on input line 200.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [22
 
 ]
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 172.
+Package pdftex.def Info: ur1.png used on input line 203.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [23
 
 ]
 File: ur1.png Graphic file (type png)
  <use ur1.png>
-Package pdftex.def Info: ur1.png used on input line 179.
+Package pdftex.def Info: ur1.png used on input line 210.
 (pdftex.def)             Requested size: 77.0893pt x 28.45274pt.
  [24
 
@@ -1322,21 +1418,21 @@ Package pdftex.def Info: ur1.png used on input line 179.
 \tf@snm=\write8
 \openout8 = `Diapo.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 180.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 180.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 211.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 211.
 
 (./Diapo.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 180.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 180.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 211.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 211.
 Package rerunfilecheck Info: File `Diapo.out' has not changed.
-(rerunfilecheck)             Checksum: 08196D538CF5B103E3F4BABF2E3418C1;533.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 180.
+(rerunfilecheck)             Checksum: 5F63F32254F2A8AC6A66A30D6BB47DE4;540.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 211.
  ) 
 Here is how much of TeX's memory you used:
- 17157 strings out of 493315
- 318720 string characters out of 6137905
- 402638 words of memory out of 5000000
- 20089 multiletter control sequences out of 15000+600000
+ 17179 strings out of 493315
+ 319001 string characters out of 6137905
+ 402616 words of memory out of 5000000
+ 20104 multiletter control sequences out of 15000+600000
  31334 words of font info for 40 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,20n,64p,394b,748s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1344,10 +1440,10 @@ Here is how much of TeX's memory you used:
 texlive/2013/texmf-dist/fonts/type1/public/lm/lmss10.pfb></usr/local/texlive/20
 13/texmf-dist/fonts/type1/public/lm/lmss12.pfb></usr/local/texlive/2013/texmf-d
 ist/fonts/type1/public/lm/lmss8.pfb>
-Output written on Diapo.pdf (24 pages, 8456326 bytes).
+Output written on Diapo.pdf (24 pages, 10272609 bytes).
 PDF statistics:
- 1266 PDF objects out of 1440 (max. 8388607)
- 1162 compressed objects within 12 object streams
+ 1288 PDF objects out of 1440 (max. 8388607)
+ 1174 compressed objects within 12 object streams
  58 named destinations out of 1000 (max. 500000)
- 268 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 313 words of extra memory for PDF output out of 10000 (max. 10000000)
 
