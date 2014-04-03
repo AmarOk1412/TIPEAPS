@@ -8,4 +8,4 @@
 \beamer@sectionintoc {3}{D\'emonstration}{15}{0}{3}
 \beamer@subsectionintoc {3}{1}{tests}{16}{0}{3}
 \beamer@subsectionintoc {3}{2}{video}{17}{0}{3}
-\beamer@sectionintoc {4}{Conclusion}{22}{0}{4}
+\beamer@subsectionintoc {4}{1}{questions}{22}{0}{3}
