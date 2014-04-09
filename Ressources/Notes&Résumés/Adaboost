@@ -1,4 +1,0 @@
-Prend de petits classifieurs pour en faire un fort.
-Au début, il faut plein de classifiers. On les apprends. Si ils sont bien on leur donne un petit poid pour faire en sorte qu'à la prochaine itération, ça soit plus adapté à ceux mal classifiés.
-Le classificateur final est une combinaison linéaire de tous les classifieurs faibles.
-Les coefficients de cette combinaison linéaire sont également déterminés dans les itérations : taux d'erreur faible -> plus grand poid que les classificateurs faibles avec un taux d'erreur élevé .

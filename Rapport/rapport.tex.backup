@@ -1,0 +1,574 @@
+\documentclass{report}
+
+\usepackage[latin1]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\usepackage[a4paper]{geometry}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{url}
+\usepackage{amsmath, amsfonts}
+\usepackage{wasysym}
+\usepackage{diagbox}
+\usepackage{array}
+\usepackage{pdfpages}
+
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{units}
+
+%definition des couleurs
+\definecolor{newGreen}{rgb}{0,0.6,0}
+\definecolor{newOrange}{rgb}{0.87,0.39,0.15}
+\definecolor{newBlue}{rgb}{0.36,0.51,0.77}
+\definecolor{newMauve}{rgb}{0.58,0,0.82}
+%Modifications de l'affichage des codes source
+\lstset{
+	numbers = left,
+	showspaces = none,
+	keepspaces = true,
+	showstringspaces = true,
+	basicstyle = \footnotesize,
+	commentstyle = \color{newGreen},
+	keywordstyle = \color{newOrange},
+	identifierstyle = \color{newBlue},
+	stringstyle = \color{newMauve}
+}
+\lstdefinestyle{arduino}{
+	language=C,
+	morekeywords = {HIGH, LOW, INPUT, OUTPUT}
+}
+
+\begin{document}
+\renewcommand{\chaptername}{Partie}
+	\begin{titlepage}
+		\vspace{-10px}
+		\begin{tabular}{l}
+			\textsc{Blin} S\'ebastien, \\
+			\textsc{Collin} Pierre-Henri, \\
+			\textsc{Louarn} Amaury 
+		\end{tabular}
+		\hfill \vspace{10px}\includegraphics[scale=0.15]{ur1.png}\\
+		\vfill
+		\begin{center}
+			\Huge{Universit\'e de Rennes 1}\\
+			\large{Campus de Beaulieu}\\
+			\vspace{1cm}
+			\LARGE{Licence STS}\\
+			\large{Cycle Pr\'eparatoire Ing\'enieur Rennes 1 - Informatique et T\'el\'ecommunications}\\
+			\vspace{0.5cm}\hrule\vspace{0.5cm}
+			\LARGE{\textbf{Rapport de Travail d'Initiative Personnelle Encadr\'ee (\textsc{TIPE})}}\\
+			\Large{Comment la reconnaissance faciale du conducteur peut-elle am\'eliorer sa s\'ecurit\'e au volant ?}
+			\vfill
+			\vfill
+		\end{center}
+		\begin{flushleft}
+			\Large{Sous l'encadrement de~:}\\
+			\vspace{0.2cm}
+			\large{Johanne \textsc{B\'ezy-Wendling}}\\
+			\normalsize{Ma\^itre de Conf\'erences\\
+			Responsable cycle pr\'eparatoire ing\'enieur de l'Universit\'e de Rennes I\\
+			(sp\'ecialit\'e informatique et t\'el\'ecommunications)}\\
+			\vspace{0.2cm}
+			\large{Finn \textsc{J\o rgensen}}\\
+			\normalsize{Responsable L3 d'informatique - ISTIC}
+		\end{flushleft}
+		\vfill
+	\end{titlepage}
+	\pagenumbering{roman}
+	\begin{abstract}
+	
+		Dans ce rapport, nous expliquons le raisonnement que nous avons suivi dans l'optique de d\'evelopper une application de reconnaissance faciale et de reconnaissance des \'emotions, appliqu\'ee au domaine de la s\'ecurit\'e routi\`ere. Nous \'etudirons tout d'abord la situation actuelle de la s\'ecurit\'e routi\`ere et pourquoi une application de ce type peut trouver sa place dans l'automobile. Nous \'etudirons ensuite l'existant, tant en reconnaissance faciale, qu'en reconnaissance des \'emotions.\\
+		
+		Enfin, nous d\'evelopperons la mise en \oe uvre de notre application, de son fonctionnement, et des tests auxquels cette application a \'et\'e soumise. Nous expliquerons alors pourquoi cette application d\'emontre que le concept peut \^etre vu comme une r\'eussite, mais que nous manquons encore de puissance de calcul et de p\'eriph\'eriques fiables (notamment une cam\'era).
+	\end{abstract}
+	\chapter*{Remerciements}
+	Nous tenons \`a exprimer nos remerciements et notre gratitude envers tous ceux qui ont bien voulu apporter leur assistance au bon d\'eroulement de ce projet.\\
+
+Nous remercions en particulier Finn \textsc{J\o rgensen}, Responsable L3 d'informatique de l'ISTIC et Madame Johanne \textsc{B\'ezy-Wendling} Ma\^itre de Conf\'erences et Responsable cycle pr\'eparatoire ing\'enieur de l'Universit\'e de Rennes I (sp\'ecialit\'e informatique et t\'el\'ecommunications) pour l'encadrement de ce \textsc{TIPE} et l'attention qu'ils ont bien voulu apporter \`a ce travail \`a divers stades de son \'elaboration.\\
+
+Nous remercions \'egalement Madame D\'eborah \textsc{Mahieu} Professeur Agr\'eg\'e et Responsable du parcours communication pour l'apport de conseils et de m\'ethodes qui nous ont servi tout au long de ce projet.\\
+
+Enfin, nous remercions toutes les personnes qui nous ont aid\'e lors des exp\'erimentations pour la v\'erification du bon fonctionnement de l'application.\\
+	\tableofcontents
+	\listoffigures
+	\chapter*{Introduction}
+	\pagenumbering{arabic}
+	\setcounter{page}{1}
+	Ce rapport intervient dans le cadre de notre deuxi\`eme ann\'ee d'\'etudes en licence STS parcours ing\'enieur mention informatique-\'electronique. En effet, nous sommes dans l'obligation de r\'ealiser un Travail d'Initiative Personnelle Encadr\'e (\textsc{TIPE}) pour assurer notre admission \`a l'E.S.I.R (Ecole Sup\'erieure d'Ing\'enieur de Rennes 1). Ce projet a \'et\'e men\'e par : S\'ebastien Blin, Pierre-Henri Collin et Amaury Louarn. Cette ann\'ee, le th\`eme national \'etait : \og Transferts et \'echanges\fg. Nous avons tout de suite pens\'e \`a l'interface homme-machine et \`a ses nombreuses possibilit\'es. Puis, apr\`es une s\'eance de brainstorming, notre choix s'est port\'e sur la reconnaissance des \'emotions avec une application possible \`a la s\'ecurit\'e routi\`ere. Plusieurs \'el\'ements ont motiv\'e ce choix : tout d'abord, la reconnaissance faciale est un domaine qui prend de plus en plus d'ampleur depuis quelques ann\'ees. Ensuite, le traitement vid\'eo constitue un domaine d'\'etudes tr\`es int\'eressant et nous permet d'avoir une premi\`ere approche sur un sujet que nous aurons peut-être l'occasion d'approfondir dans la suite de nos \'etudes. Enfin, on avait d\'ej\`a tent\'e par le pass\'e de r\'ealiser des applications de suivi de visages (ou d'une main, d'une couleur) et le sujet nous avait vraiment plu.\\
+
+Avant de commencer toute recherche technique pour mener \`a bien notre projet, nous avons commenc\'e par regarder si des projets similaires existaient d\'ej\`a. Nous avons alors trouv\'e des projets comme \cite{keyLemon} où une cam\'era sert \`a r\'ealiser l'identification du conducteur pour activer un profil de conduite (r\'eglage du si\`ege, des r\'etroviseurs, ...) et suit le regard du conducteur pour v\'erifier s'il a vu les pi\'etons qui traversent et qui sont d\'etect\'es par le radar. Dans un autre article \cite{gentside} le syst\`eme de reconnaissance faciale est utilis\'e pour d\'etecter si le conducteur s'endort. La d\'etection se fait \`a l'aide d'un suivi de points (17 points sur le visage). Par ailleurs, il poss\`ede six phases de notifications. Ensuite, un projet d\'evelopp\'e par Alps Electric \cite{alpsElectric} qui identifie le conducteur et qui permet \'egalement d'acc\'eder \`a des pr\'e-r\'eglages, mais qui r\'ealise aussi un bilan de sant\'e du conducteur. Ou encore \cite{drivingEmotionalExperienceAutomotiveDesign} qui analyse, \`a l'aide d'une cam\'era les \'emotions de conducteurs dans des traffics plus ou moins denses. Enfin, voici une application de la reconnaissance des \'emotions appliqu\'ee \`a l'automobile \cite{gnt} qui sert de gadget. Il s'agit d'un concept de Toyota où la couleur du v\'ehicule se modifie en fonction de l'humeur du conducteur. Nous pouvons \'egalement noter la pr\'esence d'un pare-brise avec r\'ealit\'e augment\'ee.\\
+
+Nous avons donc choisi pour probl\'ematique : Comment la reconnaissance faciale du conducteur peut-elle am\'eliorer sa s\'ecurit\'e au volant ? En effet, la s\'ecurit\'e routi\`ere est un enjeu de sant\'e publique et la diminution de la mortalit\'e routi\`ere fait partie des priorit\'es des pouvoirs publics. La plupart des mesures prises pour \'eviter les accidents mortels se concentrent sur le v\'ehicule. C'est pourquoi, nous avons voulu mettre l'accent sur le conducteur et ses d\'efaillances. De nombreux accidents corporels ont pour cause l'inattention du conducteur ou pire, son endormissement. Nous avons donc voulu savoir comment le comportement d'un individu peut être "contrôl\'e" pour am\'eliorer sa s\'ecurit\'e et celle des autres.\\
+
+C'est pourquoi, dans un premier temps, nous ferons un bilan des mesures prises par les gouvernements pour lutter contre l'ins\'ecurit\'e routi\`ere et des comportements \`a risque sur lesquels nous pouvons agir. Ensuite, nous verrons la partie technique concernant la reconnaissance faciale qui constitue une premi\`ere \'etape dans l'analyse du comportement du conducteur. L'identification de celui-ci peut par exemple empêcher le vol d'une voiture. Nous \'etudierons ensuite la partie centrale de notre projet qui est la reconnaissance des expressions faciales, qui va nous permettre de d\'etecter si un conducteur est surpris ou \'enerv\'e. Enfin nous verrons en d\'etail le prototype de l'application r\'ealis\'ee.\\
+
+La m\'ethodologie utilis\'ee au cours de ce projet est la suivante : nous avons d'abord effectu\'e des recherches sur les trois parties principales de notre \textsc{TIPE} : la s\'ecurit\'e routi\`ere, la reconnaissance faciale et la reconnaissance des \'emotions. Les recherches sur la s\'ecurit\'e routi\`ere nous ont permis d'identifier les comportements du conducteur \`a \'etudier. Celles sur la reconnaissance faciale et la reconnaissance des \'emotions nous ont permis de d\'ecouvrir th\'eoriquement les m\'ethodes existantes pour proc\'eder \`a la reconnaissance et les technologies les plus pertinentes pour r\'ealiser ce projet. \`A partir des ces recherches, nous avons s\'electionn\'e les algorithmes qui correspondaient le mieux \`a nos besoins, puis nous avons effectu\'e diff\'erents tests afin de v\'erifier la faisabilit\'e et la robustesse des algorithmes choisis. Nous avons ensuite r\'ealis\'e l'application qu'on a soumise aux tests finaux. Enfin, nous avons analys\'e les r\'esultats de nos tests et tir\'es des conclusions.
+
+	\chapter{Les limites de la s\'ecurit\'e routi\`ere}
+		Dans cette premi\`ere partie, nous allons aborder les limites de la s\'ecurit\'e routi\`ere, qui sont \`a l'origine de notre probl\'ematique. D'abord, nous verrons les moyens mis en oeuvre pour prot\'eger l'automobiliste. Puis, nous verrons les comportements \`a risque qui nuisent encore \`a sa s\'ecurit\'e.
+		\section{Les moyens mis en place pour la s\'ecurit\'e du conducteur en France.}
+			Dans le but de visualiser les moyens d\'eploy\'es par les pouvoirs publics, nous ferons dans un premier temps un historique de la s\'ecurit\'e routi\`ere depuis le d\'ebut des ann\'ees 70 (p\'eriode qui correspond \`a l'adoption des premi\`eres mesures pour diminuer le nombre de morts sur la route). Ensuite, nous verrons l'impact induit par ces moyens sur l'augmentation de la s\'ecurit\'e au volant.
+			\subsection{Historique de la s\'ecurit\'e routi\`ere depuis 40 ans}
+
+Apr\`es la seconde guerre mondiale, et en particulier d\`es le d\'ebut des ann\'ees 50, le nombre d'accidents mortels sur la route a fortement augment\'e \cite{accidentalite2012}. Plusieurs facteurs sont en cause~: l'expansion du parc automobile, un r\'eseau routier inadapt\'e, ainsi que l'insuffisante formation des conducteurs. Le premier d\'enombrement en 1954 recensa 7166 tu\'es à 3 jours. \`A cette \'epoque, la s\'ecurit\'e routi\`ere \'etait de loin un probl\`eme prioritaire pour le gouvernement car il n'y avait pas encore de politique publique.\\
+
+\`A partir des ann\'ees 60, ce fut le d\'ebut des op\'erations de traitement des points noirs. Entre 1960 entre 1970, la mortalit\'e augmenta de 55,7\% et le trafic est multipli\'e par 2,3.\\
+
+En 1972, le Comit\'e Interminist\'eriel de la S\'ecurit\'e Routi\`ere (C.I.S.R) fut cr\'e\'e afin de d\'efinir la politique de s\'ecurit\'e routi\`ere en France. Cette ann\'ee fut aussi celle qui aura fait le plus de victimes sur les routes avec 16 545 morts. Durant la d\'ecennie qui suivie, le gouvernement instaura plusieurs mesures telles que~: les limitations de vitesse et l'obligation du port de la ceinture \`a l'avant. En dix ans, la mortalit\'e diminua de 30\% tandis que le trafic global fut multipli\'e par 1,6.\\
+
+Au d\'ebut des ann\'ees 80, les pouvoirs publics constat\`erent une stabilisation de la baisse de la mortalit\'e routi\`ere. Ils instaur\`erent des plans d\'epartementaux de s\'ecurit\'e routi\`ere ainsi que le programme R.E.A.G.I.R (R\'eagir pour les Enquêtes sur les Accidents Graves et les Initiatives pour y Rem\'edier). Ce fut \'egalement le d\'ebut de la politique locale de s\'ecurit\'e routi\`ere. Entre 1980 et 1990, le seuil d'alcool\'emie autoris\'e fut abaiss\'e de 1,2 \`a 0,8 g/l d'alcool dans le sang, la plupart des v\'ehicules furent \'equip\'es d'un syst\`eme anti-blocage des roues, le nombre de carrefours giratoires augmenta (diminution notable du nombre d'accidents mortels dans les carrefours).\\
+
+\`A la fin des ann\'ees 80, un livre blanc de la s\'ecurit\'e routi\`ere fut publi\'e dans le but d'\'enoncer les orientations majeures des futures politiques de s\'ecurit\'e routi\`ere. Entre 1990 et 2000, de nombreuses mesures furent donc mises en oeuvre~: en 1990, la vitesse maximale autoris\'ee en agglom\'eration fut fix\'ee \`a 50km/h et un permis \`a points fut instaur\'e, le taux d'alcool autoris\'e dans le sang se limita \`a 0,5 g/l, l'essentiel du r\'eseau autoroutier \'etait quasiment achev\'e, la plupart des v\'ehicules furent \'equip\'es d'airbags. De plus, le continuum \'educatif fut mis en place. D'apr\`es le site gouvernemental de la s\'ecurit\'e routi\`ere, le continuum \'educatif exprima l'id\'ee que \og l'\'education \`a la s\'ecurit\'e routi\`ere ne se fait pas seulement lors du passage du permis de conduire, mais tout au long de sa vie\fg.\\
+En dix ans, le trafic global augmenta de 20\%, alors que la mortalit\'e routi\`ere diminua d'autant.\\
+
+En 2002, la s\'ecurit\'e routi\`ere \'etait l'un des principaux chantiers du Pr\'esident de la R\'epublique. Un an plus tard, les premiers radars de contrôle arriv\`erent au bord des routes. La même ann\'ee, le Conseil National de la S\'ecurit\'e Routi\`ere (C.N.S.R) s'installa avec pour objectif l'élargissement des débats aux instances non gouvernementales impliquées dans la sécurité routière comme les assureurs \cite{conseilNationalSecuRoutiere}. En 2004, le permis probatoire fit son apparition. Les sanctions sont devenues plus importantes pour les conducteurs en \'etat d'\'ebri\'et\'e. En effet, un d\'epassement du taux l\'egal d'alcool dans le sang entraine un retrait de six points sur le permis de conduire. Entre 2000 et 2010, la mortalit\'e baissa de 51,1\% alors que le trafic global augmenta de 7\%.\\
+
+Apr\`es un bref aperçu sur l'\'etendu des d\'ecisions prises par les gouvernements depuis 1972 en mati\`ere de s\'ecurit\'e routi\`ere, nous allons maintenant voir quel est le bilan de ces mesures.\\
+
+\subsection{Bilan de quarante ann\'ees de mesures}
+
+Premi\`erement, le nombre de tu\'es sur la route a fortement diminu\'e depuis 1972 (ann\'ee qui marque la fin de la hausse constante de la mortalit\'e routi\`ere). Comme nous pouvons le constater sur le graphique ci-dessous, ce nombre a \'et\'e divis\'e par plus de quatre en quarante ans malgr\'e un doublement du parc automobile. En 2012, 3 653 personnes ont \'et\'e tu\'ees en 30 jours contre plus de 18 000 en 1972.\\
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.41]{images/evolcompart48-11.png}
+		\caption{\'Evolution compar\'ee du traffic et de la mortalit\'e routi\`ere entre 1948 et 2011}
+	\end{center}
+\end{figure}
+
+Ces progr\`es observ\'es en mati\`ere de s\'ecurit\'e routi\`ere ont \'et\'e obtenus en agissant sur plusieurs facteurs \cite{secuRoutiere2011}. Lors d'un accident, quatre facteurs essentiels doivent être pris en compte~: tout d'abord les facteurs li\'es \`a l'infrastructure (conception, entretien et exploitation), les facteurs li\'es aux v\'ehicules (s\'ecurit\'e passive et active), les facteurs li\'es aux comportements des usagers (formation, communication, r\'epression), et le progr\`es des services de secours et de soin. Cependant, il est tr\`es difficile de d\'efinir la part de chacun de ces facteurs dans l'am\'elioration de la s\'ecurit\'e routi\`ere. \\
+
+Concernant les facteurs li\'es \`a l'infrastructure, nous pouvons retenir plusieurs points qui ont particip\'e \`a l'am\'elioration de la s\'ecurit\'e routi\`ere~: comme la construction d'un r\'eseau autoroutier, le d\'eploiement de barri\`eres de s\'ecurit\'e le long des routes potentiellement dangereuses, les protections anti-\'eblouissements, des bandes sonores anti-endormissement, les bandes d'arrêts d'urgences. \\
+
+Ensuite parmi les facteurs li\'es aux v\'ehicules, la situation actuelle n'a plus rien \`a voir avec celle d'il y a quarante ans. Le port obligatoire de la ceinture, l'obligation pour les enfants de s'asseoir \`a l'arri\`ere du v\'ehicule, l'apparition de diff\'erents coussins gonflables de s\'ecurit\'e dans le poste conducteur (airbags), la structure des v\'ehicules qui absorbent mieux les chocs (\`a l'aide des pare-chocs par exemple) ont eu un impact consid\'erable sur la diminution de la gravit\'e des accidents. Nous pouvons aussi \'evoquer la mise en place progressive dans tous les v\'ehicules de syst\`emes d'aide \`a la conduite (ABS par exemple). \\
+
+Les facteurs li\'es aux comportements des usagers sont sûrement ceux qui ont eu le plus d'effets sur la diminution du nombre de tu\'es sur la route. Tout d'abord, la formation des usagers qui n'a cess\'e de cro\^itre au fil des ann\'ees a permis de leur donner une meilleure appr\'ehension de la route. Cette formation s'inscrit dans un processus progressif et continu. Que ce soit en famille, \`a l'\'ecole, lors du passage du permis de conduire, ou pendant le reste de leur vie. Ensuite, la r\'epression a incit\'e les usagers \`a respecter les nouvelles mesures de s\'ecurit\'e mises en place. Par exemple, sur le respect des limitations de vitesse, du taux d'alcool\'emie pr\'esent dans le sang, du port de la ceinture, etc. Au fil du temps, la r\'epression s'est durcie avec l'augmentation des points retir\'es en cas de d\'elit. Enfin, la communication sur la s\'ecurit\'e routi\`ere a \'et\'e primordiale pour faire changer les moeurs.
+Des campagnes publicitaires (voir ci-dessous) parfois chocs ont fait prendre conscience aux usagers que nous sommes \og tous responsables\fg (slogan utilis\'e lors des campagnes de pr\'evention).\\
+
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.25]{images/karl-for-Securite-Routiere}
+		\caption{Karl Lagarfeld pour une affiche de pr\'evention routi\`ere}
+	\end{center}
+\end{figure}
+ 
+Suite \`a cette pr\'esentation des moyens mis en oeuvre par les gouvernements successifs et de leurs impacts sur la s\'ecurit\'e routi\`ere, nous allons \`a pr\'esent aborder les limites de ces mesures, c'est-\`a-dire les comportements qui mettent en p\'eril cette s\'ecurit\'e.\\
+
+\section{Les comportements \`a risques}
+
+Malgr\'e toutes les mesures prises pour prot\'eger le conducteur, de nombreux accidents mortels ont encore lieu. La plupart du temps, cet accident n'est pas dû \`a une d\'efaillance du v\'ehicule, une route endommag\'ee ou encore au mauvais temps, mais \`a une d\'efaillance humaine. C'est pourquoi, nous analyserons d'abord les principales causes des accidents, puis un type de comportement dangereux en particulier~: la conduite \`a l'aveugle.
+
+\subsection{Les principales causes d'accidents}
+
+Les accidents corporels sont g\'en\'eralement d\'etermin\'es par plusieurs facteurs.Ces facteurs peuvent influer sur l'occurrence des accidents, mais aussi sur leur gravit\'e. Ils sont souvent li\'es entre eux, et il est particuli\`erement difficile de d\'eterminer le facteur principal, habituellement appel\'e la \og cause\fg de l'accident.\\
+
+La vitesse est un facteur pr\'epond\'erant dans les accidents corporels. C'est \'egalement un facteur transversal, car la vitesse est presque toujours pr\'esente comme facteur d'occurrence et/ou facteur de gravit\'e. En 2011, en France, au moins 26\% des accidents mortels ont pour cause identifi\'ee la vitesse d'apr\`es les forces de l'ordre. En Suisse et en Allemagne la vitesse, seule ou associ\'ee, repr\'esente 40\% des accidents mortels.\\
+
+L 'alcool est \'egalement un facteur majeur pr\'esent dans les accidents. En effet, s'il est pr\'esent dans le sang en quantit\'e trop importante, il entra\^ine une augmentation de la vitesse, la somnolence, l'oubli du port de la ceinture de s\'ecurit\'e \cite{express}. Le taux d'implication de l'alcool dans la mortalit\'e routi\`ere reste constant~: environ 31\%. Les 875 accidents mortels avec au moins un conducteur ayant une alcool\'emie sup\'erieur au seuil autoris\'e ont provoqu\'e 964 victimes. Parmi les victimes des accidents mortels avec comme facteur l'alcool, les conducteurs ainsi que leurs passagers repr\'esentent 70\% des personnes tu\'ees.\\
+
+Les autres facteurs sont~:
+\begin{itemize}
+	\item{L'usage des stup\'efiants (en 2011, 455 accidents mortels avec au moins un conducteur test\'e positivement aux stup\'efiants). Ces accidents ont entrain\'e le d\'ec\`es de 499 personnes (soit 13\% de la mortalit\'e routi\`ere).}
+	\item{La prise de m\'edicaments~: une \'etude r\'ealis\'ee par une \'equipe de l'INSERM (projet CESIR-A) a montr\'e que 3\% des accidents \'etaient attribuables \`a la prise de produits m\'edicamenteux.}
+	\item{Le respect des distances de s\'ecurit\'e. D'apr\`es le Code de la Route~: \og Lorsque deux v\'ehicules se suivent, le conducteur du second doit maintenir une distance de s\'ecurit\'e suffisante pour pouvoir \'eviter une collision en cas de ralentissement brusque ou d'arrêt subit du v\'ehicule qui le pr\'ec\`ede. Cette distance est d'autant plus grande que la vitesse est plus \'elev\'ee. Elle correspond \`a la distance parcourue par le v\'ehicule pendant un d\'elai d'au moins deux secondes\fg. Globalement, plus de 50\% des conducteurs ne respectent pas cette r\`egle. Or, le non-respect des distances de s\'ecurit\'e qui entrainent des collisions par l'arri\`ere et des collisions en chaine totalise 6.2\% de la mortalit\'e routi\`ere.}
+	\item{Le port de la ceinture~: en 2011, 22\% des personnes tu\'ees n'\'etaient pas ceintur\'ees.}\\
+\end{itemize}
+
+Comme nous venons de le voir, les principales causes d'accidents mettent en avant le comportement de l'usager. Nous allons nous attarder sur une une cause d'accident qui n'a pas \'et\'e \'evoqu\'ee pr\'ec\'edemment~: la distraction du conducteur.\\
+
+\subsection{La conduite \`a l'aveugle}
+
+La conduite \`a l'aveugle fait r\'ef\'erence au rel\^achement d'attention du conducteur pour effectuer d'autres t\^aches annexes \`a l'int\'erieur du v\'ehicule. Ainsi, ses capacit\'es d'analyse de la circulation et de r\'eaction sont fortement diminu\'ees.\\
+
+Il existe trois types de distraction~\cite{cdc}: visuelle (regarder autre chose que la route), manuelle (d\'etacher ses mains du volant), cognitive (ne pas être concentr\'e sur la route). Concr\`etement, cela signifie~\cite{govDistractedDriving}: utiliser sont t\'el\'ephone portable ou un smartphone, envoyer un sms, manger et boire, parler aux passagers, se maquiller, lire (y compris les cartes), utiliser un syst\`eme de navigation, regarder une vid\'eo, r\'egler la radio, un lecteur CD ou mp3, etc. Envoyer des sms est la distraction la plus dangereuse, car elle combine les trois types de distraction. De plus, envoyer ou lire un texte oblige \`a quitter des yeux la route pendant 4,6 s en moyenne. A 55 mph (environ 88 km/s), c'est comme conduire la longueur d'un terrain de football, les yeux band\'es.\\
+
+En France, certaines \'etudes ont montr\'e que 25\% \`a 50\% des accidents corporels \'etaient dus \`a la distraction du conducteur. A l'\'etranger, la conduite \`a l'aveugle est \'egalement un facteur de plus en plus important dans la mortalit\'e routi\`ere. Par exemple, chaque jour aux Etats-Unis, plus de 9 personnes sont tu\'ees et plus de 1,060 personnes sont bless\'ees dans des accidents o\`u sont impliqu\'es un conducteur distrait. Par ailleurs, beaucoup d'usagers (en particuliers les jeunes) ne semblent pas encore avoir pris conscience du danger de ces pratiques. En effet, d'apr\`es un sondage r\'ealis\'e en 2011 aux Etats-Unis, 69\% des conducteurs âg\'es de 18 \`a 64 ans avaient t\'el\'ephon\'e en conduisant (En Europe, ce taux varie entre 21\% au Royaume-Uni \`a 59\% au Portugal) et 31\% avaient lu ou envoy\'e un sms en conduisant dans les 30 derniers jours avant d'être sond\'es.\\
+
+	\chapter{La reconnaissance faciale}
+		Dans cette deuxieme partie, nous nous pencherons sur la reconnaissance faciale. Dans un premier temps, nous \'etudierons l'aspect th\'eorique de la reconnaissance, puis l'aspect exp\'erimental.
+
+\section{Th\'eorie}
+
+Afin d'\'etudier l'aspect th\'eorique de la reconnaissance faciale, nous allons d'abord l'aborder de façon g\'en\'eral. Ensuite, nous analyserons plus en d\'etail trois diff\'erents algorithmes couramment utilis\'es dans le domaine de la reconnaissance faciale~: Eigenface, Fisherface et LBPH.
+
+\subsection{G\'en\'eralit\'es}
+
+Apr\`es des recherches approfondies, nous avons pu constater qu'il existe \'enorm\'ement de m\'ethodes possibles pour reconnaître un visage. Ces m\'ethodes peuvent \'egalement être combin\'ees entre elles (par exemple, la mise en place en place d'un r\'eseau neuronal \cite{emotionRecognitionNeurofuzzyNetwork} ou l'impl\'ementation de mod\`eles cach\'es de Markov \cite{analyseInterpretationMouvementsHumains}, \cite{facialExpressionRecognitionFromVideoSequences}, \cite{bimodalEmotionRecognition}). Cependant, en trois mois, nous nous n'aurions pas eu le temps de mettre en place de telles m\'ethodes. De plus, la mise en place d'un r\'eseau neuronnal n\'ecessite beaucoup de calculs. En effet, un r\'eseau neuronal est compos\'e d'une suite de couches de neurones. On donne la matrice de l'image en entrée et le r\'eseau nous donne en sortie le nom de la personne identifi\'ee. La couche de sortie est donc compos\'ee d'un neurone par personne enregistr\'ee, mais la couche d'entr\'ee n\'ecessite autant de neurones que de pixels dans l'image. Pour une image $100\times 100$ il faut donc $10 000$ neurones pour la couche d'entr\'ee (si on d\'ecide de directement traiter l'image captur\'ee). Nous nous sommes donc rabattus vers des algorithmes d\'ej\`a impl\'ement\'es dans la librairie OpenCV qui sont Eigenface, Fisherface et LBPH qui sont rapides et simples \`a impl\'ementer \cite{linuxMagazine}. \\
+
+Par ailleurs, nous avons choisi de traiter uniquement des images en noir et blanc, car la colorim\'etrie a tr\`es peu d'impact dans le processus de reconnaissance.\\
+
+\subsection{La m\'ethode Eigenface}
+
+La m\'ethode de reconnaissance faciale Eigenface a pour particularit\'e de se baser sur des \og eigen vectors\fg, c'est-\`a-dire des vecteurs propres. Elle a \'et\'e introduite en 1991 par Turk et Pentland \cite{eigenfaceRecognition}.\\
+
+L'algorithme est le suivant~: chaque image est consid\'er\'ee comme un vecteur avec pour dimension son nombre de pixels. Puis, un ou plusieurs algorithmes recherchent les principales composantes (ces composantes peuvent être diverses comme le montre la Figure~\ref{fig:eigenfaces_OpenCV}). \`A l'aide de plusieurs images du même visage, nous pouvons alors composer une image du visage \og moyen\fg qui contiendra \'egalement les principales composantes (l'eigenface). La m\'ethode de reconnaissance des axes principaux est d\'etaill\'ee ici~: Matthew Turk and Alex Pentland. Eigenfaces for recognition. J. Cognitive Neuroscience. 3(1)~:71{86, 1991}. Enfin, il suffit de comparer l'eigenface et les composantes principales d'une capture d'un visage.\\
+
+L'avantage de cette m\'ethode est la connaissance de son existence depuis longtemps. Cependant, elle pr\'esente \'egalement des d\'esavantages non-n\'egligeables. En effet, comme chaque pixel est une dimension, une image $100\times100$ donne 10 000 vecteurs \`a traiter. Le nombre de donn\'ees \`a analyser est donc tr\`es important. De plus, cette m\'ethode est sensible \`a la luminosit\'e et \`a la d\'eformation des visages (grimaces, accessoires, ...).\\
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.3]{images/eigenfaces_OpenCV.png}
+		\caption{Ensemble d'eigenfaces}
+		\label{fig:eigenfaces_OpenCV}
+	\end{center}
+\end{figure}
+
+\subsection{La m\'ethode Fisherface}
+
+La m\'ethode de reconnaissance faciale Fisherface se base sur les travaux de Sir R.A. Fisher. Il s'agit d'une \'evolution de l'algorithme Eigenface pr\'esent\'e pr\'ecedemment. Alors que l'algorithme Eigenface se base sur l'Analyse des Composantes Principales (ACP), l'algorithme Fisherface utilise l'Analyse Discriminante Lin\'eaire (ADL) qui cherche le meilleur sous espace minimisant la distance entre les images d'une m\^eme classe (ici une classe = un visage) en maximisant la distance inter-classe.\\
+Tout d'abord, l'algorithme calcul l'image moyenne de la classe~:\\
+$\frac{1}{n}\times\sum_{i=1}^{n} x_i$ avec $x_0, x_1, ..., x_n$ les images de la classe.\\
+Puis, on calcule les matrice de dispersion intra et inter classe (disons respectivement $M_i$ et $M_e$).\\
+Enfin, on trouve la matrice de projection $(P)$ en r\'esolvant \\$$M_i\times x = \lambda\times M_e\times x$$\\
+Pour trouver la meilleure projection, il suffit de r\'esoudre\\$$\frac{P^{-1}\times M_e\times P}{P^{-1}\times M_i\times P}=\mathrm{argmax}(P)$$\\
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.3]{images/fisherfacedistrib.png}
+		\caption{Distribution Fisherface}
+	\end{center}
+\end{figure}
+
+Vous pouvez retrouver plus de d\'etails dans la documentation d'OpenCV (\cite{docOpenCVFisherFace} et \cite{docOpenCVFaceRecognizer})
+
+Globalement, cette m\'ethode pr\'esente les mêmes avantages et inconv\'enients que la m\'ethode Eigenface. Cependant, elle est moins sensible \`a la lumi\`ere et \`a la d\'eformation des visages car elle ne se base pas sur des composantes discriminatoires.\\
+
+\subsection{La m\'ethode LBPH}
+
+La m\'ethode de reconnaissance faciale LBPH (Local Binary Patterns Histogram) consiste \`a visualiser la valeur d'un pixel (moyenne des trois composantes RGB) par rapport aux pixels voisins.\\
+
+Pour commencer, l'image est divis\'e en groupe de pixels. Chaque groupe de pixels correspond \`a une matrice carr\'e contenant les valeurs des pixels. Puis, le pixel plac\'e au centre de la matrice est choisi comme valeur de r\'ef\'erence. Ensuite, toutes les valeurs de la matrice sont remplac\'ees soit par 0, soit par 1 en fonction de leur valeur. La fonction d'Heaviside, nous dit que 
+\[
+	\forall x \in \mathbb{R}, H(x)=
+	\left \{
+	\begin{array}{l l}
+		0 & \text{si } x \leq 0\\
+		1 & \text{sinon}
+	\end{array}
+	\right.
+\]\\
+
+Ici, si nous attribuons la valeur 0 si la valeur du pixel est inf\'erieur \`a la valeur du pixel de r\'ef\'erence, 1 sinon. Apr\`es cette op\'eration, chaque pixel du groupe est pond\'er\'e avec un poids plus ou moins fort (le pixel en haut \`a gauche a le poids le plus faible, tandis que le pixel en bas \`a droite a le poids le plus fort). Ainsi, nous obtenons un nombre binaire qui donne une certaine valeur en base 10. Tous les groupes de l'image sont soumis \`a ce processus pour finalement obtenir un histogramme de l'image. Enfin, il ne reste plus qu'\`a faire la diff\'erence entre deux histogrammes pour comparer deux images (Figure~\ref{fig:LBPHAlgo}).\\
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.5]{images/LBPHAlgo.png}
+		\caption{L'algorithme LBPH}
+		\label{fig:LBPHAlgo}
+	\end{center}
+\end{figure}
+
+Cet algorithme est tr\`es utilis\'e comme nous pouvons le voir dans~: \cite{facialExpressionRecognitionLocalBinaryPatterns} o\`u il est combin\'e avec Adaboost (plugin d'OpenCV) pour obtenir de meilleurs r\'esultats et un r\'eseau neuronnal. Mais aussi dans \cite{faceRecognitionLocalBinaryPatternsSpatialPyramidHistogramsNaiveBayes} o\`u les auteurs essayent d'am\'eliorer l'algorithme dans le but d'en cr\'eer un nouveau~: NBNN (\textit{Naive Bayes Nearest Neighbor}). Nous n'utiliserons pas cet algorithme par manque de temps, mais \'egalement car LBPH est d\'ej\`a pr\'esent dans OpenCV.\\
+
+Comme nous venons de le voir, il existe diff\'erentes m\'ethodes de reconnaissance des visages. Nous allons maintenant passer à l'expérimentation de ces méthodes.
+
+\section{Exp\'erimentations}
+Dans cette partie, nous exp\'erimenterons les m\'ethodes de reconnaissance de visage \'evoqu\'ees dans la premi\`ere partie. D'abord, nous verrons le protocole exp\'erimental, puis la r\'ealisation des exp\'eriences et enfin, les r\'esultats et analyses de ces manipulations.
+\subsection{Protocole}
+Le but de l'exp\'erimentation \'etait de comparer les trois m\'ethodes (Eigenface, Fisherface et LBPH) impl\'ement\'ees par la librairie OpenCV de façon \`a en choisir une pour notre application finale, puis d'\'etudier sa robustesse. Nous avons r\'ealis\'e deux exp\'eriences~: la premi\`ere consistait \`a observer la vitesse de reconnaissance en fonction du nombre d'images pr\'esentes dans la base de donn\'ees et de comparer le pourcentage de r\'eussite. La seconde exp\'erience cherchait \`a \'etudier la robustesse de la m\'ethode, c'est-\`a-dire si elle marchait \'egalement pour des cas particuliers comme un visage partiellement cach\'e ou quand l'utilisateur r\'ealisait une grimace.
+\subsection{R\'ealisation des exp\'eriences}
+Lors de la premi\`ere exp\'erience, nous avons mesur\'e deux vitesses d'ex\'ecution~: le temps d'importation des images pour r\'ealiser l'entrainement de l'algorithme (premier temps) et le temps pour r\'ealiser la reconnaissance (second temps). La base de donn\'ees \'etait compos\'ee de trois individus. Nous avons d'abord captur\'e une photo d'un des individus pr\'esents dans la base. Nous avons ensuite utilis\'ee cette photo pour tester les trois algorithmes (Eigenface, Fisherface et LBPH). Pour chaque m\'ethode, l'op\'eration a \'et\'e r\'ep\'et\'ee cent fois sur le même ordinateur (afin d'\'eviter les impr\'ecisions dues au processeur qui ne travaille pas toujours de mani\`ere identique). Nous avons \'egalement vari\'e le nombre de photos pr\'esentes dans la base de donn\'ees~: 1, 2, 4, 6, 8, 10, puis 12 photos par individu. \\
+
+Dans la deuxi\`eme partie de l'exp\'erience, nous avons pris une vid\'eo compos\'ee de cent images pendant laquelle le sujet bougeait doucement la tête dans toutes les directions. Par ailleurs, chaque sujet \'etait enregistr\'e dans la base de donn\'ees \`a l'aide de douze photos prises dans diff\'erentes postures. Pour finir, chaque algorithme \'etait appliqu\'e aux cent images de la vid\'eo pour observer le pourcentage de r\'eussite.\\
+
+Pour la seconde exp\'erience qui cherche \`a \'etudier la robustesse d'un algorithme, nous avons privil\'egi\'e la m\'ethode LBPH qui montrait de meilleurs r\'esultats lors de notre premi\`ere exp\'erience. Nous avons demand\'e \`a plusieurs personnes de s'enregistrer dans la base de donn\'ees. Ensuite, pour chacune de ces personnes, une vid\'eo compos\'ee de 100 images a \'et\'e prise. Par ailleurs, les sujets ont \'et\'e film\'ees sous diff\'erentes conditions. Nous avons vari\'e la luminosit\'e (faible, naturelle, \'elev\'ee), l'orientation et l'inclinaison de la tête. Nous avons aussi accentu\'e la d\'eformation du visage, cach\'e certaines parties du visage et modifi\'e la distance par rapport \`a la cam\'era. La cam\'era utilis\'ee \'etait la même que celle utilis\'ee lors de l'enregistrement de l'individu dans la base de donn\'ees pour \'eviter tout changement de r\'esolution possible.
+\subsection{R\'esultats et analyses}
+Concernant l'exp\'erience \no 1, l'algorithme Fisherface a \'et\'e le plus rapide dans l'\'elaboration du mod\`ele, suivi par Eigenface puis LBPH (voir Figure~\ref{fig:dureesAlgos}). Nous pouvons noter qu'Eigenface devient de plus en plus lent \`a mesure que le nombre d'images dans la base de donn\'ees augmente (au bout de 36 images, la m\'ethode est aussi lente que LBPH). \\
+\begin{figure}[h]
+	\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=5.9cm,
+			height=5cm,
+			xlabel={nombre d'images dans la base de donn\'ee},
+			ylabel={temps d'ajout},
+			y unit=\si{\second}
+		]
+			\addplot table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_eigenface.csv};
+			\addplot table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_fisherface.csv};
+			\addplot table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_rec_LBPH.csv};
+		\end{axis}
+	\end{tikzpicture}
+	\begin{tikzpicture}
+		\begin{axis}[
+			width=5.9cm,
+			height=5cm,
+			xlabel={nombre d'images dans la base de donn\'ee},
+			ylabel={temps de reconnaissance},
+			y unit=\si{\second},
+			 legend style={at={(0.9,0.5)},anchor=west},
+			legend entries={eigenface,fisher face,LBPH}
+		]
+			\addplot table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_eigenface.csv};
+			\addplot table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_fisherface.csv};
+			\addplot table[x=nb,y=tps,col sep=comma] {data/ByNumberOfImages_bdd_LBPH.csv};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Dur\'ees d'initialisation, et de reconnaissance, par algorithme}
+	\label{fig:dureesAlgos}
+	\end{center}
+\end{figure}
+
+Pour la reconnaissance des visages, la dur\'ee est quasiment identique pour les trois algorithmes. Elle est comprise entre 680 et 690 ms pour un processeur Intel Core i5 de deuxi\`eme g\'en\'eration. Nous pouvons donc conclure que le temps n'est pas un facteur important dans le choix de l'algorithme. Si nous choisissons de prendre LBPH, l'initialisation prendra plus le temps, mais il n'y aura pas d'impact sur le temps de reconnaissance.\\
+\begin{figure}[t]
+	\begin{center}
+	\begin{tikzpicture}
+		\begin{axis}[
+			xbar,
+			xmin=0,
+			width=12cm,
+			height=8cm,
+			enlarge y limits=0.15,
+			xlabel={Pourcentage de reconnaissance},
+			symbolic y coords={Moyenne, {}, Amaury, Pierre-Henri, S\'ebastien},
+			ytick=data,
+			nodes near coords,
+			nodes near coords align={horizontal},
+			legend style={at={(0.5,0.36)},anchor=north,legend columns=-1},
+		]
+			\addplot coordinates {(71.929824561404,Amaury) (7.4074074074074,Pierre-Henri) (24.657534246575,S\'ebastien) (34.6649220717955,Moyenne)};
+			\addplot coordinates {(59.649122807018,Amaury) (80.246913580247,Pierre-Henri) (73.972602739726,S\'ebastien) (71.2895463756637,Moyenne)};
+			\addplot coordinates {(82.456140350877,Amaury) (60.493827160494,Pierre-Henri) (90.41095890411,S\'ebastien) (77.786975471827,Moyenne)};
+			
+			\legend{Eigenface, Fisherface, LBPH}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Pourcentage de reconnaissance, en fonction du cobaye et de l'algorithme}
+	\label{fig:pourcentageReco}
+	\end{center}
+\end{figure}
+
+Nous d\'eduisons de la seconde partie de l'exp\'erience \no 1 les r\'esultats affich\'es (Figure~\ref{fig:pourcentageReco}). Nous remarquons que l'algorithme LBPH est globalement meilleur que les deux autres. Fisherface arrive deuxi\`eme, suivi de loin par Eigenface.\\
+
+Nous pouvons conclure de la seconde partie que la luminosit\'e peut être un probl\`eme lors d'une exposition trop forte du visage (voir Figure~\ref{fig:robustesseLBPH}). Cela pose aussi un souci lorsque la limite entre le visage et l'arri\`ere-plan est difficilement perceptible (ce qui arrive assez souvent avec une cam\'era de faible qualit\'e). L'orientation et l'inclinaison de la tête sont limit\'ees \`a un certain angle (environ 20°), car au-del\`a les deux yeux ne sont pas bien visibles. La d\'eformation du visage ne perturbe pas la reconnaissance, en outre le port de lunettes de vue ne modifie que tr\`es l\'eg\`erement le r\'esultat. Pour pallier cette difficult\'e, la meilleure solution serait d'inclure des photos avec accessoires dans la base de donn\'ees. Masquer certaines parties du visage est beaucoup plus probl\'ematique. En effet, lorsque la bouche est cach\'ee, la reconnaissance est r\'ealisable, mais plus difficilement. En revanche, si les yeux sont cach\'es, la reconnaissance est impossible, ce qui pose un probl\`eme pour les personnes aux cheveux longs. La distance visage-cam\'era peut être \'egalement un obstacle \`a la reconnaissance dans le cas o\`u la taille du visage reconnue est plus petite que celle dans la base de donn\'ees. La r\'ealisation de nouveaux classifiers pourraient être int\'eressants pour am\'eliorer la reconnaissance.\\
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.5]{images/detection_cut.png}
+		\caption{Tests de robustesse pour la reconnaissance des visages.}
+		\label{fig:robustesseLBPH}
+	\end{center}
+\end{figure}
+
+Pour conclure, nous pouvons dire que les exp\'erimentations ont montr\'e que la m\'ethode de reconnaissance faciale LBPH est la plus efficace. Cependant, nous avons \'egalement vu que de nombreux facteurs ext\'erieurs influent sur la qualit\'e de la reconnaissance et peuvent mettre en \'echec celle-ci.\\
+
+Dans cette partie, nous avons compar\'e diff\'erentes m\'ethodes th\'eoriques de reconnaissance faciale. Puis, nous avons r\'ealis\'e des exp\'eriences sur chacun des algorithmes pour finalement en retenir un, LBPH. Nous allons maintenant passer \`a la partie principale de notre application qui est la reconnaissance des \'emotions.\\
+\chapter{Reconnaissance des \'emotions}
+	Dans cette derni\`ere partie, nous allons aborder la reconnaissance des \'emotions. Comme pour la reconnaissance faciale, nous \'etudierons d'abord l'aspect th\'eorique, puis nous passerons aux exp\'erimentations.
+\section{Historique}
+Le domaine des \'emotions est un domaine psychologique \'etudi\'e depuis longtemps. En 1649, Ren\'e Descartes publie dans \textit{les passions de l'\^ame} une d\'ecomposition des \'emotions par une somme de six \'emotions primaires (l'admiration, l'amour, la haine, le d\'esir, la joie et la tristesse \cite{descartes}). Cependant, ces \og \'emotions primaires\fg sont des \'emotions ressenties, et non des \'emotions visibles de l'ext\'erieur.\\
+
+\`A la fin des ann\'ees 1970, Paul Ekman, chercheur en psychologie, montre que les \'emotions exprim\'ees par les individus sont compos\'ees de micro-expressions faciales \cite{whatTheFaceReveal}, et que chaque expression faciale est la somme de plusieurs des 7 expressions de base (tristesse, joie, col\`ere, peur, d\'ego\^ut, surprise et m\'epris).\\
+
+Aujourd'hui, les travaux d'Ekman ont permis de nombreuses applications, notamment dans le domaine de la d\'etection du mensonge, et surtout dans le domaine de l'interaction homme-machine \cite{ekmangroup}, o\`u les expressions faciales sont utilis\'ees, par exemple, pour adapter le comportement de la machine en fonction de l'\'etat d'esprit de la personne, ou pour fournir des \'emotions r\'ealistes \`a un avatar \cite{photorealisticExpressiveTextTalkingHeadSynthesis}.
+\section{Th\'eorie}
+Avant de passer \`a l'exp\'erimentation, nous avons besoin de connaitre la m\'ethode la plus adapt\'ee \`a notre application. C'est pourquoi, dans un premier temps nous allons voir les diff\'erentes solutions possibles, puis nous allons choisir celle qui correspond le mieux \`a nos besoins.
+\subsection{Diff\'erentes solutions}
+	Avant toute chose, nous \'etudions les expressions faciales et non directement les \'emotions. Les expressions faciales sont br\`eves~: entre $250\si{\milli\second}$ et $5\si{\second}$ \cite{automaticFacialExpressionAnalysis}. Il existe diff\'erentes façons de r\'ecup\'erer des expressions faciales~: l'approche holistique (c'est-\`a-dire que la tête est analys\'ee de façon globale) ou l'approche locale qui consiste \`a prendre des parties de la tête et analyser ces parties ind\'ependamment les unes des autres. \\
+
+Ensuite, pour \og trouver\fg les \'emotions, il existe \'egalement diff\'erentes mani\`eres de proc\'eder. Nous avons l'approche bas\'ee sur un mod\`ele~: c'est la technique utilis\'ee pr\'ec\'edemment pour effectuer la reconnaissance des visages, mais \`a la place de s\'eparer la base de donn\'ees par individu, les images sont s\'epar\'ees par individu et par \'emotion. Nous pouvons par exemple imaginer une arborescence avec un dossier nomm\'e \verb|Xavier| contenant les sous-dossiers \verb|Xavier_Content|, \verb|Xavier_Peur|, \verb|Xavier_Degout|, ... Le probl\`eme de cette m\'ethode est qu'il faut que l'individu soit connu dans la base de donn\'ees pour reconna\^itre les \'emotions (ce qui explique pourquoi nous n'avons pas choisi cette m\'ethode). Nous avons aussi l'approche bas\'ee sur l'image~: \`a partir d'une image, nous essayons de trouver des expressions faciales qui s'apparentent aux \'emotions primaires ( \cite{facialExpressionMegamix}) d\'efinies par Ekman \cite{ekman} et Friesen. Tous les humains ont la même façon d'exprimer ces \'emotions primaires, peu importe leur origine ou leur culture \cite{universalityCulturalSpecificityEmotionRecognitionMetaAnalysis}. Cette m\'ethode pr\'esente l'avantage d'être plus simple et plus rapide \`a mettre en place. Cependant, elle est moins robuste, notamment aux changements de position de la tête. \\
+
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=0.5]{images/primaryexp.jpg}
+		\caption{Les 6 \'emotions primaires \cite{artInvisible}}
+	\end{center}
+\end{figure}
+
+Enfin, pour visualiser les changements d'expression, nous pouvons regarder les d\'eformations. Pour commencer, cela consiste \`a classer les \'emotions primaires en termes de mouvements, translations, rotations, etc. Puis, nous prenons des images \`a diff\'erents instants et nous analysons les mouvements, translations, rotations, etc... afin de les comparer \`a ceux des \'emotions primaires. Une autre solution est le suivi des points du visage~: sur chaque image, nous relevons la position de certains points et nous essayons de les aligner sur le mod\`ele de chaque expression primaire. Finalement, l'\'emotion retenue est celle dont le mod\`ele de points est le plus proche de celui de l'image. C'est la m\'ethode la plus robuste, mais aussi la plus couteuse en calcul et elle est plus difficile \`a mettre en place que la pr\'ec\'edente m\'ethode.\\
+\subsection{Solution choisie}
+	Avant de pr\'esenter la solution choisie, nous avons test\'e plusieurs autres m\'ethodes que nous avons abandonn\'e. Par exemple, pour d\'etecter la forme de la bouche, nous avons utilis\'e une fonction pr\'esente dans OpenCV~: \textit{findContours} qui permet d'obtenir des r\'esultats plutôt bons (Voir Figure~\ref{fig:findContoursOk}). \\
+	Voici comment utiliser la fonction avec la librairie OpenCV:\\
+	\lstinputlisting[language=python]{data/contour.py}
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=1]{images/findContoursOk.jpg}
+		\caption{Utilisation de la m\'ethode findContours sur une bouche}
+		\label{fig:findContoursOk}
+	\end{center}
+\end{figure}
+Cependant, dans certains cas, le r\'esultat n'\'etait pas du tout exploitable (Figure~\ref{fig:findContoursNOk}).\\
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=1]{images/findContoursNOk.jpg}
+		\caption{Utilisation de la m\'ethode findContours sur un oeil}
+		\label{fig:findContoursNOk}
+	\end{center}
+\end{figure}
+Par ailleurs, la d\'etection des couleurs a donn\'e de bien meilleurs r\'esultats (Figure~\ref{fig:inRangeOk}).\\
+\begin{figure}[h]
+	\begin{center}
+		\includegraphics[scale=1]{images/inRangeOk.jpg}
+		\caption{D\'etection d'une plage de couleur sur une bouche}
+		\label{fig:inRangeOk}
+	\end{center}
+\end{figure}
+
+	Voici comment utiliser la fonction avec la librairie OpenCV:\\
+	\lstinputlisting[language=python]{data/color.py}
+	
+Utiliser \textit{findContours} aurait \'et\'e plus pr\'ecis, mais son manque de fiabilit\'e et la n\'ecessit\'e de traiter les images rend son utilisation contraignante. Une autre solution consistait \`a d\'etecter les expressions \`a l'aide des couleurs et de l'utilisation de seuils sp\'ecifiques. C'\'etait la solution la plus rapide et la plus simple \`a mettre en place, mais elle est impr\'ecise et difficile \`a utiliser pour savoir si les yeux sont fronc\'es ou \'ecarquill\'es par exemple.\\
+
+La solution choisie est une m\'ethode l\'eg\`erement diff\'erente de la m\'ethode de d\'etection de couleur. Le suivi des points (utilis\'es dans \cite{realTimeFacialFeaturePointsTrackingPyramidalLucasKanadeAlgorithm}, \cite{emotionRecognitionCauchyNaiveBayes}, \cite{bimodalEmotionRecognition} et \cite{authenticFacialExpressionAnalysis}) ou les r\'eseaux neuronaux ont pour d\'esavantage de demander \'enorm\'ement de calculs. Comme notre application a but d'avoir pour support un ordinateur de bord d'une voiture vraisemblablement moins puissant qu'un ordinateur portable, il est n\'ecessaire de trouver une solution peu co\^uteuse en puissance de calcul. Pour simplifier les calculs, nous avons d\'efini la m\'ethode suivante pour effectuer la reconnaissance des \'emotions~: la premi\`ere \'etape est l'obtention d'un visage. L'identit\'e de la personne nous importe peu (elle est uniquement utilis\'ee pour le d\'emarrage du v\'ehicule). Ensuite, \`a l'aide d'un second classifieur, nous obtenons toutes les positions susceptibles de correspondre \`a des yeux. Les yeux situ\'es dans la partie basse du visage sont \'elimin\'es. La hauteur du classifieur nous indique si les yeux sont en position normale, fronc\'es ou \'ecarquill\'es. Pour d\'etecter les yeux ferm\'es, il suffit de regarder le nombre de pixels ayant une couleur comprise entre [80,0,0] et [160,100,100] avec la premi\'ere composante correspondant au rouge, la seconde au vert et la troisi\`eme au bleu (nous effectuons donc une d\'etection plut\^ot \`a dominance rouge pour ce point). Concernant la bouche, la m\'ethode est presque identique \`a celle des yeux. Avec un classifier sp\'ecifique, toutes les bouches possibles sont r\'ecup\'er\'ees, puis les erreurs sont \'ecart\'ees (bouches situ\'ees dans la partie haute du visage ou trop pr\`es du bord). Ensuite, la bouche est convertie en niveaux de gris et un seuil est appliqu\'ee pour n'obtenir que l'int\'erieur de la bouche. En effet, la couleur \`a l'int\'erieur d'une bouche ouverte tend vers le noir, alors que les l\`evres sont plus d'une couleur rouge. Ainsi, nous n'avons plus qu'\`a comparer le taux de noir de l'image au taux obtenu \`a l'initialisation du programme. Si le taux de noir de l'image est sup\'erieur \`a celui obtenu \`a l'initialisation plus un seuil, la bouche est ouverte. \\
+
+Apr\`es cet aperçu des diff\'erentes solutions possibles pour la reconnaissance faciale et du choix de notre m\'ethode, nous allons \`a pr\'esent l'exp\'erimenter.
+\section{Exp\'erimentations}
+	Dans cette partie, nous allons pr\'esenter les exp\'erimentations, d'abord nous exposerons le protocole exp\'erimental, puis la r\'ealisation en elle-même, et enfin les conclusions que nous en avons tir\'e.
+\subsection{Protocole}
+	Dans le but de r\'egler les seuils de façon pr\'ecise, il a fallu d\'efinir une distance entre le sujet et l'objectif de la cam\'era (cette distance a \'et\'e fix\'ee \`a 50 cm), et effectuer une initialisation avec une \'emotion neutre. Puis, pour v\'erifier la robustesse de la d\'etection, le sujet devait froncer les sourcils, \'ecarquiller et fermer les yeux et ouvrir la bouche. Ces d\'eformations particuli\`eres du visage correspondent aux expressions faciales (la col\`ere, la surprise et l'endormissement du conducteur) que nous souhaitons r\'ecup\'erer pour notre application. Le processus est r\'ep\'et\'e jusqu'\`a la d\'etection de l'expression faciale.
+\subsection{R\'ealisation}
+	Nous avons donc r\'egl\'e les seuils de l'application en r\'ealisant des d\'etections successives \`a la distance fix\'ee dans le protocole exp\'erimental. L'identification se faisait directement depuis la capture r\'ealis\'ee par la cam\'era utilis\'ee tout au long du projet. Il a fallu tester les seuils avec des variations de luminosit\'e et de distance pour rendre l'application la plus robuste possible.
+\subsection{R\'esultats et analyse}
+	Nos exp\'erimentations nous ont montr\'e que dans un lieu o\`u l'utilisateur de l'application ne bouge pas et o\`u la luminosit\'e ne change pas, nous arrivons \`a obtenir une d\'etection correcte des \'emotions. Nous pouvions tout de même observer des probl\`emes lorsque l'utilisateur s'\'eloignait ou avançait vers la cam\'era. En effet, les seuils et les tailles devenaient incorrects. Il fallait donc r\'einitialiser les seuils ou se remettre \`a la distance à laquelle était l'utilisateur \`a la pr\'ec\'edente initialisation.\\
+\chapter{Production}
+Dans cette derni\`ere partie, nous pr\'esenterons la r\'ealisation de notre application. Nous parlerons d'abord du prototype final, puis des tests r\'ealis\'es en situation r\'eelle et enfin, des r\'esultats de ces tests.
+\section{Prototype final}
+	Afin de v\'erifier l'efficacit\'e de notre application (voir code source en annexe), nous avons d\'ecid\'e de la tester en situation r\'eelle, c'est-\`a-dire dans un v\'ehicule en mouvement. Cependant, nous ne pouvions pas relier directement notre programme \`a un v\'ehicule et modifier en temps r\'eel son comportement (le freinage par exemple). C'est pourquoi, \`a l'aide d'un jeu de DELs et d'un montage \'electronique r\'ealis\'e \`a l'aide d'une carte Arduino Uno (voir Figure~\ref{fig:protoTests}), nous avons simul\'e les diff\'erentes r\'eactions du v\'ehicule en fonction du comportement du conducteur. Ainsi, nous avons choisi d'utiliser quatre DELs~:
+\begin{itemize}
+	\item{Une DEL rouge pour simuler le frein}
+	\item{Une DEL orange clignotante pour simuler les warnings}
+	\item{Une DEL jaune pour simuler une limitation de l'acc\'el\'eration}
+	\item{Une DEL verte pour simuler le droit de d\'emarrer}
+\end{itemize}
+De plus, une enceinte \'etait reli\'ee \`a l'Arduino pour \'emettre un signal sonore en cas d'inattention de la part du conducteur ou de son endormissement. Le prototype est fonctionnel sous Linux, Windows et Mac OS (il est \`a noter qu'il y a quelques probl\`emes de d\'ependances li\'es \`a OpenCV). Nous voulions porter l'application sur une carte \'electronique de type Raspberry Pi ou Beaglebone, afin de se rapprocher au plus d'un ordinateur de bord, cependant une des fonctions d'OpenCV que nous utilisons n'est pas disponible (\textit{createLBPHFaceRecognizer}, qui permet l'utilisation de la m\'ethode de reconnaissance faciale LBPH). N'ayant ni le temps, ni les moyens de recr\'eer cette fonction sur ces cartes, nous avons abandonn\'e cette id\'ee.
+	\begin{figure}
+		\begin{center}
+			\includegraphics[scale=0.7]{images/schema_tests.png}
+			\includegraphics[scale=1]{images/schema_tests_elec.png}
+			\caption{Prototype de test}
+			\label{fig:protoTests}
+		\end{center}
+	\end{figure}
+\section{Protocole du test final}
+	Tout d'abord, la premi\`ere partie du test \'etait r\'ealis\'ee sur le passager avant. Nous avons effectu\'e l'initialisation \`a l'arrêt, ainsi qu'une d\'etection des \'emotions pour v\'erifier le fonctionnement correct de l'application. Puis, un trajet pré-défini a \'et\'e r\'ealis\'e pour obtenir trois endroits avec des luminosit\'es diff\'erentes (faible, naturelle et forte) afin de v\'erifier la robustesse du programme. Lors de la seconde partie du trajet, une cam\'era a \'et\'e plac\'ee en face du conducteur (au niveau du volant pour ne pas gêner sa visibilit\'e). Nous avons roul\'e de façon continue pour simuler une situation r\'eelle et confirmer le bon fonctionnement de l'application et visualiser d'\'eventuels probl\`emes. Le dispositif final est pr\'esent\'e dans la Figure \ref{fig:protoFinal}.
+\begin{figure}
+		\begin{center}
+			\includegraphics[scale=0.125]{images/prototype.jpg}
+			\caption{Simulation finale}
+			\label{fig:protoFinal}
+		\end{center}
+	\end{figure}
+\section{Discussion et analyse des r\'esultats}
+Premi\`erement, l'application fonctionne bien dans le cas o\`u le conducteur est inattentif. Quand nous avons simul\'e un conducteur endormi, la d\'etection s'effectuait dans un temps compris entre $5$ et $15$ secondes. Le programme marche \'egalement pour les expressions faciales \og\'enerv\'e\fg et \og surpris\fg mais comme pr\'ec\'edemment, la r\'eaction du programme n'est pas instantan\'ee et les \'emotions doivent être sur-jou\'ee la plupart du temps. Nous en avons conclu que la qualit\'e de la cam\'era \'etait \`a revoir, ainsi que son placement dans l'habitacle. En effet, le volant empêchait la cam\'era de bien visualiser le visage du conducteur.\\
+
+Le point le plus probl\'ematique concerne le changement de luminosit\'e~; lorsque la luminosit\'e est trop importante, le visage du conducteur devient blanc et se confond avec l'arri\`ere-plan. Il est alors impossible d'identifier une quelconque expression faciale, ni même de reconnaître le visage.\\
+
+Nous venons donc de voir qu'une int\'egration de notre prototype est possible dans une voiture de tourisme. L'application d\'etecte bien les expressions recherch\'ees malgr\'e un temps de r\'eponse important. Cependant, plusieurs param\`etres doivent encore être am\'elior\'es comme une meilleure adaptation au changement de luminosit\'e ou le choix d'une cam\'era avec une r\'esolution plus \'elev\'ee.
+\chapter*{Conclusion}
+La d\'etection et la reconnaissance d'individus et d'\'emotions peut s'effectuer \`a l'aide d'une multitude d'algorithmes r\'esultant de dizaines d'ann\'ees de recherche (LBPH, FisherFace, EigenFace, R\'eseaux neuronaux, Mod\`ele de Markov Cach\'es, ...) dont beaucoup demandent \'enorm\'ement de calculs. Certains ont une approche plus simple et sont facilement int\'egrables \`a un projet tel que LBPH \`a l'aide de la librairie OpenCV. L'application d\'evelopp\'ee tout au long de ce \textsc{TIPE} nous montre que la reconnaissance faciale du conducteur peut être utile pour \'eviter un vol de voiture, même si la reconnaissance faciale n'est pas un facteur de s\'ecurit\'e fort. En effet, cette s\'ecurit\'e se contourne simplement en utilisant une photo du conducteur.\\
+
+L'application permet aussi de d\'etecter une personne endormie (seulement apr\`es quelques secondes) ou inattentive et permet donc d'\'eviter une conduite \`a l'aveugle. Par contre, l'application est tr\`es peu fiable pour la d\'etection de la surprise ou de l'\'enervement. De plus, la surprise et l'\'enervement peuvent provenir d'une multitude de sources telles que la pr\'esence d'un bouchon, une sortie rat\'ee, un enfant qui traverse au mauvais moment, etc. La d\'etection des \'emotions n'est donc pas forc\'ement la meilleure approche \`a avoir pour savoir comment la voiture doit r\'eagir. De plus, cette d\'etection peut être gên\'ee par de multiples facteurs tels que la luminosit\'e, une cam\'era de mauvaise qualit\'e, son placement (la tête peut-être cach\'ee par le volant), etc.\\
+
+Enfin, il faudrait plutôt prendre en compte le mouvement des points du visage plutôt que des seuils impr\'ecis qui peuvent s'av\'erer faux avec la modification de l'environnement ou trop peu r\'eactif (il faut parfois sur-jouer une \'emotion pour obtenir une d\'etection, ce qui n'est pas envisageable dans une application r\'eelle).\\
+
+Ce projet r\'ealis\'e dans le cadre du \textsc{TIPE} nous a permis d'acqu\'erir de nombreuses comp\'etences. Nous avons appris \`a travailler en groupe avec des outils tels que git (pour le partage des ressources, des images et des sources de l'application) ainsi que l'utilisation de pad collaboratif pour r\'ediger \`a plusieurs facilement (Framapad). Nous avons aussi appris des m\'ethodes de gestion de projets tels que la Check List (pour connaître les actions \`a r\'ealiser), la m\'ethode RACI (pour se r\'epartir les tâches), le diagramme de Gantt (pour planifier l'emploi du temps) ou la m\'ethode Scrum (pour se diviser l'\'ecriture de l'application). Par ailleurs, nous avons appris \`a programmer \`a l'aide de Python 2.7 (la norme python 3 est sortie, mais elle est encore mal support\'ee par OpenCV pour les m\'ethodes de reconnaissance faciale) ainsi qu'\`a maitriser la biblioth\`eque OpenCV (pour les parties reconnaissance faciale et traitement d'images). Pour analyser facilement nos r\'esultats donn\'es sous forme de log, nous avons utilis\'e le langage PHP. Enfin pour r\'ediger le rapport et g\'en\'erer les graphes, nous avons utilis\'e LaTeX. De plus, nous avons d\'evelopp\'e notre sens de l'autonomie en r\'epartissant les tâches entre les diff\'erents membres du groupe que ce soit pour les recherches, ou la r\'edaction du rapport. Nous avons \'egalement d\'evelopp\'e notre rigueur en suivant des protocoles pr\'ecis lors de nos exp\'eriences. Nous avons pris \'enorm\'ement de plaisir \`a r\'ealiser notre \textsc{TIPE}, ce qui nous a permis de confirmer notre projet professionnel qui est la poursuite d'\'etudes dans le domaine de l'informatique.\\
+
+Malgr\'e le fait que notre application fonctionne, nous pouvons l'am\'eliorer de plusieurs façons. Tout d'abord, en reliant directement l'application \`a la voiture et non \`a des LEDs qui s'allument. Pour le choix des technologies associ\'ees, nous pouvons imaginer un programme plutôt \'ecrit en C ou C++ (le python \'etant plus lent) tirant mieux parti de la programmation parall\`ele afin d'effectuer des tâches simultan\'ement. Le programme devrait tourner sur une architecture d\'edi\'ee (syst\`eme all\'eg\'e type linux/BSD all\'eg\'e). Enfin des algorithmes plus pr\'ecis devraient être envisag\'es tels que le suivi des points du visage. Même si cette m\'ethode n\'ecessite bien plus de calculs, l'application serait plus pr\'ecise. Pour pallier au probl\`eme de non information sur la cause de la surprise et de l'\'enervement de l'utilisateur, nous pouvons imaginer une am\'elioration du syst\`eme actuel avec des radars et des cam\'eras orient\'ees vers l'ext\'erieur de la voiture. Nous pouvons \'egalement renforcer la d\'etection d'un conducteur inattentif en g\'en\'erant des classifiers pour d\'etecter lorsque le conducteur utilise son t\'el\'ephone au volant. Enfin, la reconnaissance faciale du conducteur peut servir, en plus de la protection anti-vol \`a g\'en\'erer des profils de conduite (consommation d'essence, style de conduite, style de musique, bilan de sant\'e, etc.) que nous pourrions compl\'eter avec des syst\`emes de reconnaissance vocale \cite{improvingAutomotiveSafetyByPairingDriverEmotionAndCarVoiceEmotion} ou de r\'ecup\'erer les battements du coeur \cite{affectiveIntelligentCarInterfacesEmotionRecognition}. En outre, notre programme pourrait être impl\'ement\'e dans d'autres types de v\'ehicules comme des camions ou des bus. Si tous les v\'ehicules de tourisme \'etaient \'equip\'es de ce type de programme, nous pouvons envisager une r\'eduction signifivative du nombre de morts et de bless\'es sur les routes. Sachant que le co\^ut des accidents corporels en 2011 est estim\'e \`a 9,7 milliards d'euros, cela repr\'esenterait une \'economie non n\'egligeable. Enfin, la pr\'esence permanente d'une cam\'era dans l'habitacle pose le probl\`eme du respect de la vie priv\'ee. Il faudrait \`a veiller \`a ce que son utilisation soit r\'eserv\'e uniquement \`a des fins de protection du conducteur et pas \`a un moyen suppl\'ementaire d'espionner des individus.\\
+\bibliographystyle{plain}
+\bibliography{biblio_rapport}
+\appendix
+	\chapter{Code des applications}
+		\section{Application principale}
+			\lstinputlisting[language=python]{../Application_finale/app.py}
+		\section{Code Arduino pour les tests}
+			\lstinputlisting[style=arduino]{../src/tests/tests.ino}
+	\chapter{Documents utilis\'es en CST}
+		\section{check-list}
+	T\^aches~:\hfill R\'ealisation~:
+	\begin{enumerate}
+		\item{Recherche sur des projet similaires d\'ej\`a existants \hfill $\Box$ oui $\Box$ non}
+		\item{Recherche bibliographique sur la s\'ecurit\'e routi\`ere \hfill $\Box$ oui $\Box$ non}
+		\item{Recherche bibliographique sur la reconnaissance faciale \hfill $\Box$ oui $\Box$ non}
+		\item{Recherche bibliographique sur la reconnaissance des \'emotions \hfill $\Box$ oui $\Box$ non}
+		\item{Contacter des professionnels \hfill $\Box$ oui $\Box$ non}
+		\item{Apprendre Python \hfill $\Box$ oui $\Box$ non}
+		\item{Apprendre \`a utiliser git \hfill $\Box$ oui $\Box$ non}
+		\item{Cr\'eer le d\'ep\^ot git \hfill $\Box$ oui $\Box$ non}
+		\item{Apprendre \`a utiliser OpenCV \hfill $\Box$ oui $\Box$ non}
+		\item{Comparer les diff\'erents syst\`emes de reconnaissance faciale}
+			\begin{itemize}
+				\item{vitesse d'ex\'ecution \hfill $\Box$ oui $\Box$ non}
+				\item{fiabilit\'e \hfill $\Box$ oui $\Box$ non}
+			\end{itemize}
+		\item{R\'ealiser l'application}
+			\begin{itemize}
+				\item{module de reconnaissance faciale \hfill $\Box$ oui $\Box$ non}
+				\item{module de reconnaissance des \'emotions \hfill $\Box$ oui $\Box$ non}
+			\end{itemize}
+		\item{Cr\'eer le prototype de test \hfill $\Box$ oui $\Box$ non}
+		\item{R\'ealiser des tests}
+			\begin{itemize}
+				\item{tests en situation id\'eale \hfill $\Box$ oui $\Box$ non}
+				\item{tests en situation r\'eelle \hfill $\Box$ oui $\Box$ non}
+				\item{d\'ebuggage \hfill $\Box$ oui $\Box$ non}
+			\end{itemize}
+		\item{Analyser les r\'esultats des tests \hfill $\Box$ oui $\Box$ non}
+		\item{R\'ediger le rapport \'ecrit \hfill $\Box$ oui $\Box$ non}
+		\item{Relecture du rapport \'ecrit \hfill $\Box$ oui $\Box$ non}
+		\item{Pr\'eparer l'oral \hfill $\Box$ oui $\Box$ non}
+		\item{R\'ealiser le diaporama \hfill $\Box$ oui $\Box$ non}
+		\item{R\'ealiser la fiche synoptique \hfill $\Box$ oui $\Box$ non}
+	\end{enumerate}
+		\newpage
+		\section{Matrice RACI}
+		\begin{tabular}{|>{\bfseries}c|c|c|c|c|c|}
+			\hline
+			\backslashbox{T\^ache}{Membre} & \textbf{S\'ebastien} & \textbf{Pierre-Henri} & \textbf{Amaury} & \textbf{Finn} & \textbf{D\'eborah}\\
+			\hline
+			1 & C & R-C & C & I & \\
+			\hline
+			2 & I & R-C & I & I & \\
+			\hline
+			3 & R-C & I & I & I & \\
+			\hline
+			4 & I & I & R-C & I & \\
+			\hline
+			5 & C & C & C & I & \\
+			\hline
+			6 & R & C & I & & \\
+			\hline
+			7 & R & C & C & & \\
+			\hline
+			8 & R-C & I & I & & \\
+			\hline
+			9 & R-C & C & C & & \\
+			\hline
+			10.1 & R-C & C & C & I & \\
+			\hline
+			10.2 & R-C & C & C & I & \\
+			\hline
+			11.1 & R-C & C & C & A & \\
+			\hline
+			11.2 & C & C & R-C & A & \\
+			\hline
+			12 & C & R-C & C & I & \\
+			\hline
+			13.1 & C & R-C & C & I & \\
+			\hline
+			13.2 & C & C & R-C & I & \\
+			\hline
+			13.3 & R-C & C & C & I & \\
+			\hline
+			14 & C & R-C & C & A & \\
+			\hline
+			15 & C & C & R-C & A & I\\
+			\hline
+			16 & I & I & R-C & & \\
+			\hline
+			17 & C & R-C & C & & \\
+			\hline
+			18 & C & C & R-C & A & I\\
+			\hline
+			19 & C & R-C & C & A & I\\
+			\hline
+		\end{tabular}
+		\newpage
+		\section{Diagramme de GANTT}
+		\begin{center}
+		\includegraphics[scale=0.7,angle=90]{../documents/GANTT/gantt.pdf}
+		\end{center}
+\end{document}
