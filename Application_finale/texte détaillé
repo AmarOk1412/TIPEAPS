@@ -1,5 +1,0 @@
-On arrive dans la voiture
-Allumage du module
-Reconnaissance faciale
-Si la personne est reconnue -> On envoie 'e' pour engine arduino qui allume la led verte & répond 'oe' (o+commande) puis l'appli renvoie o si c'est la bonne commande
-Sinon on fais rien
