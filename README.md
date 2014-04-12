@@ -11,17 +11,22 @@ Il a pour but la reconnaissance faciale et la reconnaissance des émotions d'un 
 Auteurs
 -------
 * Louarn Amaury : nomis@homnomnom.fr
-* Collin Pierre-henri : TODO Mail
+* Collin Pierre-henri
 * Blin Sébastien : blin.sebastien@enconn.fr
 
 Architecture
 ------------
-TODO
+* Application : source
+* Diaporama : Utilisé pour la soutenance
+* Rapport : Présentation du projet
 
 Comment utiliser l'application :
 --------------------------------
-TODO
-
+* Téléchargez les sources : 'git clone https://github.com/AmarOk1412/TIPEAPS.git'
+* Branchez un Arduino à votre ordinateur
+* Entrez dans le dossier de l'application : 'cd Application'
+* Pour s'enregistrer : 'python app.py -c'
+* Lancez l'application : 'python app.py -a'
 
 Licence
 -------
